@@ -1,0 +1,9 @@
+eclipse.preferences.version=1
+encoding//WebContent/WEB-INF/views/_header.jsp=UTF-8
+encoding//src/org/wadielnatron/servlets/ForgetPasswordServlet.java=UTF-8
+encoding//src/org/wadielnatron/servlets/LoginServlet.java=UTF-8
+encoding//src/org/wadielnatron/servlets/LogoutServlet.java=UTF-8
+encoding//src/org/wadielnatron/servlets/ManageUsersServlet.java=UTF-8
+encoding//src/org/wadielnatron/servlets/RegisterServlet.java=UTF-8
+encoding//src/org/wadielnatron/servlets/SearchServlet.java=UTF-8
+encoding//src/org/wadielnatron/servlets/VoucherServlet.java=UTF-8
