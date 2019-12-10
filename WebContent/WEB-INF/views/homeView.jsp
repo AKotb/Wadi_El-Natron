@@ -6,6 +6,14 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="" />
 <meta name="description" content="" />
+<script src="resources/js/jquery.js"></script>
+<script src="resources/js/bootstrap.min.js"></script>
+<script src="resources/js/jquery.sticky.js"></script>
+<script src="resources/js/jquery.stellar.min.js"></script>
+<script src="resources/js/wow.min.js"></script>
+<script src="resources/js/smoothscroll.js"></script>
+<script src="resources/js/owl.carousel.min.js"></script>
+<script src="resources/js/custom.js"></script>
 <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700"
 	rel="stylesheet" />
 <link href="resources/default.css" rel="stylesheet" type="text/css"
@@ -22,7 +30,7 @@
  		position: absolute;
         top: 28%;
         left: 0.6%;
-        width: 10%;
+        width: 10.5%;
         padding: 5;
         z-index: 5;
         background-color: #fff;
@@ -33,16 +41,24 @@
         padding-left: 10px;
       }
  #latValue {
-        width: 70%;
+        width: 60%;
         color: gainsboro;
       }
  #lngValue {
-        width: 70%;
+        width: 60%;
+        color: gainsboro;
+      }
+ .latlngValueclass1 {
+        width: 10%;
+        color: gainsboro;
+      }
+.latlngValueclass2 {
+        width: 28%;
         color: gainsboro;
       }
  #floating-panel {
         position: absolute;
-        top: 44%;
+        top: 47%;
         left: 0.6%;
         z-index: 5;
         background-color: #fff;
@@ -516,6 +532,12 @@
 		document.getElementById('cancellatlng').addEventListener('click', function() {
 			document.getElementById('latValue').value="";
 	        document.getElementById('lngValue').value="";
+	        document.getElementById('latdeg').value="";
+	        document.getElementById('latmin').value="";
+	        document.getElementById('latsec').value="";
+	        document.getElementById('lngdeg').value="";
+	        document.getElementById('lngmin').value="";
+	        document.getElementById('lngsec').value="";
 	        marker.setMap(null);
 	        var deflatlng = {lat: parseFloat('30.2519715'), lng: parseFloat('30.2761235')};
 	        map.setCenter(deflatlng);
@@ -832,40 +854,70 @@
 			  law529_layer.setMap(null);
 		  }
 	}
-	
-	   function geocodeLatLng(geocoder, map) {
-	        var inputLat = document.getElementById('latValue').value;
-	        var inputLng = document.getElementById('lngValue').value;
-	        var latlng = {lat: parseFloat(inputLat), lng: parseFloat(inputLng)};
-	        geocoder.geocode({'location': latlng}, function(results, status) {
-	          if (status === 'OK') {
-	            if (results[0]) {
-	              map.setCenter(latlng);
-	              map.setZoom(11);
-	              marker = new google.maps.Marker({
-	                position: latlng,
-	                map: map
-	              });
-	            } else {
-	              window.alert('عفواً , لا يوجد نتائج!');
-	            }
-	          } else {
-	            window.alert('عفواً , لقد حدث خطأ!: ' + status);
-	          }
-	        });
-	      }
 </script>
-<script
-	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDxcedr1zrD8h225vpj3hNseos5mHGEDVY&callback=initMap"
-	async defer></script>
-<script src="resources/js/jquery.js"></script>
-<script src="resources/js/bootstrap.min.js"></script>
-<script src="resources/js/jquery.sticky.js"></script>
-<script src="resources/js/jquery.stellar.min.js"></script>
-<script src="resources/js/wow.min.js"></script>
-<script src="resources/js/smoothscroll.js"></script>
-<script src="resources/js/owl.carousel.min.js"></script>
-<script src="resources/js/custom.js"></script>
+<script>
+function handleClick(myRadio) {
+	var currentValue = myRadio.value;
+	if(currentValue === '1'){
+		document.getElementById('latlng_degrees_id').style.display = "none";
+		document.getElementById('latlng_decimal_id').style.display = "block";
+	}else{
+		document.getElementById('latlng_decimal_id').style.display = "none";
+		document.getElementById('latlng_degrees_id').style.display = "block";
+	}
+}
+
+function geocodeLatLng(geocoder, map) {
+	var latlng;
+	var inputLat;
+	var inputLng;
+	if (document.getElementById('decid').checked) {
+		 inputLat = document.getElementById('latValue').value;
+		 inputLng = document.getElementById('lngValue').value;
+		 latlng = {lat: parseFloat(inputLat), lng: parseFloat(inputLng)};
+	}
+	else if (document.getElementById('degid').checked) {
+		  var inputLatDeg = document.getElementById('latdeg').value;
+		  var inputLatMin = document.getElementById('latmin').value;
+		  var inputLatSec = document.getElementById('latsec').value;
+		  
+		  var inputLngDeg = document.getElementById('lngdeg').value;
+		  var inputLngMin = document.getElementById('lngmin').value;
+		  var inputLngSec = document.getElementById('lngsec').value;
+		  
+		  inputLat = ConvertDMSToDD(inputLatDeg, inputLatMin, inputLatSec, "N");
+		  inputLng = ConvertDMSToDD(inputLngDeg, inputLngMin, inputLngSec, "E");
+		  latlng = {lat: parseFloat(inputLat), lng: parseFloat(inputLng)};
+	}
+	geocoder.geocode({'location': latlng}, function(results, status) {
+	      if (status === 'OK') {
+	        if (results[0]) {
+	          map.setCenter(latlng);
+	          map.setZoom(11);
+	          marker = new google.maps.Marker({
+	            position: latlng,
+	            map: map
+	          });
+	        } else {
+	          window.alert('عفواً , لا يوجد نتائج!');
+	        }
+	      } else {
+	        window.alert('عفواً , لقد حدث خطأ!: ' + status);
+	      }
+	    });
+  }
+  
+function ConvertDMSToDD(degrees, minutes, seconds, direction) {
+    var dd = Number(degrees) + Number(minutes)/60 + Number(seconds)/(60*60);
+
+    if (direction == "S" || direction == "W") {
+        dd = dd * -1;
+    } // Don't do anything for N or E
+    return dd;
+}
+
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDxcedr1zrD8h225vpj3hNseos5mHGEDVY&callback=initMap" async defer></script>
 </head>
 <body>
 <jsp:include page="_header.jsp"></jsp:include>
@@ -890,8 +942,23 @@
 	      <b style="float: right;">(529/2017) .قرار ج</b><input type="checkbox" onclick="displayAndHideLaw529();"  id="law529" style="float: left;"/>
 	    </div>
 	    <div id="latlng_floating-panel">
-      		<b>Lat: </b><input id="latValue" type="text"  onfocus="if(this.value == '30.170996') { this.value = ''; this.style.color = '#000'}" value="30.170996"><br>
-      		<b>Lng: </b><input id="lngValue" type="text"  onfocus="if(this.value == '30.187959') { this.value = ''; this.style.color = '#000'}" value="30.187959"><br>
+  			<input type="radio" name="latlngRadios"  id="decid" onclick="handleClick(this);" value="1" checked="checked"/>Dec.
+  			<input type="radio" name="latlngRadios"  id="degid" onclick="handleClick(this);" value="2" />Deg.<br>
+  			
+  			<div id="latlng_decimal_id" style="display: block;">
+      		<b>Lat: </b><input id="latValue" type="text"  onfocus="if(this.value == '30.170996') { this.value = ''; this.style.color = '#000'}" value="30.170996">&nbsp;<b>N</b><br>
+      		<b>Lng: </b><input id="lngValue" type="text"  onfocus="if(this.value == '30.187959') { this.value = ''; this.style.color = '#000'}" value="30.187959">&nbsp;<b>E</b><br>
+      		</div>
+      		
+      		<div id="latlng_degrees_id" style="display: none;">
+      		<b>Lat: </b><input class="latlngValueclass1" id="latdeg" type="text"  onfocus="if(this.value == '30') { this.value = ''; this.style.color = '#000'}" value="30"><b><sup>o</sup></b>
+      					<input class="latlngValueclass1" id="latmin" type="text"  onfocus="if(this.value == '10') { this.value = ''; this.style.color = '#000'}" value="10">&nbsp;<b><sup>'</sup></b>
+      					<input class="latlngValueclass2" id="latsec" type="text"  onfocus="if(this.value == '15.5856') { this.value = ''; this.style.color = '#000'}" value="15.5856">&nbsp;<b><sup>"</sup> N</b><br>
+      		<b>Lng: </b><input class="latlngValueclass1" id="lngdeg" type="text"  onfocus="if(this.value == '30') { this.value = ''; this.style.color = '#000'}" value="30"><b><sup>o</sup></b>
+      					<input class="latlngValueclass1" id="lngmin" type="text"  onfocus="if(this.value == '11') { this.value = ''; this.style.color = '#000'}" value="11">&nbsp;<b><sup>'</sup></b>
+      					<input class="latlngValueclass2" id="lngsec" type="text"  onfocus="if(this.value == '16.6524') { this.value = ''; this.style.color = '#000'}" value="16.6524">&nbsp;<b><sup>"</sup> E</b><br>
+      		</div>
+      		
       		<input id="cancellatlng" type="button" value="إلغاء">
       		<input id="submitlatlng" type="button" value="بحث">
     	</div>
