@@ -38,17 +38,19 @@
            	%>
 			</li>
 			<li><a href="${pageContext.request.contextPath}/search"
-				accesskey="5" title="search"><img src="resources/images/search.png" alt="إحصائيات"></a></li>
+				accesskey="5" title="Search"><img src="resources/images/search.png" alt="إحصائيات"></a></li>
 			<li><a href="${pageContext.request.contextPath}/aboutus"
-				accesskey="4" title="aboutus"><img src="resources/images/aboutus.png" alt="إحصائيات"></a></li>
+				accesskey="4" title="About us"><img src="resources/images/aboutus.png" alt="إحصائيات"></a></li>
 			<li><a
 				href="${pageContext.request.contextPath}/regulationsandlaws"
-				accesskey="3" title="regulationsandlaws"><img src="resources/images/regulationsandlaws.png" alt="إحصائيات"></a></li>
+				accesskey="3" title="Regulations and Laws"><img src="resources/images/regulationsandlaws.png" alt="إحصائيات"></a></li>
 			<li><a href="${pageContext.request.contextPath}/statistics"
-				accesskey="2" title="statistics"><img src="resources/images/statistics.png" alt="إحصائيات"></a></li>
+				accesskey="2" title="Statistics"><img src="resources/images/statistics.png" alt="إحصائيات"></a></li>
+			<li><a href="${pageContext.request.contextPath}/cropmonitoring" 
+				accesskey="6" title="Crop Monitoring"><img src="resources/images/cropmonitoring.png" alt="إحصائيات"></a></li>
 			<li class="current_page_item"><a
 				href="${pageContext.request.contextPath}/home" accesskey="1"
-				title="home"><img src="resources/images/home.png" alt="الرئيسية"></a></li>
+				title="Home"><img src="resources/images/home.png" alt="الرئيسية"></a></li>
 		</ul>
 	</div>
 </div>
