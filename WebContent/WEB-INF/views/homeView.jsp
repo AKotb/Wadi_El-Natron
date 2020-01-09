@@ -116,8 +116,8 @@
 		});
 		
 		
-		db_layer.loadGeoJson('http://localhost:8080/JSON/db.json');
-		//db_layer.loadGeoJson('http://wn.narss.sci.eg:8080/JSON/db.json');
+		db_layer.loadGeoJson('http://localhost:8080/JSON/db_1.json');
+		//db_layer.loadGeoJson('http://wn.narss.sci.eg:8080/JSON/db_1.json');
 		
 		
 		var db2_layer = new google.maps.Data({
@@ -127,6 +127,14 @@
 		
 		db2_layer.loadGeoJson('http://localhost:8080/JSON/db_2.json');
 		//db2_layer.loadGeoJson('http://wn.narss.sci.eg:8080/JSON/db_2.json');
+		
+		var db3_layer = new google.maps.Data({
+			map : map
+		});
+		
+		
+		db3_layer.loadGeoJson('http://localhost:8080/JSON/db_3.json');
+		//db3_layer.loadGeoJson('http://wn.narss.sci.eg:8080/JSON/db_3.json');
 		
 		
 		infowindow = new google.maps.InfoWindow();
@@ -167,6 +175,25 @@
 						strokeWeight : 2
 					});
 				}
+		});
+		
+		db3_layer.setStyle(function(feature) {
+			var color = '#088da5';
+			var color_selected = 'red';
+			var showfarm_id = "${showfarm_id}";
+			if (feature.getProperty('M_ID') == showfarm_id) {
+				return ({
+					fillColor : color_selected,
+					strokeColor : color_selected,
+					strokeWeight : 4
+				});
+			} else {
+				return ({
+					fillColor : color,
+					strokeColor : color,
+					strokeWeight : 2
+				});
+			}
 		});
 
 		db_layer
@@ -501,6 +528,173 @@
 								infowindow.open(map);
 						});
 
+		db3_layer
+		.addListener(
+				'click',
+				function(event) {
+						db3_layer.revertStyle();
+						db3_layer.overrideStyle(event.feature, {
+							strokeWeight : 4,
+							strokeColor : 'red',
+							fillColor : 'green'
+						});
+						farmlat = event.latLng.lat();
+						farmlng = event.latLng.lng();
+						var owner = event.feature
+								.getProperty('Farm_Owner');
+						if (owner) {
+							owner = owner;
+						} else {
+							owner = "غير متوفر";
+						}
+						var farm_name = event.feature
+								.getProperty('Farm_Name');
+						if (farm_name) {
+							farm_name = farm_name;
+						} else {
+							farm_name = "غير متوفر";
+						}
+						var sid = event.feature
+								.getProperty('Owner_ID');
+						if (sid) {
+							sid = sid;
+						} else {
+							sid = "غير متوفر";
+						}
+						var phone = event.feature
+								.getProperty('Tel');
+						if (phone) {
+							phone = phone;
+						} else {
+							phone = "غير متوفر";
+						}
+						var ownership = event.feature
+								.getProperty('Ownership');
+						if (ownership) {
+							ownership = ownership;
+						} else {
+							ownership = "غير متوفر";
+						}
+						var area_id = event.feature
+								.getProperty('M_ID');
+						if (area_id) {
+							area_id = area_id;
+						} else {
+							area_id = "0";
+						}
+						var farm_area = event.feature
+								.getProperty('Farm_Area');
+						var feddan;
+						var qirat;
+						var sahm;
+						if (farm_area) {
+							var area = farm_area.toString();
+							var fedarr = area.split("-");
+							feddan = fedarr[0];
+							qirat = fedarr[1];
+							sahm = fedarr[2];
+						} else {
+							feddan = "غير متوفر";
+							qirat = "غير متوفر";
+							sahm = "غير متوفر";
+						}
+						var db_farmname = "";
+						var db_ownerid = "";
+						var db_ownername = "";
+						var db_ownertel = "";
+						var db_ownership = "";
+						var db_displayedownership = "";
+						for ( var i in farms) {
+							if (farms[i].farmID === area_id) {
+								if (farms[i].farmName) {
+									db_farmname = farms[i].farmName;
+								} else {
+									db_farmname = "غير متوفر";
+								}
+
+								if (farms[i].ownerID) {
+									db_ownerid = farms[i].ownerID;
+								} else {
+									db_ownerid = "غير متوفر";
+								}
+
+								if (farms[i].ownerName) {
+									db_ownername = farms[i].ownerName;
+								} else {
+									db_ownername = "غير متوفر";
+								}
+
+								if (farms[i].telephone) {
+									db_ownertel = farms[i].telephone;
+								} else {
+									db_ownertel = "غير متوفر";
+								}
+
+								if (farms[i].ownership) {
+									db_ownership = farms[i].ownership;
+									db_displayedownership = farms[i].ownership;
+								} else {
+									db_ownership = "غير متوفر";
+									db_displayedownership = "غير متوفر";
+								}
+							}
+						}
+						var link0 = "<a href=\'datafiles/mahader/0.png\' target='_blank' class=\'button\'> محضر معاينة </a>";
+						if (200 == urlExists('datafiles/mahader/'
+								+ area_id + '.png')) {
+							link0 = "<a href=\'datafiles/mahader/"+area_id+".png\' target='_blank' class=\'button\'> محضر معاينة </a>";
+						}
+						var link2 = "<a href=\'javascript:void(0);\' onclick=\'raster("
+								+ area_id
+								+ ");\' class=\'button\'> مرئيات فضائية </a>";
+						var link3 = "<a href=\'javascript:void(0);\' onclick=\'vouchers("
+								+ area_id
+								+ ");\' class=\'button\'>"
+								+ "طلب إجراءات التقنين" + "</a>";
+						var link4 = "<a href=\'datafiles/sketch/"+area_id+".jpg\' target='_blank'><img class=\'infowindowimg\' src=\'datafiles/sketch/"+area_id+".jpg\' alt=\'Icon\' style=\"width:300px;height:170px;\"></a>";
+						var link1 = "<a href=\'javascript:void(0);\' onclick=\'landuse("
+								+ area_id
+								+ ");\' class=\'button\'> استخدامات الأراضى </a>";
+						var content = "<div style=\"text-align:center; overflow:hidden;\"><h1 style=\"background-color: #44a959;\">"
+								+ "بيانات قطعة الأرض" + "</h1>"
+								+ link4
+								+ "<table class=\"outertable\" style=\"dir: rtl;\"><tr><td class=\'td\'>"
+								+ area_id
+								+ "</td><td class=\'rightcolumn\'>كود المزرعة / الشركة</td></tr><tr><td class=\'td\'>"
+								+ db_farmname
+								+ "</td><td class=\'rightcolumn\'>اسم المزرعة / الشركة</td></tr><tr><td class=\'td\'><table class=\"innertable\"><tr><td class=\'td\'>س</td><td class=\'td\'>ط</td><td class=\'td\'>ف</td></tr><tr><td class=\'td\'>"
+								+ sahm
+								+ "</td><td class=\'td\'>"
+								+ qirat
+								+ "</td><td class=\'td\'>"
+								+ feddan
+								+ "</td></tr></table>"
+								+ "</td><td class=\'rightcolumn\'>المساحة</td></tr><tr><td class=\'td\'>"
+								+ db_displayedownership
+								+ "</td><td class=\'rightcolumn\'>رقم الملف</td></tr><tr><td class=\'td\'>"
+								+ db_ownername
+								+ "</td><td class=\'rightcolumn\'>اسم المالك / واضع اليد</td></tr><tr><td class=\'td\'>"
+								+ db_ownerid
+								+ "</td><td class=\'rightcolumn\'>الرقم القومى</td></tr><tr><td class=\'td\'>"
+								+ db_ownertel
+								+ "</td><td class=\'rightcolumn\'>التليفون</td></tr></table><br>"
+                                                                     +"<div id=\"errormsg\"></div>"
+								+ "<table><tr><td class=\'td-button\'>"
+								+ link0
+								+ "</td><td class=\'td-button\'>"
+								+ link3
+								+ "</td><td class=\'td-button\'>"
+								+ link2
+								+ "</td><td class=\'td-button\'>"
+								+ link1
+								+ "</td></tr></table>"
+								+ "<span onclick='close_infowindow()' class='searchClose'>[&times;]</span></div>";
+						infowindow.setContent(content);
+						infowindow.setPosition(event.latLng);
+						infowindow.open(map);
+				});
+		
+		
 		db_layer.addListener('mouseover', function(event) {
 				db_layer.revertStyle();
 				db_layer.overrideStyle(event.feature, {
@@ -525,6 +719,19 @@
 			db2_layer.revertStyle();
 		});
 		
+		
+		db3_layer.addListener('mouseover', function(event) {
+			db3_layer.revertStyle();
+			db3_layer.overrideStyle(event.feature, {
+				strokeWeight : 4,
+				fillColor : 'yellow'
+			});
+		});
+
+		db3_layer.addListener('mouseout', function(event) {
+			db3_layer.revertStyle();
+		});
+	
 		var geocoder = new google.maps.Geocoder;
 		document.getElementById('submitlatlng').addEventListener('click', function() {
 	          geocodeLatLng(geocoder, map);
