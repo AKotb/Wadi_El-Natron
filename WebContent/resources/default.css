@@ -297,7 +297,7 @@ px
 #header h1 {
 	position: absolute;
 	color: #FFF;
-	right: 9em;
+	right: 8em;
 	top: 1em;
 	font-size: 3.5em;
 }
@@ -422,23 +422,26 @@ px
 /* Content                                                                       */
 /*********************************************************************************/
 #aboutuscontent {
-	padding: 12em 5em;
+	padding: 1% 5% 1% 5%;;
 	background-color: rgb(240, 240, 240);
 	border: 1px solid black;
-}
-
-#aboutuscontent h1 {
-	position: absolute;
-	color: #272925;
-	right: 14em;
-	top: 3.5em;
-	font-size: 3.5em;
+	height: 3050px;;
 }
 
 #aboutuscontent p {
-	text-align: right;
-	font-size: 2em;
-	color: rgba(0, 0, 0, 0.8);
+	text-align: justify;
+    margin: 0.5% 0 0.5% 7%;
+    font-weight: 600;
+    font-family: 'Titillium Web', sans-serif;
+    position: relative;
+    font-size: 31px;
+    line-height: 40px;
+    padding: 15px 15px 15px 1%;
+    color: #355681;
+    box-shadow: inset 0 0 0 1px rgba(53,86,129, 0.4), inset 0 0 5px rgba(53,86,129, 0.5), inset -285px 0 35px white;
+    border-radius: 10px 10px 10px 10px;
+    background: #fff;
+    width: 83%;
 }
 
 #regulationsandlawscontent {
@@ -802,4 +805,240 @@ input.hidden {
 .bot-border {
 	border-bottom: 1px #f8f8f8 solid;
 	margin: 5px 0 5px 0
+}
+
+/************************** About us Page style ***************************/
+
+.column_about {
+	float: right;
+	width: 16%;
+}
+
+.row_about_main_title {
+	float: right;
+}
+
+.natronteam_div {
+	width:100%;
+	margin-top:4%;
+}
+
+.dataanalysisteam_div {
+	width:100%;
+	margin-top:26%;
+}
+
+.surveyteam_div {
+	width:100%;
+	margin-top:26%;
+}
+
+.landuseteam_div {
+	width:100%;
+	margin-top:25%;
+}
+
+.devteam_div {
+	width:100%;
+	margin-top:26%;
+}
+
+.row_about {
+	width: 100%;
+	float: right;
+}
+
+.row_about:after, .row_about_main:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+@media screen and (max-width: 600px) {
+	.column_about {
+		width: 100%;
+		display: block;
+		margin-bottom: 20px;
+	}
+}
+
+.card_about {
+	padding: 0 16px;
+	text-align: center;
+}
+
+.page_title {
+	padding: 16px;
+	text-align: center;
+	color: #555;
+	font-size: 3.5em;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 700;
+}
+
+.page_content {
+	padding: 50px 8%;
+	text-align: right;
+	color: #666;
+	font-size: 2em;
+	line-height: 180%;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 200;
+}
+
+.photo_head {
+	width: 200px;
+	height: 200px;
+	border-radius: 50%;
+	transform: scale(0.8);
+	transition: transform 0.4s ease;
+	filter: saturate(1.5);
+}
+
+.photo_member {
+	width: 200px;
+	height: 200px;
+	border-radius: 50%;
+	transform: scale(0.8);
+	transition: transform 0.4s ease;
+	filter: saturate(1.5);
+}
+
+.photo_head:hover, .photo_member:hover {
+	transform: scale(1);
+}
+
+.person_title {
+	color: #444;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: bold;
+	font-size: 20px;
+}
+
+.person_desc {
+	color: #aaa;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: bold;
+	font-size: 16px;
+}
+
+.card_about:hover {
+	text-shadow: 2px 2px #dfd;
+}
+
+.team_whole {
+	background-image: linear-gradient(#ddd 0%, #eee 50%, #ddd 100%);
+}
+
+.aboutusbanner_class {
+	width: 100%;
+	margin-top: 5%;
+}
+
+.aboutauthority_div {
+	width: 100%;
+}
+
+.team_div {
+	width: 100%;
+	margin-top: 4%;
+	padding-top: 1%;
+}
+
+.center {
+	margin-left: auto; 
+	margin-right: auto;
+	display: block;
+	width: 85%;
+}
+
+.aboutauthority_h1{
+	text-align: center;
+	margin: 0.5% 0% 0.5% 45%;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 36px;
+    padding: 15px 15px 15px 3%;
+    color: #355681;
+    box-shadow: inset 0 0 0 1px rgba(53,86,129, 0.4), inset 0 0 5px rgba(53,86,129, 0.5), inset -285px 0 35px white;
+    border-radius: 10px 10px 10px 10px;
+    width: 10%;
+}
+
+.team_h1{
+	text-align: center;
+	margin: 0.5% 0% 0.5% 40%;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 36px;
+    padding: 15px 15px 15px 1%;
+    color: #355681;
+    box-shadow: inset 0 0 0 1px rgba(53,86,129, 0.4), inset 0 0 5px rgba(53,86,129, 0.5), inset -285px 0 35px white;
+    border-radius: 10px 10px 10px 10px;
+    width: 20%;
+}
+
+.natronteam_h3 {
+	text-align: center;
+    margin: 0.5% 0% 0.5% 73%;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 36px;
+    padding: 15px 15px 15px 1%;
+    color: #355681;
+    box-shadow: inset 0 0 0 1px rgba(53,86,129, 0.4), inset 0 0 5px rgba(53,86,129, 0.5), inset -285px 0 35px white;
+    border-radius: 10px 10px 10px 10px;
+    width: 24%;
+}
+
+
+.dataanalysisteam_h3 {
+	text-align: center;
+    margin: 0.5% 0% 0.5% 77%;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 36px;
+    padding: 15px 15px 15px 1%;
+    color: #355681;
+    box-shadow: inset 0 0 0 1px rgba(53,86,129, 0.4), inset 0 0 5px rgba(53,86,129, 0.5), inset -285px 0 35px white;
+    border-radius: 10px 10px 10px 10px;
+    width: 20%;
+}
+
+.surveyteam_h3 {
+	text-align: center;
+    margin: 0.5% 0% 0.5% 85%;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 36px;
+    padding: 15px 15px 15px 1%;
+    color: #355681;
+    box-shadow: inset 0 0 0 1px rgba(53,86,129, 0.4), inset 0 0 5px rgba(53,86,129, 0.5), inset -285px 0 35px white;
+    border-radius: 10px 10px 10px 10px;
+    width: 12%;
+}
+
+.landuseteam_h3 {
+	text-align: center;
+    margin: 0.5% 0% 0.5% 61%;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 36px;
+    padding: 15px 15px 15px 1%;
+    color: #355681;
+    box-shadow: inset 0 0 0 1px rgba(53,86,129, 0.4), inset 0 0 5px rgba(53,86,129, 0.5), inset -285px 0 35px white;
+    border-radius: 10px 10px 10px 10px;
+    width: 36%;
+}
+
+.devteam_h3 {
+	text-align: center;
+    margin: 0.5% 0% 0.5% 57%;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 36px;
+    padding: 15px 15px 15px 1%;
+    color: #355681;
+    box-shadow: inset 0 0 0 1px rgba(53,86,129, 0.4), inset 0 0 5px rgba(53,86,129, 0.5), inset -285px 0 35px white;
+    border-radius: 10px 10px 10px 10px;
+    width: 40%;
+}
+
+.team_container_div{
+	box-shadow: inset 0 0 0 1px rgba(53,86,129, 0.4), inset 0 0 5px rgba(53,86,129, 0.5), inset -285px 0 35px white;
+    border-radius: 10px 10px 10px 10px;
+    height: 83%;
 }

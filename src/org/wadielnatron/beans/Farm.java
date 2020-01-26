@@ -24,6 +24,7 @@ public class Farm {
 	private String poulBuildings;
 	private String animBuildings;
 	private String agriBuildings;
+	private String fileNo;
 
 	/**
 	 * 
@@ -49,10 +50,11 @@ public class Farm {
 	 * @param poulBuildings
 	 * @param animBuildings
 	 * @param agriBuildings
+	 * @param fileNo
 	 */
 	public Farm(int id, int farmID, String farmName, String ownerID, String ownerName, String telephone,
 			String ownership, String reclamedArea, String urbanArea, String unusedArea, String fieldCropsArea,
-			String cropsArea, String managBuildings, String poulBuildings, String animBuildings, String agriBuildings) {
+			String cropsArea, String managBuildings, String poulBuildings, String animBuildings, String agriBuildings, String fileNo) {
 		super();
 		this.id = id;
 		this.farmID = farmID;
@@ -70,6 +72,7 @@ public class Farm {
 		this.poulBuildings = poulBuildings;
 		this.animBuildings = animBuildings;
 		this.agriBuildings = agriBuildings;
+		this.fileNo = fileNo;
 	}
 
 	/**
@@ -310,5 +313,20 @@ public class Farm {
 	 */
 	public void setAgriBuildings(String agriBuildings) {
 		this.agriBuildings = agriBuildings;
+	}
+	
+	/**
+	 * @param fileNo
+	 *            the fileNo to set
+	 */
+	public void setFileNo(String fileNo) {
+		this.fileNo = fileNo;
+	}
+
+	/**
+	 * @return the fileNo
+	 */
+	public String getFileNo() {
+		return fileNo;
 	}
 }

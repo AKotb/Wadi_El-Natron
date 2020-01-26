@@ -61,6 +61,7 @@ public class FarmDAO {
 				farm.setPoulBuildings(rset.getString(14));
 				farm.setAnimBuildings(rset.getString(15));
 				farm.setAgriBuildings(rset.getString(16));
+				farm.setFileNo(rset.getString(17));
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -72,14 +73,15 @@ public class FarmDAO {
 		PreparedStatement preparedStatement = null;
 		boolean updateResult = false;
 		try {
-			String queryString = "UPDATE beheiraschema.farms SET \"farm_name\"=?, \"owner_id\"=?, \"owner_name\"=?, \"telephone\"=?, \"ownership\"=?  WHERE \"farm_id\"=?";
+			String queryString = "UPDATE beheiraschema.farms SET \"farm_name\"=?, \"owner_id\"=?, \"owner_name\"=?, \"telephone\"=?, \"ownership\"=?, \"file_no\"=?  WHERE \"farm_id\"=?";
 			preparedStatement = con.prepareStatement(queryString);
 			preparedStatement.setString(1, farm.getFarmName());
 			preparedStatement.setString(2, farm.getOwnerID());
 			preparedStatement.setString(3, farm.getOwnerName());
 			preparedStatement.setString(4, farm.getTelephone());
 			preparedStatement.setString(5, farm.getOwnership());
-			preparedStatement.setInt(6, farm.getFarmID());
+			preparedStatement.setString(6, farm.getFileNo());
+			preparedStatement.setInt(7, farm.getFarmID());
 			int i = preparedStatement.executeUpdate();
 			if (i == 1) {
 				updateResult = true;
@@ -91,7 +93,7 @@ public class FarmDAO {
 	}
 
 	public List<Farm> getAllFarms(String farmName, String ownerId, String ownerName, String telephone,
-			String ownership) {
+			String ownership, String fileNo) {
 		PreparedStatement preparedStatement = null;
 		List<Farm> farmsList = new ArrayList<Farm>();
 		String queryString = null;
@@ -100,13 +102,15 @@ public class FarmDAO {
 		String ownerNameChecker = null;
 		String telephoneChecker = null;
 		String ownershipChecker = null;
+		String fileNoChecker = null;
 		String whereClause = null;
 		try {
 			if((farmName == null || farmName.length() == 0) 
 					&& (ownerId == null || ownerId.length() == 0) 
 					&& (ownerName == null || ownerName.length() == 0)
 					&& (telephone == null || telephone.length() == 0)
-					&& (ownership == null || ownership.length() == 0)){
+					&& (ownership == null || ownership.length() == 0)
+					&& (fileNo == null || fileNo.length() == 0)){
 				queryString = "select * from beheiraschema.farms";
 				preparedStatement = con.prepareStatement(queryString);
 			} else {
@@ -114,7 +118,8 @@ public class FarmDAO {
 					(ownerId != null) || 
 					(ownerName != null) ||
 					(telephone != null) || 
-					(ownership != null )){
+					(ownership != null )||
+					(fileNo != null )){
 					whereClause = " where id > 0";
 				}else{
 					whereClause = "";
@@ -141,7 +146,7 @@ public class FarmDAO {
 				if(telephone == null || telephone.length() == 0){
 					telephoneChecker = "";
 				} else {
-					telephoneChecker = "  telephone like '%"+telephone+"%'";
+					telephoneChecker = " and telephone like '%"+telephone+"%'";
 				}
 				
 				if(ownership == null || ownership.length() == 0){
@@ -150,18 +155,25 @@ public class FarmDAO {
 					ownershipChecker = " and ownership like '%"+ownership+"%'";
 				}
 				
+				if(fileNo == null || fileNo.length() == 0){
+					fileNoChecker = "";
+				} else {
+					fileNoChecker = " and file_no like '%"+fileNo+"%'";
+				}
+				
 				queryString = "select * from beheiraschema.farms"
 								+whereClause
 								+farmNameChecker
 								+ownerIdChecker
 								+ownerNameChecker
 								+telephoneChecker
-								+ownershipChecker;
+								+ownershipChecker
+								+fileNoChecker;
 						
 				preparedStatement = con.prepareStatement(queryString);
 				
 			}
-			
+			System.out.println("Query: "+queryString);
 			ResultSet rset = preparedStatement.executeQuery();
 			while (rset.next()) {
 				Farm farm = new Farm();
@@ -181,6 +193,7 @@ public class FarmDAO {
 				farm.setPoulBuildings(rset.getString(14));
 				farm.setAnimBuildings(rset.getString(15));
 				farm.setAgriBuildings(rset.getString(16));
+				farm.setFileNo(rset.getString(17));
 				farmsList.add(farm);
 			}
 		} catch (SQLException e) {
@@ -214,6 +227,7 @@ public class FarmDAO {
 				farm.setPoulBuildings(rset.getString(14));
 				farm.setAnimBuildings(rset.getString(15));
 				farm.setAgriBuildings(rset.getString(16));
+				farm.setFileNo(rset.getString(17));
 				farmsList.add(farm);
 			}
 		} catch (SQLException e) {

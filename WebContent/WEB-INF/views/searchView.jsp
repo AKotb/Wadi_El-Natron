@@ -33,6 +33,7 @@
 				var ownername = "";
 				var ownertel = "";
 				var ownership = "";
+				var fileno = "";
 				var displayedownership = "";
 				for ( var i in farms) {
 					num_of_items = num_of_items + 1;
@@ -67,10 +68,27 @@
 
 					if (farms[i].ownership) {
 						ownership = farms[i].ownership;
-						displayedownership = farms[i].ownership;
+						if(ownership == "1"){
+							displayedownership = "عقد محافظة";
+						}
+						if(ownership == "2"){
+							displayedownership = "تمليك (عقود مسجلة)";
+						}
+						if(ownership == "3"){
+							displayedownership = "قرار تصرف";
+						}
+						if(ownership == "4"){
+							displayedownership = "وضع يد";
+						}
 					} else {
 						ownership = "غير متوفر";
 						displayedownership = "غير متوفر";
+					}
+					
+					if (farms[i].fileNo) {
+						fileno = farms[i].fileNo;
+					} else {
+						fileno = "غير متوفر";
 					}
 
 					results = results
@@ -83,6 +101,8 @@
 							+ '_'
 							+ ownername
 							+ '_'
+							+ fileno
+							+ '_'
 							+ ownerid
 							+ '_'
 							+ ownertel
@@ -92,20 +112,13 @@
 							+ '<button onclick=\"displayonmap('
 							+ farmid
 							+ ')\" class=\"button\" id=\"showSearchResultsBtn\">عرض على الخريطة</button>'
+							+ '</td>' + '<td align=\"right\" style=\"width:5%;\">' + fileno
 							+ '</td>' + '<td align=\"right\" style=\"width:5%;\">' + displayedownership
-							+ '</td>' + '<td align=\"right\" style=\"width:40%;\"><div style=\"word-break:break-all;\">' + ownername
+							+ '</td>'+ '<td align=\"right\" style=\"width:40%;\"><div style=\"word-break:break-all;\">' + ownername
 							+ '</div></td>' + '<td align=\"right\" style=\"width:30%;\"><div style=\"word-break:break-all;\">' + farmname
 							+ '</div></td>' + '<td style=\"width:5%;\">' + farmid + '</td>' + '</tr>';
 				}
-
 			}
-			/*
-			
-			
-						+ '<input type="submit" class="button" name="previous" value="السابق">'
-					    + '<input type="submit" class="button" name="next" value="التالي">'
-					    
-			*/
 			if (num_of_items > 0) {
 				var search_header = '<div align=\"center\"><h3 align=\"center\">تم إيجاد '
 						+ num_of_items
@@ -119,6 +132,7 @@
 						+ '<tr>'
 						+ '<th class=\"resultth\">إعدادات</th>'
 						+ '<th class=\"resultth\"> رقم الملف </th>'
+						+ '<th class=\"resultth\"> نوع الحيازة </th>'
 						+ '<th class=\"resultth\">اسم المالك / واضع اليد</th>'
 						+ '<th class=\"resultth\">اسم المزرعة / الشركة</th>'
 						+ '<th class=\"resultth\"> كود المزرعة </th>' + '</tr>';
@@ -129,18 +143,6 @@
 			} else {
 				document.getElementById('searchresultscontent').innerHTML = '<div align=\"center\"><h3>عفوا ، لا توجد نتائج</h3></div>';
 			}
-			
-			
-				var UserRole="<%=session.getAttribute("userRole")%>";
-				if (UserRole != "null") {
-					if (UserRole == "2") {
-						document.getElementById("manageusersid").style.display = "block";
-					} else {
-						document.getElementById("manageusersid").style.display = "none";
-					}
-				} else {
-					document.getElementById("manageusersid").style.display = "none";
-				}
 		}
 
 		function validateSearchForm() {
@@ -163,7 +165,10 @@
 	function displayonmap(id) {
 		var lat= "30.2519715";
 		var lng= "30.2761235";
-		window.location = "${pageContext.request.contextPath}/search?polygon_id=" + encodeURIComponent(id)+"&polygon_lat=" + encodeURIComponent(lat)+"&polygon_long=" + encodeURIComponent(lng);
+		window.location = "${pageContext.request.contextPath}/search?polygon_id=" + encodeURIComponent(id)
+				+"&polygon_lat=" + encodeURIComponent(lat)
+				+"&polygon_long=" + encodeURIComponent(lng)
+				+"&form_type=" + encodeURIComponent("displayonmap");
 	}
 
 	function editfarmdata(selectedfarmdata) {
@@ -189,23 +194,29 @@
 		} else {
 			document.getElementById("ownername").value = "غير متوفر";
 		}
-		ownerid = res[3];
+		fileno = res[3];
+		if (fileno) {
+			document.getElementById("fileno").value = fileno;
+		} else {
+			document.getElementById("fileno").value = "غير متوفر";
+		}
+		ownerid = res[4];
 		if (ownerid) {
 			document.getElementById("ownerid").value = ownerid;
 		} else {
 			document.getElementById("ownerid").value = "غير متوفر";
 		}
-		ownertel = res[4];
+		ownertel = res[5];
 		if (ownertel) {
 			document.getElementById("ownertel").value = ownertel;
 		} else {
 			document.getElementById("ownertel").value = "غير متوفر";
 		}
-		ownership = res[5];
+		ownership = res[6];
 		if (ownership) {
 			document.getElementById("ownership").value = ownership;
 		} else {
-			document.getElementById("ownership").value = "غير متوفر";
+			document.getElementById("ownership").value = "";
 		}
 	}
 
@@ -230,9 +241,14 @@
 	}
 
 	function cancel() {
-		document.getElementById("searchresultscontent").style.display = "block";
-		document.getElementById("searchformcontent").style.display = "block";
-		document.getElementById("editformcontent").style.display = "none";
+		/* window.location = "${pageContext.request.contextPath}/search?farm_name=" + encodeURIComponent(farmname)
+				+"&owner_id=" + encodeURIComponent(ownerid)
+				+"&owner_name=" + encodeURIComponent(ownername)
+				+"&owner_telephone=" + encodeURIComponent(ownertel)
+				+"&ownership_status=" + encodeURIComponent(ownership)
+				+"&file_no=" + encodeURIComponent(fileno)
+				+"&form_type=" + encodeURIComponent("searchform"); */
+		window.history.back();
 	}
 </script>
 <script
@@ -248,13 +264,13 @@
 <script src="resources/js/custom.js"></script>
 </head>
 <body>
-<jsp:include page="_header.jsp"></jsp:include>
+	<jsp:include page="_header.jsp"></jsp:include>
 	<div id="wrapper">
-		
+
 		<form id="searchformid" onsubmit="return validateSearchForm()"
 			method="post" action="${pageContext.request.contextPath}/search">
 			<div id="searchformcontent" align="center">
-			<h1>البحث عن المزارع</h1>
+				<h1>البحث في المزارع</h1>
 				<input type="hidden" name="form_type" value="searchform">
 				<table border="0" style="dir: rtl;">
 					<tr>
@@ -265,8 +281,19 @@
 					</tr>
 					<tr>
 						<td align="right"><input class="input-box" type="text"
-							id="ownership_status" name="ownership_status"></td>
-						<td align="right" style="color: #396266;">رقم الملف</td>
+							id="file_no" name="file_no" value=""></td>
+						<td align="right" style="color: #3d6266;">رقم الملف</td>
+					</tr>
+					<tr>
+						<td align="right">
+							<select id="ownership_status" name="ownership_status" style="width: 100%; direction: rtl;">
+								<option value="">اختر</option>
+								<option value="1">عقد محافظة</option>
+								<option value="2">تمليك (عقود مسجلة)</option>
+								<option value="3">قرار تصرف</option>
+								<option value="4">وضع يد</option>
+							</select></td>
+						<td align="right" style="color: #396266;">نوع الحيازة</td>
 					</tr>
 					<tr>
 						<td align="right"><input class="input-box" type="text"
@@ -297,7 +324,7 @@
 		<form id="editformid" onsubmit="return validateEditForm()"
 			method="post" action="${pageContext.request.contextPath}/search">
 			<div id="editformcontent" align="center">
-			<h1>تعديل بيانات المزرعة</h1>
+				<h1>تعديل بيانات المزرعة</h1>
 				<input type="hidden" name="form_type" value="editform">
 				<table border="0" style="dir: rtl;">
 					<tr>
@@ -312,8 +339,19 @@
 					</tr>
 					<tr>
 						<td align="right"><input class="input-box" type="text"
-							id="ownership" name="ownership_status"></td>
+							id="fileno" name="file_no"></td>
 						<td align="right" style="color: #396266;">رقم الملف</td>
+					</tr>
+					<tr>
+						<td align="right">
+							<select id="ownership" name="ownership_status" style="width: 100%; direction: rtl;">
+								<option value="">اختر</option>
+								<option value="1">عقد محافظة</option>
+								<option value="2">تمليك (عقود مسجلة)</option>
+								<option value="3">قرار تصرف</option>
+								<option value="4">وضع يد</option>
+							</select></td>
+						<td align="right" style="color: #396266;">نوع الحيازة</td>
 					</tr>
 					<tr>
 						<td align="right"><input class="input-box" type="text"

@@ -245,18 +245,16 @@
 						+ ");\' class=\'button\'>"
 						+ "طلب إجراءات التقنين"
 						+ "</a>";
-				var link4 = "<a href=\'datafiles/landuse/"+db_farmid+".jpg\' target='_blank'><img class=\'infowindowimg\' src=\'datafiles/landuse/"+db_farmid+".jpg\' alt=\'Icon\' style=\"width:300px;height:170px;\"></a>";
+				var link4 = "<a href=\'datafiles/landuse/"+db_farmid+".jpg\' target='_blank'><img class=\'infowindowimg\' src=\'datafiles/landuse/"+db_farmid+".jpg\' alt=\'Icon\' style=\"width:280px;height:200px;\"></a>";
 				var content = "<div style=\"text-align:center; overflow:hidden;\"><h1 style=\"background-color: #44a959;\">"
 					+ "بيانات قطعة الأرض" + "</h1><br>"
-					+ link4
-					+ "<br>"
 					+ "<table class=\"outertable\" style=\"dir: rtl;\"><tr><td class=\'td\'>"
 					+ db_farmid
 					+ "</td><td class=\'rightcolumn\'>كود المزرعة / الشركة</td></tr><tr><td class=\'td\'>"
 					+ db_farmname
 					+ "</td><td class=\'rightcolumn\'>اسم المزرعة / الشركة</td></tr></table>"
 					+"<h2 style=\"background-color: #44a959;\">استخدامات الأرض / فدان</h2>"
-					+"<table class=\"outertable\" style=\"dir: rtl;\"><tr><td class=\'td\'>"
+					+"<table class=\"outertable\" style=\"dir: rtl;\"><tr><td rowspan='12'>"+link4+"</td><td class=\'td\'>"
 					+ db_fieldCropsArea
 					+ "</td><td class=\'rightcolumn\'>محاصيل حقلية</td></tr><tr><td class=\'td\'>"
 					+ db_cropsArea
@@ -286,8 +284,7 @@
 					+ link3
 					+ "</td><td class=\'td-button\'>"
 					+ link2
-					+ "</td></tr></table>"
-					+ "<span onclick='close_infowindow()' class='searchClose'>[&times;]</span></div>";
+					+ "</td></tr></table></div>";
 				infowindow.setContent(content);
 				infowindow.setPosition(event.latLng);
 				infowindow.open(map);
@@ -322,7 +319,8 @@
 		}
 		
 		function back() {
-			window.location = "${pageContext.request.contextPath}/search?polygon_id=" + encodeURIComponent(id)+"&polygon_lat=" + encodeURIComponent(lat)+"&polygon_long=" + encodeURIComponent(lng);
+ 			//window.location = "${pageContext.request.contextPath}/search?polygon_id=" + encodeURIComponent(id)+"&polygon_lat=" + encodeURIComponent(lat)+"&polygon_long=" + encodeURIComponent(lng)+"&form_type=" + encodeURIComponent("displayonmap");
+			window.history.back();
 		}
 		
 		window.onload = function() {

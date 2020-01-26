@@ -272,6 +272,7 @@
 								var db_ownertel = "";
 								var db_ownership = "";
 								var db_displayedownership = "";
+								var db_fileno = "";
 								for ( var i in farms) {
 									if (farms[i].farmID === area_id) {
 										if (farms[i].farmName) {
@@ -297,13 +298,29 @@
 										} else {
 											db_ownertel = "غير متوفر";
 										}
-
 										if (farms[i].ownership) {
 											db_ownership = farms[i].ownership;
-											db_displayedownership = farms[i].ownership;
+											if(db_ownership == "1"){
+												db_displayedownership = "عقد محافظة";
+											}
+											if(db_ownership == "2"){
+												db_displayedownership = "تمليك (عقود مسجلة)";
+											}
+											if(db_ownership == "3"){
+												db_displayedownership = "قرار تصرف";
+											}
+											if(db_ownership == "4"){
+												db_displayedownership = "وضع يد";
+											}
 										} else {
 											db_ownership = "غير متوفر";
 											db_displayedownership = "غير متوفر";
+										}
+										
+										if (farms[i].fileNo) {
+											db_fileno = farms[i].fileNo;
+										} else {
+											db_fileno = "غير متوفر";
 										}
 									}
 								}
@@ -319,33 +336,34 @@
 										+ area_id
 										+ ");\' class=\'button\'>"
 										+ "طلب إجراءات التقنين" + "</a>";
-								var link4 = "<a href=\'datafiles/sketch/"+area_id+".jpg\' target='_blank'><img class=\'infowindowimg\' src=\'datafiles/sketch/"+area_id+".jpg\' alt=\'Icon\' style=\"width:300px;height:170px;\"></a>";
+								var link4 = "<a href=\'datafiles/sketch/"+area_id+".jpg\' target='_blank'><img class=\'infowindowimg\' src=\'datafiles/sketch/"+area_id+".jpg\' alt=\'Icon\' style=\"width:209px;height:180px;\"></a>";
 								var link1 = "<a href=\'javascript:void(0);\' onclick=\'landuse("
 										+ area_id
 										+ ");\' class=\'button\'> استخدامات الأراضى </a>";
 								var content = "<div style=\"text-align:center; overflow:hidden;\"><h1 style=\"background-color: #44a959;\">"
-										+ "بيانات قطعة الأرض" + "</h1>"
-										+ link4
-										+ "<table class=\"outertable\" style=\"dir: rtl;\"><tr><td class=\'td\'>"
+										+ "بيانات قطعة الأرض" + "</h1><br><br>"
+										+ "<table class=\"outertable\" style=\"dir: rtl;\"><tr><td rowspan='6'>"+link4+"</td><td class=\'td\'>"
 										+ area_id
 										+ "</td><td class=\'rightcolumn\'>كود المزرعة / الشركة</td></tr><tr><td class=\'td\'>"
+										+ db_ownername
+										+ "</td><td class=\'rightcolumn\'>اسم المالك / واضع اليد</td></tr><tr><td class=\'td\'>"
 										+ db_farmname
-										+ "</td><td class=\'rightcolumn\'>اسم المزرعة / الشركة</td></tr><tr><td class=\'td\'><table class=\"innertable\"><tr><td class=\'td\'>س</td><td class=\'td\'>ط</td><td class=\'td\'>ف</td></tr><tr><td class=\'td\'>"
+										+ "</td><td class=\'rightcolumn\'>اسم المزرعة / الشركة</td></tr><tr><td class=\'td\'>"
+										+ db_displayedownership
+										+ "</td><td class=\'rightcolumn\'>نوع الحيازة</td></tr><tr><td class=\'td\'>"
+										+ db_fileno
+										+ "</td><td class=\'rightcolumn\'>رقم الملف</td></tr><tr><td class=\'td\'><table class=\"innertable\"><tr><td class=\'td\'>س</td><td class=\'td\'>ط</td><td class=\'td\'>ف</td></tr><tr><td class=\'td\'>"
 										+ sahm
 										+ "</td><td class=\'td\'>"
 										+ qirat
 										+ "</td><td class=\'td\'>"
 										+ feddan
 										+ "</td></tr></table>"
-										+ "</td><td class=\'rightcolumn\'>المساحة</td></tr><tr><td class=\'td\'>"
-										+ db_displayedownership
-										+ "</td><td class=\'rightcolumn\'>رقم الملف</td></tr><tr><td class=\'td\'>"
-										+ db_ownername
-										+ "</td><td class=\'rightcolumn\'>اسم المالك / واضع اليد</td></tr><tr><td class=\'td\'>"
+										+ "</td><td class=\'rightcolumn\'>المساحة</td></tr><!-- <tr><td class=\'td\'>"
 										+ db_ownerid
 										+ "</td><td class=\'rightcolumn\'>الرقم القومى</td></tr><tr><td class=\'td\'>"
 										+ db_ownertel
-										+ "</td><td class=\'rightcolumn\'>التليفون</td></tr></table><br>"
+										+ "</td><td class=\'rightcolumn\'>التليفون</td></tr>--></table><br>"
                                                                                     +"<div id=\"errormsg\"></div>"
 										+ "<table><tr><td class=\'td-button\'>"
 										+ link0
@@ -355,8 +373,7 @@
 										+ link2
 										+ "</td><td class=\'td-button\'>"
 										+ link1
-										+ "</td></tr></table>"
-										+ "<span onclick='close_infowindow()' class='searchClose'>[&times;]</span></div>";
+										+ "</td></tr></table></div>";
 								infowindow.setContent(content);
 								infowindow.setPosition(event.latLng);
 								infowindow.open(map);
@@ -438,6 +455,7 @@
 								var db_ownertel = "";
 								var db_ownership = "";
 								var db_displayedownership = "";
+								var db_fileno = "";
 								for ( var i in farms) {
 									if (farms[i].farmID === area_id) {
 										if (farms[i].farmName) {
@@ -466,10 +484,27 @@
 
 										if (farms[i].ownership) {
 											db_ownership = farms[i].ownership;
-											db_displayedownership = farms[i].ownership;
+											if(db_ownership == "1"){
+												db_displayedownership = "عقد محافظة";
+											}
+											if(db_ownership == "2"){
+												db_displayedownership = "تمليك (عقود مسجلة)";
+											}
+											if(db_ownership == "3"){
+												db_displayedownership = "قرار تصرف";
+											}
+											if(db_ownership == "4"){
+												db_displayedownership = "وضع يد";
+											}
 										} else {
 											db_ownership = "غير متوفر";
 											db_displayedownership = "غير متوفر";
+										}
+										
+										if (farms[i].fileNo) {
+											db_fileno = farms[i].fileNo;
+										} else {
+											db_fileno = "غير متوفر";
 										}
 									}
 								}
@@ -485,44 +520,44 @@
 										+ area_id
 										+ ");\' class=\'button\'>"
 										+ "طلب إجراءات التقنين" + "</a>";
-								var link4 = "<a href=\'datafiles/sketch/"+area_id+".jpg\' target='_blank'><img class=\'infowindowimg\' src=\'datafiles/sketch/"+area_id+".jpg\' alt=\'Icon\' style=\"width:300px;height:170px;\"></a>";
+								var link4 = "<a href=\'datafiles/sketch/"+area_id+".jpg\' target='_blank'><img class=\'infowindowimg\' src=\'datafiles/sketch/"+area_id+".jpg\' alt=\'Icon\' style=\"width:209px;height:180px;\"></a>";
 								var link1 = "<a href=\'javascript:void(0);\' onclick=\'landuse("
 										+ area_id
 										+ ");\' class=\'button\'> استخدامات الأراضى </a>";
-								var content = "<div style=\"text-align:center; overflow:hidden;\"><h1 style=\"background-color: #44a959;\">"
-										+ "بيانات قطعة الأرض" + "</h1>"
-										+ link4
-										+ "<table class=\"outertable\" style=\"dir: rtl;\"><tr><td class=\'td\'>"
-										+ area_id
-										+ "</td><td class=\'rightcolumn\'>كود المزرعة / الشركة</td></tr><tr><td class=\'td\'>"
-										+ db_farmname
-										+ "</td><td class=\'rightcolumn\'>اسم المزرعة / الشركة</td></tr><tr><td class=\'td\'><table class=\"innertable\"><tr><td class=\'td\'>س</td><td class=\'td\'>ط</td><td class=\'td\'>ف</td></tr><tr><td class=\'td\'>"
-										+ sahm
-										+ "</td><td class=\'td\'>"
-										+ qirat
-										+ "</td><td class=\'td\'>"
-										+ feddan
-										+ "</td></tr></table>"
-										+ "</td><td class=\'rightcolumn\'>المساحة</td></tr><tr><td class=\'td\'>"
-										+ db_displayedownership
-										+ "</td><td class=\'rightcolumn\'>رقم الملف</td></tr><tr><td class=\'td\'>"
-										+ db_ownername
-										+ "</td><td class=\'rightcolumn\'>اسم المالك / واضع اليد</td></tr><tr><td class=\'td\'>"
-										+ db_ownerid
-										+ "</td><td class=\'rightcolumn\'>الرقم القومى</td></tr><tr><td class=\'td\'>"
-										+ db_ownertel
-										+ "</td><td class=\'rightcolumn\'>التليفون</td></tr></table><br>"
-                                                                             +"<div id=\"errormsg\"></div>"
-										+ "<table><tr><td class=\'td-button\'>"
-										+ link0
-										+ "</td><td class=\'td-button\'>"
-										+ link3
-										+ "</td><td class=\'td-button\'>"
-										+ link2
-										+ "</td><td class=\'td-button\'>"
-										+ link1
-										+ "</td></tr></table>"
-										+ "<span onclick='close_infowindow()' class='searchClose'>[&times;]</span></div>";
+										var content = "<div style=\"text-align:center; overflow:hidden;\"><h1 style=\"background-color: #44a959;\">"
+											+ "بيانات قطعة الأرض" + "</h1><br><br>"
+											+ "<table class=\"outertable\" style=\"dir: rtl;\"><tr><td rowspan='6'>"+link4+"</td><td class=\'td\'>"
+											+ area_id
+											+ "</td><td class=\'rightcolumn\'>كود المزرعة / الشركة</td></tr><tr><td class=\'td\'>"
+											+ db_ownername
+											+ "</td><td class=\'rightcolumn\'>اسم المالك / واضع اليد</td></tr><tr><td class=\'td\'>"
+											+ db_farmname
+											+ "</td><td class=\'rightcolumn\'>اسم المزرعة / الشركة</td></tr><tr><td class=\'td\'>"
+											+ db_displayedownership
+											+ "</td><td class=\'rightcolumn\'>نوع الحيازة</td></tr><tr><td class=\'td\'>"
+											+ db_fileno
+											+ "</td><td class=\'rightcolumn\'>رقم الملف</td></tr><tr><td class=\'td\'><table class=\"innertable\"><tr><td class=\'td\'>س</td><td class=\'td\'>ط</td><td class=\'td\'>ف</td></tr><tr><td class=\'td\'>"
+											+ sahm
+											+ "</td><td class=\'td\'>"
+											+ qirat
+											+ "</td><td class=\'td\'>"
+											+ feddan
+											+ "</td></tr></table>"
+											+ "</td><td class=\'rightcolumn\'>المساحة</td></tr><!-- <tr><td class=\'td\'>"
+											+ db_ownerid
+											+ "</td><td class=\'rightcolumn\'>الرقم القومى</td></tr><tr><td class=\'td\'>"
+											+ db_ownertel
+											+ "</td><td class=\'rightcolumn\'>التليفون</td></tr>--></table><br>"
+	                                                                                    +"<div id=\"errormsg\"></div>"
+											+ "<table><tr><td class=\'td-button\'>"
+											+ link0
+											+ "</td><td class=\'td-button\'>"
+											+ link3
+											+ "</td><td class=\'td-button\'>"
+											+ link2
+											+ "</td><td class=\'td-button\'>"
+											+ link1
+											+ "</td></tr></table></div>";
 								infowindow.setContent(content);
 								infowindow.setPosition(event.latLng);
 								infowindow.open(map);
@@ -604,6 +639,7 @@
 						var db_ownertel = "";
 						var db_ownership = "";
 						var db_displayedownership = "";
+						var db_fileno = "";
 						for ( var i in farms) {
 							if (farms[i].farmID === area_id) {
 								if (farms[i].farmName) {
@@ -632,10 +668,27 @@
 
 								if (farms[i].ownership) {
 									db_ownership = farms[i].ownership;
-									db_displayedownership = farms[i].ownership;
+									if(db_ownership == "1"){
+										db_displayedownership = "عقد محافظة";
+									}
+									if(db_ownership == "2"){
+										db_displayedownership = "تمليك (عقود مسجلة)";
+									}
+									if(db_ownership == "3"){
+										db_displayedownership = "قرار تصرف";
+									}
+									if(db_ownership == "4"){
+										db_displayedownership = "وضع يد";
+									}
 								} else {
 									db_ownership = "غير متوفر";
 									db_displayedownership = "غير متوفر";
+								}
+								
+								if (farms[i].fileNo) {
+									db_fileno = farms[i].fileNo;
+								} else {
+									db_fileno = "غير متوفر";
 								}
 							}
 						}
@@ -651,44 +704,44 @@
 								+ area_id
 								+ ");\' class=\'button\'>"
 								+ "طلب إجراءات التقنين" + "</a>";
-						var link4 = "<a href=\'datafiles/sketch/"+area_id+".jpg\' target='_blank'><img class=\'infowindowimg\' src=\'datafiles/sketch/"+area_id+".jpg\' alt=\'Icon\' style=\"width:300px;height:170px;\"></a>";
+						var link4 = "<a href=\'datafiles/sketch/"+area_id+".jpg\' target='_blank'><img class=\'infowindowimg\' src=\'datafiles/sketch/"+area_id+".jpg\' alt=\'Icon\' style=\"width:209px;height:180px;\"></a>";
 						var link1 = "<a href=\'javascript:void(0);\' onclick=\'landuse("
 								+ area_id
 								+ ");\' class=\'button\'> استخدامات الأراضى </a>";
-						var content = "<div style=\"text-align:center; overflow:hidden;\"><h1 style=\"background-color: #44a959;\">"
-								+ "بيانات قطعة الأرض" + "</h1>"
-								+ link4
-								+ "<table class=\"outertable\" style=\"dir: rtl;\"><tr><td class=\'td\'>"
-								+ area_id
-								+ "</td><td class=\'rightcolumn\'>كود المزرعة / الشركة</td></tr><tr><td class=\'td\'>"
-								+ db_farmname
-								+ "</td><td class=\'rightcolumn\'>اسم المزرعة / الشركة</td></tr><tr><td class=\'td\'><table class=\"innertable\"><tr><td class=\'td\'>س</td><td class=\'td\'>ط</td><td class=\'td\'>ف</td></tr><tr><td class=\'td\'>"
-								+ sahm
-								+ "</td><td class=\'td\'>"
-								+ qirat
-								+ "</td><td class=\'td\'>"
-								+ feddan
-								+ "</td></tr></table>"
-								+ "</td><td class=\'rightcolumn\'>المساحة</td></tr><tr><td class=\'td\'>"
-								+ db_displayedownership
-								+ "</td><td class=\'rightcolumn\'>رقم الملف</td></tr><tr><td class=\'td\'>"
-								+ db_ownername
-								+ "</td><td class=\'rightcolumn\'>اسم المالك / واضع اليد</td></tr><tr><td class=\'td\'>"
-								+ db_ownerid
-								+ "</td><td class=\'rightcolumn\'>الرقم القومى</td></tr><tr><td class=\'td\'>"
-								+ db_ownertel
-								+ "</td><td class=\'rightcolumn\'>التليفون</td></tr></table><br>"
-                                                                     +"<div id=\"errormsg\"></div>"
-								+ "<table><tr><td class=\'td-button\'>"
-								+ link0
-								+ "</td><td class=\'td-button\'>"
-								+ link3
-								+ "</td><td class=\'td-button\'>"
-								+ link2
-								+ "</td><td class=\'td-button\'>"
-								+ link1
-								+ "</td></tr></table>"
-								+ "<span onclick='close_infowindow()' class='searchClose'>[&times;]</span></div>";
+								var content = "<div style=\"text-align:center; overflow:hidden;\"><h1 style=\"background-color: #44a959;\">"
+									+ "بيانات قطعة الأرض" + "</h1><br><br>"
+									+ "<table class=\"outertable\" style=\"dir: rtl;\"><tr><td rowspan='6'>"+link4+"</td><td class=\'td\'>"
+									+ area_id
+									+ "</td><td class=\'rightcolumn\'>كود المزرعة / الشركة</td></tr><tr><td class=\'td\'>"
+									+ db_ownername
+									+ "</td><td class=\'rightcolumn\'>اسم المالك / واضع اليد</td></tr><tr><td class=\'td\'>"
+									+ db_farmname
+									+ "</td><td class=\'rightcolumn\'>اسم المزرعة / الشركة</td></tr><tr><td class=\'td\'>"
+									+ db_displayedownership
+									+ "</td><td class=\'rightcolumn\'>نوع الحيازة</td></tr><tr><td class=\'td\'>"
+									+ db_fileno
+									+ "</td><td class=\'rightcolumn\'>رقم الملف</td></tr><tr><td class=\'td\'><table class=\"innertable\"><tr><td class=\'td\'>س</td><td class=\'td\'>ط</td><td class=\'td\'>ف</td></tr><tr><td class=\'td\'>"
+									+ sahm
+									+ "</td><td class=\'td\'>"
+									+ qirat
+									+ "</td><td class=\'td\'>"
+									+ feddan
+									+ "</td></tr></table>"
+									+ "</td><td class=\'rightcolumn\'>المساحة</td></tr><!-- <tr><td class=\'td\'>"
+									+ db_ownerid
+									+ "</td><td class=\'rightcolumn\'>الرقم القومى</td></tr><tr><td class=\'td\'>"
+									+ db_ownertel
+									+ "</td><td class=\'rightcolumn\'>التليفون</td></tr>--></table><br>"
+                                                                                +"<div id=\"errormsg\"></div>"
+									+ "<table><tr><td class=\'td-button\'>"
+									+ link0
+									+ "</td><td class=\'td-button\'>"
+									+ link3
+									+ "</td><td class=\'td-button\'>"
+									+ link2
+									+ "</td><td class=\'td-button\'>"
+									+ link1
+									+ "</td></tr></table></div>";
 						infowindow.setContent(content);
 						infowindow.setPosition(event.latLng);
 						infowindow.open(map);

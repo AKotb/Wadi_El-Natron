@@ -12,8 +12,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
 import org.wadielnatron.beans.Farm;
 import org.wadielnatron.dao.FarmDAO;
+
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 /**
@@ -31,73 +33,54 @@ public class SearchServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		String polygonID = request.getParameter("polygon_id");
-		String polygonLat = request.getParameter("polygon_lat");
-		String polygonLong = request.getParameter("polygon_long");
-		RequestDispatcher dispatcher = null;
-		if (polygonID != null) {
-			request.setAttribute("showfarm_id", polygonID);
-			// map center for Egypt
-			request.setAttribute("selectedlat", polygonLat);
-			request.setAttribute("selectedlng", polygonLong);
-			dispatcher = this.getServletContext().getRequestDispatcher("/home");
-		} else {
-			dispatcher = this.getServletContext().getRequestDispatcher("/WEB-INF/views/searchView.jsp");
-		}
-		dispatcher.forward(request, response);
+		this.doPost(request, response);
 	}
 
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		String formType = request.getParameter("form_type");
-		String farmName = request.getParameter("farm_name");
-		String ownerId = request.getParameter("owner_id");
-		String ownerName = request.getParameter("owner_name");
-		String ownerTelephone = request.getParameter("owner_telephone");
-		String ownership = request.getParameter("ownership_status");
 		List<Farm> farmsList = null;
 		ObjectMapper mapper = null;
 		String farmsInjson = null;
 		FarmDAO farmdao = null;
-		 
-		if (formType.equals("paging")) {
-			System.out.println("=======Paging Pressed!");
-	
-		}
-		// search for farms
-		if (formType.equals("searchform")) {
-			try {
-				farmdao = new FarmDAO();
-				farmsList = farmdao.getAllFarms(farmName, ownerId, ownerName, ownerTelephone, ownership);
-				farmdao.closeDBConn();
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-			mapper = new ObjectMapper();
-			farmsInjson = mapper.writeValueAsString(farmsList);
-			request.setAttribute("farms", farmsInjson);
-		} else {
-			// edit farm data
-			String farmId = request.getParameter("farm_id");
-			HttpSession httpsession = request.getSession(true);
-			String role = httpsession.getAttribute("userRole").toString();
-			if (role != null) {
-				if (role.equals("2") || role.equals("3")) {
-					Farm farm = new Farm();
-					farm.setFarmID(Integer.parseInt(farmId));
-					farm.setFarmName(farmName);
-					farm.setOwnerName(ownerName);
-					farm.setOwnerID(ownerId);
-					farm.setTelephone(ownerTelephone);
-					if (ownership == null || ownership.equals("")) {
-						ownership = null;
-					}
-					farm.setOwnership(ownership);
+		
+		String formType = request.getParameter("form_type");
+		if(formType != null){
+			// select ploygon on map
+			if (formType.equals("displayonmap")) {
+				String polygonID = request.getParameter("polygon_id");
+				String polygonLat = request.getParameter("polygon_lat");
+				String polygonLong = request.getParameter("polygon_long");
+				RequestDispatcher dispatcher = null;
+				if (polygonID != null) {
+					request.setAttribute("showfarm_id", polygonID);
+					// map center for Egypt
+					request.setAttribute("selectedlat", polygonLat);
+					request.setAttribute("selectedlng", polygonLong);
+					dispatcher = this.getServletContext().getRequestDispatcher("/home");
+				} else {
+					dispatcher = this.getServletContext().getRequestDispatcher("/WEB-INF/views/searchView.jsp");
+				}
+				dispatcher.forward(request, response);
+			} else {
+				String farmName = request.getParameter("farm_name");
+				String ownerId = request.getParameter("owner_id");
+				String ownerName = request.getParameter("owner_name");
+				String ownerTelephone = request.getParameter("owner_telephone");
+				String ownership = request.getParameter("ownership_status");
+				String fileNo = request.getParameter("file_no");
+
+				// search for farms
+				if (formType.equals("searchform")) {
+					System.out.println("=====FarmName: " + farmName);
+					System.out.println("=====ownerId: " + ownerId);
+					System.out.println("=====ownerName: " + ownerName);
+					System.out.println("=====ownerTelephone: " + ownerTelephone);
+					System.out.println("=====ownership: " + ownership);
+					System.out.println("=====fileNo: " + fileNo);
 					try {
 						farmdao = new FarmDAO();
-						farmdao.updateFarm(farm);
-						farmsList = farmdao.getAllFarms(farmName, ownerId, ownerName, ownerTelephone, ownership);
+						farmsList = farmdao.getAllFarms(farmName, ownerId, ownerName, ownerTelephone, ownership, fileNo);
 						farmdao.closeDBConn();
 					} catch (Exception e) {
 						e.printStackTrace();
@@ -106,13 +89,51 @@ public class SearchServlet extends HttpServlet {
 					farmsInjson = mapper.writeValueAsString(farmsList);
 					request.setAttribute("farms", farmsInjson);
 				} else {
-					httpsession.setAttribute("updateFarmData", "برجاء المراجعة مع الموظف المختص");
+					// edit farm data
+					String farmId = request.getParameter("farm_id");
+
+					HttpSession httpsession = request.getSession(true);
+					String role = httpsession.getAttribute("userRole").toString();
+					if (role != null) {
+						if (role.equals("2") || role.equals("3")) {
+							Farm farm = new Farm();
+							farm.setFarmID(Integer.parseInt(farmId));
+							farm.setFarmName(farmName);
+							farm.setOwnerName(ownerName);
+							farm.setOwnerID(ownerId);
+							farm.setTelephone(ownerTelephone);
+							if (ownership == null || ownership.equals("")) {
+								ownership = null;
+							}
+							farm.setOwnership(ownership);
+							farm.setFileNo(fileNo);
+							try {
+								farmdao = new FarmDAO();
+								farmdao.updateFarm(farm);
+								farmsList = farmdao.getAllFarms(farmName, ownerId, ownerName, ownerTelephone, ownership,
+										fileNo);
+								farmdao.closeDBConn();
+							} catch (Exception e) {
+								e.printStackTrace();
+							}
+							mapper = new ObjectMapper();
+							farmsInjson = mapper.writeValueAsString(farmsList);
+							request.setAttribute("farms", farmsInjson);
+						} else {
+							httpsession.setAttribute("updateFarmData", "برجاء المراجعة مع الموظف المختص");
+						}
+					} else {
+						httpsession.setAttribute("updateFarmData", "برجاء تسجيل الدخول");
+					}
 				}
-			} else {
-				httpsession.setAttribute("updateFarmData", "برجاء تسجيل الدخول");
+				RequestDispatcher dispatcher = this.getServletContext()
+						.getRequestDispatcher("/WEB-INF/views/searchView.jsp");
+				dispatcher.forward(request, response);
 			}
+		}else{
+			RequestDispatcher dispatcher = this.getServletContext()
+					.getRequestDispatcher("/WEB-INF/views/searchView.jsp");
+			dispatcher.forward(request, response);
 		}
-		RequestDispatcher dispatcher = this.getServletContext().getRequestDispatcher("/WEB-INF/views/searchView.jsp");
-		dispatcher.forward(request, response);
 	}
 }
