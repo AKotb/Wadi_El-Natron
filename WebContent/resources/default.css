@@ -425,7 +425,7 @@ px
 	padding: 1% 5% 1% 5%;;
 	background-color: rgb(240, 240, 240);
 	border: 1px solid black;
-	height: 3050px;;
+	height: 4430px;;
 }
 
 #aboutuscontent p {
@@ -809,6 +809,11 @@ input.hidden {
 
 /************************** About us Page style ***************************/
 
+.supervisors_row_about_main {
+	float: right;
+	width: 50%;
+}
+
 .column_about {
 	float: right;
 	width: 16%;
@@ -818,34 +823,10 @@ input.hidden {
 	float: right;
 }
 
-.natronteam_div {
-	width:100%;
-	margin-top:4%;
-}
-
-.dataanalysisteam_div {
-	width:100%;
-	margin-top:26%;
-}
-
-.surveyteam_div {
-	width:100%;
-	margin-top:26%;
-}
-
-.landuseteam_div {
-	width:100%;
-	margin-top:25%;
-}
-
-.devteam_div {
-	width:100%;
-	margin-top:26%;
-}
-
 .row_about {
 	width: 100%;
 	float: right;
+	margin-right: 3%;
 }
 
 .row_about:after, .row_about_main:after {
@@ -912,14 +893,14 @@ input.hidden {
 	color: #444;
 	font-family: 'Montserrat', sans-serif;
 	font-weight: bold;
-	font-size: 20px;
+	font-size: 16px;
 }
 
 .person_desc {
 	color: #aaa;
 	font-family: 'Montserrat', sans-serif;
 	font-weight: bold;
-	font-size: 16px;
+	font-size: 15px;
 }
 
 .card_about:hover {
@@ -939,10 +920,58 @@ input.hidden {
 	width: 100%;
 }
 
+.supervisors_div {
+	width: 100%;
+	margin-top: 4%;
+	padding-top: 1%;
+}
+
 .team_div {
 	width: 100%;
 	margin-top: 4%;
 	padding-top: 1%;
+}
+
+.beheirateams_div {
+	width: 100%;
+	margin-top: 5%;
+	padding-top: 1%;
+}
+
+.narssteams_div {
+	width: 100%;
+	margin-top: 3%;
+	padding-top: 1%;
+}
+
+.governorateteam_div {
+	width:100%;
+	padding-top:1%;
+}
+
+.natronteam_div {
+	width:100%;
+	margin-top:4%;
+}
+
+.dataanalysisteam_div {
+	width:100%;
+	padding-top:1%;
+}
+
+.surveyteam_div {
+	width:100%;
+	margin-top:4%;
+}
+
+.landuseteam_div {
+	width:100%;
+	margin-top:4%;
+}
+
+.devteam_div {
+	width:100%;
+	margin-top:4%;
 }
 
 .center {
@@ -954,14 +983,26 @@ input.hidden {
 
 .aboutauthority_h1{
 	text-align: center;
-	margin: 0.5% 0% 0.5% 45%;
+	margin: 0.5% 0% 0.5% 40%;
     font-family: 'Titillium Web', sans-serif;
     font-size: 36px;
     padding: 15px 15px 15px 3%;
     color: #355681;
     box-shadow: inset 0 0 0 1px rgba(53,86,129, 0.4), inset 0 0 5px rgba(53,86,129, 0.5), inset -285px 0 35px white;
     border-radius: 10px 10px 10px 10px;
-    width: 10%;
+    width: 14%;
+}
+
+.supervisors_h1{
+	text-align: center;
+	margin: 0.5% 0% 0.5% 40%;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 36px;
+    padding: 15px 15px 15px 1%;
+    color: #355681;
+    box-shadow: inset 0 0 0 1px rgba(53,86,129, 0.4), inset 0 0 5px rgba(53,86,129, 0.5), inset -285px 0 35px white;
+    border-radius: 10px 10px 10px 10px;
+    width: 16%;
 }
 
 .team_h1{
@@ -973,25 +1014,61 @@ input.hidden {
     color: #355681;
     box-shadow: inset 0 0 0 1px rgba(53,86,129, 0.4), inset 0 0 5px rgba(53,86,129, 0.5), inset -285px 0 35px white;
     border-radius: 10px 10px 10px 10px;
-    width: 20%;
+    width: 16%;
 }
 
-.natronteam_h3 {
+.beheirateams_h1{
 	text-align: center;
-    margin: 0.5% 0% 0.5% 73%;
+	margin: 0.5% 0% 0.5% 35%;
     font-family: 'Titillium Web', sans-serif;
     font-size: 36px;
     padding: 15px 15px 15px 1%;
     color: #355681;
     box-shadow: inset 0 0 0 1px rgba(53,86,129, 0.4), inset 0 0 5px rgba(53,86,129, 0.5), inset -285px 0 35px white;
     border-radius: 10px 10px 10px 10px;
-    width: 24%;
+    width: 27%;
+}
+
+.narssteams_h1{
+	text-align: center;
+	margin: 0.5% 0% 0.5% 35%;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 36px;
+    padding: 15px 15px 15px 1%;
+    color: #355681;
+    box-shadow: inset 0 0 0 1px rgba(53,86,129, 0.4), inset 0 0 5px rgba(53,86,129, 0.5), inset -285px 0 35px white;
+    border-radius: 10px 10px 10px 10px;
+    width: 27%;
+}
+
+.governorateteam_h3 {
+	text-align: center;
+    margin: 0.5% 0% 0.5% 44%;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 36px;
+    padding: 15px 15px 15px 1%;
+    color: #355681;
+    box-shadow: inset 0 0 0 1px rgba(53,86,129, 0.4), inset 0 0 5px rgba(53,86,129, 0.5), inset -285px 0 35px white;
+    border-radius: 10px 10px 10px 10px;
+    width: 51%;
+}
+
+.natronteam_h3 {
+	text-align: center;
+    margin: 0.5% 0% 0.5% 64%;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 36px;
+    padding: 15px 15px 15px 1%;
+    color: #355681;
+    box-shadow: inset 0 0 0 1px rgba(53,86,129, 0.4), inset 0 0 5px rgba(53,86,129, 0.5), inset -285px 0 35px white;
+    border-radius: 10px 10px 10px 10px;
+    width: 31%;
 }
 
 
 .dataanalysisteam_h3 {
 	text-align: center;
-    margin: 0.5% 0% 0.5% 77%;
+    margin: 0.5% 0% 0.5% 75%;
     font-family: 'Titillium Web', sans-serif;
     font-size: 36px;
     padding: 15px 15px 15px 1%;
@@ -1003,29 +1080,17 @@ input.hidden {
 
 .surveyteam_h3 {
 	text-align: center;
-    margin: 0.5% 0% 0.5% 85%;
+    margin: 0.5% 0% 0.5% 80%;
     font-family: 'Titillium Web', sans-serif;
     font-size: 36px;
     padding: 15px 15px 15px 1%;
     color: #355681;
     box-shadow: inset 0 0 0 1px rgba(53,86,129, 0.4), inset 0 0 5px rgba(53,86,129, 0.5), inset -285px 0 35px white;
     border-radius: 10px 10px 10px 10px;
-    width: 12%;
+    width: 15%;
 }
 
 .landuseteam_h3 {
-	text-align: center;
-    margin: 0.5% 0% 0.5% 61%;
-    font-family: 'Titillium Web', sans-serif;
-    font-size: 36px;
-    padding: 15px 15px 15px 1%;
-    color: #355681;
-    box-shadow: inset 0 0 0 1px rgba(53,86,129, 0.4), inset 0 0 5px rgba(53,86,129, 0.5), inset -285px 0 35px white;
-    border-radius: 10px 10px 10px 10px;
-    width: 36%;
-}
-
-.devteam_h3 {
 	text-align: center;
     margin: 0.5% 0% 0.5% 57%;
     font-family: 'Titillium Web', sans-serif;
@@ -1034,11 +1099,97 @@ input.hidden {
     color: #355681;
     box-shadow: inset 0 0 0 1px rgba(53,86,129, 0.4), inset 0 0 5px rgba(53,86,129, 0.5), inset -285px 0 35px white;
     border-radius: 10px 10px 10px 10px;
-    width: 40%;
+    width: 38%;
 }
 
-.team_container_div{
+.devteam_h3 {
+	text-align: center;
+    margin: 0.5% 0% 0.5% 52%;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 36px;
+    padding: 15px 15px 15px 1%;
+    color: #355681;
+    box-shadow: inset 0 0 0 1px rgba(53,86,129, 0.4), inset 0 0 5px rgba(53,86,129, 0.5), inset -285px 0 35px white;
+    border-radius: 10px 10px 10px 10px;
+    width: 43%;
+}
+
+.supervisors_container_div{
 	box-shadow: inset 0 0 0 1px rgba(53,86,129, 0.4), inset 0 0 5px rgba(53,86,129, 0.5), inset -285px 0 35px white;
     border-radius: 10px 10px 10px 10px;
-    height: 83%;
+    height: 280px;
+    width: 85%;
+    margin-left: 7%;
+}
+
+.workteam_container_div{
+	box-shadow: inset 0 0 0 1px rgba(53,86,129, 0.4), inset 0 0 5px rgba(53,86,129, 0.5), inset -285px 0 35px white;
+    border-radius: 10px 10px 10px 10px;
+    height: 3360px;
+    width: 85%;
+    margin-left: 7%;
+}
+
+.beheirateams_container_div{
+	box-shadow: inset 0 0 0 1px rgba(53,86,129, 0.4), inset 0 0 5px rgba(53,86,129, 0.5), inset -285px 0 35px white;
+    border-radius: 10px 10px 10px 10px;
+    height: 950px;
+    width: 96%;
+    margin-left: 2%;
+}
+
+.governorateteam_container_div{
+	box-shadow: inset 0 0 0 1px rgba(53,86,129, 0.4), inset 0 0 5px rgba(53,86,129, 0.5), inset -285px 0 35px white;
+    border-radius: 10px 10px 10px 10px;
+    height: 330px;
+    width: 94%;
+    margin-left: 3%;
+}
+
+.natronteam_container_div{
+	box-shadow: inset 0 0 0 1px rgba(53,86,129, 0.4), inset 0 0 5px rgba(53,86,129, 0.5), inset -285px 0 35px white;
+    border-radius: 10px 10px 10px 10px;
+    height: 330px;
+    width: 94%;
+    margin-left: 3%;
+}
+
+.narssteams_container_div{
+	box-shadow: inset 0 0 0 1px rgba(53,86,129, 0.4), inset 0 0 5px rgba(53,86,129, 0.5), inset -285px 0 35px white;
+    border-radius: 10px 10px 10px 10px;
+    height: 1830px;
+    width: 96%;
+    margin-left: 2%;
+}
+
+.dataanalysisteam_container_div{
+	box-shadow: inset 0 0 0 1px rgba(53,86,129, 0.4), inset 0 0 5px rgba(53,86,129, 0.5), inset -285px 0 35px white;
+    border-radius: 10px 10px 10px 10px;
+    height: 330px;
+    width: 94%;
+    margin-left: 3%;
+}
+
+.surveyteam_container_div{
+	box-shadow: inset 0 0 0 1px rgba(53,86,129, 0.4), inset 0 0 5px rgba(53,86,129, 0.5), inset -285px 0 35px white;
+    border-radius: 10px 10px 10px 10px;
+    height: 330px;
+    width: 94%;
+    margin-left: 3%;
+}
+
+.landuseteam_container_div{
+	box-shadow: inset 0 0 0 1px rgba(53,86,129, 0.4), inset 0 0 5px rgba(53,86,129, 0.5), inset -285px 0 35px white;
+    border-radius: 10px 10px 10px 10px;
+    height: 330px;
+    width: 94%;
+    margin-left: 3%;
+}
+
+.devteam_container_div{
+	box-shadow: inset 0 0 0 1px rgba(53,86,129, 0.4), inset 0 0 5px rgba(53,86,129, 0.5), inset -285px 0 35px white;
+    border-radius: 10px 10px 10px 10px;
+    height: 330px;
+    width: 94%;
+    margin-left: 3%;
 }
