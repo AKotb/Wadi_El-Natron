@@ -73,7 +73,7 @@
 				<div class="row_about_main">
 					<div class="card_about">
 						<div>
-							<img class="photo_head" src="resources/images/sayed-madany.jpg">
+							<img class="photo_head" src="resources/images/sayed_madany.jpg">
 						</div>
 						<h2 class="person_title">أ.د / سيد مدني عرفات</h2>
 						<h3 class="person_desc">المدير التنفيذي للمشروع</h3>
@@ -355,7 +355,7 @@
 								<div class="card_about">
 									<div>
 										<img class="photo_member"
-											src="resources/images/profil-male.png">
+											src="resources/images/mohamed_sharqawy.jpg">
 									</div>
 									<h3 class="person_title">د. محمد مرتضى الشرقاوي</h3>
 									<h4 class="person_desc">باحث</h4>
