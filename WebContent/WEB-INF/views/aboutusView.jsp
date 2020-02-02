@@ -167,7 +167,7 @@
 								<div class="card_about">
 									<div>
 										<img class="photo_member"
-											src="resources/images/profil-male.png">
+											src="resources/images/medhat_alzoghed.jpg">
 									</div>
 									<h3 class="person_title">لواء / مدحت محمد الزغد</h3>
 									<h4 class="person_desc">رئيس مجلس مدينة وادى النطرون</h4>
@@ -177,7 +177,7 @@
 								<div class="card_about">
 									<div>
 										<img class="photo_member"
-											src="resources/images/profil-male.png">
+											src="resources/images/sayed_hamza.png">
 									</div>
 									<h3 class="person_title">م. سيد حمزه</h3>
 									<h4 class="person_desc">نائب رئيس مجلس مدينة وادى النطرون</h4>
