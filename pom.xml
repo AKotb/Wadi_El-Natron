@@ -114,7 +114,7 @@
 				<version>3.0.0</version>
 				<configuration>
 					<warSourceDirectory>WebContent</warSourceDirectory>
-					<!-- <warName>WadiElNatron</warName> -->
+<!-- 					<warName>WadiElNatron</warName> -->
 					<warName>ROOT</warName>
 				</configuration>
 			</plugin>

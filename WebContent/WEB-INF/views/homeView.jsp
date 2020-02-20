@@ -117,7 +117,8 @@
 		
 		
 		db_layer.loadGeoJson('http://localhost:8080/JSON/db_1.json');
-		//db_layer.loadGeoJson('http://wn.narss.sci.eg:8080/JSON/db_1.json');
+		//db_layer.loadGeoJson('http://wn.narss.sci.eg:8080/JSON/db_1.json'); // for narss production server
+		//db_layer.loadGeoJson('http://41.65.224.229:8080/JSON/db_1.json');  // for beheira production server
 		
 		
 		var db2_layer = new google.maps.Data({
@@ -126,7 +127,8 @@
 		
 		
 		db2_layer.loadGeoJson('http://localhost:8080/JSON/db_2.json');
-		//db2_layer.loadGeoJson('http://wn.narss.sci.eg:8080/JSON/db_2.json');
+		//db2_layer.loadGeoJson('http://wn.narss.sci.eg:8080/JSON/db_2.json'); // for narss production server
+		//db2_layer.loadGeoJson('http://41.65.224.229:8080/JSON/db_2.json'); // for beheira production server
 		
 		var db3_layer = new google.maps.Data({
 			map : map
@@ -134,7 +136,8 @@
 		
 		
 		db3_layer.loadGeoJson('http://localhost:8080/JSON/db_3.json');
-		//db3_layer.loadGeoJson('http://wn.narss.sci.eg:8080/JSON/db_3.json');
+		//db3_layer.loadGeoJson('http://wn.narss.sci.eg:8080/JSON/db_3.json'); // for narss production server
+		//db3_layer.loadGeoJson('http://41.65.224.229:8080/JSON/db_3.json'); // for beheira production server
 		
 		
 		infowindow = new google.maps.InfoWindow();
@@ -921,7 +924,8 @@
 					map : map
 				});
 			 	centers_layer.loadGeoJson('http://localhost:8080/JSON/centers.geojson');
-				//centers_layer.loadGeoJson('http://wn.narss.sci.eg:8080/JSON/centers.geojson');
+				//centers_layer.loadGeoJson('http://wn.narss.sci.eg:8080/JSON/centers.geojson'); // for narss production server
+				//centers_layer.loadGeoJson('http://41.65.224.229:8080/JSON/centers.geojson'); // for beheira production server
 			 	centers_layer.setStyle(function(feature) {
 						return ({
 							fillColor : 'transparent',
@@ -942,7 +946,8 @@
 					map : map
 				});
 			  districts_layer.loadGeoJson('http://localhost:8080/JSON/districts.geojson');
-			  //districts_layer.loadGeoJson('http://wn.narss.sci.eg:8080/JSON/districts.geojson');
+			  //districts_layer.loadGeoJson('http://wn.narss.sci.eg:8080/JSON/districts.geojson'); // for narss production server
+			  //districts_layer.loadGeoJson('http://41.65.224.229:8080/JSON/districts.geojson'); // for beheira production server
 			  districts_layer.setStyle(function(feature) {
 						return ({
 							fillColor : 'transparent',
@@ -963,7 +968,8 @@
 					map : map
 				});
 			  	landsunionsmohafza_layer.loadGeoJson('http://localhost:8080/JSON/landsunionsmohafza.json');
-				//landsunionsmohafza_layer.loadGeoJson('http://wn.narss.sci.eg:8080/JSON/landsunionsmohafza.json');
+				//landsunionsmohafza_layer.loadGeoJson('http://wn.narss.sci.eg:8080/JSON/landsunionsmohafza.json'); // for narss production server
+				//landsunionsmohafza_layer.loadGeoJson('http://41.65.224.229:8080/JSON/landsunionsmohafza.json'); // for beheira production server
 			  	landsunionsmohafza_layer.setStyle(function(feature) {
 						return ({
 							fillColor : 'transparent',
@@ -984,7 +990,8 @@
 					map : map
 				});
 			  	law41_layer.loadGeoJson('http://localhost:8080/JSON/law41.json');
-				//law41_layer.loadGeoJson('http://wn.narss.sci.eg:8080/JSON/law41.json');
+				//law41_layer.loadGeoJson('http://wn.narss.sci.eg:8080/JSON/law41.json'); // for narss production server
+				//law41_layer.loadGeoJson('http://41.65.224.229:8080/JSON/law41.json'); // for beheira production server
 			  	law41_layer.setStyle(function(feature) {
 						return ({
 							fillColor : 'transparent',
@@ -1005,7 +1012,8 @@
 					map : map
 				});
 			  	law129_layer.loadGeoJson('http://localhost:8080/JSON/law129.json');
-				//law129_layer.loadGeoJson('http://wn.narss.sci.eg:8080/JSON/law129.json');
+				//law129_layer.loadGeoJson('http://wn.narss.sci.eg:8080/JSON/law129.json'); // for narss production server
+				//law129_layer.loadGeoJson('http://41.65.224.229:8080/JSON/law129.json'); // for beheira production server
 			  	law129_layer.setStyle(function(feature) {
 						return ({
 							fillColor : 'transparent',
@@ -1026,7 +1034,8 @@
 					map : map
 				});
 			  	law228_layer.loadGeoJson('http://localhost:8080/JSON/law228.json');
-				//law228_layer.loadGeoJson('http://wn.narss.sci.eg:8080/JSON/law228.json');
+				//law228_layer.loadGeoJson('http://wn.narss.sci.eg:8080/JSON/law228.json'); // for narss production server
+				//law228_layer.loadGeoJson('http://41.65.224.229:8080/JSON/law228.json'); // for beheira production server
 			  	law228_layer.setStyle(function(feature) {
 						return ({
 							fillColor : 'transparent',
@@ -1047,7 +1056,8 @@
 					map : map
 				});
 			  	road_layer.loadGeoJson('http://localhost:8080/JSON/road.json');
-				//road_layer.loadGeoJson('http://wn.narss.sci.eg:8080/JSON/road.json');
+				//road_layer.loadGeoJson('http://wn.narss.sci.eg:8080/JSON/road.json'); // for narss production server
+				//road_layer.loadGeoJson('http://41.65.224.229:8080/JSON/road.json'); // for beheira production server
 			  	road_layer.setStyle(function(feature) {
 						return ({
 							fillColor : '#FFE584',
@@ -1059,7 +1069,8 @@
 					map : map
 				});
 			  	roadbuffer_layer.loadGeoJson('http://localhost:8080/JSON/roadbuffer.json');
-				//roadbuffer_layer.loadGeoJson('http://wn.narss.sci.eg:8080/JSON/roadbuffer.json');
+				//roadbuffer_layer.loadGeoJson('http://wn.narss.sci.eg:8080/JSON/roadbuffer.json'); // for narss production server
+				//roadbuffer_layer.loadGeoJson('http://41.65.224.229:8080/JSON/roadbuffer.json'); // for beheira production server
 			  	roadbuffer_layer.setStyle(function(feature) {
 						return ({
 							fillColor : 'transparent',
@@ -1081,7 +1092,8 @@
 					map : map
 				});
 			  	law341_layer.loadGeoJson('http://localhost:8080/JSON/law341.json');
-				//law341_layer.loadGeoJson('http://wn.narss.sci.eg:8080/JSON/law341.json');
+				//law341_layer.loadGeoJson('http://wn.narss.sci.eg:8080/JSON/law341.json'); // for narss production server
+				//law341_layer.loadGeoJson('http://41.65.224.229:8080/JSON/law341.json'); // for beheira production server
 			  	law341_layer.setStyle(function(feature) {
 						return ({
 							fillColor : 'transparent',
@@ -1102,7 +1114,8 @@
 					map : map
 				});
 			 	law529_layer.loadGeoJson('http://localhost:8080/JSON/law529.json');
-				//law529_layer.loadGeoJson('http://wn.narss.sci.eg:8080/JSON/law529.json');
+				//law529_layer.loadGeoJson('http://wn.narss.sci.eg:8080/JSON/law529.json'); // for narss production server
+				//law529_layer.loadGeoJson('http://41.65.224.229:8080/JSON/law529.json'); // for beheira production server
 			  	law529_layer.setStyle(function(feature) {
 						return ({
 							fillColor : 'transparent',

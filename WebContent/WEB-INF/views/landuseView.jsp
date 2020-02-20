@@ -58,6 +58,14 @@
 				landuse_layer.loadGeoJson('http://wn.narss.sci.eg:8080/JSON/landuse/landuse_'+id+'.json');
 			}*/
 			
+			// for Beheira production server
+			/*if (200 == urlExists('http://41.65.224.229:8080/JSON/admin/admin_'+id+'.json')) {
+				admin_layer.loadGeoJson('http://41.65.224.229:8080/JSON/admin/admin_'+id+'.json');
+			}
+			if (200 == urlExists('http://41.65.224.229:8080/JSON/landuse/landuse_'+id+'.json')) {
+				landuse_layer.loadGeoJson('http://41.65.224.229:8080/JSON/landuse/landuse_'+id+'.json');
+			}*/
+			
 			
 			
 			infowindow = new google.maps.InfoWindow();
