@@ -16,7 +16,7 @@
 					String userRole = (String) sessions.getAttribute("userRole");
 					if (username == null) {
 				%> 
-				<a href="${pageContext.request.contextPath}/login" accesskey="7" title="login">تسجيل الدخول</a> 
+				<a href="${pageContext.request.contextPath}/login" accesskey="8" title="login">تسجيل الدخول</a> 
 				<%
  					} else {
  				%>
@@ -53,6 +53,9 @@
 			<li><a href="${pageContext.request.contextPath}/statistics"
 				accesskey="2" title="Statistics"><img
 					src="resources/images/statistics.png" alt="إحصائيات"></a></li>
+			<li><a href="${pageContext.request.contextPath}/timechanges"
+				accesskey="7" title="Time Changes"><img
+					src="resources/images/timechanges.png" alt="التسلسل الزمني"></a></li>
 			<li><a href="${pageContext.request.contextPath}/cropmonitoring"
 				accesskey="6" title="Crop Monitoring"><img
 					src="resources/images/cropmonitoring.png" alt="مراقبة المحاصيل"></a></li>
