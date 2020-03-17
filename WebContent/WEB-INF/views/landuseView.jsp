@@ -143,6 +143,14 @@
 						strokeWeight : 2
 					});
 				}
+				if(landusecode == '12'){
+					color='#FFD27F';
+					return ({
+						fillColor : color,
+						strokeColor : color,
+						strokeWeight : 2
+					});
+				}
 			});
 			landuse_layer.addListener('click', function(event) {
 				landuse_layer.revertStyle();
@@ -184,60 +192,79 @@
 					colorcode = '#E64C00';
 					arname = 'مباني انتاج زراعي';
 				}
-				if (farmdata.farmID) {
+				if(landusecode == '12'){
+					colorcode = '#FFD27F';
+					arname = 'أراضي مستصلحة لم يسبق زراعتها';
+				}
+				if (farmdata.farmID && farmdata.farmID !== '0') {
 					db_farmid = farmdata.farmID;
 				} else {
 					db_farmid = "غير متوفر";
 				}
-				if (farmdata.farmName) {
+				if (farmdata.farmName && farmdata.farmName !== '0') {
 					db_farmname = farmdata.farmName;
 				} else {
 					db_farmname = "غير متوفر";
 				}
-				if (farmdata.reclamedArea) {
+				if (farmdata.reclamedArea && farmdata.reclamedArea !== '0') {
 					db_reclamedArea = farmdata.reclamedArea;
+					db_reclamedArea = Math.round(db_reclamedArea * 100) / 100
 				} else {
 					db_reclamedArea = "لا يوجد";
 				}
-				if (farmdata.urbanArea) {
+				if (farmdata.urbanArea && farmdata.urbanArea !== '0') {
 					db_urbanArea = farmdata.urbanArea;
+					db_urbanArea = Math.round(db_urbanArea * 100) / 100
 				} else {
 					db_urbanArea = "لا يوجد";
 				}
-				if (farmdata.unusedArea) {
+				if (farmdata.unusedArea && farmdata.unusedArea !== '0') {
 					db_unusedArea = farmdata.unusedArea;
+					db_unusedArea = Math.round(db_unusedArea * 100) / 100
 				} else {
 					db_unusedArea = "لا يوجد";
 				}
-				if (farmdata.fieldCropsArea) {
+				if (farmdata.fieldCropsArea && farmdata.fieldCropsArea !== '0') {
 					db_fieldCropsArea = farmdata.fieldCropsArea;
+					db_fieldCropsArea = Math.round(db_fieldCropsArea * 100) / 100
 				} else {
 					db_fieldCropsArea = "لا يوجد";
 				}
-				if (farmdata.cropsArea) {
+				if (farmdata.cropsArea && farmdata.cropsArea !== '0') {
 					db_cropsArea = farmdata.cropsArea;
+					db_cropsArea = Math.round(db_cropsArea * 100) / 100
 				} else {
 					db_cropsArea = "لا يوجد";
 				}
-				if (farmdata.managBuildings) {
+				if (farmdata.managBuildings && farmdata.managBuildings !== '0') {
 					db_managBuildings = farmdata.managBuildings;
+					db_managBuildings = Math.round(db_managBuildings * 100) / 100
 				} else {
 					db_managBuildings = "لا يوجد";
 				}
-				if (farmdata.poulBuildings) {
+				if (farmdata.poulBuildings && farmdata.poulBuildings !== '0') {
 					db_poulBuildings = farmdata.poulBuildings;
+					db_poulBuildings = Math.round(db_poulBuildings * 100) / 100
 				} else {
 					db_poulBuildings = "لا يوجد";
 				}
-				if (farmdata.animBuildings) {
+				if (farmdata.animBuildings && farmdata.animBuildings !== '0') {
 					db_animBuildings = farmdata.animBuildings;
+					db_animBuildings = Math.round(db_animBuildings * 100) / 100
 				} else {
 					db_animBuildings = "لا يوجد";
 				}
-				if (farmdata.agriBuildings) {
+				if (farmdata.agriBuildings && farmdata.agriBuildings !== '0') {
 					db_agriBuildings = farmdata.agriBuildings;
+					db_agriBuildings = Math.round(db_agriBuildings * 100) / 100
 				} else {
 					db_agriBuildings = "لا يوجد";
+				}
+				if (farmdata.reclamedLandNotUsedBefore && farmdata.reclamedLandNotUsedBefore !== '0') {
+					db_reclamedLandNotUsedBefore = farmdata.reclamedLandNotUsedBefore;
+					db_reclamedLandNotUsedBefore = Math.round(db_reclamedLandNotUsedBefore * 100) / 100
+				} else {
+					db_reclamedLandNotUsedBefore = "لا يوجد";
 				}
 				
 				var link0 = "<a href=\'datafiles/mahader/0.png\' target='_blank' class=\'button\'> محضر معاينة </a>";
@@ -269,6 +296,8 @@
 					+ "</td><td class=\'rightcolumn\'>محاصيل بستانية</td></tr><tr><td class=\'td\'>"
 					+ db_reclamedArea
 					+ "</td><td class=\'rightcolumn\'>أراضي مستصلحة ومعدة للزراعة</td></tr><tr><td class=\'td\'>"
+					+ db_reclamedLandNotUsedBefore
+					+ "</td><td class=\'rightcolumn\'>أراضي مستصلحة لم يسبق زراعتها</td></tr><tr><td class=\'td\'>"
 					+ db_unusedArea
 					+ "</td><td class=\'rightcolumn\'>أراضي غير مستغلة</td></tr><tr><td class=\'td\'>"
 					+ db_urbanArea

@@ -62,6 +62,7 @@ public class FarmDAO {
 				farm.setAnimBuildings(rset.getString(15));
 				farm.setAgriBuildings(rset.getString(16));
 				farm.setFileNo(rset.getString(17));
+				farm.setReclamedLandNotUsedBefore(rset.getString(18));
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -194,6 +195,7 @@ public class FarmDAO {
 				farm.setAnimBuildings(rset.getString(15));
 				farm.setAgriBuildings(rset.getString(16));
 				farm.setFileNo(rset.getString(17));
+				farm.setReclamedLandNotUsedBefore(rset.getString(18));
 				farmsList.add(farm);
 			}
 		} catch (SQLException e) {
@@ -228,6 +230,7 @@ public class FarmDAO {
 				farm.setAnimBuildings(rset.getString(15));
 				farm.setAgriBuildings(rset.getString(16));
 				farm.setFileNo(rset.getString(17));
+				farm.setReclamedLandNotUsedBefore(rset.getString(18));
 				farmsList.add(farm);
 			}
 		} catch (SQLException e) {

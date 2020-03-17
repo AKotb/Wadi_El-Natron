@@ -602,6 +602,21 @@ px
 	color: #f9f9f9;
 	height: 85%;
 }
+
+#timechangescontent_db1{
+	text-align: left;
+	font-size: 0.9em;
+	color: #f9f9f9;
+	height: 85%;
+}
+
+#timechangescontent_db2{
+	text-align: left;
+	font-size: 0.9em;
+	color: #f9f9f9;
+	height: 85%;
+	padding-top: 10%;
+}
 /*********************************************************************************/
 /* Sidebar                                                                       */
 /*********************************************************************************/
@@ -625,6 +640,7 @@ px
 	border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
+
 #copyright p {
 	text-align: center;
 	font-size: 1em;
@@ -632,6 +648,25 @@ px
 }
 
 #copyright a {
+	text-decoration: none;
+	color: rgba(255, 255, 255, 0.8);
+}
+
+#copyright_timechanges {
+	overflow: hidden;
+	padding: 0em 0em;
+	border-top: 1px solid rgba(255, 255, 255, 0.08);
+	margin-top: 40%;
+}
+
+
+#copyright_timechanges p {
+	text-align: center;
+	font-size: 1em;
+	color: rgba(255, 255, 255, 0.5);
+}
+
+#copyright_timechanges a {
 	text-decoration: none;
 	color: rgba(255, 255, 255, 0.8);
 }

@@ -22,7 +22,7 @@
 <body>
 	<jsp:include page="_header.jsp"></jsp:include>
 	<div id="wrappercropping">
-		<div id="cropmonitoringcontent">
+		<div id="timechangescontent_db1">
 			<div id="cf7" class="shadow">
 			<div class="floatingimagetitle" id="floatingimagetitleid">التسلسل الزمني-المنطقة (و)</div>
 				<img class='opaque'
@@ -76,8 +76,45 @@
 					alt="DB1_Sentinal_cmps348_20191014" /> <img
 					src="datafiles/timechanges/DB1/DB1_Sentinal_cmps348_20191113.jpg"
 					alt="DB1_Sentinal_cmps348_20191113" /> 
-					
-					<img 
+			</div>
+		</div>
+		<div class="rowcropmonitor">
+			<div class="nvgt" id="prev"></div>
+			<div class="nvgt" id="play"></div>
+			<div class="nvgt" id="next"></div>
+			<p id="cf7_controls">
+					<span class="selected">DB1_08_2015</span> 
+					<span>DB1_11-2015</span> 
+					<span>DB1_02-2016</span>
+					<span>DB1_05-2016</span> 
+					<span>DB1_06-2016</span> 
+					<span>DB1_07-2016</span>
+					<span>DB1_08-2016</span> 
+					<span>DB1_10-2016</span>
+					<span>DB1_01-2017</span> 
+					<span>DB1_02-2017</span> 
+					<span>DB1_03-2017</span> 
+					<span>DB1_04-2017</span>
+					<span>DB1_05-2017</span> 
+					<span>DB1_06-2017</span> 
+					<span>DB1_01-2019</span> 
+					<span>DB1_02-2019</span>
+					<span>DB1_03-2019</span> 
+					<span>DB1_04-2019</span> 
+					<span>DB1_05-2019</span> 
+					<span>DB1_06-2019</span>
+					<span>DB1_07-2019</span> 
+					<span>DB1_08-2019</span> 
+					<span>DB1_09-2019</span> 
+					<span>DB1_10-2019</span>
+					<span>DB1_11-2019</span>
+			</p>
+		</div>
+		
+		<div id="timechangescontent_db2">
+			<div id="cf7_db2" class="shadow">
+			<div class="floatingimagetitle" id="floatingimagetitleid_db2">التسلسل الزمني-المنطقة (هـ)</div>
+				<img class='opaque'
 					src="datafiles/timechanges/DB2/DB2_Sentinal_cmps348_20150816.jpg"
 					alt="DB2_Sentinal_cmps348_20150816" /> <img
 					src="datafiles/timechanges/DB2/DB2_Sentinal_cmps348_20151114.jpg"
@@ -128,41 +165,14 @@
 					alt="DB2_Sentinal_cmps348_20191014" /> <img
 					src="datafiles/timechanges/DB2/DB2_Sentinal_cmps348_20191113.jpg"
 					alt="DB2_Sentinal_cmps348_20191113" />
-					
 			</div>
 		</div>
 		<div class="rowcropmonitor">
-			<div class="nvgt" id="prev"></div>
-			<div class="nvgt" id="play"></div>
-			<div class="nvgt" id="next"></div>
-			<p id="cf7_controls">
-					<span class="selected">DB1_08_2015</span> 
-					<span>DB1_11-2015</span> 
-					<span>DB1_02-2016</span>
-					<span>DB1_05-2016</span> 
-					<span>DB1_06-2016</span> 
-					<span>DB1_07-2016</span>
-					<span>DB1_08-2016</span> 
-					<span>DB1_10-2016</span>
-					<span>DB1_01-2017</span> 
-					<span>DB1_02-2017</span> 
-					<span>DB1_03-2017</span> 
-					<span>DB1_04-2017</span>
-					<span>DB1_05-2017</span> 
-					<span>DB1_06-2017</span> 
-					<span>DB1_01-2019</span> 
-					<span>DB1_02-2019</span>
-					<span>DB1_03-2019</span> 
-					<span>DB1_04-2019</span> 
-					<span>DB1_05-2019</span> 
-					<span>DB1_06-2019</span>
-					<span>DB1_07-2019</span> 
-					<span>DB1_08-2019</span> 
-					<span>DB1_09-2019</span> 
-					<span>DB1_10-2019</span>
-					<span>DB1_11-2019</span>
-					
-					<span>DB2_08-2015</span> 
+			<div class="nvgt" id="prev_db2"></div>
+			<div class="nvgt" id="play_db2"></div>
+			<div class="nvgt" id="next_db2"></div>
+			<p id="cf7_controls_db2">
+					<span class="selected">DB2_08-2015</span> 
 					<span>DB2_11-2015</span> 
 					<span>DB2_02-2016</span>
 					<span>DB2_05-2016</span> 
@@ -190,6 +200,11 @@
 			</p>
 		</div>
 	</div>
-	<jsp:include page="_footer.jsp"></jsp:include>
+	<div id="copyright_timechanges" class="container">
+	<p>
+		  حقوق الطبع محفوظة  لمحافظة البحيرة &copy;   تم التصميم بواسطة <a
+			href="http://www.narss.sci.eg/" rel="nofollow">الهيئة القومية للاستشعار من البعد وعلوم الفضاء</a>
+	</p>
+</div>
 </body>
 </html>
