@@ -38,25 +38,26 @@
 			});
 			map.setZoom(15);
 			map.setCenter(new google.maps.LatLng(lat, lng));
+			
 			var admin_layer = new google.maps.Data({map: map});
 			var landuse_layer = new google.maps.Data({map: map});
 			
 			
 			// for development server
-			if (200 == urlExists('http://localhost:8080/JSON/admin/admin_'+id+'.json')) {
+			/*if (200 == urlExists('http://localhost:8080/JSON/admin/admin_'+id+'.json')) {
 				admin_layer.loadGeoJson('http://localhost:8080/JSON/admin/admin_'+id+'.json');
 			}
 			if (200 == urlExists('http://localhost:8080/JSON/landuse/landuse_'+id+'.json')) {
 				landuse_layer.loadGeoJson('http://localhost:8080/JSON/landuse/landuse_'+id+'.json');
-			}
+			}*/
 			
 			// for narss production server
-			/*if (200 == urlExists('http://wn.narss.sci.eg:8080/JSON/admin/admin_'+id+'.json')) {
+			if (200 == urlExists('http://wn.narss.sci.eg:8080/JSON/admin/admin_'+id+'.json')) {
 				admin_layer.loadGeoJson('http://wn.narss.sci.eg:8080/JSON/admin/admin_'+id+'.json');
 			}
 			if (200 == urlExists('http://wn.narss.sci.eg:8080/JSON/landuse/landuse_'+id+'.json')) {
 				landuse_layer.loadGeoJson('http://wn.narss.sci.eg:8080/JSON/landuse/landuse_'+id+'.json');
-			}*/
+			}
 			
 			// for Beheira production server
 			/*if (200 == urlExists('http://41.65.224.229:8080/JSON/admin/admin_'+id+'.json')) {
@@ -66,9 +67,8 @@
 				landuse_layer.loadGeoJson('http://41.65.224.229:8080/JSON/landuse/landuse_'+id+'.json');
 			}*/
 			
-			
-			
 			infowindow = new google.maps.InfoWindow();
+			
 			admin_layer.setStyle(function(feature) {
 					return ({
 						fillColor : 'transparent',
@@ -76,19 +76,27 @@
 						strokeWeight : 2
 					});
 			});
+			
 			landuse_layer.setStyle(function(feature) {
-				var landusecode = feature.getProperty('LanduseCod');
-				
+				var landusecode = feature.getProperty('LU_code');
 				if(landusecode == '1'){
-					color = 'red';
+					color = '#55FF00';
 					return ({
 						fillColor : color,
 						strokeColor : color,
 						strokeWeight : 2
 					});
 				}
-				if(landusecode == '2' || landusecode == '3'){
-					color='lightgreen';
+				if(landusecode == '2'){
+					color='#41A800';
+					return ({
+						fillColor : color,
+						strokeColor : color,
+						strokeWeight : 2
+					});
+				}
+				if(landusecode == '3'){
+					color='#FF7373';
 					return ({
 						fillColor : color,
 						strokeColor : color,
@@ -96,7 +104,7 @@
 					});
 				}
 				if(landusecode == '4'){
-					color='orange';
+					color='#C00000';
 					return ({
 						fillColor : color,
 						strokeColor : color,
@@ -104,7 +112,7 @@
 					});
 				}
 				if(landusecode == '5'){
-					color='lightgray';
+					color='#FFAA00';
 					return ({
 						fillColor : color,
 						strokeColor : color,
@@ -112,7 +120,7 @@
 					});
 				}
 				if(landusecode == '6'){
-					color='#FF0000';
+					color='#FFD966';
 					return ({
 						fillColor : color,
 						strokeColor : color,
@@ -120,7 +128,7 @@
 					});
 				}
 				if(landusecode == '7'){
-					color='#FF00FF';
+					color='#FFFF00';
 					return ({
 						fillColor : color,
 						strokeColor : color,
@@ -128,6 +136,14 @@
 					});
 				}
 				if(landusecode == '8'){
+					color='#FF0066';
+					return ({
+						fillColor : color,
+						strokeColor : color,
+						strokeWeight : 2
+					});
+				}
+				if(landusecode == '9'){
 					color='#FFBEE8';
 					return ({
 						fillColor : color,
@@ -135,16 +151,16 @@
 						strokeWeight : 2
 					});
 				}
-				if(landusecode == '9'){
-					color='#E64C00';
+				if(landusecode == '10'){
+					color='#FF00FF';
 					return ({
 						fillColor : color,
 						strokeColor : color,
 						strokeWeight : 2
 					});
 				}
-				if(landusecode == '12'){
-					color='#FFD27F';
+				if(landusecode == '11'){
+					color='#FF0000';
 					return ({
 						fillColor : color,
 						strokeColor : color,
@@ -152,6 +168,7 @@
 					});
 				}
 			});
+			
 			landuse_layer.addListener('click', function(event) {
 				landuse_layer.revertStyle();
 				landuse_layer.overrideStyle(event.feature, {
@@ -159,42 +176,51 @@
 					fillColor : 'yellow'
 				});
 				var arname = 'غير متوفر';
-				var landusecode = event.feature.getProperty('LanduseCod');
+				
+				var landusecode = event.feature.getProperty('LU_code');
 				if(landusecode == '1'){
-					colorcode = '#FF0000';
-					arname = 'مباني';
+					colorcode = '#55FF00';
+					arname = 'اراضي  مستزرعة محاصيل بستانية';
 				}
-				if(landusecode == '2' || landusecode == '3'){
-					colorcode = '#90EE90';
-					arname = 'أراضي منزرعة';
+				if(landusecode == '2'){
+					colorcode = '#41A800';
+					arname = 'اراضي  مستزرعة محاصيل حولية';
+				}
+				if(landusecode == '3'){
+					colorcode = '#FF7373';
+					arname = 'اراضي متخللات الري المحوري';
 				}
 				if(landusecode == '4'){
-					colorcode = '#FFA500';
-					arname = 'أراضي مستصلحة';
+					colorcode = '#C00000';
+					arname = 'اراضي خدمات مناطق الانتاج الزراعى';
 				}
 				if(landusecode == '5'){
-					colorcode = '#D3D3D3';
-					arname = 'أراضي غير مستغلة';
+					colorcode = '#FFAA00';
+					arname = 'اراضي مستصلحة سبق زراعتها';
 				}
 				if(landusecode == '6'){
-					colorcode = '#FF0000';
-					arname = 'مباني ادارية وسكنية';
+					colorcode = '#FFD966';
+					arname = 'اراضي مستصلحة لم يسبق زراعتها';
 				}
 				if(landusecode == '7'){
-					colorcode = '#FF00FF';
-					arname = 'مباني انتاج داجني';
+					colorcode = '#FFFF00';
+					arname = 'اراضي غير مستغله';
 				}
 				if(landusecode == '8'){
-					colorcode = '#FFBEE8';
-					arname = 'مباني انتاج حيواني';
+					colorcode = '#FF0066';
+					arname = 'مباني انتاج زراعى';
 				}
 				if(landusecode == '9'){
-					colorcode = '#E64C00';
-					arname = 'مباني انتاج زراعي';
+					colorcode = '#FFBEE8';
+					arname = 'مباني انتاج حيوانى';
 				}
-				if(landusecode == '12'){
-					colorcode = '#FFD27F';
-					arname = 'أراضي مستصلحة لم يسبق زراعتها';
+				if(landusecode == '10'){
+					colorcode = '#FF00FF';
+					arname = 'مباني انتاج داجنى';
+				}
+				if(landusecode == '11'){
+					colorcode = '#FF0000';
+					arname = 'مباني ادارية وسكنية';
 				}
 				if (farmdata.farmID && farmdata.farmID !== '0') {
 					db_farmid = farmdata.farmID;
