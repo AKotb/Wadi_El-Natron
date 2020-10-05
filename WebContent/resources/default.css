@@ -453,7 +453,7 @@ px
 #regulationsandlawscontent h1 {
 	position: absolute;
 	color: #272925;
-	right: 14em;
+	right: 12em;
 	top: 3.5em;
 	font-size: 3.5em;
 }
@@ -1179,4 +1179,54 @@ input.hidden {
     border-radius: 10px 10px 10px 10px;
     height: 280px;
     width: 100%;
+}
+
+
+/************************************************ Regulations & Laws CSS ****************************************************/
+.regulations-and-laws_title_div {
+    width: 100%;
+}
+
+.regulations-and-laws_h1 {
+    text-align: center;
+    margin: 0.5% 0% 0.5% 40%;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 36px;
+    padding: 15px 15px 15px 3%;
+    color: #355681;
+    box-shadow: inset 0 0 0 1px rgba(53,86,129, 0.4), inset 0 0 5px rgba(53,86,129, 0.5), inset -285px 0 35px white;
+    border-radius: 10px 10px 10px 10px;
+    width: 18%;
+}
+
+#regulationsandlawscontent p {
+    text-align: justify;
+    margin: 1.5% 0 0.5% 7%;
+    font-weight: 600;
+    font-family: 'Titillium Web', sans-serif;
+    position: relative;
+    font-size: 29px;
+    line-height: 40px;
+    padding: 15px 15px 15px 1%;
+    color: #355681;
+    box-shadow: inset 0 0 0 1px rgba(53,86,129, 0.4), inset 0 0 5px rgba(53,86,129, 0.5), inset -285px 0 35px white;
+    border-radius: 10px 10px 10px 10px;
+    background: #fff;
+    width: 83%;
+}
+
+#regulationsandlawscontent ul {
+    text-align: justify;
+    margin: 0.5% 0 0.5% 7%;
+    font-weight: 600;
+    font-family: 'Titillium Web', sans-serif;
+    position: relative;
+    font-size: 22px;
+    line-height: 40px;
+    padding: 15px 15px 15px 1%;
+    color: #355681;
+    box-shadow: inset 0 0 0 1px rgba(53,86,129, 0.4), inset 0 0 5px rgba(53,86,129, 0.5), inset -285px 0 35px white;
+    border-radius: 10px 10px 10px 10px;
+    background: #fff;
+    width: 83%;
 }
