@@ -106,8 +106,7 @@
 						<div class="panel panel-default">
 							<div class="panel-heading">
 								<h4>بيانات المستخدم</h4>
-								<input type="button" style="float: left; margin-top: -1.5em"
-									value="تعديل" class="btnsearch" id="editBtn"
+								<input type="button" value="تعديل" class="btn btn-info btn-md" id="editBtn" style="float: left; margin-top: -3.5rem;"
 									onclick="edituserdata();">
 							</div>
 							<div class="panel-body">
@@ -165,61 +164,89 @@
 						</div>
 					</div>
 				</div>
-				<div id="edituserdata">
-					<form method="post" onsubmit="return validateForm();"
-						action="${pageContext.request.contextPath}/manageusers">
-						<input type="hidden" name="operation_type" value="updatemyprofile">
-						<h1>بيانات المستخدم</h1>
-						<table border="0" style="margin-right:21em;">
-							<tr>
-								<td align="right" style="color: #396266;">اسم المستخدم</td>
-								<td align="right"><input class="input-box" type="text"
-									id="username" name="user_name"
-									readonly="readonly"></td>
-							</tr>
-							<tr>
-								<td align="right" style="color: #396266;">الكود الوظيفي</td>
-								<td align="right"><input class="input-box" type="text"
-									id="userrole" name="user_role"
-									readonly="readonly"></td>
-							</tr>
-							<tr>
-								<td align="right" style="color: #396266;">البريد الالكتروني</td>
-								<td align="right"><input class="input-box" type="text"
-									id="useremail" name="user_email"></td>
-							</tr>
-							<tr>
-								<td align="right" style="color: #396266;">الرقم القومي</td>
-								<td align="right"><input class="input-box" type="text"
-									id="userid" name="user_id" ></td>
-							</tr>
-							<tr>
-								<td align="right" style="color: #396266;">التليفون</td>
-								<td align="right"><input class="input-box" type="text"
-									id="usertelephone" name="user_telephone"></td>
-							</tr>
-							<tr>
-								<td align="right" style="color: #396266;">كلمة المرور
-									الجديدة</td>
-								<td align="right"><input class="input-box" type="password"
-									id="userpassword" name="user_password"></td>
-							</tr>
-							<tr>
-								<td align="right" style="color: #396266;">تأكيد كلمة المرور</td>
-								<td align="right"><input class="input-box" type="password"
-									id="userpasswordconfirm" name="user_password_confirm"></td>
-							</tr>
-							<tr>
-								<td colspan="2"><span id='confirmpassmessage'></span></td>
-							</tr>
-						</table>
-						<br> <br>
-						<h2 align="center">
-							<input type="submit" value="حفظ" class="btnsearch" id="saveBtn">
-							<input type="button" onclick="cancel()" value="الغاء" class="btnsearch" id="cancelBtn">
-						</h2>
-					</form>
-				</div>
+				<div id="search-row" class="row justify-content-center align-items-center"> 
+						<div id="search-column" class="col-md-6">
+							<div id="search-box" class="col-md-12">
+								<div id="edituserdata">
+					
+								<form method="post" onsubmit="return validateForm();"
+									action="${pageContext.request.contextPath}/manageusers">
+									<input type="hidden" name="operation_type" value="updatemyprofile">
+									<h3 class="text-center text-info">بيانات المستخدم</h3>
+									<div class="form-group">
+										<label for="user_name" class="text-info" style="float: right;">
+												اسم المستخدم
+										</label>
+										
+										<input class="form-control" type="text"
+												id="username" name="user_name" readonly>
+									</div>
+									
+									<div class="form-group">
+										<label for="user_role" class="text-info" style="float: right;">
+												الكود الوظيفي
+										</label>
+										 
+										<input class="form-control" type="text"
+												id="userrole" name="user_rolel" >
+									</div>
+									
+									<div class="form-group">
+										<label for="user_email" class="text-info" style="float: right;">
+												البريد الالكتروني
+										</label>
+										 
+										<input class="form-control" type="text"
+												id="useremail" name="user_email" >
+									</div>
+									
+									<div class="form-group">
+										<label for="user_id" class="text-info" style="float: right;">
+												الرقم القومي
+										</label>
+										
+										<input class="form-control" type="text"
+												id="userid" name="user_id" >
+									</div>
+									
+									<div class="form-group">
+										<label for="user_telephone" class="text-info" style="float: right;">
+												التليفون
+										</label>
+										
+										<input class="form-control" type="text"
+												id="usertelephone" name="user_telephone" >
+									</div>
+									
+									<div class="form-group">
+										<label for="user_password" class="text-info" style="float: right;">
+												كلمة المرور الجديدة
+										</label>
+										
+										<input class="form-control" type="password"
+												id="userpassword" name="user_password" >
+									</div>
+							
+							
+									<div class="form-group">
+										<label for="user_password_confirm" class="text-info" style="float: right;">
+												تأكيد كلمة المرور
+										</label>
+									
+										<input class="form-control" type="password"
+												id="userpasswordconfirm" name="user_password_confirm" >
+									</div>
+									
+									<div class="form-group">
+										<span id='confirmpassmessage'></span>
+									</div>
+									
+									<div class="form-group">
+										<input type="button" value="الغاء" onclick="cancel()" class="btn btn-info btn-md" id="cancelBtn">
+										<input type="submit" value="حفظ" class="btn btn-info btn-md" id="saveBtn">
+									</div>
+								</form>
+				</div></div></div></div>
 			</div>
 			<div class="form-group">
 				<%

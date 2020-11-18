@@ -71,14 +71,13 @@
 								</div>
 								<div class="form-group">
 									<input type="submit" name="submit" class="btn btn-info btn-md"
-										value="تسجيل" style="float: right; margin-right: 100px;">
+										value="تسجيل" style="float: right;">
 									<input type="reset" name="reset" class="btn btn-info btn-md"
-										value="إلغاء" style="float: right; margin-right: 100px;">
-								</div>
-								<div id="register-link" class="text-right" style="float: left;">
+										value="إلغاء" style="float: right; margin-right: 10px;">
 									<a href="${pageContext.request.contextPath}/login"
-										class="text-info">لدي حساب؟</a>
+										class="text-info" style="float: left; margin-top: 10px;">لدي حساب؟</a>
 								</div>
+								
 								<div class="form-group">
 									<%
 										HttpSession sessions = request.getSession(true);

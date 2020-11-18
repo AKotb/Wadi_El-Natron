@@ -13,19 +13,22 @@
 
 
 
-<link href="http://fonts.googleapis.com/css?family=Montserrat:400,700"
-	rel="stylesheet" />
+<!--  <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700"
+	rel="stylesheet" /> -->
+<link
+	href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+	rel="stylesheet" id="bootstrap-css">
 <link href="resources/default.css" rel="stylesheet" type="text/css"
 	media="all" />
 <link href="resources/fonts.css" rel="stylesheet" type="text/css"
 	media="all" />
-<link rel="stylesheet" href="resources/tooplate-style.css" type="text/css"
+<!-- <link rel="stylesheet" href="resources/tooplate-style.css" type="text/css"
 	media="all"/>
 <link rel="stylesheet" href="resources/beheira.css" type="text/css"
-	media="all"/>
+	media="all"/> -->
 	<script type="text/javascript">
 	window.onload = function() {
-		document.getElementById("edituserdatacontent").style.display = "none";
+		document.getElementById("search-box").style.display = "none";
 		var UserRole="<%=session.getAttribute("userRole")%>";
 		if (UserRole != "null") {
 			if (UserRole == "2") {
@@ -34,7 +37,6 @@
 				document.getElementById("manageusersid").style.display = "none";
 			}
 		}
-
 		usersjson = '${users}';
 		var num_of_items = 0;
 		var results = "";
@@ -90,8 +92,9 @@
 					displayedRole = "غير متوفر";
 				}
 				results = results
-						+ '<tr class=\"resulttr\">'
-						+ '<td style=\"width:5%;\"><div>'
+						+'<tbody>'
+						+ '<tr>'
+						+ '<td>'
 						+ '<button onclick=\"edituserdata(\''
 						+ userName
 						+ '_'
@@ -108,46 +111,45 @@
 						+ '<button onclick=\"removeuserdata(\''
 						+ userName
 						+ '\')\" class=\"button\" id=\"removeselectedBtn\">حذف</button>'
-						+ '</div></td>'
-						+ '<td align=\"right\" style=\"width:15%;\"><div style=\"word-break:break-all;\">'
+						+ '</td>'
+						+ '<td>'
 						+ displayedRole
-						+ '</div></td>'
-						+ '<td align=\"right\" style=\"width:15%;\"><div style=\"word-break:break-all;\">'
+						+ '</td>'
+						+ '<td>'
 						+ userPhoneNumber
-						+ '</div></td>'
-						+ '<td align=\"right\" style=\"width:10%;\"><div style=\"word-break:break-all;\">'
+						+ '</td>'
+						+ '<td>'
 						+ userIdentifyNumber
-						+ '</div></td>'
-						+ '<td align=\"right\" style=\"width:25%;\"><div style=\"word-break:break-all;\">'
+						+ '</td>'
+						+ '<td>'
 						+ userMail
-						+ '</div></td>'
-						+ '<td style=\"width:5%;\">'
-						+ '<input class=\"input-box\" type=\"text\"id=\"usernametxt'+i+'\" value=\"'+ userName+'\" readonly>'
-						+ '</input></td>' + '</tr>';
+						+ '</td>'
+						+ '<td>'
+						+ userName
+						+ '</td></tr></tbody>';
 			}
 		}
 		if (num_of_items > 0) {
-			var search_header = '<div align=\"center\"><h3 align=\"center\">تم إيجاد '
+			var search_header = '<div class=\"col-md-12\"><h3 class=\"text-center text-info\">تم إيجاد '
 					+ num_of_items
-					+ ' من نتائج البحث </h3><br><table border=\"0\" align=\"center\" style=\"width:100%;\">'
+					+ ' من نتائج البحث </h3><br><table class=\"table table-hover\">'
+					+'<thead class=\"thead-light\">'
 					+ '<tr>'
-					+ '<th class=\"resultth\">تعديل</th>'
-					+ '<th class=\"resultth\"> الوظيفة </th>'
-					+ '<th class=\"resultth\"> رقم التليفون </th>'
-					+ '<th class=\"resultth\">الرقم القومي</th>'
-					+ '<th class=\"resultth\">البريد الالكتروني</th>'
-					+ '<th class=\"resultth\"> اسم المستخدم </th>'
-					+ '</tr>';
-			results = search_header + results + '</td></tr>'
-					+ '</table></div><br><br><br><br>';
+					+ '<th scope=\"col\">إعدادات</th>'
+					+ '<th scope=\"col\"> الوظيفة </th>'
+					+ '<th scope=\"col\"> رقم التليفون </th>'
+					+ '<th scope=\"col\">الرقم القومي</th>'
+					+ '<th scope=\"col\">البريد الالكتروني</th>'
+					+ '<th scope=\"col\"> اسم المستخدم </th>'
+					+ '</tr></thead>';
+			results = search_header + results + '</table></div><br><br><br><br>';
 			document.getElementById('user_list').innerHTML = results;
 		} else {
 		}
 	}
-
 	
 	function edituserdata(selecteduserdata) {
-		document.getElementById("edituserdatacontent").style.display = "block";
+		document.getElementById("search-box").style.display = "block";
 		document.getElementById("user_list").style.display = "none";
 		var res = selecteduserdata.split("_");
 		userName = res[0];
@@ -206,61 +208,95 @@
 <jsp:include page="_header.jsp"></jsp:include>
 <div id="wrapper">
 	<div id="manageuserscontent">
-	<h1>إدارة المستخدمين</h1>
-	<form id="edituserdata" method="post" onsubmit="return validateForm();" action="${pageContext.request.contextPath}/manageusers">
-	<input type="hidden" name="operation_type" value="update">
-			<div id="edituserdatacontent" align="center">
-				<table border="0" style="dir: rtl;">
-					<tr>
-						<td align="right"><input class="input-box" type="text"
-							id="username" name="user_name" readonly></td>
-						<td align="right" style="color: #396266;">اسم المستخدم</td>
-					</tr>
-					<tr>
-						<td align="right"><input class="input-box" type="text"
-							id="useremail" name="user_email"></td>
-						<td align="right" style="color: #396266;">البريد الالكتروني</td>
-					</tr>
-					<tr>
-						<td align="right"><input class="input-box" type="text"
-							id="userid" name="user_id"></td>
-						<td align="right" style="color: #396266;">الرقم القومي</td>
-					</tr>
-					<tr>
-						<td align="right"><input class="input-box" type="text"
-							id="usertelephone" name="user_telephone"></td>
-						<td align="right" style="color: #396266;">التليفون</td>
-					</tr>
-					<tr>
-						<td align="right"><input class="input-box" type="password"
-							id="userpassword" name="user_password"></td>
-						<td align="right" style="color: #396266;">كلمة المرور الجديدة</td>
-					</tr>
-					<tr>
-						<td align="right"><input class="input-box" type="password"
-							id="userpasswordconfirm" name="user_password_confirm"></td>
-						<td align="right" style="color: #396266;">تأكيد كلمة المرور</td>
-					</tr>
-					<tr>
-								<td colspan="2"><span id='confirmpassmessage'></span></td>
-					</tr>
-					<tr>
-						<td align="right"><select id="userrole"
-							name="user_role" size="1" style="width: 80px;">
+		<div id="search-row" class="row justify-content-center align-items-center"> 
+					<div id="search-column" class="col-md-6">
+						<div id="search-box" class="col-md-12">
+							<form id="edituserdata" method="post" onsubmit="return validateForm();" action="${pageContext.request.contextPath}/manageusers">
+							<input type="hidden" name="operation_type" value="update">
+	
+			<!-- <div id="edituserdatacontent" class="col-md-12"> -->
+				<h3 class="text-center text-info">إدارة المستخدمين</h3>
+				<div class="form-group">
+					<label for="user_name" class="text-info" style="float: right;">
+							اسم المستخدم
+					</label>
+					
+					<input class="form-control" type="text"
+							id="username" name="user_name" readonly>
+				</div>
+				
+				<div class="form-group">
+					<label for="user_email" class="text-info" style="float: right;">
+							البريد الالكتروني
+					</label>
+					 
+					<input class="form-control" type="text"
+							id="useremail" name="user_email" >
+				</div>
+				
+				
+				<div class="form-group">
+					<label for="user_id" class="text-info" style="float: right;">
+							الرقم القومي
+					</label>
+					
+					<input class="form-control" type="text"
+							id="userid" name="user_id" >
+				</div>
+				
+				
+				<div class="form-group">
+					<label for="user_telephone" class="text-info" style="float: right;">
+							التليفون
+					</label>
+					
+					<input class="form-control" type="text"
+							id="usertelephone" name="user_telephone" >
+				</div>
+				
+				
+					<div class="form-group">
+					<label for="user_password" class="text-info" style="float: right;">
+							كلمة المرور الجديدة
+					</label>
+					
+					<input class="form-control" type="password"
+							id="userpassword" name="user_password" >
+				</div>
+				
+				
+				<div class="form-group">
+					<label for="user_password_confirm" class="text-info" style="float: right;">
+							تأكيد كلمة المرور
+					</label>
+				
+					<input class="form-control" type="password"
+							id="userpasswordconfirm" name="user_password_confirm" >
+				</div>
+				
+				
+				<div class="form-group">
+					<span id='confirmpassmessage'></span>
+				</div>
+				
+				<div class="form-group">
+					<label for="user_role" class="text-info" style="float: right;">
+							الوظيفة
+					</label>
+					<select id="userrole" class="form-control" style="width: 100%; direction: rtl;"
+							name="user_role" size="1">
 								<option value='2'>مشرف موقع</option>
 								<option value='3'>موظف</option>
 								<option value='1'>زائر</option>
-						</select></td>
-						<td align="right" style="color: #3d6266;">الوظيفة</td>
-					</tr>
-				</table>
-				<br> <br>
-				<h2 align="center">
-					<input type="button" value="الغاء" onclick="cancel()" class="btnsearch" id="cancelBtn">
-					<input type="submit" value="حفظ" class="btnsearch" id="saveBtn">
-				</h2>
-			</div>
+						</select>
+				</div>
+				
+				<div class="form-group">
+					<input type="button" value="الغاء" onclick="cancel()" class="btn btn-info btn-md" id="cancelBtn">
+					<input type="submit" value="حفظ" class="btn btn-info btn-md" id="saveBtn">
+				</div>	
 	</form>
+	</div>
 	
 	<div align="center" id='user_list' style="padding-top: 10em;"></div>
 		<div class="form-group">
@@ -291,6 +327,8 @@
 				}
 			%>
 		</div>
+	</div>
+	</div>
 	</div>
 	</div>
 	<jsp:include page="_footer.jsp"></jsp:include>

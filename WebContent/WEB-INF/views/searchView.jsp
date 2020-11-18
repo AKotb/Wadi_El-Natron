@@ -1,26 +1,31 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
-<title>البحث</title>
+<title>البحث في المزارع</title>
+
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="" />
 <meta name="description" content="" />
-<link href="http://fonts.googleapis.com/css?family=Montserrat:400,700"
-	rel="stylesheet" />
+<!-- <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700"
+	rel="stylesheet" /> -->
+<link
+	href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+	rel="stylesheet" id="bootstrap-css">
 <link href="resources/default.css" rel="stylesheet" type="text/css"
 	media="all" />
 <link href="resources/fonts.css" rel="stylesheet" type="text/css"
 	media="all" />
-<link rel="stylesheet" href="resources/tooplate-style.css"
+<!-- <link rel="stylesheet" href="resources/tooplate-style.css"
 	type="text/css" media="all" />
 <link rel="stylesheet" href="resources/beheira.css" type="text/css"
-	media="all" />
+	media="all" /> -->
 <script>
 		window.onload = function() {
 			document.getElementById("searchresultscontent").style.display = "block";
-			document.getElementById("searchformcontent").style.display = "block";
+			document.getElementById("searchcontent").style.display = "block";
 			document.getElementById("editformcontent").style.display = "none";
 			farmsjson = '${farms}';
 			var num_of_items = 0;
@@ -92,8 +97,9 @@
 					}
 
 					results = results
-							+ '<tr class=\"resulttr\">'
-							+ '<td align=\"center\" style=\"width:20%;\">'
+							+'<tbody>'
+							+ '<tr>'
+							+ '<td>'
 							+ '<button onclick=\"editfarmdata(\''
 							+ farmid
 							+ '_'
@@ -108,19 +114,19 @@
 							+ ownertel
 							+ '_'
 							+ ownership
-							+ '\')\" class=\"button\" id=\"editselectedfarmBtn\">تعديل</button>'
+							+ '\')\" class=\"btnsearch\" id=\"editselectedfarmBtn\">تعديل</button><br>'
 							+ '<button onclick=\"displayonmap('
 							+ farmid
-							+ ')\" class=\"button\" id=\"showSearchResultsBtn\">عرض على الخريطة</button>'
-							+ '</td>' + '<td align=\"right\" style=\"width:5%;\">' + fileno
-							+ '</td>' + '<td align=\"right\" style=\"width:5%;\">' + displayedownership
-							+ '</td>'+ '<td align=\"right\" style=\"width:40%;\"><div style=\"word-break:break-all;\">' + ownername
-							+ '</div></td>' + '<td align=\"right\" style=\"width:30%;\"><div style=\"word-break:break-all;\">' + farmname
-							+ '</div></td>' + '<td style=\"width:5%;\">' + farmid + '</td>' + '</tr>';
+							+ ')\" class=\"btnsearch\" id=\"showSearchResultsBtn\">الخريطة</button>'
+							+ '</td>' + '<td>' + fileno
+							+ '</td>' + '<td>' + displayedownership
+							+ '</td>'+ '<td>' + ownername
+							+ '</td>' + '<td>' + farmname
+							+ '</td>' + '<td>' + farmid + '</td>' + '</tr></tbody>';
 				}
 			}
 			if (num_of_items > 0) {
-				var search_header = '<div align=\"center\"><h3 align=\"center\">تم إيجاد '
+				var search_header = '<div class=\"col-md-12\"><h3 class=\"text-center text-info\">تم إيجاد '
 						+ num_of_items
 						+ ' من نتائج البحث </h3><br>'
 						+ '<form action="${pageContext.request.contextPath}/search" method="post">'
@@ -128,20 +134,21 @@
 						+ '<input type="hidden" name="firstrow" value="${firstrow}">'
 						+ '<input type="hidden" name="rowcount" value="${rowcount}">'
 					    + '</form>'
-						+'<table border=\"0\" align=\"center\" style=\"width:90%;\">'
+						+'<table class=\"table table-hover\">'
+						+'<thead class=\"thead-light\">'
 						+ '<tr>'
-						+ '<th class=\"resultth\">إعدادات</th>'
-						+ '<th class=\"resultth\"> رقم الملف </th>'
-						+ '<th class=\"resultth\"> نوع الحيازة </th>'
-						+ '<th class=\"resultth\">اسم المالك / واضع اليد</th>'
-						+ '<th class=\"resultth\">اسم المزرعة / الشركة</th>'
-						+ '<th class=\"resultth\"> كود المزرعة </th>' + '</tr>';
+						+ '<th scope=\"col\">إعدادات</th>'
+						+ '<th scope=\"col\"> رقم الملف </th>'
+						+ '<th scope=\"col\"> نوع الحيازة </th>'
+						+ '<th scope=\"col\">اسم المالك / واضع اليد</th>'
+						+ '<th scope=\"col\">اسم المزرعة / الشركة</th>'
+						+ '<th scope=\"col\"> كود المزرعة </th>' + '</tr></thead>';
 
 				results = search_header + results
 						+ '</table></div><br><br><br><br><br><br><br><br>';
 				document.getElementById('searchresultscontent').innerHTML = results;
 			} else {
-				document.getElementById('searchresultscontent').innerHTML = '<div align=\"center\"><h3>عفوا ، لا توجد نتائج</h3></div>';
+				document.getElementById('searchresultscontent').innerHTML = '<div align=\"center\"><h3 class=\"text-center text-info\">عفوا ، لا توجد نتائج</h3></div>';
 			}
 		}
 
@@ -174,7 +181,7 @@
 	function editfarmdata(selectedfarmdata) {
 		document.getElementById("editformcontent").style.display = "block";
 		document.getElementById("searchresultscontent").style.display = "none";
-		document.getElementById("searchformcontent").style.display = "none";
+		document.getElementById("searchcontent").style.display = "none";
 		var res = selectedfarmdata.split("_");
 		farmid = res[0];
 		if (farmid) {
@@ -227,7 +234,7 @@
 		if (UserRole != "null") {
 			if (UserRole == "2" || UserRole == "3") {
 				document.getElementById("searchresultscontent").style.display = "block";
-				document.getElementById("searchformcontent").style.display = "block";
+				//document.getElementById("searchformcontent").style.display = "block";
 				document.getElementById("editformcontent").style.display = "none";
 				return true;
 			} else {
@@ -254,8 +261,12 @@
 <script
 	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDxcedr1zrD8h225vpj3hNseos5mHGEDVY"
 	async defer></script>
-<script src="resources/js/jquery.js"></script>
-<script src="resources/js/bootstrap.min.js"></script>
+<script
+	src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script
+	src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<!-- <script src="resources/js/jquery.js"></script>
+<script src="resources/js/bootstrap.min.js"></script> -->
 <script src="resources/js/jquery.sticky.js"></script>
 <script src="resources/js/jquery.stellar.min.js"></script>
 <script src="resources/js/wow.min.js"></script>
@@ -267,116 +278,152 @@
 	<jsp:include page="_header.jsp"></jsp:include>
 	<div id="wrapper">
 
+		<div id="searchcontent" dir=rtl>
+				<div id="search-row" class="row justify-content-center align-items-center"> 
+					<div id="search-column" class="col-md-6">
+						<div id="search-box" class="col-md-12">
 		<form id="searchformid" onsubmit="return validateSearchForm()"
 			method="post" action="${pageContext.request.contextPath}/search">
-			<div id="searchformcontent" align="center">
-				<h1>البحث في المزارع</h1>
+				<h3 class="text-center text-info">البحث في المزارع</h3>
 				<input type="hidden" name="form_type" value="searchform">
-				<table border="0" style="dir: rtl;">
-					<tr>
-						<td align="right"><input class="input-box" type="text"
-							id="farm_name" name="farm_name" value=""></td>
-						<td align="right" style="color: #3d6266;">اسم المزرعة /
-							الشركة</td>
-					</tr>
-					<tr>
-						<td align="right"><input class="input-box" type="text"
-							id="file_no" name="file_no" value=""></td>
-						<td align="right" style="color: #3d6266;">رقم الملف</td>
-					</tr>
-					<tr>
-						<td align="right">
-							<select id="ownership_status" name="ownership_status" style="width: 100%; direction: rtl;">
+				<div class="form-group">
+					<label for="farm_name" class="text-info" style="float: right;">اسم المزرعة /
+							الشركة
+					</label>
+					<br> 
+					<input class="form-control" type="text"
+							id="farm_name" name="farm_name" value="">
+				</div>
+				
+				<div class="form-group">
+					<label for="file_no" class="text-info" style="float: right;">رقم الملف
+					</label>
+					<br> 
+					<input class="form-control" type="text"
+							id="file_no" name="file_no" value="">
+				</div>
+				
+				<div class="form-group">
+					<label for="ownership_status" class="text-info" style="float: right;">نوع الحيازة
+					</label>
+					<br> 
+					<select id="ownership_status" class="form-control" name="ownership_status" style="width: 100%; direction: rtl;">
 								<option value="">اختر</option>
 								<option value="1">عقد محافظة</option>
 								<option value="2">تمليك (عقود مسجلة)</option>
 								<option value="3">قرار تصرف</option>
 								<option value="4">وضع يد</option>
-							</select></td>
-						<td align="right" style="color: #396266;">نوع الحيازة</td>
-					</tr>
-					<tr>
-						<td align="right"><input class="input-box" type="text"
-							id="owner" name="owner_name" value=""></td>
-						<td align="right" style="color: #3d6266;">اسم المالك / واضع
-							اليد</td>
-					</tr>
-					<tr>
-						<td align="right"><input class="input-box" type="text"
-							id="sid" name="owner_id" value=""></td>
-						<td align="right" style="color: #3d6266;">الرقم القومى</td>
-					</tr>
-					<tr>
-						<td align="right"><input class="input-box" type="text"
-							id="phone" name="owner_telephone" value=""></td>
-						<td align="right" style="color: #3d6266;">التليفون</td>
-					</tr>
-				</table>
+					</select>
+				</div>
+				
+				<div class="form-group">
+					<label for="owner_name" class="text-info" style="float: right;">اسم المالك / واضع
+							اليد
+					</label>
+					<br> 
+					<input class="form-control" type="text"
+							id="owner" name="owner_name" value="">
+				</div>
+				
+				<div class="form-group">
+					<label for="owner_id" class="text-info" style="float: right;">الرقم القومى
+					</label>
+					<br> 
+					<input class="form-control" type="text"
+							id="sid" name="owner_id" value="">
+				</div>
+				
+				<div class="form-group">
+					<label for="owner_telephone" class="text-info" style="float: right;">التليفون
+					</label>
+					<br> 
+					<input class="form-control" type="text"
+							id="phone" name="owner_telephone" value="">
+				</div>
+				
 				<div id="errormsg"></div>
 
-				<h2 align="center">
-					<input type="submit" value="بحث" class="button btnsearch"
-						id="searchBtn">
-				</h2>
-			</div>
+				<div class="form-group">
+				<br> 
+					<input type="submit" value="بحث" class="btn btn-info btn-md" style="margin-left: 120px;" id="searchBtn">
+				</div>
+			
 		</form>
-
+		</div></div></div></div>
+		<div id="editsearchcontent" dir=rtl>
+			
+				<div id="editformcontent" class="row justify-content-center align-items-center">
+					<div id="search-column" class="col-md-12">
+						<div id="search-box" class="col-md-12">
 		<form id="editformid" onsubmit="return validateEditForm()"
 			method="post" action="${pageContext.request.contextPath}/search">
-			<div id="editformcontent" align="center">
-				<h1>تعديل بيانات المزرعة</h1>
+				<h3 class="text-center text-info">تعديل بيانات المزرعة</h3>
 				<input type="hidden" name="form_type" value="editform">
-				<table border="0" style="dir: rtl;">
-					<tr>
-						<td align="right"><input class="input-box" type="text"
-							id="farmid" name="farm_id" readonly></td>
-						<td align="right" style="color: #396266;">كود المزرعة</td>
-					</tr>
-					<tr>
-						<td align="right"><input class="input-box" type="text"
-							id="farmname" name="farm_name"></td>
-						<td align="right" style="color: #396266;">اسم المزرعة</td>
-					</tr>
-					<tr>
-						<td align="right"><input class="input-box" type="text"
-							id="fileno" name="file_no"></td>
-						<td align="right" style="color: #396266;">رقم الملف</td>
-					</tr>
-					<tr>
-						<td align="right">
-							<select id="ownership" name="ownership_status" style="width: 100%; direction: rtl;">
+				
+				<div class="form-group">
+					<label for="farm_id" class="text-info" style="float: right;">كود المزرعة</label>
+					<br> 
+					<input class="form-control" type="text"
+							id="farmid" name="farm_id" readonly>
+				</div>
+				
+				<div class="form-group">
+					<label for="farm_name" class="text-info" style="float: right;">اسم المزرعة /
+							الشركة
+					</label>
+					<br> 
+					<input class="form-control" type="text"
+							id="farmname" name="farm_name">
+				</div>
+				
+				<div class="form-group">
+					<label for="file_no" class="text-info" style="float: right;">رقم الملف</label>
+					<br> 
+					<input class="form-control" type="text"
+							id="fileno" name="file_no">
+				</div>
+				
+				<div class="form-group">
+					<label for="ownership_status" class="text-info" style="float: right;">نوع الحيازة
+					</label>
+					<br> 
+					<select id="ownership" class="form-control" name="ownership_status" style="width: 100%; direction: rtl;">
 								<option value="">اختر</option>
 								<option value="1">عقد محافظة</option>
 								<option value="2">تمليك (عقود مسجلة)</option>
 								<option value="3">قرار تصرف</option>
 								<option value="4">وضع يد</option>
-							</select></td>
-						<td align="right" style="color: #396266;">نوع الحيازة</td>
-					</tr>
-					<tr>
-						<td align="right"><input class="input-box" type="text"
-							id="ownername" name="owner_name"></td>
-						<td align="right" style="color: #396266;">اسم المالك</td>
-					</tr>
-					<tr>
-						<td align="right"><input class="input-box" type="text"
-							id="ownerid" name="owner_id"></td>
-						<td align="right" style="color: #396266;">الرقم القومي</td>
-					</tr>
-					<tr>
-						<td align="right"><input class="input-box" type="text"
-							id="ownertel" name="owner_telephone"></td>
-						<td align="right" style="color: #396266;">التليفون</td>
-					</tr>
-				</table>
-				<br> <br>
-				<h2 align="center">
-					<button onclick="cancel()" class="btnsearch" id="cancelBtn">الغاء</button>
-					<input type="submit" value="حفظ" class="btnsearch" id="saveBtn">
-				</h2>
-			</div>
+					</select>
+				</div>
+				
+				<div class="form-group">
+					<label for="owner_name" class="text-info" style="float: right;">اسم المالك</label>
+					<br> 
+					<input class="form-control" type="text"
+							id="ownername" name="owner_name">
+				</div>
+				
+				<div class="form-group">
+					<label for="owner_id" class="text-info" style="float: right;">الرقم القومي</label>
+					<br> 
+					<input class="form-control" type="text"
+							id="ownerid" name="owner_id">
+				</div>
+				
+				<div class="form-group">
+					<label for="owner_telephone" class="text-info" style="float: right;">التليفون</label>
+					<br> 
+					<input class="form-control" type="text"
+							id="ownertel" name="owner_telephone">
+				</div>
+				
+				<div class="form-group">
+				<br>
+					<input type="submit" value="حفظ" class="btn btn-info btn-md" id="saveBtn">
+					<button onclick="cancel()" class="btn btn-info btn-md" id="cancelBtn" style="margin-left: 120px;">الغاء</button>
+				</div>
 		</form>
-
+		</div></div></div></div>
 		<div id="searchresultscontent"></div>
 
 	</div>

@@ -532,7 +532,7 @@ px
 #editformcontent {
 	padding: 120px;
 	background-color: rgb(240, 240, 240);
-	border: 1px solid black;
+	/*border: 1px solid black;*/
 	margin: auto;
 }
 
@@ -547,7 +547,7 @@ px
 #searchresultscontent {
 	padding: 20px;
 	background-color: rgb(240, 240, 240);
-	border: 1px solid black;
+	/*border: 1px solid black;*/
 	height: 100%;
 }
 
@@ -616,6 +616,25 @@ px
 	color: #f9f9f9;
 	height: 85%;
 	padding-top: 10%;
+}
+
+#searchcontent {
+	padding: 5em 5em;
+	background-color: rgb(240, 240, 240);
+	/*border: 1px solid black;*/
+}
+
+#editsearchcontent
+{
+    padding: 5em 5em;
+    background-color: rgb(240, 240, 240);
+    /* border: 1px solid black; */
+}
+
+#vouchercontent {
+	padding: 5em 5em;
+	background-color: rgb(240, 240, 240);
+	/*border: 1px solid black;*/
 }
 /*********************************************************************************/
 /* Sidebar                                                                       */
@@ -1180,3 +1199,136 @@ input.hidden {
     height: 280px;
     width: 100%;
 }
+
+/******************************************/
+New Design CSS
+/******************************************/
+
+.beh_title_decorated{
+				width:100%;
+				height:100%;
+				padding:0;
+				color:#efe;
+				font-size:2.5vw;
+				font-weight:bold;
+				line-height: 3;
+			}
+			
+.beh_header_banner{
+				width:30%;
+				height:100%;
+				padding:0;
+				margin:0;
+				background-color:#79C255;
+				float:left;
+				overflow:hidden;
+			}			
+
+.beh_header_banner > a > img{
+	width: 100%;
+	height: 100%;
+}
+
+.beh_header_banner > a{
+	width: 100%;
+	height: 100%;
+}
+
+.beh_header{
+				width:100%;
+				height:15%;
+				padding:0.5% 0;
+				margin:0;
+				background-color:#79C255;
+			}
+			
+.beh_header_login{
+				width:10%;
+				height:100%;
+				padding:0;
+				margin:0;
+				background-color:#79C255;
+				float:left;
+				overflow:hidden;
+				color:#efe;
+				font-size:1.5vw;
+				font-weight:bold;
+				line-height: 2;
+			}
+			
+.beh_header_nav{
+				width:30%;
+				height:100%;
+				padding:0;
+				margin:0;
+				background-color:#79C255;
+				float:left;
+				overflow:hidden;
+			}
+		
+.beh_header_title{
+				width:30%;
+				height:100%;
+				padding:0;
+				margin:0;
+				background-color:#79C255;
+				float:left;
+				overflow:hidden;
+			}
+				
+.beh_nav_item{
+				width:14%;
+				height:100%;
+				padding:0;
+				margin:0;
+				background-color:#79C255;
+				float:left;
+				overflow:hidden;
+			}
+			
+.beh_container{
+				width:100%;
+				height:100%;
+				text-align: center;
+				font-size: 2vw;
+			}
+			
+.beh_footer{
+				width:100%;
+				height:6.8%;
+				padding:0.5% 0;
+				margin:0;
+				background-color:#79C255;
+				font-size: 1.5vw;
+				font-weight: bold;
+				line-height: 2;
+			}
+			
+.beh_main{
+				width:100%;
+				height:74%;
+				padding:0;
+				margin:0;
+				background-color:#afb;
+			}
+			
+.beh_main_side{
+				width:23%;
+				height:100%;
+				padding:0.5%;
+				margin:0;
+				background-color:#79C255;
+				color: #333333;
+				float:left;
+				overflow:hidden;
+			}
+			
+.beh_main_map{
+				width:75%;
+				height:100%;
+				padding:0.5%;
+				margin:0;
+				background-color:#79C255;
+				float:left;
+				overflow:hidden;
+			}
