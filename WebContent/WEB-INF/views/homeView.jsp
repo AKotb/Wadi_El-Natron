@@ -25,6 +25,7 @@
 <link rel="stylesheet" href="resources/beheira.css" type="text/css"
 	media="all"/>
 <title>الرئيسية</title>
+<!-- Test Commit by Ehab -->
 <style type="text/css">
  #latlng_floating-panel {
  		position: absolute;

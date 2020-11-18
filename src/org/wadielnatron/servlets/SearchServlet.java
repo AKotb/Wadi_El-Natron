@@ -16,8 +16,6 @@ import javax.servlet.http.HttpSession;
 import org.wadielnatron.beans.Farm;
 import org.wadielnatron.dao.FarmDAO;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-
 /**
  * @author ahmed.kotb
  *
@@ -40,12 +38,10 @@ public class SearchServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		List<Farm> farmsList = null;
-		ObjectMapper mapper = null;
-		String farmsInjson = null;
 		FarmDAO farmdao = null;
-		
+
 		String formType = request.getParameter("form_type");
-		if(formType != null){
+		if (formType != null) {
 			// select ploygon on map
 			if (formType.equals("displayonmap")) {
 				String polygonID = request.getParameter("polygon_id");
@@ -69,25 +65,37 @@ public class SearchServlet extends HttpServlet {
 				String ownerTelephone = request.getParameter("owner_telephone");
 				String ownership = request.getParameter("ownership_status");
 				String fileNo = request.getParameter("file_no");
+				int nOfPages = 1;
+				int rows = 1;
 
 				// search for farms
 				if (formType.equals("searchform")) {
-					System.out.println("=====FarmName: " + farmName);
-					System.out.println("=====ownerId: " + ownerId);
-					System.out.println("=====ownerName: " + ownerName);
-					System.out.println("=====ownerTelephone: " + ownerTelephone);
-					System.out.println("=====ownership: " + ownership);
-					System.out.println("=====fileNo: " + fileNo);
+					// For Pagination
 					try {
+						response.setContentType("text/html;charset=UTF-8");
+						int currentPage = Integer.parseInt(request.getParameter("currentPage"));
+						int recordsPerPage = Integer.parseInt(request.getParameter("recordsPerPage"));
 						farmdao = new FarmDAO();
-						farmsList = farmdao.getAllFarms(farmName, ownerId, ownerName, ownerTelephone, ownership, fileNo);
+						farmsList = farmdao.findFarms(farmName, ownerId, ownerName, ownerTelephone, ownership, fileNo,
+								currentPage, recordsPerPage);
+						rows = (farmdao.getAllFarms(farmName, ownerId, ownerName, ownerTelephone, ownership, fileNo))
+								.size();
+						nOfPages = rows / recordsPerPage;
+						if (nOfPages % recordsPerPage > 0) {
+							nOfPages++;
+						}
 						farmdao.closeDBConn();
+						request.setAttribute("farmspg", farmsList);
+						request.setAttribute("noOfPages", nOfPages);
+						request.setAttribute("currentPage", currentPage);
+						request.setAttribute("recordsPerPage", recordsPerPage);
+						request.setAttribute("farm_ownership_status", ownership);
+						request.setAttribute("noofrows", rows + "");
+					} catch (NumberFormatException e) {
+						System.out.println("No Pages to Show!");
 					} catch (Exception e) {
 						e.printStackTrace();
 					}
-					mapper = new ObjectMapper();
-					farmsInjson = mapper.writeValueAsString(farmsList);
-					request.setAttribute("farms", farmsInjson);
 				} else {
 					// edit farm data
 					String farmId = request.getParameter("farm_id");
@@ -116,9 +124,9 @@ public class SearchServlet extends HttpServlet {
 							} catch (Exception e) {
 								e.printStackTrace();
 							}
-							mapper = new ObjectMapper();
-							farmsInjson = mapper.writeValueAsString(farmsList);
-							request.setAttribute("farms", farmsInjson);
+							request.setAttribute("farmspg", farmsList);
+							request.setAttribute("farm_ownership_status", ownership);
+							request.setAttribute("noofrows", "1");
 						} else {
 							httpsession.setAttribute("updateFarmData", "برجاء المراجعة مع الموظف المختص");
 						}
@@ -130,7 +138,7 @@ public class SearchServlet extends HttpServlet {
 						.getRequestDispatcher("/WEB-INF/views/searchView.jsp");
 				dispatcher.forward(request, response);
 			}
-		}else{
+		} else {
 			RequestDispatcher dispatcher = this.getServletContext()
 					.getRequestDispatcher("/WEB-INF/views/searchView.jsp");
 			dispatcher.forward(request, response);

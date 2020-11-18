@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 html, body {
 	height: 100%;
 }
@@ -1332,3 +1333,1239 @@ New Design CSS
 				float:left;
 				overflow:hidden;
 			}
+=======
+html, body {
+	height: 100%;
+}
+
+body {
+	margin: 0px !important;
+	padding: 0px !important;
+	background: #79C255 !important;
+	font-family: 'Montserrat', sans-serif !important;
+	font-size: 11pt !important;
+	font-weight: 200 !important;
+	color: #656565 !important;
+}
+
+h1, h2, h3 {
+	margin: 0;
+	padding: 0;
+	font-weight: 700;
+	color: #2B3F48;
+}
+
+p, ol, ul {
+	margin-top: 0;
+}
+
+ol, ul {
+	padding: 0;
+	list-style: none;
+}
+
+ul.actions {
+	text-align: center;
+}
+
+ul.actions li {
+	
+}
+
+p {
+	line-height: 180%;
+}
+
+strong {
+	
+}
+
+a {
+	color: #0000FF;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+.container {
+	overflow: hidden;
+	margin: 0em auto;
+	width: 1000px;
+}
+
+/*********************************************************************************/
+/* Image Style                                                                   */
+/*********************************************************************************/
+.image {
+	display: inline-block;
+}
+
+.image img {
+	display: block;
+	width: 100%;
+}
+
+.image-full {
+	display: block;
+	width: 100%;
+	margin: 0 0 2em 0;
+}
+
+.image-left {
+	float: left;
+	margin: 0 2em 2em 0;
+}
+
+.image-centered {
+	display: block;
+	margin: 0 0 2em 0;
+}
+
+.image-centered img {
+	margin: 0 auto;
+	width: auto;
+}
+
+/*********************************************************************************/
+/* List Styles                                                                   */
+/*********************************************************************************/
+ul.staff {
+	margin-bottom: 3em;
+}
+
+ul.staff li {
+	display: inline-block;
+}
+
+ul.staff li img {
+	width: 80%;
+	border-radius: 50%;
+}
+
+/*********************************************************************************/
+/* Social Icon Styles                                                            */
+/*********************************************************************************/
+ul.contact {
+	margin: 0;
+	padding: 2em 0em 0em 0em;
+	list-style: none;
+}
+
+ul.contact li {
+	display: inline-block;
+	padding: 0em 0.30em;
+	font-size: 1em;
+}
+
+ul.contact li span {
+	display: none;
+	margin: 0;
+	padding: 0;
+}
+
+ul.contact li a {
+	color: #FFF;
+}
+
+ul.contact li a:before {
+	display: inline-block;
+	background: #3f3f3f;
+	width: 40px;
+	height: 40px;
+	line-height: 40px;
+	border-radius: 20px;
+	text-align: center;
+	color: #FFFFFF;
+}
+
+ul.contact li a.icon-twitter:before {
+	background: #2DAAE4;
+}
+
+ul.contact li a.icon-facebook:before {
+	background: #39599F;
+}
+
+ul.contact li a.icon-dribbble:before {
+	background: #C4376B;
+}
+
+ul.contact li a.icon-tumblr:before {
+	background: #31516A;
+}
+
+ul.contact li a.icon-rss:before {
+	background: #F2600B;
+}
+
+/*********************************************************************************/
+/* Button Style                                                                  */
+/*********************************************************************************/
+
+/* 	.button
+	{
+		display: inline-block;
+		padding: 0em 3em;
+		background: #79C255;
+		border-radius: 8px;
+		letter-spacing: 0.20em;
+		line-height: 4em;
+		text-decoration: none;
+		text-transform: uppercase;
+		font-weight: 400;
+		font-size: 1em;
+		color: #FFF;
+	} */
+.button:before {
+	display: inline-block;
+	background: #FFC31F;
+	margin-right: 1em;
+	width: 40px;
+	height: 40px;
+	line-height: 40px;
+	border-radius: 20px;
+	text-align: center;
+	color: #272925;
+}
+
+/*********************************************************************************/
+/* Heading Titles                                                                */
+/*********************************************************************************/
+.title {
+	margin-bottom: 3em;
+}
+
+.title h2 {
+	text-transform: uppercase;
+	font-size: 2.7em;
+}
+
+.title .byline {
+	font-size: 1.7em;
+	color: #6F6F6F;
+}
+
+/*********************************************************************************/
+/* 4-column                                                                      */
+/*********************************************************************************/
+.box1, .box2, .box3, .box4 {
+	width: 235px;
+}
+
+.box1
+,
+.box2
+,
+.box3
+,
+{
+float
+:
+ 
+left
+;
+
+		
+margin-right
+:
+ 
+20
+px
+;
+
+	
+}
+.box4 {
+	float: right;
+}
+
+/*********************************************************************************/
+/* 3-column                                                                      */
+/*********************************************************************************/
+.boxA, .boxB, .boxC {
+	width: 320px;
+}
+
+.boxA, .boxB {
+	float: left;
+	margin-right: 20px;
+}
+
+.boxC {
+	float: right;
+}
+
+/*********************************************************************************/
+/* 2-column                                                                      */
+/*********************************************************************************/
+.tbox1, .tbox2 {
+	width: 575px;
+}
+
+.tbox1 {
+	float: left;
+}
+
+.tbox2 {
+	float: right;
+}
+
+#wrapper {
+	background: #FFF;
+	border: 1px solid black;
+	/* background: #79C255; */
+	/* background-color: rgb(240, 240, 240); */
+}
+
+#wrappercropping {
+	/* 		background: #FFF; */
+	background: #79C255;
+	height: 75%;
+}
+
+/*********************************************************************************/
+/* Header                                                                        */
+/*********************************************************************************/
+#header {
+	/*position: relative;*/
+	padding: 5em 19em;
+}
+
+#header h1 {
+	position: absolute;
+	color: #FFF;
+	right: 7.5em;
+	top: 1em;
+	font-size: 3.2em;
+}
+
+/*********************************************************************************/
+/* Logo                                                                          */
+/*********************************************************************************/
+#logo {
+	position: absolute;
+	top: 0em;
+	right: 0;
+}
+
+#logo h1 {
+	color: #FFF;
+}
+
+#logo a {
+	text-decoration: none;
+	text-transform: uppercase;
+	/* 		color: #79C255; */
+	color: #FFF;
+}
+
+#logo img {
+	float: right;
+	height: 120px;
+	width: 330px;
+}
+
+/*********************************************************************************/
+/* Menu                                                                          */
+/*********************************************************************************/
+#menu {
+	position: absolute;
+	top: 2.5em;
+	left: 0;
+}
+
+#menu ul {
+	display: inline-block;
+}
+
+#menu li {
+	display: block;
+	float: left;
+	text-align: center;
+}
+
+#menu li a, #menu li span {
+	padding: 1em 0.5em;
+	letter-spacing: 1px;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-size: 0.8em;
+	color: #2B3F48;
+}
+
+#menu li:hover a, #menu li.active a, #menu li.active span {
+	color: #2B3F48;
+}
+
+#menu .current_page_item a {
+	border: 2px solid #79C255;
+	background: #79C255;
+	border-radius: 6px;
+	color: #FFF;
+}
+
+#menu img {
+	width: 77px;
+	height: 77px;
+	border: 0;
+}
+
+/*********************************************************************************/
+/* Banner                                                                        */
+/*********************************************************************************/
+#map-canvas {
+	overflow: hidden;
+	padding: 19em 0em;
+	/* background: url(images/banner.jpg) no-repeat center;
+		background-size: cover;  */
+	text-align: center;
+	color: rgba(255, 255, 255, .8);
+}
+
+#map-canvas .title {
+	margin-bottom: 1em;
+	text-transform: uppercase !important;
+}
+
+#map-canvas .title h2 {
+	color: #FFF;
+}
+
+#map-canvas .title .byline {
+	color: rgba(255, 255, 255, .6);
+}
+
+/* 	#map-canvas .button
+	{
+		margin-top: 3em;
+		background: #589937 !important;
+	} */
+
+/*********************************************************************************/
+/* Page                                                                          */
+/*********************************************************************************/
+#page {
+	padding: 2em 0em 5em 0em;
+	text-align: center;
+}
+
+#page .button {
+	margin-top: 2em;
+	display: inline-block;
+	text-align: center;
+}
+
+/*********************************************************************************/
+/* Content                                                                       */
+/*********************************************************************************/
+#aboutuscontent {
+	padding: 1% 5% 1% 5%;;
+	background-color: rgb(240, 240, 240);
+	border: 1px solid black;
+	height: 100%;;
+}
+
+#aboutuscontent p {
+	text-align: justify;
+    margin: 0.5% 0 0.5% 7%;
+    font-weight: 600;
+    font-family: 'Titillium Web', sans-serif;
+    position: relative;
+    font-size: 31px;
+    line-height: 40px;
+    padding: 15px 15px 15px 1%;
+    color: #355681;
+    box-shadow: inset 0 0 0 1px rgba(53,86,129, 0.4), inset 0 0 5px rgba(53,86,129, 0.5), inset -285px 0 35px white;
+    border-radius: 10px 10px 10px 10px;
+    background: #fff;
+    width: 83%;
+}
+
+#regulationsandlawscontent {
+	padding: 8em 5em;
+	background-color: rgb(240, 240, 240);
+	border: 1px solid black;
+}
+
+#regulationsandlawscontent h1 {
+	position: absolute;
+	color: #272925;
+	right: 12em;
+	top: 3.5em;
+	font-size: 3.5em;
+}
+
+#regulationsandlawscontent p {
+	text-align: right;
+	font-size: 1.6em;
+	color: rgba(0, 0, 0, 0.8);
+}
+
+#logincontent {
+	padding: 11em 5em;
+	background-color: rgb(240, 240, 240);
+	border: 1px solid black;
+}
+
+#logincontent h1 {
+	position: absolute;
+	color: #272925;
+	right: 14em;
+	top: 3.5em;
+	font-size: 3.5em;
+}
+
+#forget_passwordcontent {
+	padding: 11em 5em;
+	background-color: rgb(240, 240, 240);
+	border: 1px solid black;
+}
+
+#userinfocontent {
+	padding: 7em 5em;
+	background-color: rgb(240, 240, 240);
+	border: 1px solid black;
+	height: 40em;
+}
+
+#userinfocontent h1 {
+	position: absolute;
+	color: #272925;
+	right: 14em;
+	top: 3.5em;
+	font-size: 3.5em;
+}
+
+#statisticscontent {
+	padding: 8em 5em;
+	background-color: rgb(240, 240, 240);
+	border: 1px solid black;
+	height: 72em;
+}
+
+#statisticscontent h1 {
+	position: absolute;
+	color: #272925;
+	right: 15.5em;
+	top: 3.5em;
+	font-size: 3.5em;
+}
+
+#searchformcontent {
+	padding: 120px;
+	/* background-color: rgb(240, 240, 240); */
+	/* border: 1px solid black; */
+	margin: auto;
+}
+
+#searchformcontent h1 {
+	position: absolute;
+	color: #272925;
+	right: 14em;
+	top: 3.5em;
+	font-size: 3.5em;
+}
+
+#editformcontent {
+	padding: 120px;
+	background-color: rgb(240, 240, 240);
+	border: 1px solid black;
+	margin: auto;
+}
+
+#editformcontent h1 {
+	position: absolute;
+	color: #272925;
+	right: 14em;
+	top: 3.5em;
+	font-size: 3.5em;
+}
+
+#searchresultscontent {
+	padding: 20px;
+	background-color: rgb(240, 240, 240);
+	border: 1px solid black;
+	height: 100%;
+}
+
+#voucherscontent h1 {
+	position: absolute;
+	color: #272925;
+	right: 11em;
+	top: 3.5em;
+	font-size: 3.5em;
+}
+
+#registercontent {
+	padding: 4em 5em;
+	background-color: rgb(240, 240, 240);
+	border: 1px solid black;
+	height: 40em;
+	direction: rtl;
+}
+
+#registercontent h1 {
+	position: absolute;
+	color: #272925;
+	right: 11em;
+	top: 3.5em;
+	font-size: 3.5em;
+}
+
+#manageuserscontent {
+	padding: 20px;
+	background-color: rgb(240, 240, 240);
+	border: 1px solid black;
+	height: 40em;
+}
+
+#manageuserscontent h1 {
+	position: absolute;
+	color: #272925;
+	right: 15em;
+	top: 3.5em;
+	font-size: 3.5em;
+}
+
+#edituserdatacontent {
+	padding: 12em 5em;
+	background-color: rgb(240, 240, 240);
+	border: 1px solid black;
+}
+
+#cropmonitoringcontent{
+	text-align: left;
+	font-size: 0.9em;
+	color: #f9f9f9;
+	height: 85%;
+}
+
+#timechangescontent_db1{
+	text-align: left;
+	font-size: 0.9em;
+	color: #f9f9f9;
+	height: 85%;
+}
+
+#timechangescontent_db2{
+	text-align: left;
+	font-size: 0.9em;
+	color: #f9f9f9;
+	height: 85%;
+	padding-top: 10%;
+}
+/*********************************************************************************/
+/* Sidebar                                                                       */
+/*********************************************************************************/
+#sidebar {
+	
+}
+
+/*********************************************************************************/
+/* Footer                                                                        */
+/*********************************************************************************/
+#footer {
+	
+}
+
+/*********************************************************************************/
+/* Copyright                                                                     */
+/*********************************************************************************/
+#copyright {
+	overflow: hidden;
+	padding: 0em 0em;
+	border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+
+#copyright p {
+	text-align: center;
+	font-size: 1em;
+	color: rgba(255, 255, 255, 0.5);
+}
+
+#copyright a {
+	text-decoration: none;
+	color: rgba(255, 255, 255, 0.8);
+}
+
+#copyright_timechanges {
+	overflow: hidden;
+	padding: 0em 0em;
+	border-top: 1px solid rgba(255, 255, 255, 0.08);
+	margin-top: 40%;
+}
+
+
+#copyright_timechanges p {
+	text-align: center;
+	font-size: 1em;
+	color: rgba(255, 255, 255, 0.5);
+}
+
+#copyright_timechanges a {
+	text-decoration: none;
+	color: rgba(255, 255, 255, 0.8);
+}
+
+/*********************************************************************************/
+/* Featured                                                                      */
+/*********************************************************************************/
+#featured {
+	overflow: hidden;
+	padding: 5em 0em;
+	background: #79C255;
+	color: rgba(255, 255, 255, .8);
+	text-align: center;
+}
+
+#featured a {
+	color: rgba(255, 255, 255, 1);
+}
+
+#featured .button {
+	background: #FFF;
+	margin-top: 3em;
+	font-size: 1em;
+	color: #79C255;
+}
+
+#featured .title {
+	
+}
+
+#featured .title h2 {
+	color: #FFF;
+}
+
+#featured .title .byline {
+	color: rgba(255, 255, 255, .6);
+}
+
+/*********************************************************************************/
+/* Featured                                                                      */
+/*********************************************************************************/
+.box {
+	padding: 3em 2em 2em 2em;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	border-radius: 8px;
+	text-align: center;
+}
+
+#extra {
+	overflow: hidden;
+	padding: 5em 0em;
+}
+
+#extra .title {
+	text-align: center;
+}
+
+#extra .button {
+	margin-top: 5em;
+}
+
+#extra .fa {
+	display: block;
+	margin-bottom: 0.5em;
+	text-align: center;
+	font-size: 3em;
+}
+
+.gallery {
+	overflow: hidden;
+	margin-bottom: 3em;
+}
+
+/****************Login and Register Design **************************************************/
+#login .container #login-row #login-column #login-box {
+	margin-top: 120px;
+	max-width: 600px;
+	height: 320px;
+	border: 1px solid #9C9C9C;
+	background-color: #EAEAEA;
+}
+
+#login .container #login-row #login-column #login-box #login-form {
+	padding: 20px;
+}
+
+#login .container #login-row #login-column #login-box #login-form #register-link
+	{
+	margin-top: -85px;
+}
+
+/********************* drop down menu design **********************************/
+.navbar {
+	overflow: hidden;
+	background-color: #333;
+}
+
+.navbar a {
+	float: left;
+	font-size: 16px;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+}
+
+.dropdown {
+	float: left;
+	overflow: hidden;
+}
+
+.dropdown .dropbtn {
+	font-size: 16px;
+	border: none;
+	outline: none;
+	color: #272925;
+	padding: 14px 33px;
+	background-color: inherit;
+	font-family: inherit;
+	margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+	background-color: #f9f9f9;
+}
+
+.dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: #79C255;
+	min-width: 147px;
+	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+	z-index: 1;
+}
+
+.dropdown-content a {
+	float: none;
+	color: black;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+	text-align: right;
+}
+
+.dropdown-content a:hover {
+	background-color: #f9f9f9;
+}
+
+.dropdown:hover .dropdown-content {
+	display: block;
+}
+
+/*********************** user profile Design *************************/
+input.hidden {
+	position: absolute;
+	left: -9999px;
+}
+
+#profile-image1 {
+	cursor: pointer;
+	width: 100px;
+	height: 100px;
+	border: 2px solid #03b1ce;
+}
+
+.tital {
+	font-size: 16px;
+	font-weight: 500;
+}
+
+.bot-border {
+	border-bottom: 1px #f8f8f8 solid;
+	margin: 5px 0 5px 0
+}
+
+/************************** About us Page style ***************************/
+
+.supervisors_row_about_main {
+	float: right;
+	width: 50%;
+}
+
+.column_about {
+	float: right;
+	width: 16%;
+}
+
+.row_about_main_title {
+	float: right;
+}
+
+.row_about {
+	width: 100%;
+	float: right;
+	margin-right: 3%;
+}
+
+.row_about:after, .row_about_main:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+@media screen and (max-width: 600px) {
+	.column_about {
+		width: 100%;
+		display: block;
+		margin-bottom: 20px;
+	}
+}
+
+.card_about {
+	padding: 0 16px;
+	text-align: center;
+}
+
+.page_title {
+	padding: 16px;
+	text-align: center;
+	color: #555;
+	font-size: 3.5em;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 700;
+}
+
+.page_content {
+	padding: 50px 8%;
+	text-align: right;
+	color: #666;
+	font-size: 2em;
+	line-height: 180%;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 200;
+}
+
+.photo_head {
+	width: 200px;
+	height: 200px;
+	border-radius: 50%;
+	transform: scale(0.8);
+	transition: transform 0.4s ease;
+	filter: saturate(1.5);
+}
+
+.photo_member {
+	width: 200px;
+	height: 200px;
+	border-radius: 50%;
+	transform: scale(0.8);
+	transition: transform 0.4s ease;
+	filter: saturate(1.5);
+}
+
+.photo_head:hover, .photo_member:hover {
+	transform: scale(1);
+}
+
+.person_title {
+	color: #444;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: bold;
+	font-size: 16px;
+}
+
+.person_desc {
+	color: #aaa;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: bold;
+	font-size: 15px;
+}
+
+.card_about:hover {
+	text-shadow: 2px 2px #dfd;
+}
+
+.team_whole {
+	background-image: linear-gradient(#ddd 0%, #eee 50%, #ddd 100%);
+}
+
+.aboutusbanner_class {
+	width: 100%;
+	margin-top: 5%;
+}
+
+.aboutauthority_div {
+	width: 100%;
+}
+
+.team_div {
+	width: 100%;
+	margin-top: 2%;
+}
+
+.governorateteam_div {
+	width:100%;
+	padding-top:2%;
+}
+
+.natronteam_div {
+	width:100%;
+	margin-top:2%;
+}
+
+.dataanalysisteam_div {
+	width:100%;
+	margin-top:2%;
+}
+
+.surveyteam_div {
+	width:100%;
+	margin-top:2%;
+}
+
+.landuseteam_div {
+	width:100%;
+	margin-top:2%;
+}
+
+.devteam_div {
+	width:100%;
+	margin-top:2%;
+}
+
+.center {
+	margin-left: auto; 
+	margin-right: auto;
+	display: block;
+	width: 85%;
+}
+
+.aboutauthority_h1{
+	text-align: center;
+	margin: 0.5% 0% 0.5% 40%;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 36px;
+    padding: 15px 15px 15px 3%;
+    color: #355681;
+    box-shadow: inset 0 0 0 1px rgba(53,86,129, 0.4), inset 0 0 5px rgba(53,86,129, 0.5), inset -285px 0 35px white;
+    border-radius: 10px 10px 10px 10px;
+    width: 14%;
+}
+
+.supervisors_h1{
+	text-align: center;
+	margin: 0.5% 0% 0.5% 40%;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 36px;
+    padding: 15px 15px 15px 1%;
+    color: #355681;
+    box-shadow: inset 0 0 0 1px rgba(53,86,129, 0.4), inset 0 0 5px rgba(53,86,129, 0.5), inset -285px 0 35px white;
+    border-radius: 10px 10px 10px 10px;
+    width: 16%;
+}
+
+.team_h1{
+	text-align: center;
+	margin: 0.5% 0% 0.5% 43%;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 36px;
+    padding: 15px 15px 15px 1%;
+    color: #355681;
+    box-shadow: inset 0 0 0 1px rgba(53,86,129, 0.4), inset 0 0 5px rgba(53,86,129, 0.5), inset -285px 0 35px white;
+    border-radius: 10px 10px 10px 10px;
+    width: 13%;
+}
+
+.beheirateams_h1{
+	text-align: center;
+	margin: 0.5% 0% 0.5% 68%;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 36px;
+    padding: 15px 15px 15px 1%;
+    color: #355681;
+    box-shadow: inset 0 0 0 1px rgba(53,86,129, 0.4), inset 0 0 5px rgba(53,86,129, 0.5), inset -285px 0 35px white;
+    border-radius: 10px 10px 10px 10px;
+    width: 30%;
+}
+
+.narssteams_h1{
+	text-align: center;
+	margin: 0.5% 0% 0.5% 2%;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 36px;
+    padding: 15px 15px 15px 1%;
+    color: #355681;
+    box-shadow: inset 0 0 0 1px rgba(53,86,129, 0.4), inset 0 0 5px rgba(53,86,129, 0.5), inset -285px 0 35px white;
+    border-radius: 10px 10px 10px 10px;
+    width: 30%;
+}
+
+.governorateteam_h3 {
+	text-align: center;
+    margin: 0.5% 0% 0.5% 47%;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 36px;
+    padding: 15px 15px 15px 1%;
+    color: #355681;
+    box-shadow: inset 0 0 0 1px rgba(53,86,129, 0.4), inset 0 0 5px rgba(53,86,129, 0.5), inset -285px 0 35px white;
+    border-radius: 10px 10px 10px 10px;
+    width: 53%;
+}
+
+.natronteam_h3 {
+	text-align: center;
+    margin: 0.5% 0% 0.5% 63%;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 36px;
+    padding: 15px 15px 15px 1%;
+    color: #355681;
+    box-shadow: inset 0 0 0 1px rgba(53,86,129, 0.4), inset 0 0 5px rgba(53,86,129, 0.5), inset -285px 0 35px white;
+    border-radius: 10px 10px 10px 10px;
+    width: 37%;
+}
+
+
+.dataanalysisteam_h3 {
+	text-align: center;
+    margin: 0.5% 0% 0.5% 77%;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 36px;
+    padding: 15px 15px 15px 1%;
+    color: #355681;
+    box-shadow: inset 0 0 0 1px rgba(53,86,129, 0.4), inset 0 0 5px rgba(53,86,129, 0.5), inset -285px 0 35px white;
+    border-radius: 10px 10px 10px 10px;
+    width: 23%;
+}
+
+.surveyteam_h3 {
+	text-align: center;
+    margin: 0.5% 0% 0.5% 76%;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 36px;
+    padding: 15px 15px 15px 1%;
+    color: #355681;
+    box-shadow: inset 0 0 0 1px rgba(53,86,129, 0.4), inset 0 0 5px rgba(53,86,129, 0.5), inset -285px 0 35px white;
+    border-radius: 10px 10px 10px 10px;
+    width: 24%;
+}
+
+.landuseteam_h3 {
+	text-align: center;
+    margin: 0.5% 0% 0.5% 57%;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 36px;
+    padding: 15px 15px 15px 1%;
+    color: #355681;
+    box-shadow: inset 0 0 0 1px rgba(53,86,129, 0.4), inset 0 0 5px rgba(53,86,129, 0.5), inset -285px 0 35px white;
+    border-radius: 10px 10px 10px 10px;
+    width: 43%;
+}
+
+.devteam_h3 {
+	text-align: center;
+    margin: 0.5% 0% 0.5% 54%;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 36px;
+    padding: 15px 15px 15px 1%;
+    color: #355681;
+    box-shadow: inset 0 0 0 1px rgba(53,86,129, 0.4), inset 0 0 5px rgba(53,86,129, 0.5), inset -285px 0 35px white;
+    border-radius: 10px 10px 10px 10px;
+    width: 46%;
+}
+
+.supervisors_container_div{
+	box-shadow: inset 0 0 0 1px rgba(53,86,129, 0.4), inset 0 0 5px rgba(53,86,129, 0.5), inset -285px 0 35px white;
+    border-radius: 10px 10px 10px 10px;
+    height: 280px;
+    width: 83%;
+    margin-left: 7%;
+    margin-top: 2%;
+}
+
+.governorateteam_container_div{
+	box-shadow: inset 0 0 0 1px rgba(53,86,129, 0.4), inset 0 0 5px rgba(53,86,129, 0.5), inset -285px 0 35px white;
+    border-radius: 10px 10px 10px 10px;
+    height: 280px;
+    width: 100%;
+}
+
+.natronteam_container_div{
+	box-shadow: inset 0 0 0 1px rgba(53,86,129, 0.4), inset 0 0 5px rgba(53,86,129, 0.5), inset -285px 0 35px white;
+    border-radius: 10px 10px 10px 10px;
+    height: 280px;
+    width: 100%;
+}
+
+.dataanalysisteam_container_div{
+	box-shadow: inset 0 0 0 1px rgba(53,86,129, 0.4), inset 0 0 5px rgba(53,86,129, 0.5), inset -285px 0 35px white;
+    border-radius: 10px 10px 10px 10px;
+    height: 280px;
+    width: 100%;
+}
+
+.surveyteam_container_div{
+	box-shadow: inset 0 0 0 1px rgba(53,86,129, 0.4), inset 0 0 5px rgba(53,86,129, 0.5), inset -285px 0 35px white;
+    border-radius: 10px 10px 10px 10px;
+    height: 280px;
+    width: 100%;
+}
+
+.landuseteam_container_div{
+	box-shadow: inset 0 0 0 1px rgba(53,86,129, 0.4), inset 0 0 5px rgba(53,86,129, 0.5), inset -285px 0 35px white;
+    border-radius: 10px 10px 10px 10px;
+    height: 280px;
+    width: 100%;
+}
+
+.devteam_container_div{
+	box-shadow: inset 0 0 0 1px rgba(53,86,129, 0.4), inset 0 0 5px rgba(53,86,129, 0.5), inset -285px 0 35px white;
+    border-radius: 10px 10px 10px 10px;
+    height: 280px;
+    width: 100%;
+}
+
+
+/************************************************ Regulations & Laws CSS ****************************************************/
+.regulations-and-laws_title_div {
+    width: 100%;
+}
+
+.regulations-and-laws_h1 {
+    text-align: center;
+    margin: 0.5% 0% 0.5% 40%;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 36px;
+    padding: 15px 15px 15px 3%;
+    color: #355681;
+    box-shadow: inset 0 0 0 1px rgba(53,86,129, 0.4), inset 0 0 5px rgba(53,86,129, 0.5), inset -285px 0 35px white;
+    border-radius: 10px 10px 10px 10px;
+    width: 18%;
+}
+
+#regulationsandlawscontent p {
+    text-align: justify;
+    margin: 1.5% 0 0.5% 7%;
+    font-weight: 600;
+    font-family: 'Titillium Web', sans-serif;
+    position: relative;
+    font-size: 29px;
+    line-height: 40px;
+    padding: 15px 15px 15px 1%;
+    color: #355681;
+    box-shadow: inset 0 0 0 1px rgba(53,86,129, 0.4), inset 0 0 5px rgba(53,86,129, 0.5), inset -285px 0 35px white;
+    border-radius: 10px 10px 10px 10px;
+    background: #fff;
+    width: 83%;
+}
+
+#regulationsandlawscontent ul {
+    text-align: justify;
+    margin: 0.5% 0 0.5% 7%;
+    font-weight: 600;
+    font-family: 'Titillium Web', sans-serif;
+    position: relative;
+    font-size: 22px;
+    line-height: 40px;
+    padding: 15px 15px 15px 1%;
+    color: #355681;
+    box-shadow: inset 0 0 0 1px rgba(53,86,129, 0.4), inset 0 0 5px rgba(53,86,129, 0.5), inset -285px 0 35px white;
+    border-radius: 10px 10px 10px 10px;
+    background: #fff;
+    width: 83%;
+}
+>>>>>>> branch 'master' of https://github.com/AKotb/Wadi_El-Natron.git
