@@ -92,9 +92,8 @@
 					displayedRole = "غير متوفر";
 				}
 				results = results
-						+'<tbody>'
 						+ '<tr>'
-						+ '<td>'
+						+ '<td align=\"center\">'
 						+ '<button onclick=\"edituserdata(\''
 						+ userName
 						+ '_'
@@ -107,42 +106,42 @@
 						+ userRole
 						+ '_'
 						+ i
-						+ '\')\" class=\"button\" id=\"editselectedBtn\">تعديل</button>'
+						+ '\')\" class=\"btn btn-primary\" id=\"editselectedBtn\">تعديل</button>'
 						+ '<button onclick=\"removeuserdata(\''
 						+ userName
-						+ '\')\" class=\"button\" id=\"removeselectedBtn\">حذف</button>'
+						+ '\')\" class=\"btn btn-success\" id=\"removeselectedBtn\" style="\margin-left: 5px;\">حذف</button>'
 						+ '</td>'
-						+ '<td>'
+						+ '<td align=\"right\">'
 						+ displayedRole
 						+ '</td>'
-						+ '<td>'
+						+ '<td align=\"right\">'
 						+ userPhoneNumber
 						+ '</td>'
-						+ '<td>'
+						+ '<td align=\"right\">'
 						+ userIdentifyNumber
 						+ '</td>'
-						+ '<td>'
+						+ '<td align=\"right\">'
 						+ userMail
 						+ '</td>'
-						+ '<td>'
+						+ '<td align=\"right\">'
 						+ userName
-						+ '</td></tr></tbody>';
+						+ '</td></tr>';
 			}
 		}
 		if (num_of_items > 0) {
 			var search_header = '<div class=\"col-md-12\"><h3 class=\"text-center text-info\">تم إيجاد '
 					+ num_of_items
-					+ ' من نتائج البحث </h3><br><table class=\"table table-hover\">'
-					+'<thead class=\"thead-light\">'
+					+ ' من نتائج البحث </h3><br><table class=\"table table-striped table-bordered table-sm\" dir=\"ltr\">'
+					+'<tbody>'
 					+ '<tr>'
-					+ '<th scope=\"col\">إعدادات</th>'
-					+ '<th scope=\"col\"> الوظيفة </th>'
-					+ '<th scope=\"col\"> رقم التليفون </th>'
-					+ '<th scope=\"col\">الرقم القومي</th>'
-					+ '<th scope=\"col\">البريد الالكتروني</th>'
-					+ '<th scope=\"col\"> اسم المستخدم </th>'
-					+ '</tr></thead>';
-			results = search_header + results + '</table></div><br><br><br><br>';
+					+ '<th scope=\"col\" style=\"text-align: center; height: 60px; vertical-align: middle;\">إعدادات</th>'
+					+ '<th scope=\"col\" style=\"text-align: center; height: 60px; vertical-align: middle;\"> الوظيفة </th>'
+					+ '<th scope=\"col\" style=\"text-align: center; height: 60px; vertical-align: middle;\"> رقم التليفون </th>'
+					+ '<th scope=\"col\" style=\"text-align: center; height: 60px; vertical-align: middle;\">الرقم القومي</th>'
+					+ '<th scope=\"col\" style=\"text-align: center; height: 60px; vertical-align: middle;\">البريد الالكتروني</th>'
+					+ '<th scope=\"col\" style=\"text-align: center; height: 60px; vertical-align: middle;\"> اسم المستخدم </th>'
+					+ '</tr>';
+			results = search_header + results + '</tbody></table></div><br><br><br><br>';
 			document.getElementById('user_list').innerHTML = results;
 		} else {
 		}
@@ -207,98 +206,97 @@
 <body>
 <jsp:include page="_header.jsp"></jsp:include>
 <div id="wrapper">
-	<div id="manageuserscontent">
+	<div id="manageuserscontent" dir="rtl">
 		<div id="search-row" class="row justify-content-center align-items-center"> 
-					<div id="search-column" class="col-md-6">
+					<div id="search-column" class="col-md-12">
 						<div id="search-box" class="col-md-12">
 							<form id="edituserdata" method="post" onsubmit="return validateForm();" action="${pageContext.request.contextPath}/manageusers">
 							<input type="hidden" name="operation_type" value="update">
 	
 			<!-- <div id="edituserdatacontent" class="col-md-12"> -->
-				<h3 class="text-center text-info">إدارة المستخدمين</h3>
-				<div class="form-group">
-					<label for="user_name" class="text-info" style="float: right;">
+				<h3 class="text-center text-info">إدارة المستخدمين</h3><br>
+				<table border="0" align="center" style="dir: rtl;">
+					<tr>
+						<td align="right"><label for="user_name" class="text-info" style="float: right;">
 							اسم المستخدم
-					</label>
-					
-					<input class="form-control" type="text"
+							</label>
+						</td>
+						<td align="right"><input class="form-control" type="text"
 							id="username" name="user_name" readonly>
-				</div>
-				
-				<div class="form-group">
-					<label for="user_email" class="text-info" style="float: right;">
+						</td>
+					</tr>
+					<tr>
+						<td align="right"><label for="user_email" class="text-info" style="float: right;">
 							البريد الالكتروني
-					</label>
-					 
-					<input class="form-control" type="text"
+							</label>
+						</td>
+						<td align="right"><input class="form-control" type="text"
 							id="useremail" name="user_email" >
-				</div>
-				
-				
-				<div class="form-group">
-					<label for="user_id" class="text-info" style="float: right;">
+						</td>
+					</tr>
+					<tr>
+						<td align="right"><label for="user_id" class="text-info" style="float: right;">
 							الرقم القومي
-					</label>
-					
-					<input class="form-control" type="text"
+							</label>
+						</td>
+						<td align="right"><input class="form-control" type="text"
 							id="userid" name="user_id" >
-				</div>
-				
-				
-				<div class="form-group">
-					<label for="user_telephone" class="text-info" style="float: right;">
+						</td>
+					</tr>
+					<tr>
+						<td align="right"><label for="user_telephone" class="text-info" style="float: right;">
 							التليفون
-					</label>
-					
-					<input class="form-control" type="text"
+							</label>
+						</td>
+						<td align="right"><input class="form-control" type="text"
 							id="usertelephone" name="user_telephone" >
-				</div>
-				
-				
-					<div class="form-group">
-					<label for="user_password" class="text-info" style="float: right;">
+						</td>
+					</tr>
+					<tr>
+						<td align="right"><label for="user_password" class="text-info" style="float: right;">
 							كلمة المرور الجديدة
-					</label>
-					
-					<input class="form-control" type="password"
+							</label>
+						</td>
+						<td align="right"><input class="form-control" type="password"
 							id="userpassword" name="user_password" >
-				</div>
-				
-				
-				<div class="form-group">
-					<label for="user_password_confirm" class="text-info" style="float: right;">
+						</td>
+					</tr>
+					<tr>
+						<td align="right"><label for="user_password_confirm" class="text-info" style="float: right;">
 							تأكيد كلمة المرور
-					</label>
-				
-					<input class="form-control" type="password"
+							</label>
+						</td>
+						<td align="right"><input class="form-control" type="password"
 							id="userpasswordconfirm" name="user_password_confirm" >
-				</div>
-				
-				
-				<div class="form-group">
-					<span id='confirmpassmessage'></span>
-				</div>
-				
-				<div class="form-group">
-					<label for="user_role" class="text-info" style="float: right;">
+						</td>
+					</tr>
+					<tr>
+						<td align="right"><span id='confirmpassmessage'></span>
+						</td>
+					</tr>
+					<tr>
+						<td align="right"><label for="user_role" class="text-info" style="float: right;">
 							الوظيفة
-					</label>
-					<select id="userrole" class="form-control" style="width: 100%; direction: rtl;"
+							</label>
+						</td>
+						<td align="right"><select id="userrole" class="form-control" style="width: 100%; direction: rtl;"
 							name="user_role" size="1">
 								<option value='2'>مشرف موقع</option>
 								<option value='3'>موظف</option>
 								<option value='1'>زائر</option>
-						</select>
-				</div>
-				
-				<div class="form-group">
-					<input type="button" value="الغاء" onclick="cancel()" class="btn btn-info btn-md" id="cancelBtn">
-					<input type="submit" value="حفظ" class="btn btn-info btn-md" id="saveBtn">
-				</div>	
+							</select>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<h2 align="center">
+						<input type="submit" value="حفظ" class="btn btn-info btn-md" id="saveBtn">
+						<input type="button" value="الغاء" onclick="cancel()" class="btn btn-info btn-md" id="cancelBtn">
+				</h2>
 	</form>
 	</div>
 	
-	<div align="center" id='user_list' style="padding-top: 10em;"></div>
+	<div align="center" id='user_list' style="padding-top: 10em;" dir="ltr"></div>
 		<div class="form-group">
 			<%
 				HttpSession sessions = request.getSession(true);

@@ -28,58 +28,52 @@
 	<div id="wrapper">
 	<div id="vouchercontent" dir=rtl>
 				<div id="search-row" class="row justify-content-center align-items-center"> 
-					<div id="search-column" class="col-md-6">
+					<div id="search-column" class="col-md-12">
 						<div id="search-box" class="col-md-12">
 		
-					<h3 class="text-center text-info">طلب إجراءات التقنين(المعاينة/الفحص)</h3>
-			
-					<div class="form-group">
-						
-						<label for="vm_gov" class="text-info" style="float: right;">المحافظة</label>
-						<br> 
-						<input class="form-control" type="text"
-								id="vm_gov" name="vm_gov" value="" readonly>
-					</div>
+					<h3 class="text-center text-info">طلب إجراءات التقنين(المعاينة/الفحص)</h3><br>
+					<table border="0" align="center" style="dir: rtl;">
+						<tr>
 					
-					<div class="form-group">
-						
-						<label for="vm_farm_ID" class="text-info" style="float: right;">رقم
+							<td align="right"><label for="vm_gov" class="text-info" style="float: right;">المحافظة</label></td>
+							<td align="right"><input class="form-control" type="text"
+								id="vm_gov" name="vm_gov" value="" readonly></td>
+						</tr>
+						<tr>
+					
+							<td align="right"><label for="vm_farm_ID" class="text-info" style="float: right;">رقم
 								المزرعة</label>
-						<br> 
-						<input class="form-control" type="text"
-								id="vm_farm_ID" name="vm_farm_ID" value="" readonly>
-					</div>
+							</td>
+							<td align="right"><input class="form-control" type="text"
+								id="vm_farm_ID" name="vm_farm_ID" value="" readonly></td>
+						</tr>
+						<tr>
 					
-					<div class="form-group">
-						
-						<label for="vm_person_ID" class="text-info" style="float: right;">الرقم
+							<td align="right"><label for="vm_person_ID" class="text-info" style="float: right;">الرقم
 								القومى</label>
-						<br> 
-						<input class="form-control" type="text"
-								id="vm_person_ID" name="vm_person_ID" value="">
-					</div>
+							</td>
+							<td align="right"><input class="form-control" type="text"
+								id="vm_person_ID" name="vm_person_ID" value=""></td>
+						</tr>
+						<tr>
 					
+							<td align="right"><label for="vm_site" class="text-info" style="float: right;">الموقع</label>
+							</td>
+							<td align="right"><input class="form-control" type="text"
+								id="vm_site" name="vm_site" value="" readonly></td>
+						</tr>
+						<tr>
 					
-					<div class="form-group">
-						
-						<label for="vm_site" class="text-info" style="float: right;">الموقع</label>
-						<br> 
-						<input class="form-control" type="text"
-								id="vm_site" name="vm_site" value="" readonly>
-					</div>
-					
-					<div class="form-group">
-						
-						<label for="vm_Person_Name" class="text-info" style="float: right;">مقدم
+							<td align="right"><label for="vm_Person_Name" class="text-info" style="float: right;">مقدم
 								الطلب</label>
-						<br> 
-						<input class="form-control" type="text"
-								id="vm_Person_Name" name="vm_Person_Name" value="" >
-					</div>
+							</td>
+							<td align="right"><input class="form-control" type="text"
+								id="vm_Person_Name" name="vm_Person_Name" value="" ></td>
+						</tr>
+						<tr>
 					
-					<div class="form-group">
-						
-						<%
+							<td align="right">
+								<%
 									HttpSession addvoucherssession = request.getSession(true);
 									String adderrormsg = (String) addvoucherssession.getAttribute("addNewVoucher");
 									if (adderrormsg == null) {
@@ -92,88 +86,72 @@
 								<%
 									}
 								%>
-					</div>
-					
-					<div class="form-group">
-						
+							</td>
+						</tr>
+					</table>
+					<br>
+					<h2 align="center">
 						<a href='javascript:void(0);'
 						onclick='voucher_add(id);' class='btn btn-info btn-md' id='myvoucher'>إضافة
-						إيصال</a> <br> <br>
-						
-					</div>
+						إيصال</a>
+					</h2><br>
+					
 					
 					<div align="center" id="voucher_edit_form">
 						<h3 class="text-center text-info">تعديل
-							إيصال</h3>
+							إيصال</h3><br>
 						<input type="hidden" id="selectedvoucherid" name="selectedvoucherid">
-							
-				  <div class="form-group">
-						
-						<label for="edit_voucher_Date" class="text-info" style="float: right;">تاريخ الطلب</label>
-						<br> 
-						<input class="form-control" type="date"
-								id="edit_voucher_Date" name="edit_voucher_Date" value="" >
-					</div>
-					
-					<div class="form-group">
-						
-						<label for="edit_Fees_Status" class="text-info" style="float: right;">نوع الرسوم</label>
-						<br> 
-						<input class="form-control" type="text"
-								id="edit_Fees_Status" name="edit_Fees_Status" value="" >
-					</div>
-					
-					<div class="form-group">
-						
-						<label for="edit_Amount" class="text-info" style="float: right;">المبلغ</label>
-						<br> 
-						<input class="form-control" type="text"
-								id="edit_Amount" name="edit_Amount" value="" >
-					</div>
-					
-					<div class="form-group">
-						
-						<label for="edit_Payment_Status" class="text-info" style="float: right;">تم الدفع</label>
-						<br> 
-						<input class="form-control" type="text"
-								id="edit_Payment_Status" name="edit_Payment_Status" value="" >
-					</div>
-					
-					<div class="form-group">
-						
-						<label for="edit_Issuing_document" class="text-info" style="float: right;">جهة إصدار الوثيقة</label>
-						<br> 
-						<input class="form-control" type="text"
-								id="edit_Issuing_document" name="edit_Issuing_document" value="" >
-					</div>
-					
-					<div class="form-group">
-						
-						<label for="edit_Issuing_document_section" class="text-info" style="float: right;">الفرع</label>
-						<br> 
-						<input class="form-control" type="text"
-								id="edit_Issuing_document_section" name="edit_Issuing_document_section" value="" >
-					</div>
-					
-					<div class="form-group">
-						
-						<label for="edit_Issuing_document_No" class="text-info" style="float: right;">رقم الوثيقة</label>
-						<br> 
-						<input class="form-control" type="text"
-								id="edit_Issuing_document_No" name="edit_Issuing_document_No" value="" >
-					</div>
-					
-					<div class="form-group">
-						
-						<label for="edit_Notes" class="text-info" style="float: right;">ملاحظات</label>
-						<br> 
-						<input class="form-control" type="text"
-								id="edit_Notes" name="edit_Notes" value="" >
-					</div>
-					
-					<div class="form-group">
-						
-						<%
+						<table border="0" align="center" style="dir: rtl;">
+							<tr>
+								<td align="right"><label for="edit_voucher_Date" class="text-info" style="float: right;">تاريخ الطلب</label>
+								</td>
+								<td align="right"><input class="form-control" type="date"
+								id="edit_voucher_Date" name="edit_voucher_Date" value="" ></td>
+							</tr>
+							<tr>
+								<td align="right"><label for="edit_Fees_Status" class="text-info" style="float: right;">نوع الرسوم</label>
+								</td>
+								<td align="right"><input class="form-control" type="text"
+								id="edit_Fees_Status" name="edit_Fees_Status" value="" ></td>
+							</tr>
+							<tr>
+								<td align="right"><label for="edit_Amount" class="text-info" style="float: right;">المبلغ</label>
+								</td>
+								<td align="right"><input class="form-control" type="text"
+								id="edit_Amount" name="edit_Amount" value="" ></td>
+							</tr>
+							<tr>
+									<td align="right"><input type="checkbox" id="edit_Payment_Status" name="edit_Payment_Status" style="float: right;" value="">
+									</td>
+									<td align="right"><label for="edit_Payment_Status" style="margin-left: 200px;">تم الدفع</label></td>
+								</tr>
+							<tr>
+								<td align="right"><label for="edit_Issuing_document" class="text-info" style="float: right;">جهة إصدار الوثيقة</label>
+								</td>
+								<td align="right"><input class="form-control" type="text"
+								id="edit_Issuing_document" name="edit_Issuing_document" value="" ></td>
+							</tr>
+							<tr>
+								<td align="right"><label for="edit_Issuing_document_section" class="text-info" style="float: right;">الفرع</label>
+								</td>
+								<td align="right"><input class="form-control" type="text"
+								id="edit_Issuing_document_section" name="edit_Issuing_document_section" value="" ></td>
+							</tr>
+							<tr>
+								<td align="right"><label for="edit_Issuing_document_No" class="text-info" style="float: right;">رقم الوثيقة</label>
+								</td>
+								<td align="right"><input class="form-control" type="text"
+								id="edit_Issuing_document_No" name="edit_Issuing_document_No" value="" ></td>
+							</tr>
+							<tr>
+								<td align="right"><label for="edit_Notes" class="text-info" style="float: right;">ملاحظات</label>
+								</td>
+								<td align="right"><input class="form-control" type="text"
+								id="edit_Notes" name="edit_Notes" value="" ></td>
+							</tr>
+							<tr>
+								<td align="right">
+									<%
 										HttpSession editvoucherssession = request.getSession(true);
 										String editerrormsg = (String) editvoucherssession.getAttribute("editVoucher");
 										if (editerrormsg == null) {
@@ -186,107 +164,97 @@
 									<%
 										}
 									%>
-					</div>
-					
-					<div class="form-group">
-						
-						<button onclick="voucherPrint()" class="btn btn-info btn-md"
+								</td>
+							</tr>
+						</table>
+						<h2 align="center">
+							<button onclick="voucherPrint()" class="btn btn-info btn-md"
 								id="voucherBtn">طباعة</button>
 							<button onclick="voucherAction(1)" class="btn btn-info btn-md"
 								id="voucherBtn">تعديل</button>
-					</div>
+						</h2><br>
 				</div>		
 					
 					<div align="center" id="voucher_add_form">
 						<h3 class="text-center text-info">إضافة
-							إيصال جديد</h3>
-							
-							<div class="form-group">
-						
-								<label for="add_voucher_Date" class="text-info" style="float: right;">تاريخ الطلب</label>
-								<br> 
-								<input class="form-control" type="date"
-										id="add_voucher_Date" name="add_voucher_Date" value="">
-								
-					       </div>
-					       
-					       <div class="form-group">
-						
-								<label for="add_Fees_Status" class="text-info" style="float: right;">نوع الرسوم</label>
-								<br> 
-								<input class="form-control" type="text"
-										id="add_Fees_Status" name="add_Fees_Status" value="">
-					       </div>
-					       
-					       <div class="form-group">
-						
-								<label for="add_Amount" class="text-info" style="float: right;">المبلغ</label>
-								<br> 
-								<input class="form-control" type="text"
-										id="add_Amount" name="add_Amount" value="">
-					       </div>
-					       
-					        <div class="form-group">
-								<input type="checkbox" id="add_Payment_Status" name="add_Payment_Status" style="float: right;" value="">
-										
-								<label for="add_Payment_Status" style="margin-left: 200px;">تم الدفع</label>
-							</div>
-					       
-					       <div class="form-group">
-						
-								<label for="add_Issuing_document" class="text-info" style="float: right;">جهة إصدار الوثيقة</label>
-								<br> 
-								<input class="form-control" type="text"
+							إيصال جديد</h3><br>
+							<table border="0" align="center" style="dir: rtl;">
+								<tr>
+									<td align="right"><label for="add_voucher_Date" class="text-info" style="float: right;">تاريخ الطلب</label>
+									</td>
+									<td align="right"><input class="form-control" type="date"
+										id="add_voucher_Date" name="add_voucher_Date" value="" style="dir: rtl;"></td>
+								</tr>
+								<tr>
+									<td align="right"><label for="add_Fees_Status" class="text-info" style="float: right;">نوع الرسوم</label>
+									</td>
+									<td align="right"><input class="form-control" type="text"
+										id="add_Fees_Status" name="add_Fees_Status" value=""></td>
+								</tr>
+								<tr>
+									<td align="right"><label for="add_Amount" class="text-info" style="float: right;">المبلغ</label>
+									</td>
+									<td align="right"><input class="form-control" type="text"
+										id="add_Amount" name="add_Amount" value=""></td>
+								</tr>
+								<tr>
+									<td align="right"><label for="add_Payment_Status" class="text-info">تم الدفع</label>
+									</td>
+									<td align="right"><input type="checkbox" id="add_Payment_Status" name="add_Payment_Status" value="" style="margin-left: 200px;"></td>
+								</tr>
+								<tr>
+									<td align="right"><label for="add_Issuing_document" class="text-info" style="float: right;">جهة إصدار الوثيقة</label>
+									</td>
+									<td align="right"><input class="form-control" type="text"
 										id="add_Issuing_document" name="add_Issuing_document" value="">
-					       </div>
-					       
-					        <div class="form-group">
-						
-								<label for="add_Issuing_document_section" class="text-info" style="float: right;">الفرع</label>
-								<br> 
-								<input class="form-control" type="text"
+									</td>
+								</tr>
+								<tr>
+									<td align="right"><label for="add_Issuing_document_section" class="text-info" style="float: right;">الفرع</label>
+									</td>
+									<td align="right"><input class="form-control" type="text"
 										id="add_Issuing_document_section" name="add_Issuing_document_section" value="">
-					       </div>
-					       
-					       <div class="form-group">
-						
-								<label for="add_Issuing_document_No" class="text-info" style="float: right;">رقم الوثيقة</label>
-								<br> 
-								<input class="form-control" type="text"
+									</td>
+								</tr>
+								<tr>
+									<td align="right"><label for="add_Issuing_document_No" class="text-info" style="float: right;">رقم الوثيقة</label>
+									</td>
+									<td align="right"><input class="form-control" type="text"
 										id="add_Issuing_document_No" name="add_Issuing_document_No" value="">
-					       </div>
-					       
-					        <div class="form-group">
-						
-								<label for="add_Notes" class="text-info" style="float: right;">ملاحظات</label>
-								<br> 
-								<input class="form-control" type="text"
+									</td>
+								</tr>
+								<tr>
+									<td align="right"><label for="add_Notes" class="text-info" style="float: right;">ملاحظات</label>
+									</td>
+									<td align="right"><input class="form-control" type="text"
 										id="add_Notes" name="add_Notes" value="">
-					       </div>
-					       
-					        <div class="form-group">
-						
-								<%
+									</td>
+								</tr>
+								<tr>
+									<td align="right">
+										<%
 										HttpSession addnewvoucherssession = request.getSession(true);
 										String addnewerrormsg = (String) addnewvoucherssession.getAttribute("addNewVoucher");
 										if (addnewerrormsg == null) {
-									%>
-									<%
-										} else {
-									%>
-
-									<h2 style="color: red;"><%=addnewerrormsg%></h2>
-									<%
-										}
-									%>
-					       </div>
-					       
-						<div class="form-group">
-							<button onclick="voucherPrint()" class="btn btn-info btn-md"
+										%>
+										<%
+											} else {
+										%>
+	
+										<h2 style="color: red;"><%=addnewerrormsg%></h2>
+										<%
+											}
+										%>
+									</td>
+								</tr>
+							</table>
+							<br>
+							<h2 align="center">
+								<button onclick="voucherPrint()" class="btn btn-info btn-md"
 								id="voucherBtn">طباعة</button>
 							<button onclick="voucherAction(2)" class="btn btn-info btn-md"
 								id="voucherBtn">إضافة</button>
-						</div>
+							</h2><br>
 					</div>
 				</div>
 				<div align="center" id='voucher_list'></div>
@@ -314,18 +282,18 @@
 				var voucher_issuingDocumentSection = "";
 				var voucher_issuingDocumentNo = "";
 
-				var voucher_header = '<table class=\"table table-hover\">'
-						+'<thead class=\"thead-light\">'
+				var voucher_header = '<table dir=\"rtl\" class=\"table table-striped table-bordered table-sm\">'
+						+'<tbody>'
 						+'<tr>'
-						+ '<th scope=\"col\">إعدادات</th>'
-						+ '<th scope=\"col\">رقم الوثيقة</th>'
-						+ '<th scope=\"col\">الفرع</th>'
-						+ '<th scope=\"col\">جهة إصدار الوثيقة</th>'
-						+ '<th scope=\"col\">تم الدفع</th>'
-						+ '<th scope=\"col\">ملاحظات</th>'
-						+ '<th scope=\"col\">المبلغ</th>'
-						+ '<th scope=\"col\">الرسوم</th>'
-						+ '<th scope=\"col\">التاريخ</th>' + '</tr></thead>';
+						+ '<th scope=\"col\" style=\"text-align: center; height: 60px; vertical-align: middle;\">التاريخ</th>'
+						+ '<th scope=\"col\" style=\"text-align: center; height: 60px; vertical-align: middle;\">رقم الوثيقة</th>'
+						+ '<th scope=\"col\" style=\"text-align: center; height: 60px; vertical-align: middle;\">الفرع</th>'
+						+ '<th scope=\"col\" style=\"text-align: center; height: 60px; vertical-align: middle;\">جهة إصدار الوثيقة</th>'
+						+ '<th scope=\"col\" style=\"text-align: center; height: 60px; vertical-align: middle;\">تم الدفع</th>'
+						+ '<th scope=\"col\" style=\"text-align: center; height: 60px; vertical-align: middle;\">ملاحظات</th>'
+						+ '<th scope=\"col\" style=\"text-align: center; height: 60px; vertical-align: middle;\">المبلغ</th>'
+						+ '<th scope=\"col\" style=\"text-align: center; height: 60px; vertical-align: middle;\">الرسوم</th>'
+						+ '<th scope=\"col\" style=\"text-align: center; height: 60px; vertical-align: middle;\">إعدادات</th>' + '</tr>';
 				var voucher_list_html = "";
 
 				for ( var i in vouchers) {
@@ -413,15 +381,8 @@
 					}
 
 					voucher_list_html = voucher_list_html
-							+'<tbody>'
 							+ '<tr>'
-							+ '<td>'
-							+ '<button onclick=\"voucher_delete('
-							+ vouchers[i].voucherID
-							+ ')\" class=\"btnsearch\" id=\"voucher_delete\">حذف</button>'
-							+ '<button onclick=\"voucher_edit('
-							+ vouchers[i].voucherID
-							+ ')\" class=\"btnsearch\" id=\"voucher_edit\">تعديل</button>'
+							+ '<td>' + formattedDate
 							+ '</td>' + '<td>' + voucher_issuingDocumentNo
 							+ '</td>' + '<td>' + voucher_issuingDocumentSection
 							+ '</td>' + '<td>' + voucher_issuingDocument
@@ -429,12 +390,19 @@
 							+ '</td>' + '<td>' + voucher_notes
 							+ '</td>' + '<td>' + voucher_amount
 							+ '</td>' + '<td>'
-							+ voucher_feesStatus + '</td>' + '<td>'
-							+ formattedDate + '</td>' + '</tr></tbody>';
+							+ voucher_feesStatus + '</td>' 
+							+ '<td align=\"center\">'
+							+ '<button onclick=\"voucher_delete(' 
+							+ vouchers[i].voucherID 
+							+ ')\" class=\"btn btn-success\" id=\"voucher_delete\">حذف</button><span width="\2px\"></span>'
+							+ '<button onclick=\"voucher_edit('
+							+ vouchers[i].voucherID
+							+ ')\" class=\"btn btn-primary\" id=\"voucher_edit\" style="\margin-right: 5px;\">تعديل</button>'
+							+'</td>' + '</tr>';
 
 				}
 				voucher_list_html = voucher_header + voucher_list_html
-						+ "</table>";
+						+ "</tbody></table>";
 
 			} else {
 				document.getElementById("vm_farm_ID").value = parsedselectedfarmid;
@@ -581,7 +549,7 @@
 						} else {
 							document.getElementById("edit_Notes").value = "";
 						}
-						alert(selected_voucher.paymentStatus);
+						//alert(selected_voucher.paymentStatus);
 						if (selected_voucher.paymentStatus == "true") {
 							document.getElementById("edit_Payment_Status").checked = true;
 						} else {

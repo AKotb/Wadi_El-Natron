@@ -15,6 +15,9 @@
 	media="all" />
 <link rel="stylesheet"	href="resources/tooplate-style.css">
 <link rel="stylesheet" href="resources/beheira.css">
+<link
+	href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+	rel="stylesheet" id="bootstrap-css">
 <style>
 .img_slider {
 	position: absolute;
@@ -38,11 +41,11 @@
 			<div id='img2_title' class='legend'>
 				<p class='img_title top_title'>Sentinel2 Septemper 2018</p>
 			</div>
-			<div id='controlbuttons' class='control_buttons'>
-				<a href="javascript:void(0);" onclick="landuse();" class="button">استخدامات الأراضى</a> 
-				<a href="javascript:void(0);" onclick="vouchers();" class="button">طلب إجراءات التقنين</a> 
-				<a href="javascript:void(0);" onclick="gotoMahdar();" class="button">محضر معاينة</a> 
-				<a href="javascript:void(0);" onclick="back();" class="button">رجوع</a>
+			<div id='controlbuttons' class='control_buttons' dir="rtl">
+				<a href="javascript:void(0);" onclick="landuse();" class="btn btn-info btn-md">استخدامات الأراضى</a> 
+				<a href="javascript:void(0);" onclick="vouchers();" class="btn btn-info btn-md">طلب إجراءات التقنين</a> 
+				<a href="javascript:void(0);" onclick="gotoMahdar();" class="btn btn-info btn-md">محضر معاينة</a> 
+				<a href="javascript:void(0);" onclick="back();" class="btn btn-info btn-md">رجوع</a>
 			</div>
 		</div>
 	</div>

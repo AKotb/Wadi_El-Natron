@@ -15,6 +15,9 @@
 	media="all" />
 <link rel="stylesheet"	href="resources/tooplate-style.css">
 <link rel="stylesheet" href="resources/beheira.css">
+<link
+	href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+	rel="stylesheet" id="bootstrap-css">
 
 	<script>
 		id = "${polygonID}";
@@ -293,28 +296,28 @@
 					db_reclamedLandNotUsedBefore = "لا يوجد";
 				}
 				
-				var link0 = "<a href=\'datafiles/mahader/0.png\' target='_blank' class=\'button\'> محضر معاينة </a>";
+				var link0 = "<a href=\'datafiles/mahader/0.png\' target='_blank' class=\'btn btn-info btn-md\'> محضر معاينة </a>";
 				if (200 == urlExists('datafiles/mahader/'+db_farmid+'.png')) {
-					link0 = "<a href=\'datafiles/mahader/"+db_farmid+".png\' target='_blank' class=\'button\'> محضر معاينة </a>";
+					link0 = "<a href=\'datafiles/mahader/"+db_farmid+".png\' target='_blank' class=\'btn btn-info btn-md\'> محضر معاينة </a>";
 				}
-				var link1 = "<a href=\'javascript:void(0);\' onclick=\'back();\' class=\'button\'> رجوع </a>";
+				var link1 = "<a href=\'javascript:void(0);\' onclick=\'back();\' class=\'btn btn-info btn-md\'> رجوع </a>";
 				var link2 = "<a href=\'javascript:void(0);\' onclick=\'raster("
 							+ db_farmid
-							+ ");\' class=\'button\'> مرئيات فضائية </a>";
+							+ ");\' class=\'btn btn-info btn-md\'> مرئيات فضائية </a>";
 				var link3 = "<a href=\'javascript:void(0);\' onclick=\'vouchers("
 						+ db_farmid
-						+ ");\' class=\'button\'>"
+						+ ");\' class=\'btn btn-info btn-md\'>"
 						+ "طلب إجراءات التقنين"
 						+ "</a>";
 				var link4 = "<a href=\'datafiles/landuse/"+db_farmid+".jpg\' target='_blank'><img class=\'infowindowimg\' src=\'datafiles/landuse/"+db_farmid+".jpg\' alt=\'Icon\' style=\"width:280px;height:200px;\"></a>";
-				var content = "<div style=\"text-align:center; overflow:hidden;\"><h1 style=\"background-color: #44a959;\">"
+				var content = "<div style=\"text-align:center; overflow:hidden;\"><h1 style=\"background-color: #17a2b8;\">"
 					+ "بيانات قطعة الأرض" + "</h1><br>"
 					+ "<table class=\"outertable\" style=\"dir: rtl;\"><tr><td class=\'td\'>"
 					+ db_farmid
 					+ "</td><td class=\'rightcolumn\'>كود المزرعة / الشركة</td></tr><tr><td class=\'td\'>"
 					+ db_farmname
 					+ "</td><td class=\'rightcolumn\'>اسم المزرعة / الشركة</td></tr></table>"
-					+"<h2 style=\"background-color: #44a959;\">استخدامات الأرض / فدان</h2>"
+					+"<h2 style=\"background-color: #17a2b8;\">استخدامات الأرض / فدان</h2>"
 					+"<table class=\"outertable\" style=\"dir: rtl;\"><tr><td rowspan='12'>"+link4+"</td><td class=\'td\'>"
 					+ db_fieldCropsArea
 					+ "</td><td class=\'rightcolumn\'>محاصيل حقلية</td></tr><tr><td class=\'td\'>"

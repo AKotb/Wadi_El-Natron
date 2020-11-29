@@ -24,6 +24,9 @@
 	media="all"/>
 <link rel="stylesheet" href="resources/beheira.css" type="text/css"
 	media="all"/>
+<link
+	href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+	rel="stylesheet" id="bootstrap-css">
 <title>الرئيسية</title>
 <!-- Test Commit by Ehab -->
 <style type="text/css">
@@ -42,24 +45,24 @@
         padding-left: 10px;
       }
  #latValue {
-        width: 60%;
+        width: 100%;
         color: gainsboro;
       }
  #lngValue {
-        width: 60%;
+        width: 100%;
         color: gainsboro;
       }
  .latlngValueclass1 {
-        width: 10%;
+        width: 100%;
         color: gainsboro;
       }
 .latlngValueclass2 {
-        width: 28%;
+        width: 100%;
         color: gainsboro;
       }
  #floating-panel {
         position: absolute;
-        top: 47%;
+        top: 48%;
         left: 0.6%;
         z-index: 5;
         background-color: #fff;
@@ -69,7 +72,7 @@
         font-family: 'Roboto','sans-serif';
         line-height: 30px;
         padding-left: 10px;
-        width: 9.7%
+        width: 10.5%
       }
 </style>
 <script>
@@ -328,23 +331,23 @@
 										}
 									}
 								}
-								var link0 = "<a href=\'datafiles/mahader/0.png\' target='_blank' class=\'button\'> محضر معاينة </a>";
+								var link0 = "<a href=\'datafiles/mahader/0.png\' target='_blank' class=\'btn btn-info btn-md\'> محضر معاينة </a>";
 								if (200 == urlExists('datafiles/mahader/'
 										+ area_id + '.png')) {
-									link0 = "<a href=\'datafiles/mahader/"+area_id+".png\' target='_blank' class=\'button\'> محضر معاينة </a>";
+									link0 = "<a href=\'datafiles/mahader/"+area_id+".png\' target='_blank' class=\'btn btn-info btn-md\'> محضر معاينة </a>";
 								}
 								var link2 = "<a href=\'javascript:void(0);\' onclick=\'raster("
 										+ area_id
-										+ ");\' class=\'button\'> مرئيات فضائية </a>";
+										+ ");\' class=\'btn btn-info btn-md\'> مرئيات فضائية </a>";
 								var link3 = "<a href=\'javascript:void(0);\' onclick=\'vouchers("
 										+ area_id
-										+ ");\' class=\'button\'>"
+										+ ");\' class=\'btn btn-info btn-md\'>"
 										+ "طلب إجراءات التقنين" + "</a>";
 								var link4 = "<a href=\'datafiles/sketch/"+area_id+".jpg\' target='_blank'><img class=\'infowindowimg\' src=\'datafiles/sketch/"+area_id+".jpg\' alt=\'Icon\' style=\"width:209px;height:180px;\"></a>";
 								var link1 = "<a href=\'javascript:void(0);\' onclick=\'landuse("
 										+ area_id
-										+ ");\' class=\'button\'> استخدامات الأراضى </a>";
-								var content = "<div style=\"text-align:center; overflow:hidden;\"><h1 style=\"background-color: #44a959;\">"
+										+ ");\' class=\'btn btn-info btn-md\'> استخدامات الأراضى </a>";
+								var content = "<div style=\"text-align:center; overflow:hidden;\"><h1 style=\"background-color: #17a2b8;\">"
 										+ "بيانات قطعة الأرض" + "</h1><br><br>"
 										+ "<table class=\"outertable\" style=\"dir: rtl;\"><tr><td rowspan='6'>"+link4+"</td><td class=\'td\'>"
 										+ area_id
@@ -369,7 +372,7 @@
 										+ db_ownertel
 										+ "</td><td class=\'rightcolumn\'>التليفون</td></tr>--></table><br>"
                                                                                     +"<div id=\"errormsg\"></div>"
-										+ "<table><tr><td class=\'td-button\'>"
+										+ "<table align=\'center\'><tr><td class=\'td-button\'>"
 										+ link0
 										+ "</td><td class=\'td-button\'>"
 										+ link3
@@ -512,23 +515,23 @@
 										}
 									}
 								}
-								var link0 = "<a href=\'datafiles/mahader/0.png\' target='_blank' class=\'button\'> محضر معاينة </a>";
+								var link0 = "<a href=\'datafiles/mahader/0.png\' target='_blank' class=\'btn btn-info btn-md\'> محضر معاينة </a>";
 								if (200 == urlExists('datafiles/mahader/'
 										+ area_id + '.png')) {
-									link0 = "<a href=\'datafiles/mahader/"+area_id+".png\' target='_blank' class=\'button\'> محضر معاينة </a>";
+									link0 = "<a href=\'datafiles/mahader/"+area_id+".png\' target='_blank' class=\'btn btn-info btn-md\'> محضر معاينة </a>";
 								}
 								var link2 = "<a href=\'javascript:void(0);\' onclick=\'raster("
 										+ area_id
-										+ ");\' class=\'button\'> مرئيات فضائية </a>";
+										+ ");\' class=\'btn btn-info btn-md\'> مرئيات فضائية </a>";
 								var link3 = "<a href=\'javascript:void(0);\' onclick=\'vouchers("
 										+ area_id
-										+ ");\' class=\'button\'>"
+										+ ");\' class=\'btn btn-info btn-md\'>"
 										+ "طلب إجراءات التقنين" + "</a>";
 								var link4 = "<a href=\'datafiles/sketch/"+area_id+".jpg\' target='_blank'><img class=\'infowindowimg\' src=\'datafiles/sketch/"+area_id+".jpg\' alt=\'Icon\' style=\"width:209px;height:180px;\"></a>";
 								var link1 = "<a href=\'javascript:void(0);\' onclick=\'landuse("
 										+ area_id
-										+ ");\' class=\'button\'> استخدامات الأراضى </a>";
-										var content = "<div style=\"text-align:center; overflow:hidden;\"><h1 style=\"background-color: #44a959;\">"
+										+ ");\' class=\'btn btn-info btn-md\'> استخدامات الأراضى </a>";
+										var content = "<div style=\"text-align:center; overflow:hidden;\"><h1 style=\"background-color: #17a2b8;\">"
 											+ "بيانات قطعة الأرض" + "</h1><br><br>"
 											+ "<table class=\"outertable\" style=\"dir: rtl;\"><tr><td rowspan='6'>"+link4+"</td><td class=\'td\'>"
 											+ area_id
@@ -553,7 +556,7 @@
 											+ db_ownertel
 											+ "</td><td class=\'rightcolumn\'>التليفون</td></tr>--></table><br>"
 	                                                                                    +"<div id=\"errormsg\"></div>"
-											+ "<table><tr><td class=\'td-button\'>"
+											+ "<table align=\'center\'><tr><td class=\'td-button\'>"
 											+ link0
 											+ "</td><td class=\'td-button\'>"
 											+ link3
@@ -696,23 +699,23 @@
 								}
 							}
 						}
-						var link0 = "<a href=\'datafiles/mahader/0.png\' target='_blank' class=\'button\'> محضر معاينة </a>";
+						var link0 = "<a href=\'datafiles/mahader/0.png\' target='_blank' class=\'btn btn-info btn-md\'> محضر معاينة </a>";
 						if (200 == urlExists('datafiles/mahader/'
 								+ area_id + '.png')) {
-							link0 = "<a href=\'datafiles/mahader/"+area_id+".png\' target='_blank' class=\'button\'> محضر معاينة </a>";
+							link0 = "<a href=\'datafiles/mahader/"+area_id+".png\' target='_blank' class=\'btn btn-info btn-md\'> محضر معاينة </a>";
 						}
 						var link2 = "<a href=\'javascript:void(0);\' onclick=\'raster("
 								+ area_id
-								+ ");\' class=\'button\'> مرئيات فضائية </a>";
+								+ ");\' class=\'btn btn-info btn-md\'> مرئيات فضائية </a>";
 						var link3 = "<a href=\'javascript:void(0);\' onclick=\'vouchers("
 								+ area_id
-								+ ");\' class=\'button\'>"
+								+ ");\' class=\'btn btn-info btn-md\'>"
 								+ "طلب إجراءات التقنين" + "</a>";
 						var link4 = "<a href=\'datafiles/sketch/"+area_id+".jpg\' target='_blank'><img class=\'infowindowimg\' src=\'datafiles/sketch/"+area_id+".jpg\' alt=\'Icon\' style=\"width:209px;height:180px;\"></a>";
 						var link1 = "<a href=\'javascript:void(0);\' onclick=\'landuse("
 								+ area_id
-								+ ");\' class=\'button\'> استخدامات الأراضى </a>";
-								var content = "<div style=\"text-align:center; overflow:hidden;\"><h1 style=\"background-color: #44a959;\">"
+								+ ");\' class=\'btn btn-info btn-md\'> استخدامات الأراضى </a>";
+								var content = "<div style=\"text-align:center; overflow:hidden;\"><h1 style=\"background-color: #17a2b8;\">"
 									+ "بيانات قطعة الأرض" + "</h1><br><br>"
 									+ "<table class=\"outertable\" style=\"dir: rtl;\"><tr><td rowspan='6'>"+link4+"</td><td class=\'td\'>"
 									+ area_id
@@ -737,7 +740,7 @@
 									+ db_ownertel
 									+ "</td><td class=\'rightcolumn\'>التليفون</td></tr>--></table><br>"
                                                                                 +"<div id=\"errormsg\"></div>"
-									+ "<table><tr><td class=\'td-button\'>"
+									+ "<table align=\'center\'><tr><td class=\'td-button\'>"
 									+ link0
 									+ "</td><td class=\'td-button\'>"
 									+ link3
@@ -1220,21 +1223,101 @@ function ConvertDMSToDD(degrees, minutes, seconds, direction) {
   			<input type="radio" name="latlngRadios"  id="degid" onclick="handleClick(this);" value="2" />Deg.<br>
   			
   			<div id="latlng_decimal_id" style="display: block;">
-      		<b>Lat: </b><input id="latValue" type="text"  onfocus="if(this.value == '30.170996') { this.value = ''; this.style.color = '#000'}" value="30.170996">&nbsp;<b>N</b><br>
-      		<b>Lng: </b><input id="lngValue" type="text"  onfocus="if(this.value == '30.187959') { this.value = ''; this.style.color = '#000'}" value="30.187959">&nbsp;<b>E</b><br>
+	  			<table border="0" align="center" style="dir: ltr;">
+		  			<tr>
+		  				<td align="left">
+		  					<b>Lat: </b>
+		  				</td>
+		  				<td align="left">
+		  					<input id="latValue" type="text"  onfocus="if(this.value == '30.170996') { this.value = ''; this.style.color = '#000'}" value="30.170996">
+		  				</td>
+		  				<td align="left">
+		  					<b>N</b>
+		  				</td>
+		  			</tr>
+		  			<tr>
+		  				<td align="left">
+		  					<b>Lon: </b>
+		  				</td>
+		  				<td align="left">
+		  					<input id="lngValue" type="text"  onfocus="if(this.value == '30.187959') { this.value = ''; this.style.color = '#000'}" value="30.187959">
+		  				</td>
+		  				<td align="left">
+		  					<b>E</b>
+		  				</td>
+		  			</tr>
+	      		 	<!-- <b>Lat: </b><input id="latValue" type="text"  onfocus="if(this.value == '30.170996') { this.value = ''; this.style.color = '#000'}" value="30.170996">&nbsp;<b>N</b><br>
+	      		 	<b>Lng: </b><input id="lngValue" type="text"  onfocus="if(this.value == '30.187959') { this.value = ''; this.style.color = '#000'}" value="30.187959">&nbsp;<b>E</b><br> -->
+	      		</table>
       		</div>
       		
+      		
       		<div id="latlng_degrees_id" style="display: none;">
-      		<b>Lat: </b><input class="latlngValueclass1" id="latdeg" type="text"  onfocus="if(this.value == '30') { this.value = ''; this.style.color = '#000'}" value="30"><b><sup>o</sup></b>
+      			<table border="0" align="center" style="dir: ltr;">
+	      			<tr>
+	      				<td align="left">
+		  					<b>Lat: </b>
+		  				</td>
+		  				<td align="left">
+		  					<input class="latlngValueclass1" id="latdeg" type="text"  onfocus="if(this.value == '30') { this.value = ''; this.style.color = '#000'}" value="30">
+		  				</td>
+		  				<td align="left">
+		  					<b><sup>o</sup></b>
+		  				</td>
+		  				<td align="left">
+		  					<input class="latlngValueclass1" id="latmin" type="text"  onfocus="if(this.value == '10') { this.value = ''; this.style.color = '#000'}" value="10">
+		  				</td>
+		  				<td align="left">
+		  					<b><sup>'</sup></b>
+		  				</td>
+		  				<td align="left">
+		  					<input class="latlngValueclass2" id="latsec" type="text"  onfocus="if(this.value == '15.5856') { this.value = ''; this.style.color = '#000'}" value="15.5856">
+		  				</td>
+		  				<td align="left">
+		  					<sup>"</sup>
+		  				</td>
+		  				<td align="left">
+		  					<b>N</b>
+		  				</td>
+	      			</tr>
+	      			<tr>
+	      				<td align="left">
+		  					<b>Lng: </b>
+		  				</td>
+		  				<td align="left">
+		  					<input class="latlngValueclass1" id="lngdeg" type="text"  onfocus="if(this.value == '30') { this.value = ''; this.style.color = '#000'}" value="30">
+		  				</td>
+		  				<td align="left">
+		  					<b><sup>o</sup></b>
+		  				</td>
+		  				<td align="left">
+		  					<input class="latlngValueclass1" id="lngmin" type="text"  onfocus="if(this.value == '11') { this.value = ''; this.style.color = '#000'}" value="11">
+		  				</td>
+		  				<td align="left">
+		  					<b><sup>'</sup></b>
+		  				</td>
+		  				<td align="left">
+		  					<input class="latlngValueclass2" id="lngsec" type="text"  onfocus="if(this.value == '16.6524') { this.value = ''; this.style.color = '#000'}" value="16.6524">
+		  				</td>
+		  				<td align="left">
+		  					<sup>"</sup>
+		  				</td>
+		  				<td align="left">
+		  					<b>E</b>
+		  				</td>
+	      			</tr>
+      			</table>
+      		<!-- <b>Lat: </b><input class="latlngValueclass1" id="latdeg" type="text"  onfocus="if(this.value == '30') { this.value = ''; this.style.color = '#000'}" value="30"><b><sup>o</sup></b>
       					<input class="latlngValueclass1" id="latmin" type="text"  onfocus="if(this.value == '10') { this.value = ''; this.style.color = '#000'}" value="10">&nbsp;<b><sup>'</sup></b>
       					<input class="latlngValueclass2" id="latsec" type="text"  onfocus="if(this.value == '15.5856') { this.value = ''; this.style.color = '#000'}" value="15.5856">&nbsp;<b><sup>"</sup> N</b><br>
       		<b>Lng: </b><input class="latlngValueclass1" id="lngdeg" type="text"  onfocus="if(this.value == '30') { this.value = ''; this.style.color = '#000'}" value="30"><b><sup>o</sup></b>
       					<input class="latlngValueclass1" id="lngmin" type="text"  onfocus="if(this.value == '11') { this.value = ''; this.style.color = '#000'}" value="11">&nbsp;<b><sup>'</sup></b>
-      					<input class="latlngValueclass2" id="lngsec" type="text"  onfocus="if(this.value == '16.6524') { this.value = ''; this.style.color = '#000'}" value="16.6524">&nbsp;<b><sup>"</sup> E</b><br>
+      					<input class="latlngValueclass2" id="lngsec" type="text"  onfocus="if(this.value == '16.6524') { this.value = ''; this.style.color = '#000'}" value="16.6524">&nbsp;<b><sup>"</sup> E</b><br> -->
       		</div>
-      		
-      		<input id="cancellatlng" type="button" value="إلغاء">
-      		<input id="submitlatlng" type="button" value="بحث">
+      		<h2 align="center">
+      			<input id="cancellatlng" type="button" value="إلغاء" class="btn btn-info btn-md">
+      			<input id="submitlatlng" type="button" value="بحث" class="btn btn-info btn-md">
+      		</h2>
     	</div>
 		<div id="map-canvas"></div>
 	</div>

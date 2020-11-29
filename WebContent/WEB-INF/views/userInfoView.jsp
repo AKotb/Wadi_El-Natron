@@ -165,86 +165,88 @@
 					</div>
 				</div>
 				<div id="search-row" class="row justify-content-center align-items-center"> 
-						<div id="search-column" class="col-md-6">
+						<div id="search-column" class="col-md-12">
 							<div id="search-box" class="col-md-12">
 								<div id="edituserdata">
 					
 								<form method="post" onsubmit="return validateForm();"
 									action="${pageContext.request.contextPath}/manageusers">
 									<input type="hidden" name="operation_type" value="updatemyprofile">
-									<h3 class="text-center text-info">بيانات المستخدم</h3>
-									<div class="form-group">
-										<label for="user_name" class="text-info" style="float: right;">
+									<h3 class="text-center text-info">بيانات المستخدم</h3><br>
+									<table border="0" align="center" style="dir: rtl;">
+										<tr>
+											<td align="right"><label for="user_name" class="text-info" style="float: right;">
 												اسم المستخدم
-										</label>
-										
-										<input class="form-control" type="text"
+												</label>
+											</td>
+											<td align="right"><input class="form-control" type="text"
 												id="username" name="user_name" readonly>
-									</div>
-									
-									<div class="form-group">
-										<label for="user_role" class="text-info" style="float: right;">
+											</td>
+										</tr>
+										<tr>
+											<td align="right"><label for="user_role" class="text-info" style="float: right;">
 												الكود الوظيفي
-										</label>
-										 
-										<input class="form-control" type="text"
+												</label>
+											</td>
+											<td align="right"><input class="form-control" type="text"
 												id="userrole" name="user_rolel" >
-									</div>
-									
-									<div class="form-group">
-										<label for="user_email" class="text-info" style="float: right;">
+											</td>
+										</tr>
+										<tr>
+											<td align="right"><label for="user_email" class="text-info" style="float: right;">
 												البريد الالكتروني
-										</label>
-										 
-										<input class="form-control" type="text"
+												</label>
+											</td>
+											<td align="right"><input class="form-control" type="text"
 												id="useremail" name="user_email" >
-									</div>
-									
-									<div class="form-group">
-										<label for="user_id" class="text-info" style="float: right;">
+											</td>
+										</tr>
+										<tr>
+											<td align="right"><label for="user_id" class="text-info" style="float: right;">
 												الرقم القومي
-										</label>
-										
-										<input class="form-control" type="text"
+												</label>
+											</td>
+											<td align="right"><input class="form-control" type="text"
 												id="userid" name="user_id" >
-									</div>
-									
-									<div class="form-group">
-										<label for="user_telephone" class="text-info" style="float: right;">
+											</td>
+										</tr>
+										<tr>
+											<td align="right"><label for="user_telephone" class="text-info" style="float: right;">
 												التليفون
-										</label>
-										
-										<input class="form-control" type="text"
+												</label>
+											</td>
+											<td align="right"><input class="form-control" type="text"
 												id="usertelephone" name="user_telephone" >
-									</div>
-									
-									<div class="form-group">
-										<label for="user_password" class="text-info" style="float: right;">
+											</td>
+										</tr>
+										<tr>
+											<td align="right"><label for="user_password" class="text-info" style="float: right;">
 												كلمة المرور الجديدة
-										</label>
-										
-										<input class="form-control" type="password"
+												</label>
+											</td>
+											<td align="right"><input class="form-control" type="password"
 												id="userpassword" name="user_password" >
-									</div>
-							
-							
-									<div class="form-group">
-										<label for="user_password_confirm" class="text-info" style="float: right;">
+											</td>
+										</tr>
+										<tr>
+											<td align="right"><label for="user_password_confirm" class="text-info" style="float: right;">
 												تأكيد كلمة المرور
-										</label>
-									
-										<input class="form-control" type="password"
+												</label>
+											</td>
+											<td align="right"><input class="form-control" type="password"
 												id="userpasswordconfirm" name="user_password_confirm" >
-									</div>
-									
-									<div class="form-group">
-										<span id='confirmpassmessage'></span>
-									</div>
-									
-									<div class="form-group">
-										<input type="button" value="الغاء" onclick="cancel()" class="btn btn-info btn-md" id="cancelBtn">
-										<input type="submit" value="حفظ" class="btn btn-info btn-md" id="saveBtn">
-									</div>
+											</td>
+										</tr>
+										<tr>
+											<td align="right"><span id='confirmpassmessage'></span>
+											</td>
+										</tr>
+									</table>
+									<br>
+									<h2 align="center">
+											<input type="submit" value="حفظ" class="btn btn-info btn-md" id="saveBtn">
+											<input type="button" value="الغاء" onclick="cancel()" class="btn btn-info btn-md" id="cancelBtn">
+									</h2>
 								</form>
 				</div></div></div></div>
 			</div>
