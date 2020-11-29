@@ -121,10 +121,10 @@
 								id="edit_Amount" name="edit_Amount" value="" ></td>
 							</tr>
 							<tr>
-									<td align="right"><input type="checkbox" id="edit_Payment_Status" name="edit_Payment_Status" style="float: right;" value="">
+									<td align="right"><label for="edit_Payment_Status" class="text-info">تم الدفع</label>
 									</td>
-									<td align="right"><label for="edit_Payment_Status" style="margin-left: 200px;">تم الدفع</label></td>
-								</tr>
+									<td align="right"><input type="checkbox" id="edit_Payment_Status" name="edit_Payment_Status" style="margin-left: 200px;"></td>
+							</tr>
 							<tr>
 								<td align="right"><label for="edit_Issuing_document" class="text-info" style="float: right;">جهة إصدار الوثيقة</label>
 								</td>
