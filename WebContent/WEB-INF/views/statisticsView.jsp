@@ -630,7 +630,7 @@
 		<h1>إحصائيات</h1>
 			<div style="width: 49%; float: left;">
 				<div id="chartTitle1"
-					style="width: 100%; height: 50px; text-align: center; background-color: #32a854; color: #0000FF; border-radius: 20px 20px 0px 0px;">
+					style="width: 100%; height: 50px; text-align: center; background-color: #17a2b9; color: #0000FF; border-radius: 20px 20px 0px 0px;">
 					<h2>
 						<p style="padding: 10px">البيانات الإحصائية الخاصة بالمنطقة -
 							و</p>
@@ -639,7 +639,7 @@
 				<div id="piechart3" style="width: 100%; height: 500px;"></div>
 				<br>
 				<div id="chartTitleDetails1"
-					style="width: 100%; height: 50px; text-align: center; background-color: #32a854; color: #0000FF; border-radius: 20px 20px 0px 0px;">
+					style="width: 100%; height: 50px; text-align: center; background-color: #17a2b9; color: #0000FF; border-radius: 20px 20px 0px 0px;">
 					<h2>
 						<p style="padding: 10px">
 							<span>البيانات الإحصائية التفصيلية الخاصة بالمنطقة - و - </span><span
@@ -654,7 +654,7 @@
 			<div style="width: 49%; float: right;">
 
 				<div id="chartTitle2"
-					style="width: 100%; height: 50px; text-align: center; background-color: #32a854; color: #0000FF; border-radius: 20px 20px 0px 0px;">
+					style="width: 100%; height: 50px; text-align: center; background-color: #17a2b9; color: #0000FF; border-radius: 20px 20px 0px 0px;">
 					<h2>
 						<p style="padding: 10px">البيانات الإحصائية الخاصة بالمنطقة -
 							هـــ</p>
@@ -663,7 +663,7 @@
 				<div id="piechart4" style="width: 100%; height: 500px;"></div>
 				<br>
 				<div id="chartTitleDetails2"
-					style="width: 100%; height: 50px; text-align: center; background-color: #32a854; color: #0000FF; border-radius: 20px 20px 0px 0px;">
+					style="width: 100%; height: 50px; text-align: center; background-color: #17a2b9; color: #0000FF; border-radius: 20px 20px 0px 0px;">
 					<h2>
 						<p style="padding: 10px">
 							<span>البيانات الإحصائية التفصيلية الخاصة بالمنطقة - هــ -

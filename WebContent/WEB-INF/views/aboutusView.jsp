@@ -115,34 +115,34 @@ td {
 					</tr>
 					<tr>
 						<td><button type="button" class="btn btn-info"
-								style="width: 62%; background-color: #79c255; border-color: #79c255; font-size: 16pt;"
+								style="width: 62%; background-color: #17a2b9; border-color: #17a2b9; font-size: 16pt;"
 								data-toggle="collapse" data-target="#nteam1">فريق عمل
 								تحليل البيانات</button></td>
 						<td><button type="button" class="btn btn-info"
-								style="width: 62%; background-color: #79c255; border-color: #79c255; font-size: 16pt;"
+								style="width: 62%; background-color: #17a2b9; border-color: #17a2b9; font-size: 16pt;"
 								data-toggle="collapse" data-target="#bteam1">فريق عمل
 								الادارة العامة لحماية أملاك الدولة بمحافظة البحيرة</button></td>
 					</tr>
 					<tr>
 						<td><button type="button" class="btn btn-info"
-								style="width: 62%; background-color: #79c255; border-color: #79c255; font-size: 16pt;"
+								style="width: 62%; background-color: #17a2b9; border-color: #17a2b9; font-size: 16pt;"
 								data-toggle="collapse" data-target="#nteam2">فريق عمل
 								الرفع المساحي</button></td>
 						<td><button type="button" class="btn btn-info"
-								style="width: 62%; background-color: #79c255; border-color: #79c255; font-size: 16pt;"
+								style="width: 62%; background-color: #17a2b9; border-color: #17a2b9; font-size: 16pt;"
 								data-toggle="collapse" data-target="#bteam2">فريق عمل
 								الوحدة المحلية بوادي النطرون</button></td>
 					</tr>
 					<tr>
 						<td><button type="button" class="btn btn-info"
-								style="width: 62%; background-color: #79c255; border-color: #79c255; font-size: 16pt;"
+								style="width: 62%; background-color: #17a2b9; border-color: #17a2b9; font-size: 16pt;"
 								data-toggle="collapse" data-target="#nteam3">فريق عمل
 								استخدامات الأراضي و الغطاء الأرضي</button></td>
 						<td></td>
 					</tr>
 					<tr>
 						<td><button type="button" class="btn btn-info"
-								style="width: 62%; background-color: #79c255; border-color: #79c255; font-size: 16pt;"
+								style="width: 62%; background-color: #17a2b9; border-color: #17a2b9; font-size: 16pt;"
 								data-toggle="collapse" data-target="#nteam4">فريق عمل
 								مطوري الموقع الإلكتروني وقاعدة البيانات</button></td>
 						<td></td>
