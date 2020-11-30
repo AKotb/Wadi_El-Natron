@@ -5,7 +5,7 @@ html, body {
 body {
 	margin: 0px !important;
 	padding: 0px !important;
-	background: #17A2B8 !important;
+	background: #17a2b9 !important;
 	font-family: 'Montserrat', sans-serif !important;
 	font-size: 11pt !important;
 	font-weight: 200 !important;
@@ -284,7 +284,7 @@ px
 
 #wrappercropping {
 	/* 		background: #FFF; */
-	background: #79C255;
+	background: #17a2b9;
 	height: 75%;
 }
 
@@ -363,8 +363,8 @@ px
 }
 
 #menu .current_page_item a {
-	border: 2px solid #79C255;
-	background: #79C255;
+	border: 2px solid #17a2b9;
+	background: #17a2b9;
 	border-radius: 6px;
 	color: #FFF;
 }
@@ -679,7 +679,7 @@ px
 #featured {
 	overflow: hidden;
 	padding: 5em 0em;
-	background: #79C255;
+	background: #17a2b9;
 	color: rgba(255, 255, 255, .8);
 	text-align: center;
 }
@@ -692,7 +692,7 @@ px
 	background: #FFF;
 	margin-top: 3em;
 	font-size: 1em;
-	color: #79C255;
+	color: #17a2b9;
 }
 
 #featured .title {
@@ -798,7 +798,7 @@ px
 .dropdown-content {
 	display: none;
 	position: absolute;
-	background-color: #79C255;
+	background-color: #17a2b9;
 	min-width: 147px;
 	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 	z-index: 1;
