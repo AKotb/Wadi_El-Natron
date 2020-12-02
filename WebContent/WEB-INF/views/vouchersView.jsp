@@ -15,7 +15,11 @@
 	media="all" />
 <link href="resources/fonts.css" rel="stylesheet" type="text/css"
 	media="all" />
-<!-- <link rel="stylesheet" href="resources/tooplate-style.css">
+<!--<link rel="stylesheet" href="https://formden.com/static/cdn/bootstrap-iso.css" />
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+ <link rel="stylesheet" href="resources/tooplate-style.css">
 <link rel="stylesheet" href="resources/beheira.css"> -->
 <style>
 .img_slider {
@@ -178,12 +182,12 @@
 					<div align="center" id="voucher_add_form">
 						<h3 class="text-center text-info">إضافة
 							إيصال جديد</h3><br>
-							<table border="0" align="center" style="dir: rtl;">
+							<table id="add_voucher_table" border="0" align="center" style="dir: rtl;">
 								<tr>
 									<td align="right"><label for="add_voucher_Date" class="text-info" style="float: right;">تاريخ الطلب</label>
 									</td>
 									<td align="right"><input class="form-control" type="date"
-										id="add_voucher_Date" name="add_voucher_Date" value="" style="dir: rtl;"></td>
+										id="add_voucher_Date" name="add_voucher_Date" value=""></td>
 								</tr>
 								<tr>
 									<td align="right"><label for="add_Fees_Status" class="text-info" style="float: right;">نوع الرسوم</label>
@@ -583,6 +587,17 @@
 			document.getElementById("voucher_add_form").style.display = "block";
 			document.getElementById("voucher_edit_form").style.display = "none";
 		}
+		
+		/*$(document).ready(function(){
+			var date_input=$('input[name="add_voucher_Date"]'); //our date input has the name "date"
+			var container=$('input[name="add_voucher_table"]');
+			date_input.datepicker({
+				//format: 'mm/dd/yyyy',
+				container: container,
+				todayHighlight: true,
+				autoclose: true,
+			})
+		});*/
 	</script>
 </body>
 </html>

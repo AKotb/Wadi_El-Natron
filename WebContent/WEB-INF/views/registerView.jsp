@@ -29,6 +29,8 @@
 			}
 		} 
 	}
+	
+	
 </script>
 </head>
 <body>
@@ -73,7 +75,7 @@
 									<input type="submit" name="submit" class="btn btn-info btn-md"
 										value="تسجيل" style="float: right;">
 									<input type="reset" name="reset" class="btn btn-info btn-md"
-										value="إلغاء" style="float: right; margin-right: 10px;">
+										value="مسح" style="float: right; margin-right: 10px;"> 
 									<a href="${pageContext.request.contextPath}/login"
 										class="text-info" style="float: left; margin-top: 10px;">لدي حساب؟</a>
 								</div>
