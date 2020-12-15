@@ -54,6 +54,14 @@
 				landuse_layer.loadGeoJson('http://localhost:8080/JSON/landuse/landuse_'+id+'.json');
 			}
 			
+			// for azure production server
+			/*if (200 == urlExists('http://wn-narss.centralus.cloudapp.azure.com:8080/JSON/admin/admin_'+id+'.json')) {
+				admin_layer.loadGeoJson('http://wn-narss.centralus.cloudapp.azure.com:8080/JSON/admin/admin_'+id+'.json');
+			}
+			if (200 == urlExists('http://wn-narss.centralus.cloudapp.azure.com:8080/JSON/landuse/landuse_'+id+'.json')) {
+				landuse_layer.loadGeoJson('http://wn-narss.centralus.cloudapp.azure.com:8080/JSON/landuse/landuse_'+id+'.json');
+			}*/
+			
 			// for narss production server
 			/*if (200 == urlExists('http://wn.narss.sci.eg:8080/JSON/admin/admin_'+id+'.json')) {
 				admin_layer.loadGeoJson('http://wn.narss.sci.eg:8080/JSON/admin/admin_'+id+'.json');
