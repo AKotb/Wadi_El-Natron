@@ -35,12 +35,11 @@
 </script>
 </head>
 <body>
-<jsp:include page="_header.jsp"></jsp:include>
-<div id="wrapper">
-	<div id="regulationsandlawscontent">
-	<div class="regulations-and-laws_title_div">
-		<h1 class="regulations-and-laws_h1">اللوائح والقوانين</h1>
-	</div>
+<div class="beh_container">
+	<jsp:include page="_header.jsp"></jsp:include>
+	<div class="beh_main2">
+		<div class="beh_main_regulations">
+			<h1>اللوائح والقوانين</h1>
 			<p dir=rtl>
 			يعتبر حصر و تقدير مساحات إستخدامات الأراضى الصحراوية فى مصر متطلبا أساسيا وذو أولوية وطنية عالية للخطط القومية للتنمية المتمثلة فى إدارة الموارد الأرضية والمائية فى مصر ووقف التعديات عليها، وعلاوة على تخطيط الاستخدام الأمثل لتنمية هذه الموارد والتى تعتمد إلى حد كبير على توافر مثل هذه البيانات الدقيقة عن الأراضى ومتابعة التغيرات الحادثة عليها.
 			<br>
@@ -48,24 +47,25 @@
 			</p>
 			
 			<ul dir="rtl">
-			<li><a href="#" onclick='titlepath("datafiles/pdf/rl_01.pdf","143 قانون");' >قانون رقم 143 لسنة 1981 بشأن الأراضي الصحراوية ولائحته التنفيذية</a></li>
-			<li><a href="#" onclick='titlepath("datafiles/pdf/rl_02.pdf","228 قرار");' >قرار رئيس مجلس الوزراء رقم 228 لسنة 1990 بتحديد نطاق مدينة وادي النطرون</a></li>
-			<li><a href="#" onclick='titlepath("datafiles/pdf/rl_03.pdf","7 قانون");' >القانون رقم 7 لسنة 1991 بشأن بعض الاحكام المتعلقة بأملاك الدولة الخاصة</a></li>
-			<li><a href="#" onclick='titlepath("datafiles/pdf/rl_04.pdf","341 قرار ج");' >قرار رئيس الجمهورية رقم 341 لسنة 2014 بشأن الأراضي المخصصة للاستصلاح والاستزراع</a></li>
-			<li><a href="#" onclick='titlepath("datafiles/pdf/rl_05.pdf","75 قرار ج");' >قرار رئيس الجمهورية رقم 75 لسنة 2016 بشأن تشكيل لجنة إسترداد أراضي الدولة</a></li>
-			<li><a href="#" onclick='titlepath("datafiles/pdf/rl_06.pdf","378 قرار ج");' >قرار رئيس الجمهورية رقم 378 لسنة 2016 بشأن استرداد أراضي الدولة</a></li>
-			<li><a href="#" onclick='titlepath("datafiles/pdf/rl_07.pdf","129 قرار ج");' >قراررئيس الجمهورية رقم 129 لسنة 2017 بإلغاء تخصيص قطعتي أرض</a></li>
-			<li><a href="#" onclick='titlepath("datafiles/pdf/rl_08.pdf","144 قرار ج");' >قانون رئيس الجمهورية رقم 144 لسنة 2017 بشأن بعض قواعد التصرف في أملاك الدولة الخاصة</a></li>
-			<li><a href="#" onclick='titlepath("datafiles/pdf/rl_15.pdf","اللائحة التنفيذية");' >اللائحة التنفيذية للقانون 144 لسنة 2017</a></li>
-			<li><a href="#" onclick='titlepath("datafiles/pdf/rl_09.pdf","529 قرار ج");' >قرار رئيس الجمهورية رقم 529 لسنة 2017</a></li>
-			<li><a href="#" onclick='titlepath("datafiles/pdf/rl_10.pdf","خطاب وزير الزراعة");' >خطاب وزير الزراعة لمحافظة البحيرة بشأن قرار رئيس الجمهورية رقم 529 لسنة 2017 بإعادة تخصيص قطع أراضي</a></li>
-			<li><a href="#" onclick='titlepath("datafiles/pdf/rl_11.pdf","بروتوكول تعاون");' >بروتوكول التعاون بين محافظة البحيرة والهيئة القومية للاستشعار من البعد</a></li>
-			<li><a href="#" onclick='titlepath("datafiles/pdf/rl_13.pdf","41 قرار ج");' >قرار رئيس الجمهورية رقم 41 لسنة 2017</a></li>
-			<li><a href="#" onclick='titlepath("datafiles/pdf/rl_14.pdf","233 قرار ج");' >قرار رئيس الجمهورية رقم 233 لسنة 2016</a></li>
+				<li><a href="#" onclick='titlepath("datafiles/pdf/rl_01.pdf","143 قانون");' >قانون رقم 143 لسنة 1981 بشأن الأراضي الصحراوية ولائحته التنفيذية</a></li>
+				<li><a href="#" onclick='titlepath("datafiles/pdf/rl_02.pdf","228 قرار");' >قرار رئيس مجلس الوزراء رقم 228 لسنة 1990 بتحديد نطاق مدينة وادي النطرون</a></li>
+				<li><a href="#" onclick='titlepath("datafiles/pdf/rl_03.pdf","7 قانون");' >القانون رقم 7 لسنة 1991 بشأن بعض الاحكام المتعلقة بأملاك الدولة الخاصة</a></li>
+				<li><a href="#" onclick='titlepath("datafiles/pdf/rl_04.pdf","341 قرار ج");' >قرار رئيس الجمهورية رقم 341 لسنة 2014 بشأن الأراضي المخصصة للاستصلاح والاستزراع</a></li>
+				<li><a href="#" onclick='titlepath("datafiles/pdf/rl_05.pdf","75 قرار ج");' >قرار رئيس الجمهورية رقم 75 لسنة 2016 بشأن تشكيل لجنة إسترداد أراضي الدولة</a></li>
+				<li><a href="#" onclick='titlepath("datafiles/pdf/rl_06.pdf","378 قرار ج");' >قرار رئيس الجمهورية رقم 378 لسنة 2016 بشأن استرداد أراضي الدولة</a></li>
+				<li><a href="#" onclick='titlepath("datafiles/pdf/rl_07.pdf","129 قرار ج");' >قراررئيس الجمهورية رقم 129 لسنة 2017 بإلغاء تخصيص قطعتي أرض</a></li>
+				<li><a href="#" onclick='titlepath("datafiles/pdf/rl_08.pdf","144 قرار ج");' >قانون رئيس الجمهورية رقم 144 لسنة 2017 بشأن بعض قواعد التصرف في أملاك الدولة الخاصة</a></li>
+				<li><a href="#" onclick='titlepath("datafiles/pdf/rl_15.pdf","اللائحة التنفيذية");' >اللائحة التنفيذية للقانون 144 لسنة 2017</a></li>
+				<li><a href="#" onclick='titlepath("datafiles/pdf/rl_09.pdf","529 قرار ج");' >قرار رئيس الجمهورية رقم 529 لسنة 2017</a></li>
+				<li><a href="#" onclick='titlepath("datafiles/pdf/rl_10.pdf","خطاب وزير الزراعة");' >خطاب وزير الزراعة لمحافظة البحيرة بشأن قرار رئيس الجمهورية رقم 529 لسنة 2017 بإعادة تخصيص قطع أراضي</a></li>
+				<li><a href="#" onclick='titlepath("datafiles/pdf/rl_11.pdf","بروتوكول تعاون");' >بروتوكول التعاون بين محافظة البحيرة والهيئة القومية للاستشعار من البعد</a></li>
+				<li><a href="#" onclick='titlepath("datafiles/pdf/rl_13.pdf","41 قرار ج");' >قرار رئيس الجمهورية رقم 41 لسنة 2017</a></li>
+				<li><a href="#" onclick='titlepath("datafiles/pdf/rl_14.pdf","233 قرار ج");' >قرار رئيس الجمهورية رقم 233 لسنة 2016</a></li>
 			</ul>
 			
 		</div>
 	</div>
 	<jsp:include page="_footer.jsp"></jsp:include>
+</div>
 </body>
 </html>

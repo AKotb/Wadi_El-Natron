@@ -326,9 +326,10 @@
 				},
 				alignment : 'center'
 			},
-			backgroundColor : "#aaffaa",
+			backgroundColor : "#8FE2F1",
 			//reverseCategories: true,
-			pieStartAngle : 0
+			pieStartAngle : 0,
+			is3D: true,
 		};
 
 		chart1 = new google.visualization.PieChart(document
@@ -386,9 +387,10 @@
 				},
 				alignment : 'center'
 			},
-			backgroundColor : "#aaffaa",
+			backgroundColor : "#8FE2F1",
 			//reverseCategories: true,
-			pieStartAngle : 0
+			pieStartAngle : 0,
+			is3D: true,
 		};
 
 		chart2 = new google.visualization.PieChart(document
@@ -443,9 +445,10 @@
 				},
 				alignment : 'center'
 			},
-			backgroundColor : "#aaffaa",
+			backgroundColor : "#8FE2F1",
 			//reverseCategories: true,
-			pieStartAngle : 0
+			pieStartAngle : 0,
+			is3D: true,
 		};
 
 		var chart3 = new google.visualization.PieChart(document
@@ -549,9 +552,10 @@
 				},
 				alignment : 'center'
 			},
-			backgroundColor : "#aaffaa",
+			backgroundColor : "#8FE2F1",
 			//reverseCategories: true,
-			pieStartAngle : 0
+			pieStartAngle : 0,
+			is3D: true,
 		};
 
 		var chart4 = new google.visualization.PieChart(document
@@ -624,57 +628,54 @@
 </script>
 </head>
 <body>
-<jsp:include page="_header.jsp"></jsp:include>
-	<div id="wrapper">
-		<div id="statisticscontent" align="center">
+<div class="beh_container">
+	<jsp:include page="_header.jsp"></jsp:include>
+	<!-- <div class="beh_main2"> -->
+	<div id="statisticscontent" align="center">
 		<h1>إحصائيات</h1>
-			<div style="width: 49%; float: left;">
-				<div id="chartTitle1"
-					style="width: 100%; height: 50px; text-align: center; background-color: #17a2b9; color: #0000FF; border-radius: 20px 20px 0px 0px;">
-					<h2>
-						<p style="padding: 10px">البيانات الإحصائية الخاصة بالمنطقة -
-							و</p>
-					</h2>
-				</div>
-				<div id="piechart3" style="width: 100%; height: 500px;"></div>
-				<br>
-				<div id="chartTitleDetails1"
-					style="width: 100%; height: 50px; text-align: center; background-color: #17a2b9; color: #0000FF; border-radius: 20px 20px 0px 0px;">
-					<h2>
-						<p style="padding: 10px">
-							<span>البيانات الإحصائية التفصيلية الخاصة بالمنطقة - و - </span><span
-								id='details1'></span>
-						</p>
-					</h2>
-				</div>
-				<div id="piechart1" style="width: 100%; height: 500px;"></div>
-
-
+		<div class="stats_chart_div_l">
+			<div class="stats_chart_title">
+				<h2>
+					<p style="padding: 0.75vw;">البيانات الإحصائية الخاصة بالمنطقة -
+						و</p>
+				</h2>
 			</div>
-			<div style="width: 49%; float: right;">
-
-				<div id="chartTitle2"
-					style="width: 100%; height: 50px; text-align: center; background-color: #17a2b9; color: #0000FF; border-radius: 20px 20px 0px 0px;">
-					<h2>
-						<p style="padding: 10px">البيانات الإحصائية الخاصة بالمنطقة -
-							هـــ</p>
-					</h2>
-				</div>
-				<div id="piechart4" style="width: 100%; height: 500px;"></div>
-				<br>
-				<div id="chartTitleDetails2"
-					style="width: 100%; height: 50px; text-align: center; background-color: #17a2b9; color: #0000FF; border-radius: 20px 20px 0px 0px;">
-					<h2>
-						<p style="padding: 10px">
-							<span>البيانات الإحصائية التفصيلية الخاصة بالمنطقة - هــ -
-							</span><span id='details2'></span>
-						</p>
-					</h2>
-				</div>
-				<div id="piechart2" style="width: 100%; height: 500px;"></div>
+			<div id="piechart3" class="stats_chart_pie"></div>
+			<br>
+			<div class="stats_chart_title">
+				<h2>
+					<p style="padding: 0.75vw;">
+						<span>البيانات الإحصائية التفصيلية الخاصة بالمنطقة - و - </span><span
+							id='details1'></span>
+					</p>
+				</h2>
 			</div>
+			<div id="piechart1" class="stats_chart_pie"></div>
+
+
+		</div>
+		<div class="stats_chart_div_r">
+
+			<div class="stats_chart_title">
+				<h2>
+					<p style="padding: 0.75vw;">البيانات الإحصائية الخاصة بالمنطقة -
+						هـــ</p>
+				</h2>
+			</div>
+			<div id="piechart4" class="stats_chart_pie"></div>
+			<br>
+			<div class="stats_chart_title">
+				<h2>
+					<p style="padding: 0.75vw;">
+						<span>البيانات الإحصائية التفصيلية الخاصة بالمنطقة - هــ -
+						</span><span id='details2'></span>
+					</p>
+				</h2>
+			</div>
+			<div id="piechart2" class="stats_chart_pie"></div>
 		</div>
 	</div>
 	<jsp:include page="_footer.jsp"></jsp:include>
+</div>
 </body>
 </html>

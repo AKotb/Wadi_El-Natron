@@ -350,7 +350,7 @@
 								var link1 = "<a href=\'javascript:void(0);\' onclick=\'landuse("
 										+ area_id
 										+ ");\' class=\'btn btn-info btn-md\'> استخدامات الأراضى </a>";
-								var content = "<div style=\"text-align:center; overflow:hidden;\"><h1 style=\"background-color: #17a2b8;\">"
+								var content = "<div style=\"text-align:center; overflow:hidden;\"><h1 style=\"background-color: #17a2b8;color:#fff;\">"
 										+ "بيانات قطعة الأرض" + "</h1><br><br>"
 										+ "<table class=\"outertable\" style=\"dir: rtl;\"><tr><td rowspan='6'>"+link4+"</td><td class=\'td\'>"
 										+ area_id
@@ -534,7 +534,7 @@
 								var link1 = "<a href=\'javascript:void(0);\' onclick=\'landuse("
 										+ area_id
 										+ ");\' class=\'btn btn-info btn-md\'> استخدامات الأراضى </a>";
-										var content = "<div style=\"text-align:center; overflow:hidden;\"><h1 style=\"background-color: #17a2b8;\">"
+										var content = "<div style=\"text-align:center; overflow:hidden;\"><h1 style=\"background-color: #17a2b8; color:#fff;\">"
 											+ "بيانات قطعة الأرض" + "</h1><br><br>"
 											+ "<table class=\"outertable\" style=\"dir: rtl;\"><tr><td rowspan='6'>"+link4+"</td><td class=\'td\'>"
 											+ area_id
@@ -718,7 +718,7 @@
 						var link1 = "<a href=\'javascript:void(0);\' onclick=\'landuse("
 								+ area_id
 								+ ");\' class=\'btn btn-info btn-md\'> استخدامات الأراضى </a>";
-								var content = "<div style=\"text-align:center; overflow:hidden;\"><h1 style=\"background-color: #17a2b8;\">"
+								var content = "<div style=\"text-align:center; overflow:hidden;\"><h1 style=\"background-color: #17a2b8; color:#fff;\">"
 									+ "بيانات قطعة الأرض" + "</h1><br><br>"
 									+ "<table class=\"outertable\" style=\"dir: rtl;\"><tr><td rowspan='6'>"+link4+"</td><td class=\'td\'>"
 									+ area_id
@@ -1210,130 +1210,139 @@ function ConvertDMSToDD(degrees, minutes, seconds, direction) {
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDxcedr1zrD8h225vpj3hNseos5mHGEDVY&callback=initMap" async defer></script>
 </head>
 <body>
-<jsp:include page="_header.jsp"></jsp:include>
-	<div id="wrapper">
-		<div id="floating-panel">
-	      <b style="float: right;">المراكز</b><input type="checkbox" onclick="displayAndHideCenters();"  id="centers" style="float: left;"/>
-	      <br>
-	      <b style="float: right;">المناطق</b><input type="checkbox" onclick="displayAndHideDistricts();"  id="districts" style="float: left;"/>
-	      <br>
-	      <b style="float: right;">أراضي مضافة للمحافظة</b><input type="checkbox" onclick="displayAndHideLandsUnionsMohafza();"  id="landsunionsmohafza" style="float: left;"/>
-	      <br>
-	      <b style="float: right;">(41/2017) .قرار ج</b><input type="checkbox" onclick="displayAndHideLaw41();"  id="law41" style="float: left;"/>
-	      <br>
-	      <b style="float: right;">(129/2017) .قرار ج</b><input type="checkbox" onclick="displayAndHideLaw129();"  id="law129" style="float: left;"/>
-	      <br>
-	      <b style="float: right;">(228/1990) قرار</b><input type="checkbox" onclick="displayAndHideLaw228();"  id="law228" style="float: left;"/>
-	      <br>
-	      <b style="float: right;">(233/2016) .قرار ج</b><input type="checkbox" onclick="displayAndHideLaw233();"  id="law233" style="float: left;"/>
-	      <br>
-	      <b style="float: right;">(341/2014) .قرار ج</b><input type="checkbox" onclick="displayAndHideLaw341();"  id="law341" style="float: left;"/>
-	      <br>
-	      <b style="float: right;">(529/2017) .قرار ج</b><input type="checkbox" onclick="displayAndHideLaw529();"  id="law529" style="float: left;"/>
-	    </div>
-	    <div id="latlng_floating-panel">
-  			<input type="radio" name="latlngRadios"  id="decid" onclick="handleClick(this);" value="1" checked="checked"/>Dec.
-  			<input type="radio" name="latlngRadios"  id="degid" onclick="handleClick(this);" value="2" />Deg.<br>
-  			
-  			<div id="latlng_decimal_id" style="display: block;">
-	  			<table border="0" align="center" style="dir: ltr;">
-		  			<tr>
-		  				<td align="left">
-		  					<b>Lat: </b>
-		  				</td>
-		  				<td align="left">
-		  					<input id="latValue" type="text"  onfocus="if(this.value == '30.170996') { this.value = ''; this.style.color = '#000'}" value="30.170996">
-		  				</td>
-		  				<td align="left">
-		  					<b>N</b>
-		  				</td>
-		  			</tr>
-		  			<tr>
-		  				<td align="left">
-		  					<b>Lon: </b>
-		  				</td>
-		  				<td align="left">
-		  					<input id="lngValue" type="text"  onfocus="if(this.value == '30.187959') { this.value = ''; this.style.color = '#000'}" value="30.187959">
-		  				</td>
-		  				<td align="left">
-		  					<b>E</b>
-		  				</td>
-		  			</tr>
-	      		 	<!-- <b>Lat: </b><input id="latValue" type="text"  onfocus="if(this.value == '30.170996') { this.value = ''; this.style.color = '#000'}" value="30.170996">&nbsp;<b>N</b><br>
-	      		 	<b>Lng: </b><input id="lngValue" type="text"  onfocus="if(this.value == '30.187959') { this.value = ''; this.style.color = '#000'}" value="30.187959">&nbsp;<b>E</b><br> -->
-	      		</table>
-      		</div>
-      		
-      		
-      		<div id="latlng_degrees_id" style="display: none;">
-      			<table border="0" align="center" style="dir: ltr;">
-	      			<tr>
-	      				<td align="left">
-		  					<b>Lat: </b>
-		  				</td>
-		  				<td align="left">
-		  					<input class="latlngValueclass1" id="latdeg" type="text"  onfocus="if(this.value == '30') { this.value = ''; this.style.color = '#000'}" value="30">
-		  				</td>
-		  				<td align="left">
-		  					<b><sup>o</sup></b>
-		  				</td>
-		  				<td align="left">
-		  					<input class="latlngValueclass1" id="latmin" type="text"  onfocus="if(this.value == '10') { this.value = ''; this.style.color = '#000'}" value="10">
-		  				</td>
-		  				<td align="left">
-		  					<b><sup>'</sup></b>
-		  				</td>
-		  				<td align="left">
-		  					<input class="latlngValueclass2" id="latsec" type="text"  onfocus="if(this.value == '15.5856') { this.value = ''; this.style.color = '#000'}" value="15.5856">
-		  				</td>
-		  				<td align="left">
-		  					<sup>"</sup>
-		  				</td>
-		  				<td align="left">
-		  					<b>N</b>
-		  				</td>
-	      			</tr>
-	      			<tr>
-	      				<td align="left">
-		  					<b>Lng: </b>
-		  				</td>
-		  				<td align="left">
-		  					<input class="latlngValueclass1" id="lngdeg" type="text"  onfocus="if(this.value == '30') { this.value = ''; this.style.color = '#000'}" value="30">
-		  				</td>
-		  				<td align="left">
-		  					<b><sup>o</sup></b>
-		  				</td>
-		  				<td align="left">
-		  					<input class="latlngValueclass1" id="lngmin" type="text"  onfocus="if(this.value == '11') { this.value = ''; this.style.color = '#000'}" value="11">
-		  				</td>
-		  				<td align="left">
-		  					<b><sup>'</sup></b>
-		  				</td>
-		  				<td align="left">
-		  					<input class="latlngValueclass2" id="lngsec" type="text"  onfocus="if(this.value == '16.6524') { this.value = ''; this.style.color = '#000'}" value="16.6524">
-		  				</td>
-		  				<td align="left">
-		  					<sup>"</sup>
-		  				</td>
-		  				<td align="left">
-		  					<b>E</b>
-		  				</td>
-	      			</tr>
-      			</table>
-      		<!-- <b>Lat: </b><input class="latlngValueclass1" id="latdeg" type="text"  onfocus="if(this.value == '30') { this.value = ''; this.style.color = '#000'}" value="30"><b><sup>o</sup></b>
-      					<input class="latlngValueclass1" id="latmin" type="text"  onfocus="if(this.value == '10') { this.value = ''; this.style.color = '#000'}" value="10">&nbsp;<b><sup>'</sup></b>
-      					<input class="latlngValueclass2" id="latsec" type="text"  onfocus="if(this.value == '15.5856') { this.value = ''; this.style.color = '#000'}" value="15.5856">&nbsp;<b><sup>"</sup> N</b><br>
-      		<b>Lng: </b><input class="latlngValueclass1" id="lngdeg" type="text"  onfocus="if(this.value == '30') { this.value = ''; this.style.color = '#000'}" value="30"><b><sup>o</sup></b>
-      					<input class="latlngValueclass1" id="lngmin" type="text"  onfocus="if(this.value == '11') { this.value = ''; this.style.color = '#000'}" value="11">&nbsp;<b><sup>'</sup></b>
-      					<input class="latlngValueclass2" id="lngsec" type="text"  onfocus="if(this.value == '16.6524') { this.value = ''; this.style.color = '#000'}" value="16.6524">&nbsp;<b><sup>"</sup> E</b><br> -->
-      		</div>
-      		<h2 align="center">
-      			<input id="cancellatlng" type="button" value="إلغاء" class="btn btn-info btn-md">
-      			<input id="submitlatlng" type="button" value="بحث" class="btn btn-info btn-md">
-      		</h2>
-    	</div>
-		<div id="map-canvas"></div>
+<div class="beh_container">
+	<jsp:include page="_header.jsp"></jsp:include>
+	<div class="beh_main">
+		<div class="beh_main_side">
+			<div><!-- <div id="floating-panel"> -->
+		      <b style="float: right;">المراكز</b><input type="checkbox" onclick="displayAndHideCenters();"  id="centers" style="float: left;"/>
+		      <br>
+		      <b style="float: right;">المناطق</b><input type="checkbox" onclick="displayAndHideDistricts();"  id="districts" style="float: left;"/>
+		      <br>
+		      <b style="float: right;">أراضي مضافة للمحافظة</b><input type="checkbox" onclick="displayAndHideLandsUnionsMohafza();"  id="landsunionsmohafza" style="float: left;"/>
+		      <br>
+		      <b style="float: right;">(41/2017) .قرار ج</b><input type="checkbox" onclick="displayAndHideLaw41();"  id="law41" style="float: left;"/>
+		      <br>
+		      <b style="float: right;">(129/2017) .قرار ج</b><input type="checkbox" onclick="displayAndHideLaw129();"  id="law129" style="float: left;"/>
+		      <br>
+		      <b style="float: right;">(228/1990) قرار</b><input type="checkbox" onclick="displayAndHideLaw228();"  id="law228" style="float: left;"/>
+		      <br>
+		      <b style="float: right;">(233/2016) .قرار ج</b><input type="checkbox" onclick="displayAndHideLaw233();"  id="law233" style="float: left;"/>
+		      <br>
+		      <b style="float: right;">(341/2014) .قرار ج</b><input type="checkbox" onclick="displayAndHideLaw341();"  id="law341" style="float: left;"/>
+		      <br>
+		      <b style="float: right;">(529/2017) .قرار ج</b><input type="checkbox" onclick="displayAndHideLaw529();"  id="law529" style="float: left;"/>
+		    </div>
+		    <div><!-- <div id="latlng_floating-panel"> -->
+	  			<br><br>
+	  			<input type="radio" name="latlngRadios"  id="decid" onclick="handleClick(this);" value="1" checked="checked"/>Dec.
+	  			<input type="radio" name="latlngRadios"  id="degid" onclick="handleClick(this);" value="2" />Deg.<br>
+	  			
+	  			<div id="latlng_decimal_id" style="display: block;">
+		  			<table border="0" align="center" style="dir: ltr;">
+			  			<tr>
+			  				<td align="left">
+			  					<b>Lat: </b>
+			  				</td>
+			  				<td align="left">
+			  					<input id="latValue" type="text"  onfocus="if(this.value == '30.170996') { this.value = ''; this.style.color = '#000'}" value="30.170996">
+			  				</td>
+			  				<td align="left">
+			  					<b>N</b>
+			  				</td>
+			  			</tr>
+			  			<tr>
+			  				<td align="left">
+			  					<b>Lon: </b>
+			  				</td>
+			  				<td align="left">
+			  					<input id="lngValue" type="text"  onfocus="if(this.value == '30.187959') { this.value = ''; this.style.color = '#000'}" value="30.187959">
+			  				</td>
+			  				<td align="left">
+			  					<b>E</b>
+			  				</td>
+			  			</tr>
+		      		 	<!-- <b>Lat: </b><input id="latValue" type="text"  onfocus="if(this.value == '30.170996') { this.value = ''; this.style.color = '#000'}" value="30.170996">&nbsp;<b>N</b><br>
+		      		 	<b>Lng: </b><input id="lngValue" type="text"  onfocus="if(this.value == '30.187959') { this.value = ''; this.style.color = '#000'}" value="30.187959">&nbsp;<b>E</b><br> -->
+		      		</table>
+	      		</div>
+	      		
+	      		
+	      		<div id="latlng_degrees_id" style="display: none;">
+	      			<table border="0" align="center" style="dir: ltr;">
+		      			<tr>
+		      				<td align="left">
+			  					<b>Lat: </b>
+			  				</td>
+			  				<td align="left">
+			  					<input class="latlngValueclass1" id="latdeg" type="text"  onfocus="if(this.value == '30') { this.value = ''; this.style.color = '#000'}" value="30">
+			  				</td>
+			  				<td align="left">
+			  					<b><sup>o</sup></b>
+			  				</td>
+			  				<td align="left">
+			  					<input class="latlngValueclass1" id="latmin" type="text"  onfocus="if(this.value == '10') { this.value = ''; this.style.color = '#000'}" value="10">
+			  				</td>
+			  				<td align="left">
+			  					<b><sup>'</sup></b>
+			  				</td>
+			  				<td align="left">
+			  					<input class="latlngValueclass2" id="latsec" type="text"  onfocus="if(this.value == '15.5856') { this.value = ''; this.style.color = '#000'}" value="15.5856">
+			  				</td>
+			  				<td align="left">
+			  					<sup>"</sup>
+			  				</td>
+			  				<td align="left">
+			  					<b>N</b>
+			  				</td>
+		      			</tr>
+		      			<tr>
+		      				<td align="left">
+			  					<b>Lng: </b>
+			  				</td>
+			  				<td align="left">
+			  					<input class="latlngValueclass1" id="lngdeg" type="text"  onfocus="if(this.value == '30') { this.value = ''; this.style.color = '#000'}" value="30">
+			  				</td>
+			  				<td align="left">
+			  					<b><sup>o</sup></b>
+			  				</td>
+			  				<td align="left">
+			  					<input class="latlngValueclass1" id="lngmin" type="text"  onfocus="if(this.value == '11') { this.value = ''; this.style.color = '#000'}" value="11">
+			  				</td>
+			  				<td align="left">
+			  					<b><sup>'</sup></b>
+			  				</td>
+			  				<td align="left">
+			  					<input class="latlngValueclass2" id="lngsec" type="text"  onfocus="if(this.value == '16.6524') { this.value = ''; this.style.color = '#000'}" value="16.6524">
+			  				</td>
+			  				<td align="left">
+			  					<sup>"</sup>
+			  				</td>
+			  				<td align="left">
+			  					<b>E</b>
+			  				</td>
+		      			</tr>
+	      			</table>
+	      		<!-- <b>Lat: </b><input class="latlngValueclass1" id="latdeg" type="text"  onfocus="if(this.value == '30') { this.value = ''; this.style.color = '#000'}" value="30"><b><sup>o</sup></b>
+	      					<input class="latlngValueclass1" id="latmin" type="text"  onfocus="if(this.value == '10') { this.value = ''; this.style.color = '#000'}" value="10">&nbsp;<b><sup>'</sup></b>
+	      					<input class="latlngValueclass2" id="latsec" type="text"  onfocus="if(this.value == '15.5856') { this.value = ''; this.style.color = '#000'}" value="15.5856">&nbsp;<b><sup>"</sup> N</b><br>
+	      		<b>Lng: </b><input class="latlngValueclass1" id="lngdeg" type="text"  onfocus="if(this.value == '30') { this.value = ''; this.style.color = '#000'}" value="30"><b><sup>o</sup></b>
+	      					<input class="latlngValueclass1" id="lngmin" type="text"  onfocus="if(this.value == '11') { this.value = ''; this.style.color = '#000'}" value="11">&nbsp;<b><sup>'</sup></b>
+	      					<input class="latlngValueclass2" id="lngsec" type="text"  onfocus="if(this.value == '16.6524') { this.value = ''; this.style.color = '#000'}" value="16.6524">&nbsp;<b><sup>"</sup> E</b><br> -->
+	      		</div>
+	      		<h2 align="center">
+	      			<input id="cancellatlng" type="button" value="إلغاء" class="btn btn-info btn-md">
+	      			<input id="submitlatlng" type="button" value="بحث" class="btn btn-info btn-md">
+	      		</h2>
+	    	</div>
+		
+		</div>
+		<div class="beh_main_map" id="map-canvas">
+			<!-- <div id="map-canvas"></div> -->
+		</div>
 	</div>
+	
 	<jsp:include page="_footer.jsp"></jsp:include>
+</div>
 </body>
 </html>

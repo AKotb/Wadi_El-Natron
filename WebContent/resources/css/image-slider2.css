@@ -7,15 +7,16 @@ p#cf7_controls {
   cursor:pointer;
   /*border:1px solid white;*/
   writing-mode: vertical-lr;
-  padding: 1.3%;
+  padding: 0.8%;
   transform: rotate(-140deg);
-  width: 1%;
+  width: 0.8%;
+  font-weight: bold;
 }
 #cf7 {
   position:relative;
   height:100%;
   width:100%;
-  margin:0 auto 10px;
+  margin:2vw 0;
 }
 #cf7 img {
   position:absolute;
@@ -39,37 +40,37 @@ p#cf7_controls {
 
 .selected{
 	font-weight: bold;
-	color: #0000ff;
+	color: #17a2b9;
 }
 
 .nvgt{
-	height: 40px;
-	width: 50px;
-	opacity: 0.6;
-	margin: 5px;
+	height: 2vw;
+	width: 2.75vw;
+	opacity: 0.9;
+	margin: 0.1vw;
 	float: left;
 }
 .rowcropmonitor{
 	overflow: hidden;
 	padding-left:20%;
-	width: 80%
+	width: 75%
 }
 .nvgt:hover{
 	opacity: 0.9;
 }
 #prev{
-	background: #000 url('../images/ts_prev.png') no-repeat center;
-	background-size: 30px 40px;
-	border-radius: 12px 0 0 12px;
+	background: #17a2b9 url('../images/ts_prev.png') no-repeat center;
+	background-size: 1.25vw 2vw;
+	border-radius: 0.75vw 0 0 0.75vw;
 }
 #next{
-	background: #000 url('../images/ts_next.png') no-repeat center;
-	background-size: 30px 40px;
-	border-radius: 0 12px 12px 0;
+	background: #17a2b9 url('../images/ts_next.png') no-repeat center;
+	background-size: 1.25vw 2vw;
+	border-radius: 0 0.75vw 0.75vw 0;
 }
 #play{
-	background: #000 url('../images/ts_play.png') no-repeat center;
-	background-size: 30px 40px;
+	background: #17a2b9 url('../images/ts_play.png') no-repeat center;
+	background-size: 1.25vw 2vw;
 }
 #cf7_controls>span:hover{
 	color: red;
@@ -78,13 +79,13 @@ p#cf7_controls {
 .floatingimagetitle{
 	position: absolute;
     right: 20.5%;
-    top: 4px;
+    top: 0.2vw;
     z-index: 50;
     color: white;
     font-weight: bold;
-    font-size: 18pt;
-    border: 2px solid #17a2b9;
-    padding: 5px;
+    font-size: 1.1vw;
+    border: 0.1vw solid #17a2b9;
+    padding: 0.25vw;
     background-color: #777;
 }
 /*********************************  Team Members  *******************************/

@@ -318,14 +318,14 @@
 						+ "طلب إجراءات التقنين"
 						+ "</a>";
 				var link4 = "<a href=\'datafiles/landuse/"+db_farmid+".jpg\' target='_blank'><img class=\'infowindowimg\' src=\'datafiles/landuse/"+db_farmid+".jpg\' alt=\'Icon\' style=\"width:280px;height:200px;\"></a>";
-				var content = "<div style=\"text-align:center; overflow:hidden;\"><h1 style=\"background-color: #17a2b8;\">"
+				var content = "<div style=\"text-align:center; overflow:hidden;\"><h1 style=\"background-color: #17a2b8; color:#fff;\">"
 					+ "بيانات قطعة الأرض" + "</h1><br>"
 					+ "<table class=\"outertable\" style=\"dir: rtl;\"><tr><td class=\'td\'>"
 					+ db_farmid
 					+ "</td><td class=\'rightcolumn\'>كود المزرعة / الشركة</td></tr><tr><td class=\'td\'>"
 					+ db_farmname
 					+ "</td><td class=\'rightcolumn\'>اسم المزرعة / الشركة</td></tr></table>"
-					+"<h2 style=\"background-color: #17a2b8;\">استخدامات الأرض / فدان</h2>"
+					+"<h2 style=\"background-color: #17a2b8; color: #fff;\">استخدامات الأرض / فدان</h2>"
 					+"<table class=\"outertable\" style=\"dir: rtl;\"><tr><td rowspan='12'>"+link4+"</td><td class=\'td\'>"
 					+ db_fieldCropsArea
 					+ "</td><td class=\'rightcolumn\'>محاصيل حقلية</td></tr><tr><td class=\'td\'>"
@@ -421,10 +421,19 @@
 	<script src="resources/js/custom.js"></script>
 </head>
 <body>
-<jsp:include page="_header.jsp"></jsp:include>
-<div id="wrapper">
-	<div id="map-canvas"></div>
+<div class="beh_container">
+	<jsp:include page="_header.jsp"></jsp:include>
+	<div class="beh_main">
+		<div class="beh_main_other" id="map-canvas">
+			<!-- <div id="map-canvas"></div> -->
+		</div>
+		<!-- 
+		<div id="wrapper">
+			<div id="map-canvas"></div>
+			</div>
+		-->
 	</div>
 	<jsp:include page="_footer.jsp"></jsp:include>
+</div>
 </body>
 </html>

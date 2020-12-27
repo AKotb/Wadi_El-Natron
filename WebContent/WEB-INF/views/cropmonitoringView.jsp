@@ -20,10 +20,11 @@
 	href="resources/css/image-slider2.css">
 </head>
 <body>
+<div class="beh_container">
 	<jsp:include page="_header.jsp"></jsp:include>
-	<div id="wrappercropping">
-		<div id="cropmonitoringcontent">
-			
+	<div class="beh_main2"><!-- <div id="wrappercropping"> -->
+		<div class="beh_main_regulations"><!--<div id="cropmonitoringcontent">-->
+			<div style="height:60%;">
 			<div id="cf7" class="shadow">
 			<div class="floatingimagetitle" id="floatingimagetitleid">التغير الزمني في الغطاء الخضري-المنطقة (و)</div>
 				<img class='opaque'
@@ -76,22 +77,28 @@
 					src="datafiles/cropmonitoring/db2_NDVI_20170626.jpg"
 					alt="db2_2017-06-26" />
 			</div>
-		</div>
-		<div class="rowcropmonitor">
-			<div class="nvgt" id="prev"></div>
-			<div class="nvgt" id="play"></div>
-			<div class="nvgt" id="next"></div>
-			<p id="cf7_controls">
-					<span class="selected">2016-02</span> <span>2016-05</span> <span>2016-06</span>
-					<span>2016-07</span> <span>2016-08</span> <span>2016-10</span> <span>2017-01</span>
-					<span>2017-02</span> <span>2017-03</span> <span>2017-04</span> <span>2017-05</span>
-					<span>2017-06</span> <span>2016-02</span> <span>2016-05</span> <span>2016-06</span>
-					<span>2016-07</span> <span>2016-08</span> <span>2016-10</span> <span>2017-01</span>
-					<span>2017-02</span> <span>2017-03</span> <span>2017-04</span> <span>2017-05</span>
-					<span>2017-06</span>
-			</p>
+			</div>
+			<div class="rowcropmonitor">
+				<div style="align:center;">
+					<div class="nvgt" id="prev"></div>
+					<div class="nvgt" id="play"></div>
+					<div class="nvgt" id="next"></div>
+				</div>
+				<br>
+				<span id="cf7_controls">
+						<span class="selected">2016-02</span> <span>2016-05</span> <span>2016-06</span>
+						<span>2016-07</span> <span>2016-08</span> <span>2016-10</span> <span>2017-01</span>
+						<span>2017-02</span> <span>2017-03</span> <span>2017-04</span> <span>2017-05</span>
+						<span>2017-06</span> <span>2016-02</span> <span>2016-05</span> <span>2016-06</span>
+						<span>2016-07</span> <span>2016-08</span> <span>2016-10</span> <span>2017-01</span>
+						<span>2017-02</span> <span>2017-03</span> <span>2017-04</span> <span>2017-05</span>
+						<span>2017-06</span>
+				</span>
+			</div>
+		
 		</div>
 	</div>
 	<jsp:include page="_footer.jsp"></jsp:include>
+</div>
 </body>
 </html>
