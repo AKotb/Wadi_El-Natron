@@ -6,6 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="" />
 <meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="resources/js/jquery.js"></script>
 <script src="resources/js/bootstrap.min.js"></script>
 <script src="resources/js/jquery.sticky.js"></script>
@@ -1214,27 +1215,9 @@ function ConvertDMSToDD(degrees, minutes, seconds, direction) {
 	<jsp:include page="_header.jsp"></jsp:include>
 	<div class="beh_main">
 		<div class="beh_main_side">
-			<div><!-- <div id="floating-panel"> -->
-		      <b style="float: right;">المراكز</b><input type="checkbox" onclick="displayAndHideCenters();"  id="centers" style="float: left;"/>
-		      <br>
-		      <b style="float: right;">المناطق</b><input type="checkbox" onclick="displayAndHideDistricts();"  id="districts" style="float: left;"/>
-		      <br>
-		      <b style="float: right;">أراضي مضافة للمحافظة</b><input type="checkbox" onclick="displayAndHideLandsUnionsMohafza();"  id="landsunionsmohafza" style="float: left;"/>
-		      <br>
-		      <b style="float: right;">(41/2017) .قرار ج</b><input type="checkbox" onclick="displayAndHideLaw41();"  id="law41" style="float: left;"/>
-		      <br>
-		      <b style="float: right;">(129/2017) .قرار ج</b><input type="checkbox" onclick="displayAndHideLaw129();"  id="law129" style="float: left;"/>
-		      <br>
-		      <b style="float: right;">(228/1990) قرار</b><input type="checkbox" onclick="displayAndHideLaw228();"  id="law228" style="float: left;"/>
-		      <br>
-		      <b style="float: right;">(233/2016) .قرار ج</b><input type="checkbox" onclick="displayAndHideLaw233();"  id="law233" style="float: left;"/>
-		      <br>
-		      <b style="float: right;">(341/2014) .قرار ج</b><input type="checkbox" onclick="displayAndHideLaw341();"  id="law341" style="float: left;"/>
-		      <br>
-		      <b style="float: right;">(529/2017) .قرار ج</b><input type="checkbox" onclick="displayAndHideLaw529();"  id="law529" style="float: left;"/>
-		    </div>
+			
 		    <div><!-- <div id="latlng_floating-panel"> -->
-	  			<br><br>
+	  			
 	  			<input type="radio" name="latlngRadios"  id="decid" onclick="handleClick(this);" value="1" checked="checked"/>Dec.
 	  			<input type="radio" name="latlngRadios"  id="degid" onclick="handleClick(this);" value="2" />Deg.<br>
 	  			
@@ -1335,6 +1318,28 @@ function ConvertDMSToDD(degrees, minutes, seconds, direction) {
 	      			<input id="submitlatlng" type="button" value="بحث" class="btn btn-info btn-md">
 	      		</h2>
 	    	</div>
+	    	
+	    	<div class="beh_main_side_sep"></div>
+	    	
+	    	<div style="padding:1vw 1vw 3vw 1vw;"><!-- <div id="floating-panel"> -->
+		      <b style="float: right;">المراكز</b><input type="checkbox" onclick="displayAndHideCenters();"  id="centers" style="float: left;"/>
+		      <br>
+		      <b style="float: right;">المناطق</b><input type="checkbox" onclick="displayAndHideDistricts();"  id="districts" style="float: left;"/>
+		      <br>
+		      <b style="float: right;">أراضي مضافة للمحافظة</b><input type="checkbox" onclick="displayAndHideLandsUnionsMohafza();"  id="landsunionsmohafza" style="float: left;"/>
+		      <br>
+		      <b style="float: right;">(41/2017) .قرار ج</b><input type="checkbox" onclick="displayAndHideLaw41();"  id="law41" style="float: left;"/>
+		      <br>
+		      <b style="float: right;">(129/2017) .قرار ج</b><input type="checkbox" onclick="displayAndHideLaw129();"  id="law129" style="float: left;"/>
+		      <br>
+		      <b style="float: right;">(228/1990) قرار</b><input type="checkbox" onclick="displayAndHideLaw228();"  id="law228" style="float: left;"/>
+		      <br>
+		      <b style="float: right;">(233/2016) .قرار ج</b><input type="checkbox" onclick="displayAndHideLaw233();"  id="law233" style="float: left;"/>
+		      <br>
+		      <b style="float: right;">(341/2014) .قرار ج</b><input type="checkbox" onclick="displayAndHideLaw341();"  id="law341" style="float: left;"/>
+		      <br>
+		      <b style="float: right;">(529/2017) .قرار ج</b><input type="checkbox" onclick="displayAndHideLaw529();"  id="law529" style="float: left;"/>
+		    </div>
 		
 		</div>
 		<div class="beh_main_map" id="map-canvas">

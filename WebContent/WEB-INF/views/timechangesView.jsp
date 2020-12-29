@@ -7,6 +7,7 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<meta name="keywords" content="" />
 		<meta name="description" content="" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 		
 		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
 		<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
@@ -16,16 +17,25 @@
 		<link href="resources/fonts.css" rel="stylesheet" type="text/css"
 			media="all" />
 			
+		<link rel="stylesheet" href="resources/css/bootstrap.min.3.4.1.css">
+		<script src="resources/js/jquery.js"></script>
+		<script src="resources/js/jquery.min.3.4.1.js"></script>
+		<script type="text/javascript" src="resources/js/image-slider2.js"></script>
+		<script src="resources/js/bootstrap.min.3.4.1.js"></script>
+		<link href="resources/css/googlefonts.css" rel="stylesheet" />
+		<link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="resources/css/image-slider2.css">
+		
 		<style>
 			#map_db1 {
-				width: 80%;
-				height: 80%;
-				margin: 1% 10% 5% 10%;
+				width: 70vw;
+				height: 34vw;
+				margin: 1vw 10vw 4vw 15vw;
 			}
 			#map_db2 {
-				width: 80%;
-				height: 80%;
-				margin: 1% 10% 1% 10%;
+				width: 70vw;
+				height: 34vw;
+				margin: 1vw 10vw 6vw 15vw;
 			}
 		</style>
 	</head>

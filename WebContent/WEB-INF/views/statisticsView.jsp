@@ -3,16 +3,24 @@
 <!DOCTYPE html>
 <html>
 <head>
+<title>إحصائيات</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="" />
 <meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="resources/css/bootstrap.min.3.4.1.css">
+<script src="resources/js/jquery.js"></script>
+<script src="resources/js/jquery.min.3.4.1.js"></script>
+
+<script src="resources/js/bootstrap.min.3.4.1.js"></script>
+<link href="resources/css/googlefonts.css" rel="stylesheet" />
 <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700"
 	rel="stylesheet" />
 <link href="resources/default.css" rel="stylesheet" type="text/css"
 	media="all" />
 <link href="resources/fonts.css" rel="stylesheet" type="text/css"
 	media="all" />
-<title>إحصائيات</title>
+
 <script type="text/javascript"
 	src="https://www.gstatic.com/charts/loader.js"></script>
 <script
@@ -636,7 +644,7 @@
 		<div class="stats_chart_div_l">
 			<div class="stats_chart_title">
 				<h2>
-					<p style="padding: 0.75vw;">البيانات الإحصائية الخاصة بالمنطقة -
+					<p style="padding: 0 0.75vw;">البيانات الإحصائية الخاصة بالمنطقة -
 						و</p>
 				</h2>
 			</div>
@@ -644,7 +652,7 @@
 			<br>
 			<div class="stats_chart_title">
 				<h2>
-					<p style="padding: 0.75vw;">
+					<p style="padding: 0 0.75vw;">
 						<span>البيانات الإحصائية التفصيلية الخاصة بالمنطقة - و - </span><span
 							id='details1'></span>
 					</p>
@@ -658,7 +666,7 @@
 
 			<div class="stats_chart_title">
 				<h2>
-					<p style="padding: 0.75vw;">البيانات الإحصائية الخاصة بالمنطقة -
+					<p style="padding: 0 0.75vw;">البيانات الإحصائية الخاصة بالمنطقة -
 						هـــ</p>
 				</h2>
 			</div>
@@ -666,7 +674,7 @@
 			<br>
 			<div class="stats_chart_title">
 				<h2>
-					<p style="padding: 0.75vw;">
+					<p style="padding: 0 0.75vw;">
 						<span>البيانات الإحصائية التفصيلية الخاصة بالمنطقة - هــ -
 						</span><span id='details2'></span>
 					</p>
