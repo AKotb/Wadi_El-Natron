@@ -29,7 +29,7 @@
 	<jsp:include page="_header.jsp"></jsp:include>
 	<div class="beh_main2">
 		<div class="beh_main_regulations">
-			<div style="height:32vw;">
+			<div style="height:31vw;">
 				<div id="cf7" class="shadow">
 				<div class="floatingimagetitle" id="floatingimagetitleid">التغير الزمني في الغطاء الخضري-المنطقة (و)</div>
 					<img class='opaque'
@@ -101,9 +101,9 @@
 				</span>
 			</div>
 		</div>
+		</div>
+		<jsp:include page="_footer.jsp"></jsp:include>
 	</div>
-	</div>
-	<jsp:include page="_footer.jsp"></jsp:include>
 </div>
 </body>
 </html>

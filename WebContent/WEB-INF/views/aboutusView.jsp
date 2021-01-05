@@ -366,6 +366,17 @@ td {
 								<h4 class="person_desc">مطور برمجيات</h4>
 							</div>
 						</div>
+						
+						<div class="column_about">
+							<div class="card_about">
+								<div>
+									<img class="photo_member"
+										src="resources/images/sayed-ahmed.jpeg">
+								</div>
+								<h3 class="person_title">م. سيد أحمد سيد</h3>
+								<h4 class="person_desc">مطور برمجيات</h4>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>

@@ -439,10 +439,10 @@ px
     position: relative;
     font-size: 31px;
     line-height: 40px;
-    padding: 15px 15px 15px 1%;
+    padding: 1vw;
     color: #355681;
-    box-shadow: inset 0 0 0 1px rgba(53,86,129, 0.4), inset 0 0 5px rgba(53,86,129, 0.5), inset -285px 0 35px white;
-    border-radius: 10px 10px 10px 10px;
+    box-shadow: inset 0 0 0 0.1vw rgba(53,86,129, 0.4), inset 0 0 1.5vw rgba(53,86,129, 0.5), inset -25vw 0 6vw white;
+    border-radius: 0.6vw;
     background: #fff;
     width: 83%;
 }
@@ -658,8 +658,8 @@ px
     font-size: 40px;
     padding: 15px 15px 15px 3%;
     color: #355681;
-    box-shadow: inset 0 0 0 1px rgba(53,86,129, 0.4), inset 0 0 5px rgba(53,86,129, 0.5), inset -285px 0 35px white;
-    border-radius: 10px 10px 10px 10px;
+    box-shadow: inset 0 0 0 0.1vw rgba(53,86,129, 0.4), inset 0 0 1.5vw rgba(53,86,129, 0.5), inset -25vw 0 6vw white;
+    border-radius: 0.6vw;
     width: 28%;
 }
 
@@ -922,12 +922,12 @@ input.hidden {
 	.column_about {
 		width: 100%;
 		display: block;
-		margin-bottom: 20px;
+		margin-bottom: 1.6vw;
 	}
 }
 
 .card_about {
-	padding: 0 16px;
+	padding: 0;
 	text-align: center;
 }
 
@@ -935,7 +935,7 @@ input.hidden {
 	padding: 16px;
 	text-align: center;
 	color: #555;
-	font-size: 3.5em;
+	font-size: 3em;
 	font-family: 'Montserrat', sans-serif;
 	font-weight: 700;
 }
@@ -951,21 +951,23 @@ input.hidden {
 }
 
 .photo_head {
-	width: 200px;
-	height: 200px;
+	width: 15vw;
+	height: 15vw;
 	border-radius: 50%;
 	transform: scale(0.8);
 	transition: transform 0.4s ease;
 	filter: saturate(1.5);
+	padding: 0.5vw;
 }
 
 .photo_member {
-	width: 200px;
-	height: 200px;
+	width: 15vw;
+	height: 15vw;
 	border-radius: 50%;
 	transform: scale(0.8);
 	transition: transform 0.4s ease;
 	filter: saturate(1.5);
+	padding: 0.5vw;
 }
 
 .photo_head:hover, .photo_member:hover {
@@ -976,18 +978,18 @@ input.hidden {
 	color: #444;
 	font-family: 'Montserrat', sans-serif;
 	font-weight: bold;
-	font-size: 16px;
+	font-size: 1.4vw;
 }
 
 .person_desc {
 	color: #aaa;
 	font-family: 'Montserrat', sans-serif;
 	font-weight: bold;
-	font-size: 15px;
+	font-size: 1.4vw;
 }
 
 .card_about:hover {
-	text-shadow: 2px 2px #dfd;
+	text-shadow: 0.15vw 0.15vw #dfd;
 }
 
 .team_whole {
@@ -1049,11 +1051,11 @@ input.hidden {
 	text-align: center;
 	margin: 0.5% 0% 0.5% 40%;
     font-family: 'Titillium Web', sans-serif;
-    font-size: 36px;
+    font-size: 3.5em;
     padding: 15px 15px 15px 3%;
     color: #355681;
-    box-shadow: inset 0 0 0 1px rgba(53,86,129, 0.4), inset 0 0 5px rgba(53,86,129, 0.5), inset -285px 0 35px white;
-    border-radius: 10px 10px 10px 10px;
+    box-shadow: inset 0 0 0 0.1vw rgba(53,86,129, 0.4), inset 0 0 1.5vw rgba(53,86,129, 0.5), inset -25vw 0 6vw white;
+    border-radius: 0.6vw;
     width: 14%;
 }
 
@@ -1061,11 +1063,11 @@ input.hidden {
 	text-align: center;
 	margin: 0.5% 0% 0.5% 40%;
     font-family: 'Titillium Web', sans-serif;
-    font-size: 36px;
-    padding: 15px 15px 15px 1%;
+    font-size: 3em;
+    padding: 1vw;
     color: #355681;
-    box-shadow: inset 0 0 0 1px rgba(53,86,129, 0.4), inset 0 0 5px rgba(53,86,129, 0.5), inset -285px 0 35px white;
-    border-radius: 10px 10px 10px 10px;
+    box-shadow: inset 0 0 0 0.1vw rgba(53,86,129, 0.4), inset 0 0 1.5vw rgba(53,86,129, 0.5), inset -25vw 0 6vw white;
+    border-radius: 0.6vw;
     width: 16%;
 }
 
@@ -1073,11 +1075,11 @@ input.hidden {
 	text-align: center;
 	margin: 0.5% 0% 0.5% 43%;
     font-family: 'Titillium Web', sans-serif;
-    font-size: 36px;
-    padding: 15px 15px 15px 1%;
+    font-size: 3.5em;
+    padding: 1vw;
     color: #355681;
-    box-shadow: inset 0 0 0 1px rgba(53,86,129, 0.4), inset 0 0 5px rgba(53,86,129, 0.5), inset -285px 0 35px white;
-    border-radius: 10px 10px 10px 10px;
+    box-shadow: inset 0 0 0 0.1vw rgba(53,86,129, 0.4), inset 0 0 1.5vw rgba(53,86,129, 0.5), inset -25vw 0 6vw white;
+    border-radius: 0.6vw;
     width: 13%;
 }
 
@@ -1085,11 +1087,11 @@ input.hidden {
 	text-align: center;
 	margin: 0.5% 0% 0.5% 68%;
     font-family: 'Titillium Web', sans-serif;
-    font-size: 36px;
-    padding: 15px 15px 15px 1%;
+    font-size: 3em;
+    padding: 1vw;
     color: #355681;
-    box-shadow: inset 0 0 0 1px rgba(53,86,129, 0.4), inset 0 0 5px rgba(53,86,129, 0.5), inset -285px 0 35px white;
-    border-radius: 10px 10px 10px 10px;
+    box-shadow: inset 0 0 0 0.1vw rgba(53,86,129, 0.4), inset 0 0 1.5vw rgba(53,86,129, 0.5), inset -25vw 0 6vw white;
+    border-radius: 0.6vw;
     width: 30%;
 }
 
@@ -1097,136 +1099,142 @@ input.hidden {
 	text-align: center;
 	margin: 0.5% 0% 0.5% 2%;
     font-family: 'Titillium Web', sans-serif;
-    font-size: 36px;
-    padding: 15px 15px 15px 1%;
+    font-size: 3.5em;
+    padding: 1vw;
     color: #355681;
-    box-shadow: inset 0 0 0 1px rgba(53,86,129, 0.4), inset 0 0 5px rgba(53,86,129, 0.5), inset -285px 0 35px white;
-    border-radius: 10px 10px 10px 10px;
+    box-shadow: inset 0 0 0 0.1vw rgba(53,86,129, 0.4), inset 0 0 1.5vw rgba(53,86,129, 0.5), inset -25vw 0 6vw white;
+    border-radius: 0.6vw;
     width: 30%;
 }
 
 .governorateteam_h3 {
 	text-align: center;
-    margin: 0.5% 0% 0.5% 47%;
+    margin: 0.5% 5% 0.5% 31%;
     font-family: 'Titillium Web', sans-serif;
-    font-size: 36px;
-    padding: 15px 15px 15px 1%;
+    font-size: 3em;
+    padding: 1vw;
     color: #355681;
-    box-shadow: inset 0 0 0 1px rgba(53,86,129, 0.4), inset 0 0 5px rgba(53,86,129, 0.5), inset -285px 0 35px white;
-    border-radius: 10px 10px 10px 10px;
-    width: 53%;
+    box-shadow: inset 0 0 0 0.1vw rgba(53,86,129, 0.4), inset 0 0 1.5vw rgba(53,86,129, 0.5), inset -25vw 0 6vw white;
+    border-radius: 0.6vw;
+    width: 64%;
 }
 
 .natronteam_h3 {
 	text-align: center;
-    margin: 0.5% 0% 0.5% 63%;
+    margin: 0.5% 5% 0.5% 44%;
     font-family: 'Titillium Web', sans-serif;
-    font-size: 36px;
-    padding: 15px 15px 15px 1%;
+    font-size: 3.5em;
+    padding: 1vw;
     color: #355681;
-    box-shadow: inset 0 0 0 1px rgba(53,86,129, 0.4), inset 0 0 5px rgba(53,86,129, 0.5), inset -285px 0 35px white;
-    border-radius: 10px 10px 10px 10px;
-    width: 37%;
+    box-shadow: inset 0 0 0 0.1vw rgba(53,86,129, 0.4), inset 0 0 1.5vw rgba(53,86,129, 0.5), inset -25vw 0 6vw white;
+    border-radius: 0.6vw;
+    width: 51%;
 }
 
 
 .dataanalysisteam_h3 {
 	text-align: center;
-    margin: 0.5% 0% 0.5% 77%;
+    margin: 0.5% 5% 0.5% 61%;
     font-family: 'Titillium Web', sans-serif;
-    font-size: 36px;
-    padding: 15px 15px 15px 1%;
+    font-size: 3em;
+    padding: 1vw;
     color: #355681;
-    box-shadow: inset 0 0 0 1px rgba(53,86,129, 0.4), inset 0 0 5px rgba(53,86,129, 0.5), inset -285px 0 35px white;
-    border-radius: 10px 10px 10px 10px;
-    width: 23%;
+    box-shadow: inset 0 0 0 0.1vw rgba(53,86,129, 0.4), inset 0 0 1.5vw rgba(53,86,129, 0.5), inset -25vw 0 6vw white;
+    border-radius: 0.6vw;
+    width: 34%;
 }
 
 .surveyteam_h3 {
 	text-align: center;
-    margin: 0.5% 0% 0.5% 76%;
+    margin: 0.5% 5% 0.5% 66%;
     font-family: 'Titillium Web', sans-serif;
-    font-size: 36px;
-    padding: 15px 15px 15px 1%;
+    font-size: 3em;
+    padding: 1vw;
     color: #355681;
-    box-shadow: inset 0 0 0 1px rgba(53,86,129, 0.4), inset 0 0 5px rgba(53,86,129, 0.5), inset -285px 0 35px white;
-    border-radius: 10px 10px 10px 10px;
-    width: 24%;
+    box-shadow: inset 0 0 0 0.1vw rgba(53,86,129, 0.4), inset 0 0 1.5vw rgba(53,86,129, 0.5), inset -25vw 0 6vw white;
+    border-radius: 0.6vw;
+    width: 29%;
 }
 
 .landuseteam_h3 {
 	text-align: center;
-    margin: 0.5% 0% 0.5% 57%;
+    margin: 0.5% 5% 0.5% 42%;
     font-family: 'Titillium Web', sans-serif;
-    font-size: 36px;
-    padding: 15px 15px 15px 1%;
+    font-size: 3em;
+    padding: 1vw;
     color: #355681;
-    box-shadow: inset 0 0 0 1px rgba(53,86,129, 0.4), inset 0 0 5px rgba(53,86,129, 0.5), inset -285px 0 35px white;
-    border-radius: 10px 10px 10px 10px;
-    width: 43%;
+    box-shadow: inset 0 0 0 0.1vw rgba(53,86,129, 0.4), inset 0 0 1.5vw rgba(53,86,129, 0.5), inset -25vw 0 6vw white;
+    border-radius: 0.6vw;
+    width: 53%;
 }
 
 .devteam_h3 {
 	text-align: center;
-    margin: 0.5% 0% 0.5% 54%;
+    margin: 0.5% 5% 0.5% 40%;
     font-family: 'Titillium Web', sans-serif;
-    font-size: 36px;
-    padding: 15px 15px 15px 1%;
+    font-size: 3em;
+    padding: 1vw;
     color: #355681;
-    box-shadow: inset 0 0 0 1px rgba(53,86,129, 0.4), inset 0 0 5px rgba(53,86,129, 0.5), inset -285px 0 35px white;
-    border-radius: 10px 10px 10px 10px;
-    width: 46%;
+    box-shadow: inset 0 0 0 0.1vw rgba(53,86,129, 0.4), inset 0 0 1.5vw rgba(53,86,129, 0.5), inset -25vw 0 6vw white;
+    border-radius: 0.6vw;
+    width: 55%;
 }
 
 .supervisors_container_div{ 
 	/*changed*/
-	box-shadow: inset 0 0 0 1px rgba(53,86,129, 0.4), inset 0 0 20px rgba(53,86,129, 0.5), inset -385px 0 95px #ddd;
-    border-radius: 10px 10px 10px 10px;
-    height: 280px;
+	box-shadow: inset 0 0 0 0.1vw rgba(53,86,129, 0.4), inset 0 0 1.5vw rgba(53,86,129, 0.5), inset -25vw 0 6vw white;
+    border-radius: 0.6vw;
+    height: 22vw;
     width: 70%;
     margin: 2% 0 1% 15%;
 }
 
 .governorateteam_container_div{
-	box-shadow: inset 0 0 0 1px rgba(53,86,129, 0.4), inset 0 0 5px rgba(53,86,129, 0.5), inset -285px 0 35px white;
-    border-radius: 10px 10px 10px 10px;
-    height: 280px;
-    width: 100%;
+	box-shadow: inset 0 0 0 0.1vw rgba(53,86,129, 0.4), inset 0 0 1.5vw rgba(53,86,129, 0.5), inset -25vw 0 6vw white;
+    border-radius: 0.6vw;
+    height: 22vw;
+    width: 90%;
+    margin: 1% 5%;
 }
 
 .natronteam_container_div{
-	box-shadow: inset 0 0 0 1px rgba(53,86,129, 0.4), inset 0 0 5px rgba(53,86,129, 0.5), inset -285px 0 35px white;
-    border-radius: 10px 10px 10px 10px;
-    height: 280px;
-    width: 100%;
+	box-shadow: inset 0 0 0 0.1vw rgba(53,86,129, 0.4), inset 0 0 1.5vw rgba(53,86,129, 0.5), inset -25vw 0 6vw white;
+    border-radius: 0.6vw;
+    height: 22vw;
+    width: 90%;
+    margin: 1% 5%;
 }
 
 .dataanalysisteam_container_div{
-	box-shadow: inset 0 0 0 1px rgba(53,86,129, 0.4), inset 0 0 5px rgba(53,86,129, 0.5), inset -285px 0 35px white;
-    border-radius: 10px 10px 10px 10px;
-    height: 280px;
-    width: 100%;
+	box-shadow: inset 0 0 0 0.1vw rgba(53,86,129, 0.4), inset 0 0 1.5vw rgba(53,86,129, 0.5), inset -25vw 0 6vw white;
+    border-radius: 0.6vw;
+    height: 22vw;
+    width: 90%;
+    margin: 1% 5%;
 }
 
 .surveyteam_container_div{
-	box-shadow: inset 0 0 0 1px rgba(53,86,129, 0.4), inset 0 0 5px rgba(53,86,129, 0.5), inset -285px 0 35px white;
-    border-radius: 10px 10px 10px 10px;
-    height: 280px;
-    width: 100%;
+	box-shadow: inset 0 0 0 0.1vw rgba(53,86,129, 0.4), inset 0 0 1.5vw rgba(53,86,129, 0.5), inset -25vw 0 6vw white;
+    border-radius: 0.6vw;
+    height: 22vw;
+    width: 90%;
+    margin: 1% 5%;
 }
 
 .landuseteam_container_div{
-	box-shadow: inset 0 0 0 1px rgba(53,86,129, 0.4), inset 0 0 5px rgba(53,86,129, 0.5), inset -285px 0 35px white;
-    border-radius: 10px 10px 10px 10px;
-    height: 280px;
-    width: 100%;
+	box-shadow: inset 0 0 0 0.1vw rgba(53,86,129, 0.4), inset 0 0 1.5vw rgba(53,86,129, 0.5), inset -25vw 0 6vw white;
+    border-radius: 0.6vw;
+    height: 22vw;
+    width: 90%;
+    margin: 1% 5%;
 }
 
 .devteam_container_div{
-	box-shadow: inset 0 0 0 1px rgba(53,86,129, 0.4), inset 0 0 5px rgba(53,86,129, 0.5), inset -285px 0 35px white;
-    border-radius: 10px 10px 10px 10px;
-    height: 280px;
-    width: 100%;
+	box-shadow: inset 0 0 0 0.1vw rgba(53,86,129, 0.4), inset 0 0 1.5vw rgba(53,86,129, 0.5), inset -25vw 0 6vw white;
+    border-radius: 0.6vw;
+    height: 22vw;
+    width: 90%;
+    margin: 1% 5%;
 }
 
 
@@ -1239,11 +1247,11 @@ input.hidden {
     text-align: center;
     margin: 0.5% 0% 0.5% 40%;
     font-family: 'Titillium Web', sans-serif;
-    font-size: 36px;
+    font-size: 3.5em;
     padding: 15px 15px 15px 3%;
     color: #355681;
-    box-shadow: inset 0 0 0 1px rgba(53,86,129, 0.4), inset 0 0 5px rgba(53,86,129, 0.5), inset -285px 0 35px white;
-    border-radius: 10px 10px 10px 10px;
+    box-shadow: inset 0 0 0 0.1vw rgba(53,86,129, 0.4), inset 0 0 1.5vw rgba(53,86,129, 0.5), inset -25vw 0 6vw white;
+    border-radius: 0.6vw;
     width: 18%;
 }
 
@@ -1255,10 +1263,10 @@ input.hidden {
     position: relative;
     font-size: 29px;
     line-height: 40px;
-    padding: 15px 15px 15px 1%;
+    padding: 1vw;
     color: #355681;
-    box-shadow: inset 0 0 0 1px rgba(53,86,129, 0.4), inset 0 0 5px rgba(53,86,129, 0.5), inset -285px 0 35px white;
-    border-radius: 10px 10px 10px 10px;
+    box-shadow: inset 0 0 0 0.1vw rgba(53,86,129, 0.4), inset 0 0 1.5vw rgba(53,86,129, 0.5), inset -25vw 0 6vw white;
+    border-radius: 0.6vw;
     background: #fff;
     width: 83%;
 }
@@ -1271,10 +1279,10 @@ input.hidden {
     position: relative;
     font-size: 22px;
     line-height: 40px;
-    padding: 15px 15px 15px 1%;
+    padding: 1vw;
     color: #355681;
-    box-shadow: inset 0 0 0 1px rgba(53,86,129, 0.4), inset 0 0 5px rgba(53,86,129, 0.5), inset -285px 0 35px white;
-    border-radius: 10px 10px 10px 10px;
+    box-shadow: inset 0 0 0 0.1vw rgba(53,86,129, 0.4), inset 0 0 1.5vw rgba(53,86,129, 0.5), inset -25vw 0 6vw white;
+    border-radius: 0.6vw;
     background: #fff;
     width: 83%;
 }
@@ -1311,7 +1319,7 @@ input.hidden {
 
 .beh_header{
 				width:100%;
-				height:6vw;
+				height:7vw;
 				padding:0.5% 0;
 				margin:0;
 				background-color:#17a2b9;
@@ -1384,7 +1392,7 @@ input.hidden {
 			
 .beh_main{
 				width:100%;
-				height:81%;
+				height:79%;
 				padding:0;
 				margin:0;
 				background-color:#eee;
@@ -1398,6 +1406,7 @@ input.hidden {
 				background-color:#eee;
 			}
 			
+
 .beh_main_side{
 				width:15%;
 				height:100%;
@@ -1478,8 +1487,8 @@ input.hidden {
     line-height: 40px;
     padding: 2%;
     color: #355681;
-    box-shadow: inset 0 0 0 1px rgba(53,86,129, 0.4), inset 0 0 20px rgba(53,86,129, 0.5), inset -385px 0 95px #fff;
-    border-radius: 10px 10px 10px 10px;
+    box-shadow: inset 0 0 0 0.1vw rgba(53,86,129, 0.4), inset 0 0 1.5vw rgba(53,86,129, 0.5), inset -25vw 0 6vw white;
+    border-radius: 0.6vw;
     background: #fff;
     width: 70%;
 }
@@ -1501,8 +1510,8 @@ input.hidden {
     line-height: 40px;
     padding: 2%;
     color: #355681;
-    box-shadow: inset 0 0 0 1px rgba(53,86,129, 0.4), inset 0 0 20px rgba(53,86,129, 0.5), inset -385px 0 95px #fff;
-    border-radius: 10px 10px 10px 10px;
+    box-shadow: inset 0 0 0 0.1vw rgba(53,86,129, 0.4), inset 0 0 1.5vw rgba(53,86,129, 0.5), inset -25vw 0 6vw white;
+    border-radius: 0.6vw;
     background: #fff;
     width: 70%;
 }
