@@ -29,13 +29,13 @@
 		<style>
 			#map_db1 {
 				width: 70vw;
-				height: 34vw;
+				height: 32vw;
 				margin: 1vw 10vw 4vw 15vw;
 			}
 			#map_db2 {
 				width: 70vw;
-				height: 34vw;
-				margin: 1vw 10vw 6vw 15vw;
+				height: 32vw;
+				margin: 1vw 10vw 1vw 15vw;
 			}
 		</style>
 	</head>
@@ -43,7 +43,7 @@
 	<div class="beh_container">
 		<jsp:include page="_header.jsp"></jsp:include>
 		<div class="beh_main2">
-			<div class="beh_main_regulations">
+			<div class="beh_main_timeseries">
 				<h1>التسلسل الزمنى للمنطقة هـ</h1>
 				<div id='map_db1'></div>
 				<h1>التسلسل الزمنى للمنطقة و</h1>

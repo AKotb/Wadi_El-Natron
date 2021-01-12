@@ -638,49 +638,50 @@
 <body>
 <div class="beh_container">
 	<jsp:include page="_header.jsp"></jsp:include>
-	<!-- <div class="beh_main2"> -->
-	<div id="statisticscontent" align="center">
-		<h1>إحصائيات</h1>
-		<div class="stats_chart_div_l">
-			<div class="stats_chart_title">
-				<h2>
-					<p style="padding: 0 0.75vw;">البيانات الإحصائية الخاصة بالمنطقة -
-						و</p>
-				</h2>
+	<div class="beh_main2">
+		<div id="statisticscontent" align="center">
+			<h1>إحصائيات</h1>
+			<div class="stats_chart_div_l">
+				<div class="stats_chart_title">
+					<h2>
+						<p style="padding: 0 0.75vw;">البيانات الإحصائية الخاصة بالمنطقة -
+							و</p>
+					</h2>
+				</div>
+				<div id="piechart3" class="stats_chart_pie"></div>
+				<br>
+				<div class="stats_chart_title">
+					<h2>
+						<p style="padding: 0 0.75vw;">
+							<span>البيانات الإحصائية التفصيلية الخاصة بالمنطقة - و - </span><span
+								id='details1'></span>
+						</p>
+					</h2>
+				</div>
+				<div id="piechart1" class="stats_chart_pie"></div>
+	
+	
 			</div>
-			<div id="piechart3" class="stats_chart_pie"></div>
-			<br>
-			<div class="stats_chart_title">
-				<h2>
-					<p style="padding: 0 0.75vw;">
-						<span>البيانات الإحصائية التفصيلية الخاصة بالمنطقة - و - </span><span
-							id='details1'></span>
-					</p>
-				</h2>
+			<div class="stats_chart_div_r">
+	
+				<div class="stats_chart_title">
+					<h2>
+						<p style="padding: 0 0.75vw;">البيانات الإحصائية الخاصة بالمنطقة -
+							هـــ</p>
+					</h2>
+				</div>
+				<div id="piechart4" class="stats_chart_pie"></div>
+				<br>
+				<div class="stats_chart_title">
+					<h2>
+						<p style="padding: 0 0.75vw;">
+							<span>البيانات الإحصائية التفصيلية الخاصة بالمنطقة - هــ -
+							</span><span id='details2'></span>
+						</p>
+					</h2>
+				</div>
+				<div id="piechart2" class="stats_chart_pie"></div>
 			</div>
-			<div id="piechart1" class="stats_chart_pie"></div>
-
-
-		</div>
-		<div class="stats_chart_div_r">
-
-			<div class="stats_chart_title">
-				<h2>
-					<p style="padding: 0 0.75vw;">البيانات الإحصائية الخاصة بالمنطقة -
-						هـــ</p>
-				</h2>
-			</div>
-			<div id="piechart4" class="stats_chart_pie"></div>
-			<br>
-			<div class="stats_chart_title">
-				<h2>
-					<p style="padding: 0 0.75vw;">
-						<span>البيانات الإحصائية التفصيلية الخاصة بالمنطقة - هــ -
-						</span><span id='details2'></span>
-					</p>
-				</h2>
-			</div>
-			<div id="piechart2" class="stats_chart_pie"></div>
 		</div>
 	</div>
 	<jsp:include page="_footer.jsp"></jsp:include>

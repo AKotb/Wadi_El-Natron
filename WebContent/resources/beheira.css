@@ -75,7 +75,7 @@
 }
 
 #raster_extra {
-	height: 641px;
+	/*height: 641px;*/
 	width: 100%;
 }
 
@@ -97,7 +97,8 @@
 }
 
 #floating-panel {             
-	background-color: #fff;
+	background-color: #eee;
+	padding: 0.75vw 0;
 }
 
 #map {
@@ -329,11 +330,12 @@ input.readonly-box {
 
 .slider {
     -webkit-appearance: none;
-    height: 25px;
-    width: 500px;
+    height: 2vw;
+    width: 40vw;
     background: #d3d3d3;
     opacity: 0.7;
-    position:relative;
+    /*position:relative;*/
+    border: 0.2vw solid #17a2b9;
 }
 
 .slider:hover { 
@@ -343,16 +345,16 @@ input.readonly-box {
 .slider::-webkit-slider-thumb {  
 	-webkit-appearance: none; 
 	appearance: none;  
-	width: 15px; 
-	height: 25px; 
-	background: #44a959; 
+	width: 1.25vw; 
+	height: 2vw; 
+	background: #17a2b9; 
 	cursor: e-resize;
 }
 
 .slider::-moz-range-thumb {
-	width: 15px; 
-	height: 25px; 
-	background: #44a959;
+	width: 1.25vw; 
+	height: 2vw; 
+	background: #17a2b9; 
 	cursor: e-resize;
 }
 

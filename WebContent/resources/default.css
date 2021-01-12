@@ -468,9 +468,9 @@ px
 }
 
 #logincontent {
-	padding: 11em 5em;
+	padding: 10em 5em;
 	background-color: rgb(240, 240, 240);
-	border: 1px solid black;
+	/*border: 1px solid black;*/
 }
 
 #logincontent h1 {
@@ -503,9 +503,10 @@ px
 }
 
 #statisticscontent {
-	padding: 1vw 3vw;
+	padding: 0 3vw 1vw 3vw;
 	background-color: rgb(240, 240, 240);
-	height: 100vw;
+	height: 100%;
+	overflow:auto;
 }
 
 #statisticscontent h1 {
@@ -528,7 +529,7 @@ px
     box-shadow: inset 0 0 0 0.1vw rgba(53,86,129, 0.4), inset 0 0 1.5vw rgba(53,86,129, 0.5), inset -25vw 0 6vw #fff;
     border-radius: 0.6vw;
     background: #fff;
-    width: 25%;
+    width: 17%;
 }
 
 .stats_chart_div_r{
@@ -595,8 +596,8 @@ px
 #registercontent {
 	padding: 4em 5em;
 	background-color: rgb(240, 240, 240);
-	border: 1px solid black;
-	height: 40em;
+	/*border: 1px solid black;
+	height: 40em;*/
 	direction: rtl;
 }
 
@@ -1288,7 +1289,7 @@ input.hidden {
 }
 
 #searchcontent {
-	padding: 5em 5em;
+	padding: 2em 5em;
 	background-color: rgb(240, 240, 240);
 	/*border: 1px solid black;*/
 }
@@ -1392,7 +1393,7 @@ input.hidden {
 			
 .beh_main{
 				width:100%;
-				height:79%;
+				height:calc(100% - 5% - 7vw); /* footer height: 5% & header height: 7vw*/
 				padding:0;
 				margin:0;
 				background-color:#eee;
@@ -1400,7 +1401,7 @@ input.hidden {
 			
 .beh_main2{
 				width:100%;
-				/*height:80%;*/
+				height:calc(100% - 5% - 7vw); /* footer height: 5% & header height: 7vw*/
 				padding:0;
 				margin:0;
 				background-color:#eee;
@@ -1463,7 +1464,7 @@ input.hidden {
 
 .beh_main_regulations h1 {
 	text-align: center;
-    margin: 0.5% 0 0.5% 32%;
+    margin: 0.5% 0 0.5% 37.5%;
     font-weight: bold;
     font-family: 'Titillium Web', sans-serif;
     position: relative;
@@ -1474,7 +1475,7 @@ input.hidden {
     box-shadow: inset 0 0 0 0.1vw rgba(53,86,129, 0.4), inset 0 0 1.5vw rgba(53,86,129, 0.5), inset -25vw 0 6vw #fff;
     border-radius: 0.75vw;
     background: #fff;
-    width: 36%;
+    width: 25%;
 }
 
 .beh_main_regulations p{
@@ -1519,10 +1520,121 @@ input.hidden {
 .beh_main_regulations span {
 	font-size: 0.9vw;
 }	
+
+.beh_main_timeseries {
+	width:100%;
+	height:100%;
+	padding: 0; 
+	margin: 0;
+	background-color:#eee;
+	float:left;
+	overflow:auto;
+}
+
+.beh_main_timeseries h1 {
+	text-align: center;
+    margin: 0.5% 0 0.5% 32%;
+    font-weight: bold;
+    font-family: 'Titillium Web', sans-serif;
+    position: relative;
+    font-size: 3.5em;
+    line-height: 1.25vw;
+    padding: 2%;
+    color: #355681;
+    box-shadow: inset 0 0 0 0.1vw rgba(53,86,129, 0.4), inset 0 0 1.5vw rgba(53,86,129, 0.5), inset -25vw 0 6vw #fff;
+    border-radius: 0.75vw;
+    background: #fff;
+    width: 36%;
+}
 	
+.beh_main_aboutus {
+	width:100%;
+	height:100%;
+	padding: 0; 
+	margin: 0;
+	background-color:#eee;
+	float:left;
+	overflow:auto;
+}
+
+.beh_main_aboutus h1 {
+	text-align: center;
+    margin: 0.5% 0 0.5% 41.5%;
+    font-weight: bold;
+    font-family: 'Titillium Web', sans-serif;
+    position: relative;
+    font-size: 3.5em;
+    line-height: 1.25vw;
+    padding: 2%;
+    color: #355681;
+    box-shadow: inset 0 0 0 0.1vw rgba(53,86,129, 0.4), inset 0 0 1.5vw rgba(53,86,129, 0.5), inset -25vw 0 6vw #fff;
+    border-radius: 0.75vw;
+    background: #fff;
+    width: 17%;
+}
+
+.beh_main_aboutus p{
+	text-align: justify;
+    margin: 1% 0 1% 15%;
+    font-weight: 600;
+    font-family: 'Titillium Web', sans-serif;
+    position: relative;
+    font-size: 29px;
+    line-height: 40px;
+    padding: 2%;
+    color: #355681;
+    box-shadow: inset 0 0 0 0.1vw rgba(53,86,129, 0.4), inset 0 0 1.5vw rgba(53,86,129, 0.5), inset -25vw 0 6vw white;
+    border-radius: 0.6vw;
+    background: #fff;
+    width: 70%;
+}
+
+.beh_main_aboutus p span{
+    font-weight: 600;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 29px;
+    line-height: 40px;
+}
+
+.beh_main_cropmonitoring {
+	width:100%;
+	height:100%;
+	padding: 0; 
+	margin: 0;
+	background-color:#eee;
+	float:left;
+	overflow:auto;
+}
+
+.beh_main_cropmonitoring h1 {
+	text-align: center;
+    margin: 0.5% 0 0.5% 28%;
+    font-weight: bold;
+    font-family: 'Titillium Web', sans-serif;
+    position: relative;
+    font-size: 2.5em;
+    line-height: 0.4vw;
+    padding: 2%;
+    color: #355681;
+    box-shadow: inset 0 0 0 0.1vw rgba(53,86,129, 0.4), inset 0 0 1.5vw rgba(53,86,129, 0.5), inset -25vw 0 6vw #fff;
+    border-radius: 0.75vw;
+    background: #fff;
+    width: 44%;
+}
+
+.beh_main_search {
+	width:100%;
+	height:100%;
+	padding: 0; 
+	margin: 0;
+	background-color:#eee;
+	float:left;
+	overflow:auto;
+}
+
 .beh_footer{
 				width:100%;
-				/*height:6%;*/
+				height:5%;
 				padding:0.75% 0 1% 0;
 				margin:0;
 				background-color:#17a2b9;
@@ -1530,7 +1642,7 @@ input.hidden {
 				font-weight: bold;
 				line-height: 2;
 				text-align: center;
-				/*border-top: 0.15vw black solid;*/
+				border-top: 0.15vw black solid;
 				color:white;
 			}
 			

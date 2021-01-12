@@ -26,33 +26,36 @@
 </style>
 </head>
 <body>
-<jsp:include page="_header.jsp"></jsp:include>
-<div id="wrapper">
-		<div id="raster_extra">
-		<div id="floating-panel" align='center'>
-			<input class="slider" type="range" min="0" max="100" value="0"
-				id="myRange">
+	<div class="beh_container">
+		<jsp:include page="_header.jsp"></jsp:include>
+		<div class="beh_main2">
+			<div class="beh_main_search">
+				<!-- <div id="raster_extra"> -->
+					<div id="floating-panel" align='center'>
+						<input class="slider" type="range" min="0" max="100" value="0"
+							id="myRange">
+					</div>
+					<div id="raster_view">
+						<img id='img1' class='img_slider' src='datafiles/rasterimages/0.png'>
+						<div id='img1_title' class='legend'>
+							<p class='img_title bottom_title'>Pleiades March 2017</p>
+						</div>
+						<img id='img2' class='img_slider' src='datafiles/rasterimages/0.png'>
+						<div id='img2_title' class='legend'>
+							<p class='img_title top_title'>Sentinel2 Septemper 2018</p>
+						</div>
+						<div id='controlbuttons' class='control_buttons' dir="rtl">
+							<a href="javascript:void(0);" onclick="landuse();" class="btn btn-info btn-md">استخدامات الأراضى</a> 
+							<a href="javascript:void(0);" onclick="vouchers();" class="btn btn-info btn-md">طلب إجراءات التقنين</a> 
+							<a href="javascript:void(0);" onclick="gotoMahdar();" class="btn btn-info btn-md">محضر معاينة</a> 
+							<a href="javascript:void(0);" onclick="back();" class="btn btn-info btn-md">رجوع</a>
+						</div>
+					</div>
+				<!-- </div> -->
+			</div>
 		</div>
-		<div id="raster_view">
-			<img id='img1' class='img_slider' src='datafiles/rasterimages/0.png'>
-			<div id='img1_title' class='legend'>
-				<p class='img_title bottom_title'>Pleiades March 2017</p>
-			</div>
-			<img id='img2' class='img_slider' src='datafiles/rasterimages/0.png'>
-			<div id='img2_title' class='legend'>
-				<p class='img_title top_title'>Sentinel2 Septemper 2018</p>
-			</div>
-			<div id='controlbuttons' class='control_buttons' dir="rtl">
-				<a href="javascript:void(0);" onclick="landuse();" class="btn btn-info btn-md">استخدامات الأراضى</a> 
-				<a href="javascript:void(0);" onclick="vouchers();" class="btn btn-info btn-md">طلب إجراءات التقنين</a> 
-				<a href="javascript:void(0);" onclick="gotoMahdar();" class="btn btn-info btn-md">محضر معاينة</a> 
-				<a href="javascript:void(0);" onclick="back();" class="btn btn-info btn-md">رجوع</a>
-			</div>
-		</div>
+		<jsp:include page="_footer.jsp"></jsp:include>
 	</div>
-	</div>
-	<jsp:include page="_footer.jsp"></jsp:include>
-	
 	<script>
 	var id = "${polygonID}";
 	var lat = "${lat}";

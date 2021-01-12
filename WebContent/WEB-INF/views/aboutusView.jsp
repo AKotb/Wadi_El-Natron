@@ -47,7 +47,7 @@ td {
 <div class="beh_container">
 	<jsp:include page="_header.jsp"></jsp:include>
 	<div class="beh_main2">
-		<div class="beh_main_regulations">
+		<div class="beh_main_aboutus">
 			<h1 class="aboutauthority_h1">عن الهيئة</h1>
 			<p dir="rtl">
 					بدأ نشاط الإستشعار من البعد فى مصر مع بداية السبعينات وتحديدا عام

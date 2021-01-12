@@ -28,10 +28,10 @@
 <div class="beh_container">
 	<jsp:include page="_header.jsp"></jsp:include>
 	<div class="beh_main2">
-		<div class="beh_main_regulations">
-			<div style="height:31vw;">
+		<div class="beh_main_cropmonitoring">
+			<h1 id="floatingimagetitleid" class="aboutauthority_h1">التغير الزمني في الغطاء الخضري-المنطقة (و)</h1>
+			<div style="height:28vw;">
 				<div id="cf7" class="shadow">
-				<div class="floatingimagetitle" id="floatingimagetitleid">التغير الزمني في الغطاء الخضري-المنطقة (و)</div>
 					<img class='opaque'
 						src="datafiles/cropmonitoring/db1_NDVI_20160212.jpg"
 						alt="db1_2016-02-12" /> <img
@@ -89,7 +89,7 @@
 					<div class="nvgt" id="play"></div>
 					<div class="nvgt" id="next"></div>
 				</div>
-				<br>
+				<!-- <br> -->
 				<span id="cf7_controls">
 						<span class="selected">2016-02</span> <span>2016-05</span> <span>2016-06</span>
 						<span>2016-07</span> <span>2016-08</span> <span>2016-10</span> <span>2017-01</span>
