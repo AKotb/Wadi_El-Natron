@@ -38,6 +38,10 @@
 	
 	<div class="beh_header_nav">
 		
+		<a href="${pageContext.request.contextPath}/publications"
+				accesskey="8" title="Publications">
+			<img class="beh_nav_item" src="resources/images/publications.png" alt="النشر العلمي">
+		</a>
 		<a href="${pageContext.request.contextPath}/search"
 				accesskey="5" title="Search">
 			<img class="beh_nav_item" src="resources/images/search.png" alt="بحث">

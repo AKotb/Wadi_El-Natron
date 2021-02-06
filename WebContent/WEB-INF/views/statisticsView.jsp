@@ -465,9 +465,10 @@
 		function selectHandler() {
 
 			var selectedItem = chart3.getSelection()[0];
-			if (selectedItem) {
-				var value1 = data3.getValue(selectedItem.row, 0);
-				var value2 = data3.getValue(selectedItem.row, 1);
+			//if (selectedItem) {
+				//var value1 = data3.getValue(selectedItem.row, 0);
+				//var value2 = data3.getValue(selectedItem.row, 1);
+				var value1 = 'وضع يد';
 				if (value1 === 'تمليك') {
 					document.getElementById('details1').textContent = 'تمليك';
 					data1 = google.visualization.arrayToDataTable([
@@ -516,10 +517,10 @@
 				}
 
 				chart1.draw(data1, options1);
-			}
+			//}
 		}
 		google.visualization.events
-				.addListener(chart3, 'select', selectHandler);
+				.addListener(chart3, 'ready', selectHandler);
 		chart3.draw(data3, options3);
 	}
 
@@ -571,9 +572,10 @@
 
 		function selectHandler() {
 			var selectedItem = chart4.getSelection()[0];
-			if (selectedItem) {
-				var value1 = data4.getValue(selectedItem.row, 0);
-				var value2 = data4.getValue(selectedItem.row, 1);
+			//if (selectedItem) {
+				//var value1 = data4.getValue(selectedItem.row, 0);
+				//var value2 = data4.getValue(selectedItem.row, 1);
+				var value1 = 'وضع يد';
 				if (value1 === 'تمليك') {
 					document.getElementById('details2').textContent = 'تمليك';
 					//options4['slices'] = {  1: {offset: 0.2}, 2: {offset: 0.0}, 3: {offset: 0.0}, 4: {offset: 0.0} };
@@ -627,10 +629,10 @@
 				}
 
 				chart2.draw(data2, options2);
-			}
+			//}
 		}
 		google.visualization.events
-				.addListener(chart4, 'select', selectHandler);
+				.addListener(chart4, 'ready', selectHandler);
 		chart4.draw(data4, options4);
 	}
 </script>
@@ -642,13 +644,13 @@
 		<div id="statisticscontent" align="center">
 			<h1>إحصائيات</h1>
 			<div class="stats_chart_div_l">
-				<div class="stats_chart_title">
+				<div class="stats_chart_title" style="display: none;">
 					<h2>
 						<p style="padding: 0 0.75vw;">البيانات الإحصائية الخاصة بالمنطقة -
 							و</p>
 					</h2>
 				</div>
-				<div id="piechart3" class="stats_chart_pie"></div>
+				<div id="piechart3" class="stats_chart_pie" style="display: none;"></div>
 				<br>
 				<div class="stats_chart_title">
 					<h2>
@@ -664,13 +666,13 @@
 			</div>
 			<div class="stats_chart_div_r">
 	
-				<div class="stats_chart_title">
+				<div class="stats_chart_title" style="display: none;">
 					<h2>
 						<p style="padding: 0 0.75vw;">البيانات الإحصائية الخاصة بالمنطقة -
 							هـــ</p>
 					</h2>
 				</div>
-				<div id="piechart4" class="stats_chart_pie"></div>
+				<div id="piechart4" class="stats_chart_pie" style="display: none;"></div>
 				<br>
 				<div class="stats_chart_title">
 					<h2>
