@@ -29,13 +29,13 @@
 <script>
 	var farms;
 	// 0: allReclamedArea1, 1: allUrbanArea1, 2: allUnusedArea1, 3: allFieldCropsArea1, 4: allCropsArea1
-	var allGovernorateContractDetails1 = [0.0, 0.0, 0.0, 0.0, 0.0 ];
+	var allGovernorateContractDetails1 = [ 0.0, 0.0, 0.0, 0.0, 0.0 ];
 	var allOwnershipDetails1 = [ 0.0, 0.0, 0.0, 0.0, 0.0 ];
 	var allActionDecisionDetails1 = [ 0.0, 0.0, 0.0, 0.0, 0.0 ];
 	var allHandDetails1 = [ 0.0, 0.0, 0.0, 0.0, 0.0 ];
 	var allOtherDetails1 = [ 0.0, 0.0, 0.0, 0.0, 0.0 ];
 
-	var allGovernorateContractDetails2 = [0.0, 0.0, 0.0, 0.0, 0.0 ];
+	var allGovernorateContractDetails2 = [ 0.0, 0.0, 0.0, 0.0, 0.0 ];
 	var allOwnershipDetails2 = [ 0.0, 0.0, 0.0, 0.0, 0.0 ];
 	var allActionDecisionDetails2 = [ 0.0, 0.0, 0.0, 0.0, 0.0 ];
 	var allHandDetails2 = [ 0.0, 0.0, 0.0, 0.0, 0.0 ];
@@ -46,7 +46,7 @@
 	var allActionDecision1 = 0;
 	var allHand1 = 0;
 	var allOther1 = 0;
-	
+
 	/*var allOwnership1 = 0;
 	var allRent1 = 0;
 	var allHand1 = 0;
@@ -119,7 +119,7 @@
 
 					if (farms[i].ownership) {
 						curState = farms[i].ownership;
-						
+
 						if (curState === '1') {
 							allGovernorateContract1 = allGovernorateContract1 + 1;
 
@@ -134,7 +134,7 @@
 							allGovernorateContractDetails1[4] = allGovernorateContractDetails1[4]
 									+ curCropsArea;
 						}
-						
+
 						if (curState === '2') {
 							allOwnership1 = allOwnership1 + 1;
 
@@ -192,12 +192,12 @@
 									+ curCropsArea;
 						}
 					}
-				} 
+				}
 				// خاص بالمنطقة هـــ 
 				else {
 					if (farms[i].ownership) {
 						curState = farms[i].ownership;
-						
+
 						if (curState === '1') {
 							allGovernorateContract2 = allGovernorateContract2 + 1;
 
@@ -212,7 +212,7 @@
 							allGovernorateContractDetails2[4] = allGovernorateContractDetails2[4]
 									+ curCropsArea;
 						}
-						
+
 						if (curState === '2') {
 							allOwnership2 = allOwnership2 + 1;
 
@@ -273,18 +273,7 @@
 				}
 			}
 		}
-		
-			var UserRole="<%=session.getAttribute("userRole")%>";
-			if (UserRole != "null") {
-				if (UserRole == "2") {
-					document.getElementById("manageusersid").style.display = "block";
-				} else {
-					document.getElementById("manageusersid").style.display = "none";
-				}
-			} else {
-				document.getElementById("manageusersid").style.display = "none";
-			}
-		
+
 	}
 
 	//Pie Chart Code
@@ -337,7 +326,8 @@
 			backgroundColor : "#8FE2F1",
 			//reverseCategories: true,
 			pieStartAngle : 0,
-			is3D: true,
+			is3D : true,
+			colors : [ 'orange', 'red', 'yellow', 'lightgreen', 'green' ]
 		};
 
 		chart1 = new google.visualization.PieChart(document
@@ -398,7 +388,8 @@
 			backgroundColor : "#8FE2F1",
 			//reverseCategories: true,
 			pieStartAngle : 0,
-			is3D: true,
+			is3D : true,
+			colors : [ 'orange', 'red', 'yellow', 'lightgreen', 'green' ]
 		};
 
 		chart2 = new google.visualization.PieChart(document
@@ -420,8 +411,9 @@
 
 		var data3 = google.visualization.arrayToDataTable([
 				[ 'Type', 'Ratio' ], [ 'عقد محافظة', allGovernorateContract1 ],
-				[ "تمليك", allOwnership1 ], [ "قرار تصرف", allActionDecision1 ],
-				[ "وضع يد", allHand1 ],[ 'أخري', allOther1 ] ]);
+				[ "تمليك", allOwnership1 ],
+				[ "قرار تصرف", allActionDecision1 ], [ "وضع يد", allHand1 ],
+				[ 'أخري', allOther1 ] ]);
 
 		options3 = {
 			titleTextStyle : {
@@ -456,7 +448,7 @@
 			backgroundColor : "#8FE2F1",
 			//reverseCategories: true,
 			pieStartAngle : 0,
-			is3D: true,
+			is3D : true
 		};
 
 		var chart3 = new google.visualization.PieChart(document
@@ -466,70 +458,75 @@
 
 			var selectedItem = chart3.getSelection()[0];
 			//if (selectedItem) {
-				//var value1 = data3.getValue(selectedItem.row, 0);
-				//var value2 = data3.getValue(selectedItem.row, 1);
-				var value1 = 'وضع يد';
-				if (value1 === 'تمليك') {
-					document.getElementById('details1').textContent = 'تمليك';
-					data1 = google.visualization.arrayToDataTable([
-							[ 'Type', 'Ratio' ],
-							[ 'أراضي مستصلحة', allOwnershipDetails1[0] ],
-							[ 'مباني', allOwnershipDetails1[1] ],
-							[ 'أراضي غير مستغلة', allOwnershipDetails1[2] ],
-							[ 'محاصيل حقلية', allOwnershipDetails1[3] ],
-							[ 'محاصيل بستانية', allOwnershipDetails1[4] ] ]);
-				} else if (value1 === 'عقد محافظة') {
-					document.getElementById('details1').textContent = 'عقد محافظة';
-					data1 = google.visualization.arrayToDataTable([
-							[ 'Type', 'Ratio' ],
-							[ 'أراضي مستصلحة', allGovernorateContractDetails1[0] ],
-							[ 'مباني', allGovernorateContractDetails1[1] ],
-							[ 'أراضي غير مستغلة', allGovernorateContractDetails1[2] ],
-							[ 'محاصيل حقلية', allGovernorateContractDetails1[3] ],
-							[ 'محاصيل بستانية', allGovernorateContractDetails1[4] ] ]);
-				} else if (value1 === 'وضع يد') {
-					document.getElementById('details1').textContent = 'وضع يد';
-					data1 = google.visualization.arrayToDataTable([
-							[ 'Type', 'Ratio' ],
-							[ 'أراضي مستصلحة', allHandDetails1[0] ],
-							[ 'مباني', allHandDetails1[1] ],
-							[ 'أراضي غير مستغلة', allHandDetails1[2] ],
-							[ 'محاصيل حقلية', allHandDetails1[3] ],
-							[ 'محاصيل بستانية', allHandDetails1[4] ] ]);
-				} else if (value1 === 'قرار تصرف') {
-					document.getElementById('details1').textContent = 'قرار تصرف';
-					data1 = google.visualization.arrayToDataTable([
-							[ 'Type', 'Ratio' ],
-							[ 'أراضي مستصلحة', allActionDecisiionDetails1[0] ],
-							[ 'مباني', allActionDecisiionDetails1[1] ],
-							[ 'أراضي غير مستغلة', allActionDecisiionDetails1[2] ],
-							[ 'محاصيل حقلية', allActionDecisiionDetails1[3] ],
-							[ 'محاصيل بستانية', allActionDecisiionDetails1[4] ] ]);
-				} else {
-					document.getElementById('details1').textContent = 'أخري';
-					data1 = google.visualization.arrayToDataTable([
-							[ 'Type', 'Ratio' ],
-							[ 'أراضي مستصلحة', allOtherDetails1[0] ],
-							[ 'مباني', allOtherDetails1[1] ],
-							[ 'أراضي غير مستغلة', allOtherDetails1[2] ],
-							[ 'محاصيل حقلية', allOtherDetails1[3] ],
-							[ 'محاصيل بستانية', allOtherDetails1[4] ] ]);
-				}
+			//var value1 = data3.getValue(selectedItem.row, 0);
+			//var value2 = data3.getValue(selectedItem.row, 1);
+			var value1 = 'وضع يد';
+			if (value1 === 'تمليك') {
+				document.getElementById('details1').textContent = 'تمليك';
+				data1 = google.visualization.arrayToDataTable([
+						[ 'Type', 'Ratio' ],
+						[ 'أراضي مستصلحة', allOwnershipDetails1[0] ],
+						[ 'مباني', allOwnershipDetails1[1] ],
+						[ 'أراضي غير مستغلة', allOwnershipDetails1[2] ],
+						[ 'محاصيل حقلية', allOwnershipDetails1[3] ],
+						[ 'محاصيل بستانية', allOwnershipDetails1[4] ] ]);
+			} else if (value1 === 'عقد محافظة') {
+				document.getElementById('details1').textContent = 'عقد محافظة';
+				data1 = google.visualization
+						.arrayToDataTable([
+								[ 'Type', 'Ratio' ],
+								[ 'أراضي مستصلحة',
+										allGovernorateContractDetails1[0] ],
+								[ 'مباني', allGovernorateContractDetails1[1] ],
+								[ 'أراضي غير مستغلة',
+										allGovernorateContractDetails1[2] ],
+								[ 'محاصيل حقلية',
+										allGovernorateContractDetails1[3] ],
+								[ 'محاصيل بستانية',
+										allGovernorateContractDetails1[4] ] ]);
+			} else if (value1 === 'وضع يد') {
+				document.getElementById('details1').textContent = 'وضع يد';
+				data1 = google.visualization.arrayToDataTable([
+						[ 'Type', 'Ratio' ],
+						[ 'أراضي مستصلحة', allHandDetails1[0] ],
+						[ 'مباني', allHandDetails1[1] ],
+						[ 'أراضي غير مستغلة', allHandDetails1[2] ],
+						[ 'محاصيل حقلية', allHandDetails1[3] ],
+						[ 'محاصيل بستانية', allHandDetails1[4] ] ]);
+			} else if (value1 === 'قرار تصرف') {
+				document.getElementById('details1').textContent = 'قرار تصرف';
+				data1 = google.visualization.arrayToDataTable([
+						[ 'Type', 'Ratio' ],
+						[ 'أراضي مستصلحة', allActionDecisiionDetails1[0] ],
+						[ 'مباني', allActionDecisiionDetails1[1] ],
+						[ 'أراضي غير مستغلة', allActionDecisiionDetails1[2] ],
+						[ 'محاصيل حقلية', allActionDecisiionDetails1[3] ],
+						[ 'محاصيل بستانية', allActionDecisiionDetails1[4] ] ]);
+			} else {
+				document.getElementById('details1').textContent = 'أخري';
+				data1 = google.visualization.arrayToDataTable([
+						[ 'Type', 'Ratio' ],
+						[ 'أراضي مستصلحة', allOtherDetails1[0] ],
+						[ 'مباني', allOtherDetails1[1] ],
+						[ 'أراضي غير مستغلة', allOtherDetails1[2] ],
+						[ 'محاصيل حقلية', allOtherDetails1[3] ],
+						[ 'محاصيل بستانية', allOtherDetails1[4] ] ]);
+			}
 
-				chart1.draw(data1, options1);
+			chart1.draw(data1, options1);
 			//}
 		}
-		google.visualization.events
-				.addListener(chart3, 'ready', selectHandler);
+		google.visualization.events.addListener(chart3, 'ready', selectHandler);
 		chart3.draw(data3, options3);
 	}
 
 	function drawChart4() {
 
 		var data4 = google.visualization.arrayToDataTable([
-			[ 'Type', 'Ratio' ], [ 'عقد محافظة', allGovernorateContract2 ],
-			[ "تمليك", allOwnership2 ], [ "قرار تصرف", allActionDecision2 ],
-			[ "وضع يد", allHand2 ],[ 'أخري', allOther2 ] ]);
+				[ 'Type', 'Ratio' ], [ 'عقد محافظة', allGovernorateContract2 ],
+				[ "تمليك", allOwnership2 ],
+				[ "قرار تصرف", allActionDecision2 ], [ "وضع يد", allHand2 ],
+				[ 'أخري', allOther2 ] ]);
 
 		options4 = {
 			titleTextStyle : {
@@ -564,7 +561,7 @@
 			backgroundColor : "#8FE2F1",
 			//reverseCategories: true,
 			pieStartAngle : 0,
-			is3D: true,
+			is3D : true
 		};
 
 		var chart4 = new google.visualization.PieChart(document
@@ -573,120 +570,124 @@
 		function selectHandler() {
 			var selectedItem = chart4.getSelection()[0];
 			//if (selectedItem) {
-				//var value1 = data4.getValue(selectedItem.row, 0);
-				//var value2 = data4.getValue(selectedItem.row, 1);
-				var value1 = 'وضع يد';
-				if (value1 === 'تمليك') {
-					document.getElementById('details2').textContent = 'تمليك';
-					//options4['slices'] = {  1: {offset: 0.2}, 2: {offset: 0.0}, 3: {offset: 0.0}, 4: {offset: 0.0} };
-					data2 = google.visualization.arrayToDataTable([
-							[ 'Type', 'Ratio' ],
-							[ 'أراضي مستصلحة', allOwnershipDetails2[0] ],
-							[ 'مباني', allOwnershipDetails2[1] ],
-							[ 'أراضي غير مستغلة', allOwnershipDetails2[2] ],
-							[ 'محاصيل حقلية', allOwnershipDetails2[3] ],
-							[ 'محاصيل بستانية', allOwnershipDetails2[4] ] ]);
-				} else if (value1 === 'عقد محافظة') {
-					document.getElementById('details2').textContent = 'عقد محافظة';
-					//options4['slices'] = {  1: {offset: 0.0}, 2: {offset: 0.2}, 3: {offset: 0.0}, 4: {offset: 0.0} };
-					data2 = google.visualization.arrayToDataTable([
-							[ 'Type', 'Ratio' ],
-							[ 'أراضي مستصلحة', allGovernorateContractDetails2[0] ],
-							[ 'مباني', allGovernorateContractDetails2[1] ],
-							[ 'أراضي غير مستغلة', allGovernorateContractDetails2[2] ],
-							[ 'محاصيل حقلية', allGovernorateContractDetails2[3] ],
-							[ 'محاصيل بستانية', allGovernorateContractDetails2[4] ] ]);
-				} else if (value1 === 'وضع يد') {
-					document.getElementById('details2').textContent = 'وضع يد';
-					//options4['slices'] = {  1: {offset: 0.0}, 2: {offset: 0.0}, 3: {offset: 0.2}, 4: {offset: 0.0} };
-					data2 = google.visualization.arrayToDataTable([
-							[ 'Type', 'Ratio' ],
-							[ 'أراضي مستصلحة', allHandDetails2[0] ],
-							[ 'مباني', allHandDetails2[1] ],
-							[ 'أراضي غير مستغلة', allHandDetails2[2] ],
-							[ 'محاصيل حقلية', allHandDetails2[3] ],
-							[ 'محاصيل بستانية', allHandDetails2[4] ] ]);
-				} else if (value1 === 'قرار تصرف') {
-					document.getElementById('details2').textContent = 'قرار تصرف';
-					//options4['slices'] = {  1: {offset: 0.0}, 2: {offset: 0.0}, 3: {offset: 0.2}, 4: {offset: 0.0} };
-					data2 = google.visualization.arrayToDataTable([
-							[ 'Type', 'Ratio' ],
-							[ 'أراضي مستصلحة', allActionDecisionDetails2[0] ],
-							[ 'مباني', allActionDecisionDetails2[1] ],
-							[ 'أراضي غير مستغلة', allActionDecisionDetails2[2] ],
-							[ 'محاصيل حقلية', allActionDecisionDetails2[3] ],
-							[ 'محاصيل بستانية', allActionDecisionDetails2[4] ] ]);
-				} else {
-					document.getElementById('details2').textContent = 'أخري';
-					//options4['slices'] = {  1: {offset: 0.0}, 2: {offset: 0.0}, 3: {offset: 0.0}, 4: {offset: 0.2} };
-					data2 = google.visualization.arrayToDataTable([
-							[ 'Type', 'Ratio' ],
-							[ 'أراضي مستصلحة', allOtherDetails2[0] ],
-							[ 'مباني', allOtherDetails2[1] ],
-							[ 'أراضي غير مستغلة', allOtherDetails2[2] ],
-							[ 'محاصيل حقلية', allOtherDetails2[3] ],
-							[ 'محاصيل بستانية', allOtherDetails2[4] ] ]);
-				}
+			//var value1 = data4.getValue(selectedItem.row, 0);
+			//var value2 = data4.getValue(selectedItem.row, 1);
+			var value1 = 'وضع يد';
+			if (value1 === 'تمليك') {
+				document.getElementById('details2').textContent = 'تمليك';
+				//options4['slices'] = {  1: {offset: 0.2}, 2: {offset: 0.0}, 3: {offset: 0.0}, 4: {offset: 0.0} };
+				data2 = google.visualization.arrayToDataTable([
+						[ 'Type', 'Ratio' ],
+						[ 'أراضي مستصلحة', allOwnershipDetails2[0] ],
+						[ 'مباني', allOwnershipDetails2[1] ],
+						[ 'أراضي غير مستغلة', allOwnershipDetails2[2] ],
+						[ 'محاصيل حقلية', allOwnershipDetails2[3] ],
+						[ 'محاصيل بستانية', allOwnershipDetails2[4] ] ]);
+			} else if (value1 === 'عقد محافظة') {
+				document.getElementById('details2').textContent = 'عقد محافظة';
+				//options4['slices'] = {  1: {offset: 0.0}, 2: {offset: 0.2}, 3: {offset: 0.0}, 4: {offset: 0.0} };
+				data2 = google.visualization
+						.arrayToDataTable([
+								[ 'Type', 'Ratio' ],
+								[ 'أراضي مستصلحة',
+										allGovernorateContractDetails2[0] ],
+								[ 'مباني', allGovernorateContractDetails2[1] ],
+								[ 'أراضي غير مستغلة',
+										allGovernorateContractDetails2[2] ],
+								[ 'محاصيل حقلية',
+										allGovernorateContractDetails2[3] ],
+								[ 'محاصيل بستانية',
+										allGovernorateContractDetails2[4] ] ]);
+			} else if (value1 === 'وضع يد') {
+				document.getElementById('details2').textContent = 'وضع يد';
+				//options4['slices'] = {  1: {offset: 0.0}, 2: {offset: 0.0}, 3: {offset: 0.2}, 4: {offset: 0.0} };
+				data2 = google.visualization.arrayToDataTable([
+						[ 'Type', 'Ratio' ],
+						[ 'أراضي مستصلحة', allHandDetails2[0] ],
+						[ 'مباني', allHandDetails2[1] ],
+						[ 'أراضي غير مستغلة', allHandDetails2[2] ],
+						[ 'محاصيل حقلية', allHandDetails2[3] ],
+						[ 'محاصيل بستانية', allHandDetails2[4] ] ]);
+			} else if (value1 === 'قرار تصرف') {
+				document.getElementById('details2').textContent = 'قرار تصرف';
+				//options4['slices'] = {  1: {offset: 0.0}, 2: {offset: 0.0}, 3: {offset: 0.2}, 4: {offset: 0.0} };
+				data2 = google.visualization.arrayToDataTable([
+						[ 'Type', 'Ratio' ],
+						[ 'أراضي مستصلحة', allActionDecisionDetails2[0] ],
+						[ 'مباني', allActionDecisionDetails2[1] ],
+						[ 'أراضي غير مستغلة', allActionDecisionDetails2[2] ],
+						[ 'محاصيل حقلية', allActionDecisionDetails2[3] ],
+						[ 'محاصيل بستانية', allActionDecisionDetails2[4] ] ]);
+			} else {
+				document.getElementById('details2').textContent = 'أخري';
+				//options4['slices'] = {  1: {offset: 0.0}, 2: {offset: 0.0}, 3: {offset: 0.0}, 4: {offset: 0.2} };
+				data2 = google.visualization.arrayToDataTable([
+						[ 'Type', 'Ratio' ],
+						[ 'أراضي مستصلحة', allOtherDetails2[0] ],
+						[ 'مباني', allOtherDetails2[1] ],
+						[ 'أراضي غير مستغلة', allOtherDetails2[2] ],
+						[ 'محاصيل حقلية', allOtherDetails2[3] ],
+						[ 'محاصيل بستانية', allOtherDetails2[4] ] ]);
+			}
 
-				chart2.draw(data2, options2);
+			chart2.draw(data2, options2);
 			//}
 		}
-		google.visualization.events
-				.addListener(chart4, 'ready', selectHandler);
+		google.visualization.events.addListener(chart4, 'ready', selectHandler);
 		chart4.draw(data4, options4);
 	}
 </script>
 </head>
 <body>
-<div class="beh_container">
-	<jsp:include page="_header.jsp"></jsp:include>
-	<div class="beh_main2">
-		<div id="statisticscontent" align="center">
-			<h1>إحصائيات</h1>
-			<div class="stats_chart_div_l">
-				<div class="stats_chart_title" style="display: none;">
-					<h2>
-						<p style="padding: 0 0.75vw;">البيانات الإحصائية الخاصة بالمنطقة -
-							و</p>
-					</h2>
+	<div class="beh_container">
+		<jsp:include page="_header.jsp"></jsp:include>
+		<div class="beh_main2">
+			<div id="statisticscontent" align="center">
+				<h1>إحصائيات</h1>
+				<div class="stats_chart_div_l">
+					<div class="stats_chart_title" style="display: none;">
+						<h2>
+							<p style="padding: 0 0.75vw;">البيانات الإحصائية الخاصة
+								بالمنطقة - و</p>
+						</h2>
+					</div>
+					<div id="piechart3" class="stats_chart_pie" style="display: none;"></div>
+					<br>
+					<div class="stats_chart_title">
+						<h2>
+							<p style="padding: 0 0.75vw;">
+								<span>البيانات الإحصائية التفصيلية الخاصة بالمنطقة - و -
+								</span><span id='details1'></span>
+							</p>
+						</h2>
+					</div>
+					<div id="piechart1" class="stats_chart_pie"></div>
+
+
 				</div>
-				<div id="piechart3" class="stats_chart_pie" style="display: none;"></div>
-				<br>
-				<div class="stats_chart_title">
-					<h2>
-						<p style="padding: 0 0.75vw;">
-							<span>البيانات الإحصائية التفصيلية الخاصة بالمنطقة - و - </span><span
-								id='details1'></span>
-						</p>
-					</h2>
+				<div class="stats_chart_div_r">
+
+					<div class="stats_chart_title" style="display: none;">
+						<h2>
+							<p style="padding: 0 0.75vw;">البيانات الإحصائية الخاصة
+								بالمنطقة - هـــ</p>
+						</h2>
+					</div>
+					<div id="piechart4" class="stats_chart_pie" style="display: none;"></div>
+					<br>
+					<div class="stats_chart_title">
+						<h2>
+							<p style="padding: 0 0.75vw;">
+								<span>البيانات الإحصائية التفصيلية الخاصة بالمنطقة - هــ
+									- </span><span id='details2'></span>
+							</p>
+						</h2>
+					</div>
+					<div id="piechart2" class="stats_chart_pie"></div>
 				</div>
-				<div id="piechart1" class="stats_chart_pie"></div>
-	
-	
-			</div>
-			<div class="stats_chart_div_r">
-	
-				<div class="stats_chart_title" style="display: none;">
-					<h2>
-						<p style="padding: 0 0.75vw;">البيانات الإحصائية الخاصة بالمنطقة -
-							هـــ</p>
-					</h2>
-				</div>
-				<div id="piechart4" class="stats_chart_pie" style="display: none;"></div>
-				<br>
-				<div class="stats_chart_title">
-					<h2>
-						<p style="padding: 0 0.75vw;">
-							<span>البيانات الإحصائية التفصيلية الخاصة بالمنطقة - هــ -
-							</span><span id='details2'></span>
-						</p>
-					</h2>
-				</div>
-				<div id="piechart2" class="stats_chart_pie"></div>
 			</div>
 		</div>
+		<jsp:include page="_footer.jsp"></jsp:include>
 	</div>
-	<jsp:include page="_footer.jsp"></jsp:include>
-</div>
 </body>
 </html>

@@ -42,7 +42,7 @@
 						</div>
 						<img id='img2' class='img_slider' src='datafiles/rasterimages/0.png'>
 						<div id='img2_title' class='legend'>
-							<p class='img_title top_title'>Sentinel2 Septemper 2018</p>
+							<p class='img_title top_title'>Hyper Spectral Satellite (JL1GP01/02)2020</p>
 						</div>
 						<div id='controlbuttons' class='control_buttons' dir="rtl">
 							<a href="javascript:void(0);" onclick="landuse();" class="btn btn-info btn-md">استخدامات الأراضى</a> 
