@@ -60,8 +60,8 @@
 	var id = "${polygonID}";
 	var lat = "${lat}";
 	var lng = "${lng}";
-	document.getElementById('img1').src = 'datafiles/rasterimages/png_new/'+ id + '.png';
-	document.getElementById('img2').src = 'datafiles/rasterimages/png_old/'+ id + '.png';
+	document.getElementById('img1').src = 'datafiles/rasterimages/png_old/'+ id + '.png';
+	document.getElementById('img2').src = 'datafiles/rasterimages/png_new/'+ id + '.png';
 	var img_height = 500;
 	var img_width = 800;
 	window.onload = function() {
@@ -71,15 +71,26 @@
 		img_width = new_width;
 		document.getElementById("img1").width = new_width;
 		document.getElementById("img1").height = new_height;
-		if(new_width > 800){
+		/*if(new_width > 800){
 			ratio = new_height / new_width;
 			new_height = ratio * 800;
 			new_width = 800;
-		}
+		}*/
 		
 		ratio = new_width / new_height;
 		new_height = 500;
 		new_width = ratio * 500;
+		
+		/*if(new_width < 200){
+			alert('less than 200');
+			h_ratio = new_height / new_width;
+			new_height = h_ratio * 200;
+			w_ratio = new_width / new_height;
+			new_width = w_ratio * 130;
+		}*/
+		
+		
+		
 		
 		img_height = new_height;
 		img_width = new_width;
@@ -139,7 +150,6 @@
 	}
 
 	function back() {
-		//window.location = "${pageContext.request.contextPath}/search?polygon_id=" + encodeURIComponent(id)+"&polygon_lat=" + encodeURIComponent(lat)+"&polygon_long=" + encodeURIComponent(lng);
 		window.history.back();
 	}
 	
@@ -147,9 +157,7 @@
 		var location = "${pageContext.request.contextPath}"+"/datafiles/mahader/0.png";
 		if (200 == urlExists("${pageContext.request.contextPath}"+"/datafiles/mahader/" + id + ".png")) {
 			location = "${pageContext.request.contextPath}"+"/datafiles/mahader/" + id + ".png";
-		}
-		//window.location.href = location;
-		window.open(location, '_blank');
+		}window.open(location, '_blank');
 	}
 	
 	function urlExists(checkedurl) {

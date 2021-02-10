@@ -46,7 +46,7 @@
 			<div class="beh_main_timeseries">
 				<h1>التسلسل الزمنى للمنطقة و</h1>
 				<div id='map_db1'></div>
-				<h1>التسلسل الزمنى للمنطقة ه</h1>
+				<h1>التسلسل الزمنى للمنطقة هــ</h1>
 				<div id='map_db2'></div>
 			</div>
 		</div>
