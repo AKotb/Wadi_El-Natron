@@ -32,7 +32,7 @@
 			<div class="beh_main_search">
 				<!-- <div id="raster_extra"> -->
 					<div id="floating-panel" align='center'>
-						<input class="slider" type="range" min="0" max="100" value="0"
+						<input class="slider" type="range" min="0" max="100" value="50"
 							id="myRange">
 					</div>
 					<div id="raster_view">
@@ -67,8 +67,8 @@
 	window.onload = function() {
 		new_width = document.getElementById("img2").width;
 		new_height = document.getElementById("img2").height;
-		img_height = new_height;
-		img_width = new_width;
+		/*img_height = new_height;
+		img_width = new_width;*/
 		document.getElementById("img1").width = new_width;
 		document.getElementById("img1").height = new_height;
 		/*if(new_width > 800){
@@ -78,8 +78,13 @@
 		}*/
 		
 		ratio = new_width / new_height;
-		new_height = 500;
-		new_width = ratio * 500;
+		default_height = 500;
+		if(new_height < 300){
+			default_height = 300;
+		}
+		
+		new_height = default_height;
+		new_width = ratio * default_height;
 		
 		/*if(new_width < 200){
 			alert('less than 200');
@@ -111,6 +116,13 @@
 		
 		document.getElementById("img1_title").style.left = shift + 'px';
 		document.getElementById("img2_title").style.left = shift + 'px';
+		
+		document.getElementById("img2").style.clip = "rect(0," + img_width
+		+ "px, " + img_height + "px, " + 0.5 * img_width + "px)";
+		
+		document.getElementById("img2_title").style.clip = "rect(0,"
+			+ img_width + "px, " + img_height + "px, " + 0.5
+			* img_width + "px)";
 		
 			var UserRole="<%=session.getAttribute("userRole")%>";
 			if (UserRole != "null") {
