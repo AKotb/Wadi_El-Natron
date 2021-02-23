@@ -26,6 +26,7 @@ public class Farm {
 	private String agriBuildings;
 	private String fileNo;
 	private String reclamedLandNotUsedBefore;
+	private String location;
 
 	/**
 	 * 
@@ -53,10 +54,12 @@ public class Farm {
 	 * @param agriBuildings
 	 * @param fileNo
 	 * @param reclamedLandNotUsedBefore
+	 * @param location
 	 */
 	public Farm(int id, int farmID, String farmName, String ownerID, String ownerName, String telephone,
 			String ownership, String reclamedArea, String urbanArea, String unusedArea, String fieldCropsArea,
-			String cropsArea, String managBuildings, String poulBuildings, String animBuildings, String agriBuildings, String fileNo, String reclamedLandNotUsedBefore) {
+			String cropsArea, String managBuildings, String poulBuildings, String animBuildings, String agriBuildings, 
+			String fileNo, String reclamedLandNotUsedBefore, String location) {
 		super();
 		this.id = id;
 		this.farmID = farmID;
@@ -76,6 +79,7 @@ public class Farm {
 		this.agriBuildings = agriBuildings;
 		this.fileNo = fileNo;
 		this.reclamedLandNotUsedBefore = reclamedLandNotUsedBefore;
+		this.location = location;
 	}
 
 	/**
@@ -345,6 +349,20 @@ public class Farm {
 	 */
 	public void setReclamedLandNotUsedBefore(String reclamedLandNotUsedBefore) {
 		this.reclamedLandNotUsedBefore = reclamedLandNotUsedBefore;
+	}
+
+	/**
+	 * @return the location
+	 */
+	public String getLocation() {
+		return location;
+	}
+
+	/**
+	 * @param location the location to set
+	 */
+	public void setLocation(String location) {
+		this.location = location;
 	}
 	
 }
