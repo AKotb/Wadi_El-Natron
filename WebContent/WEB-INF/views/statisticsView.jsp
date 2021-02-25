@@ -28,6 +28,12 @@
 	async defer></script>
 <script>
 	var farms;
+	var db2FarmsID = [265, 266, 267, 268, 269, 270, 271, 272, 273, 274, 275, 276, 277, 278, 279, 280, 281, 282, 283, 284, 285, 286, 287, 288, 289, 290, 291, 292, 293, 294, 295, 296, 297, 298, 299, 300, 301, 302, 303, 304, 305, 306, 307, 308, 309, 310, 311, 312, 313, 314, 315, 316, 317, 318, 319, 320, 321, 322, 323, 324, 325, 326, 327, 328, 330, 331, 332, 333, 334, 335, 336, 337, 338, 339, 340, 341, 342, 343, 344, 345, 346, 347, 348, 349, 350, 351, 352, 353, 354, 355, 356, 357, 358, 359, 360, 361, 362, 363, 364, 365, 366, 367, 368, 369, 370, 371, 372, 373, 374, 375, 376, 377, 378, 379, 380, 381, 382, 383, 384, 385, 386, 387, 388, 389, 390, 391, 392, 393, 394, 395, 396, 397, 398, 399, 400, 401, 402, 403, 404, 405, 406, 407, 408, 409, 410, 411, 412, 413, 414, 415, 416, 417, 418, 419, 420, 421, 422, 423, 424, 425, 426, 427, 428, 429, 430, 431, 432, 433, 434, 435, 436, 437, 438, 439, 440, 441, 442, 443, 444, 445, 446, 447, 448, 449, 450, 451, 452, 453, 454, 455, 456, 457, 458, 459, 460, 461, 462, 463, 464, 465, 466, 467, 468, 469, 470, 471, 472, 473, 474, 475, 476, 477, 478, 479, 480, 481, 482, 483, 484, 485, 486, 487, 488, 489, 490, 491, 492, 493, 494, 495, 496, 497, 498, 499, 500, 501, 502, 503, 504, 505, 506, 507, 508, 509, 510, 511, 512, 513, 514, 515, 516, 517, 518, 519, 520, 521, 522, 523, 524, 525, 526, 527, 528, 529, 530, 531, 532, 533, 534, 535, 536, 537, 538, 539, 540, 541, 542, 543, 544, 545, 546, 547, 548, 549, 550, 551, 552, 553, 554, 555, 556, 557, 685, 705, 1110, 1111, 1112, 1113, 1114, 1115, 1116];
+	var db2_farms_count;
+	var db1_farms_count;
+	
+	var db2_farms_area = 337.527; //in KM square (منطقة هـــ);
+	var db1_farms_area = 509.727 //in KM square (منطقة و);
 	// 0: allReclamedArea1, 1: allUrbanArea1, 2: allUnusedArea1, 3: allFieldCropsArea1, 4: allCropsArea1
 	var allGovernorateContractDetails1 = [ 0.0, 0.0, 0.0, 0.0, 0.0 ];
 	var allOwnershipDetails1 = [ 0.0, 0.0, 0.0, 0.0, 0.0 ];
@@ -82,7 +88,8 @@
 			var curFieldCropsArea = 0.0;
 			var curCropsArea = 0.0;
 			var curState = 0;
-
+			db2_farms_count = db2FarmsID.length;
+			db1_farms_count = farms.length - db2_farms_count;
 			for ( var i in farms) {
 
 				if (farms[i].reclamedArea) {
@@ -114,7 +121,7 @@
 				} else {
 					curCropsArea = 0.0;
 				}
-				//خاص بالمنطقة و
+				//DB1 خاص بالمنطقة  و
 				if (parseInt(farms[i].farmID, 10) <= 264) {
 
 					if (farms[i].ownership) {
@@ -193,7 +200,7 @@
 						}
 					}
 				}
-				// خاص بالمنطقة هـــ 
+				// DB2 خاص بالمنطقة هـــ 
 				else {
 					if (farms[i].ownership) {
 						curState = farms[i].ownership;
@@ -276,7 +283,7 @@
 
 	}
 
-	//Pie Chart Code
+	//Google Chart Code
 	google.charts.load('current', {
 		'packages' : [ 'corechart' ]
 	});
@@ -284,18 +291,35 @@
 	google.charts.setOnLoadCallback(drawChart2);
 	google.charts.setOnLoadCallback(drawChart3);
 	google.charts.setOnLoadCallback(drawChart4);
+    google.charts.setOnLoadCallback(drawTotalNumberFamrsBarChart);
+    google.charts.setOnLoadCallback(drawTotalAreaBarChart);
 
 	function drawChart1() {
 
-		data1 = google.visualization.arrayToDataTable([ [ 'Type', 'Ratio' ],
-				[ 'أراضي مستصلحة', allOwnershipDetails1[0] ],
-				[ 'مباني', allOwnershipDetails1[1] ],
-				[ 'أراضي غير مستغلة', allOwnershipDetails1[2] ],
-				[ 'محاصيل حقلية', allOwnershipDetails1[3] ],
-				[ 'محاصيل بستانية', allOwnershipDetails1[4] ] ]);
+		/*data1 = google.visualization.arrayToDataTable([ [ 'Type', 'Ratio' ],
+			[ 'أراضي مستصلحة', allOwnershipDetails1[0] ],
+			[ 'مباني', allOwnershipDetails1[1] ],
+			[ 'أراضي غير مستغلة', allOwnershipDetails1[2] ],
+			[ 'محاصيل حقلية', allOwnershipDetails1[3] ],
+			[ 'محاصيل بستانية', allOwnershipDetails1[4] ] ]);*/
+		
+		// Static version
+		data1 = google.visualization.arrayToDataTable([ [ 'Ratio', 'Type' ],
+			[46548.4880405823 , 'اراضي  مستزرعة محاصيل بستانية'],
+			[23030.5735096032 , 'اراضي  مستزرعة محاصيل حولية'],
+			[0.0 , 'اراضي متخللات الري المحوري'],
+			[0.0 , 'اراضي خدمات مناطق الانتاج الزراعى'],
+			[20418.6108822442 , 'اراضي مستصلحة سبق زراعتها'],
+			[437.93801661849 , 'اراضي مستصلحة لم يسبق زراعتها'],
+			[18919.1990412627 , 'اراضي غير مستغله'],
+			[14.126820182318 , 'مباني انتاج زراعى'],
+			[0.0 , 'مباني انتاج حيوانى'],
+			[34.9711638379839 , 'مباني انتاج داجنى'],
+			[1502.50570706165 , 'مباني ادارية وسكنية']
+			]);
 
 		options1 = {
-			titleTextStyle : {
+				titleTextStyle : {
 				color : '#0000FF',
 				fontName : 'arial',
 				fontSize : 50,
@@ -312,14 +336,17 @@
 			},
 			pieSliceTextStyle : {
 				fontName : 'arial',
-				fontSize : 16
+				fontSize : 20,
+				bold: true,
+				color : '#000000'
 			},
 			legend : {
-				maxLines : 3,
+				maxLines : 4,
 				position : 'top',
 				textStyle : {
 					color : 'blue',
-					fontSize : 16
+					fontSize : 12,
+					bold: true
 				},
 				alignment : 'center'
 			},
@@ -327,7 +354,8 @@
 			//reverseCategories: true,
 			pieStartAngle : 0,
 			is3D : true,
-			colors : [ 'orange', 'red', 'yellow', 'lightgreen', 'green' ]
+			sliceVisibilityThreshold: 0.0,
+			colors : ['#55FF00', '#41A800', '#FF7373', '#C00000', '#FFAA00', '#FFD966', '#FFFF00', '#FF0066', '#FFBEE8', '#FF00FF', '#FF0000']
 		};
 
 		chart1 = new google.visualization.PieChart(document
@@ -357,7 +385,7 @@
 				[ 'محاصيل بستانية', allOwnershipDetails2[4] ] ]);
 
 		options2 = {
-			titleTextStyle : {
+				titleTextStyle : {
 				color : '#0000FF',
 				fontName : 'arial',
 				fontSize : 50,
@@ -374,14 +402,17 @@
 			},
 			pieSliceTextStyle : {
 				fontName : 'arial',
-				fontSize : 16
+				fontSize : 20,
+				bold: true,
+				color : '#000000'
 			},
 			legend : {
-				maxLines : 3,
+				maxLines : 4,
 				position : 'top',
 				textStyle : {
 					color : 'blue',
-					fontSize : 16
+					fontSize : 12,
+					bold: true
 				},
 				alignment : 'center'
 			},
@@ -389,7 +420,8 @@
 			//reverseCategories: true,
 			pieStartAngle : 0,
 			is3D : true,
-			colors : [ 'orange', 'red', 'yellow', 'lightgreen', 'green' ]
+			sliceVisibilityThreshold: 0.0,
+			colors : ['#55FF00', '#41A800', '#FF7373', '#C00000', '#FFAA00', '#FFD966', '#FFFF00', '#FF0066', '#FFBEE8', '#FF00FF', '#FF0000']
 		};
 
 		chart2 = new google.visualization.PieChart(document
@@ -488,11 +520,18 @@
 				document.getElementById('details1').textContent = 'وضع يد';
 				data1 = google.visualization.arrayToDataTable([
 						[ 'Type', 'Ratio' ],
-						[ 'أراضي مستصلحة', allHandDetails1[0] ],
-						[ 'مباني', allHandDetails1[1] ],
-						[ 'أراضي غير مستغلة', allHandDetails1[2] ],
-						[ 'محاصيل حقلية', allHandDetails1[3] ],
-						[ 'محاصيل بستانية', allHandDetails1[4] ] ]);
+						[ 'اراضي  مستزرعة محاصيل بستانية',  46548],
+						[ 'اراضي  مستزرعة محاصيل حولية', 23031],
+						[ 'اراضي متخللات الري المحوري', 0],
+						[ 'اراضي خدمات مناطق الانتاج الزراعى', 0],
+						[ 'اراضي مستصلحة سبق زراعتها', 20419],
+						[ 'اراضي مستصلحة لم يسبق زراعتها', 438],
+						[ 'اراضي غير مستغله', 18919],
+						[ 'مباني انتاج زراعى', 14],
+						[ 'مباني انتاج حيوانى', 0],
+						[ 'مباني انتاج داجنى', 35],
+						[ 'مباني ادارية وسكنية', 1503]
+						]);
 			} else if (value1 === 'قرار تصرف') {
 				document.getElementById('details1').textContent = 'قرار تصرف';
 				data1 = google.visualization.arrayToDataTable([
@@ -603,11 +642,18 @@
 				//options4['slices'] = {  1: {offset: 0.0}, 2: {offset: 0.0}, 3: {offset: 0.2}, 4: {offset: 0.0} };
 				data2 = google.visualization.arrayToDataTable([
 						[ 'Type', 'Ratio' ],
-						[ 'أراضي مستصلحة', allHandDetails2[0] ],
-						[ 'مباني', allHandDetails2[1] ],
-						[ 'أراضي غير مستغلة', allHandDetails2[2] ],
-						[ 'محاصيل حقلية', allHandDetails2[3] ],
-						[ 'محاصيل بستانية', allHandDetails2[4] ] ]);
+						[ 'اراضي  مستزرعة محاصيل بستانية',  13292],
+						[ 'اراضي  مستزرعة محاصيل حولية', 961],
+						[ 'اراضي متخللات الري المحوري', 0],
+						[ 'اراضي خدمات مناطق الانتاج الزراعى', 0],
+						[ 'اراضي مستصلحة سبق زراعتها', 7813],
+						[ 'اراضي مستصلحة لم يسبق زراعتها', 0],
+						[ 'اراضي غير مستغله', 34805],
+						[ 'مباني انتاج زراعى', 24],
+						[ 'مباني انتاج حيوانى', 2],
+						[ 'مباني انتاج داجنى', 323],
+						[ 'مباني ادارية وسكنية', 118]
+						]);
 			} else if (value1 === 'قرار تصرف') {
 				document.getElementById('details2').textContent = 'قرار تصرف';
 				//options4['slices'] = {  1: {offset: 0.0}, 2: {offset: 0.0}, 3: {offset: 0.2}, 4: {offset: 0.0} };
@@ -636,6 +682,90 @@
 		google.visualization.events.addListener(chart4, 'ready', selectHandler);
 		chart4.draw(data4, options4);
 	}
+	
+	//For # of Farms Bra Chart Drawing
+    function drawTotalNumberFamrsBarChart() {
+    	var data = google.visualization.arrayToDataTable([
+            ["Element", "عدد المزارع", { role: "style" } ],
+            ["منطقة و", 806, "#F80"],
+            ["منطقة هــ", 301, "#8F0"],
+            ["خارج حدود القرار", 5, "#FF0"]
+          ]);
+
+          var view = new google.visualization.DataView(data);
+          view.setColumns([0, 1,
+                           { calc: "stringify",
+                             sourceColumn: 1,
+                             type: "string",
+                             role: "annotation" },
+                           2]);
+
+          var options = {
+            title: "",
+            width: 675,
+            height: 600,
+            vAxis: {
+                title: 'عدد المزارع',
+				titleTextStyle: {
+					color: "#000",
+					fontName: "arial",
+					fontSize: 30,
+					bold: true,
+					italic: false
+				}
+            },
+            bar: {groupWidth: "40%"},
+            legend: { position: "none" },
+            backgroundColor: {
+				fill: 'rgb(143, 226, 241)',
+				fillOpacity: 0.8
+			}
+          };
+          var chart = new google.visualization.ColumnChart(document.getElementById("columnchart_values"));
+          chart.draw(view, options);
+    }
+	
+  	//For Areas Bra Chart Drawing
+    function drawTotalAreaBarChart() {
+    	var data2 = google.visualization.arrayToDataTable([
+            ["Element", "المساحة بالفدان", { role: "style" } ],
+            ["المنطقة و", 110907, "#F80"],
+            ["المنطقة هـ", 57338, "#8F0"],
+            ["خارج حدود القرار", 20275, "#FF0"]
+          ]);
+
+          var view2 = new google.visualization.DataView(data2);
+          view2.setColumns([0, 1,
+                           { calc: "stringify",
+                             sourceColumn: 1,
+                             type: "string",
+                             role: "annotation" },
+                           2]);
+
+          var options2 = {
+            title: "",
+            width: 675,
+            height: 600,
+            vAxis: {
+                title: 'المساحة بالفدان',
+				titleTextStyle: {
+					color: "#000",
+					fontName: "arial",
+					fontSize: 30,
+					bold: true,
+					italic: false
+				}
+              },
+            bar: {groupWidth: "40%"},
+            legend: { position: "none" },
+            backgroundColor: {
+				fill: 'rgb(143, 226, 241)',
+				fillOpacity: 0.8
+			}
+          };
+          var chart = new google.visualization.ColumnChart(document.getElementById("columnchart_values2"));
+          chart.draw(view2, options2);
+    }
 </script>
 </head>
 <body>
@@ -644,7 +774,7 @@
 		<div class="beh_main2">
 			<div id="statisticscontent" align="center">
 				<h1>إحصائيات</h1>
-				<div class="stats_chart_div_l">
+				<div class="stats_chart_div_r">
 					<div class="stats_chart_title" style="display: none;">
 						<h2>
 							<p style="padding: 0 0.75vw;">البيانات الإحصائية الخاصة
@@ -665,7 +795,7 @@
 
 
 				</div>
-				<div class="stats_chart_div_r">
+				<div class="stats_chart_div_l">
 
 					<div class="stats_chart_title" style="display: none;">
 						<h2>
@@ -685,6 +815,34 @@
 					</div>
 					<div id="piechart2" class="stats_chart_pie"></div>
 				</div>
+				
+				<div style="float: right; height: 5px;"></div>
+				<!-- Bar Chart for Total Number of Farms for Regions (هــــ - ,) -->
+				<div class="stats_chart_div_farms_no_r">
+
+					<div class="stats_chart_title">
+						<h2>
+							<p style="padding: 0 0.75vw;">إجمالي عمليات الرفع المساحي للمنطقتين و - هــ</p>
+						</h2>
+					</div>
+					
+    				<div id="columnchart_values" class="stats_chart_bar"></div>
+
+				</div>
+				
+				<!-- Bar Chart for Total Areas for Regions (هــــ - ,) -->
+				<div class="stats_chart_div_farms_area_l">
+
+					<div class="stats_chart_title">
+						<h2>
+							<p style="padding: 0 0.75vw;">إجمالي المساحات للمنطقتين و - هـــ</p>
+						</h2>
+					</div>
+					
+    				<div id="columnchart_values2" class="stats_chart_bar"></div>
+
+				</div>
+				<!-- ---------------------------------------------------------------- -->
 			</div>
 		</div>
 		<jsp:include page="_footer.jsp"></jsp:include>

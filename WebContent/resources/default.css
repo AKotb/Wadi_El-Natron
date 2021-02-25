@@ -542,6 +542,26 @@ px
 	float: left;
 }
 
+.stats_chart_div_farms_no_r{
+	width: 49%;
+	float: right;
+	margin-top: 2vw;
+}
+
+.stats_chart_div_farms_area_l{
+	width: 49%;
+	float: left;
+	margin-top: 2vw;
+}
+
+.stats_chart_bar{
+	width: 100%; 
+	height: 40vw;
+	font-weight:800; 
+	font-size: 18vw;
+	border: 0.2vw solid #17a2b9;
+}
+
 .stats_chart_pie{
 	width: 100%; 
 	height: 40vw;

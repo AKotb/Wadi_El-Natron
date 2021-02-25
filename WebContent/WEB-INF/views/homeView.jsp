@@ -284,7 +284,6 @@
 								var db_ownership = "";
 								var db_displayedownership = "";
 								var db_fileno = "";
-								var db_location = "";
 								for ( var i in farms) {
 									if (farms[i].farmID === area_id) {
 										if (farms[i].farmName) {
@@ -334,21 +333,6 @@
 										} else {
 											db_fileno = "غير متوفر";
 										}
-										if (farms[i].location) {
-											db_location = farms[i].location;
-											if(db_location == "1"){
-												db_displayedlocation = "منطقة (و)";
-											}
-											if(db_location == "2"){
-												db_displayedlocation = "منطقة (هـ)";
-											}
-											if(db_location == "3"){
-												db_displayedlocation = "خارج حدود القرار";
-											}
-										} else {
-											db_location = "غير متوفر";
-											db_displayedlocation = "غير متوفر";
-										}
 									}
 								}
 								var link0 = "<a href=\'datafiles/mahader/0.png\' target='_blank' class=\'btn btn-info btn-md\'> محضر معاينة </a>";
@@ -379,9 +363,7 @@
 										+ db_displayedownership
 										+ "</td><td class=\'rightcolumn\'>نوع الحيازة</td></tr><tr><td class=\'td\'>"
 										+ db_fileno
-										+ "</td><td class=\'rightcolumn\'>رقم الملف</td></tr><tr><td class=\'td\'>"
-										+ db_displayedlocation
-										+ "</td><td class=\'rightcolumn\'>المنطقة</td></tr><tr><td class=\'td\'><table class=\"innertable\"><tr><td class=\'td\'>س</td><td class=\'td\'>ط</td><td class=\'td\'>ف</td></tr><tr><td class=\'td\'>"
+										+ "</td><td class=\'rightcolumn\'>رقم الملف</td></tr><tr><td class=\'td\'><table class=\"innertable\"><tr><td class=\'td\'>س</td><td class=\'td\'>ط</td><td class=\'td\'>ف</td></tr><tr><td class=\'td\'>"
 										+ sahm
 										+ "</td><td class=\'td\'>"
 										+ qirat
@@ -485,7 +467,6 @@
 								var db_ownership = "";
 								var db_displayedownership = "";
 								var db_fileno = "";
-								var db_location = "";
 								for ( var i in farms) {
 									if (farms[i].farmID === area_id) {
 										if (farms[i].farmName) {
@@ -536,21 +517,6 @@
 										} else {
 											db_fileno = "غير متوفر";
 										}
-										if (farms[i].location) {
-											db_location = farms[i].location;
-											if(db_location == "1"){
-												db_displayedlocation = "منطقة (و)";
-											}
-											if(db_location == "2"){
-												db_displayedlocation = "منطقة (هـ)";
-											}
-											if(db_location == "3"){
-												db_displayedlocation = "خارج حدود القرار";
-											}
-										} else {
-											db_location = "غير متوفر";
-											db_displayedlocation = "غير متوفر";
-										}
 									}
 								}
 								var link0 = "<a href=\'datafiles/mahader/0.png\' target='_blank' class=\'btn btn-info btn-md\'> محضر معاينة </a>";
@@ -581,9 +547,7 @@
 											+ db_displayedownership
 											+ "</td><td class=\'rightcolumn\'>نوع الحيازة</td></tr><tr><td class=\'td\'>"
 											+ db_fileno
-											+ "</td><td class=\'rightcolumn\'>رقم الملف</td></tr><tr><td class=\'td\'>"
-											+ db_displayedlocation
-											+ "</td><td class=\'rightcolumn\'>المنطقة</td></tr><tr><td class=\'td\'><table class=\"innertable\"><tr><td class=\'td\'>س</td><td class=\'td\'>ط</td><td class=\'td\'>ف</td></tr><tr><td class=\'td\'>"
+											+ "</td><td class=\'rightcolumn\'>رقم الملف</td></tr><tr><td class=\'td\'><table class=\"innertable\"><tr><td class=\'td\'>س</td><td class=\'td\'>ط</td><td class=\'td\'>ف</td></tr><tr><td class=\'td\'>"
 											+ sahm
 											+ "</td><td class=\'td\'>"
 											+ qirat
@@ -687,7 +651,6 @@
 						var db_ownership = "";
 						var db_displayedownership = "";
 						var db_fileno = "";
-						var db_location = "";
 						for ( var i in farms) {
 							if (farms[i].farmID === area_id) {
 								if (farms[i].farmName) {
@@ -738,21 +701,6 @@
 								} else {
 									db_fileno = "غير متوفر";
 								}
-								if (farms[i].location) {
-									db_location = farms[i].location;
-									if(db_location == "1"){
-										db_displayedlocation = "منطقة (و)";
-									}
-									if(db_location == "2"){
-										db_displayedlocation = "منطقة (هـ)";
-									}
-									if(db_location == "3"){
-										db_displayedlocation = "خارج حدود القرار";
-									}
-								} else {
-									db_location = "غير متوفر";
-									db_displayedlocation = "غير متوفر";
-								}
 							}
 						}
 						var link0 = "<a href=\'datafiles/mahader/0.png\' target='_blank' class=\'btn btn-info btn-md\'> محضر معاينة </a>";
@@ -783,9 +731,7 @@
 									+ db_displayedownership
 									+ "</td><td class=\'rightcolumn\'>نوع الحيازة</td></tr><tr><td class=\'td\'>"
 									+ db_fileno
-									+ "</td><td class=\'rightcolumn\'>رقم الملف</td></tr><tr><td class=\'td\'>"
-									+ db_displayedlocation
-									+ "</td><td class=\'rightcolumn\'>المنطقة</td></tr><tr><td class=\'td\'><table class=\"innertable\"><tr><td class=\'td\'>س</td><td class=\'td\'>ط</td><td class=\'td\'>ف</td></tr><tr><td class=\'td\'>"
+									+ "</td><td class=\'rightcolumn\'>رقم الملف</td></tr><tr><td class=\'td\'><table class=\"innertable\"><tr><td class=\'td\'>س</td><td class=\'td\'>ط</td><td class=\'td\'>ف</td></tr><tr><td class=\'td\'>"
 									+ sahm
 									+ "</td><td class=\'td\'>"
 									+ qirat
