@@ -344,7 +344,7 @@
 				maxLines : 4,
 				position : 'top',
 				textStyle : {
-					color : 'blue',
+					color : '#000000',
 					fontSize : 12,
 					bold: true
 				},
@@ -410,7 +410,7 @@
 				maxLines : 4,
 				position : 'top',
 				textStyle : {
-					color : 'blue',
+					color : '#000000',
 					fontSize : 12,
 					bold: true
 				},
@@ -421,7 +421,7 @@
 			pieStartAngle : 0,
 			is3D : true,
 			sliceVisibilityThreshold: 0.0,
-			colors : ['#55FF00', '#41A800', '#FF7373', '#C00000', '#FFAA00', '#FFD966', '#FFFF00', '#FF0066', '#FFBEE8', '#FF00FF', '#FF0000']
+			colors : ['#55FF00', '#41A800', '#FF7373', '#C00000', '#FFAA00', '#FFD966', '#FFFF00', '#FF0066', '#FFBEE8', '#FF00FF', '#FF0000', '#4169E1']
 		};
 
 		chart2 = new google.visualization.PieChart(document
@@ -652,7 +652,8 @@
 						[ 'مباني انتاج زراعى', 24],
 						[ 'مباني انتاج حيوانى', 2],
 						[ 'مباني انتاج داجنى', 323],
-						[ 'مباني ادارية وسكنية', 118]
+						[ 'مباني ادارية وسكنية', 118],
+						[ 'أراضي بدون ارشاد', 23331]
 						]);
 			} else if (value1 === 'قرار تصرف') {
 				document.getElementById('details2').textContent = 'قرار تصرف';
@@ -730,7 +731,7 @@
     	var data2 = google.visualization.arrayToDataTable([
             ["Element", "المساحة بالفدان", { role: "style" } ],
             ["المنطقة و", 110907, "#F80"],
-            ["المنطقة هـ", 57338, "#8F0"],
+            ["المنطقة هـ", 80669, "#8F0"],
             ["خارج حدود القرار", 20275, "#FF0"]
           ]);
 
