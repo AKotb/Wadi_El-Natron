@@ -344,7 +344,7 @@
 				maxLines : 4,
 				position : 'top',
 				textStyle : {
-					color : 'blue',
+					color : '#000000',
 					fontSize : 12,
 					bold: true
 				},
@@ -410,7 +410,7 @@
 				maxLines : 4,
 				position : 'top',
 				textStyle : {
-					color : 'blue',
+					color : '#000000',
 					fontSize : 12,
 					bold: true
 				},
@@ -421,7 +421,7 @@
 			pieStartAngle : 0,
 			is3D : true,
 			sliceVisibilityThreshold: 0.0,
-			colors : ['#55FF00', '#41A800', '#FF7373', '#C00000', '#FFAA00', '#FFD966', '#FFFF00', '#FF0066', '#FFBEE8', '#FF00FF', '#FF0000']
+			colors : ['#55FF00', '#41A800', '#FF7373', '#C00000', '#FFAA00', '#FFD966', '#FFFF00', '#FF0066', '#FFBEE8', '#FF00FF', '#FF0000', '#4169E1']
 		};
 
 		chart2 = new google.visualization.PieChart(document
@@ -652,7 +652,8 @@
 						[ 'مباني انتاج زراعى', 24],
 						[ 'مباني انتاج حيوانى', 2],
 						[ 'مباني انتاج داجنى', 323],
-						[ 'مباني ادارية وسكنية', 118]
+						[ 'مباني ادارية وسكنية', 118],
+						[ 'أراضي بدون ارشاد', 23331]
 						]);
 			} else if (value1 === 'قرار تصرف') {
 				document.getElementById('details2').textContent = 'قرار تصرف';
@@ -687,9 +688,9 @@
     function drawTotalNumberFamrsBarChart() {
     	var data = google.visualization.arrayToDataTable([
             ["Element", "عدد المزارع", { role: "style" } ],
-            ["منطقة و", 806, "#F80"],
+            ["منطقة و", 805, "#F80"],
             ["منطقة هــ", 301, "#8F0"],
-            ["خارج حدود القرار", 5, "#FF0"]
+            ["خارج حدود القرار", 6, "#FF0"]
           ]);
 
           var view = new google.visualization.DataView(data);
@@ -729,9 +730,9 @@
     function drawTotalAreaBarChart() {
     	var data2 = google.visualization.arrayToDataTable([
             ["Element", "المساحة بالفدان", { role: "style" } ],
-            ["المنطقة و", 110907, "#F80"],
-            ["المنطقة هـ", 57338, "#8F0"],
-            ["خارج حدود القرار", 20275, "#FF0"]
+            ["المنطقة و", 91636, "#F80"],
+            ["المنطقة هـ", 80004, "#8F0"],
+            ["خارج حدود القرار", 29549, "#FF0"]
           ]);
 
           var view2 = new google.visualization.DataView(data2);
