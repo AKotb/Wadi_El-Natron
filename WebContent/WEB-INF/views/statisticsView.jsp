@@ -688,9 +688,9 @@
     function drawTotalNumberFamrsBarChart() {
     	var data = google.visualization.arrayToDataTable([
             ["Element", "عدد المزارع", { role: "style" } ],
-            ["منطقة و", 805, "#F80"],
+            ["منطقة و", 806, "#F80"],
             ["منطقة هــ", 301, "#8F0"],
-            ["خارج حدود القرار", 6, "#FF0"]
+            ["خارج حدود القرار", 5, "#FF0"]
           ]);
 
           var view = new google.visualization.DataView(data);
@@ -730,9 +730,9 @@
     function drawTotalAreaBarChart() {
     	var data2 = google.visualization.arrayToDataTable([
             ["Element", "المساحة بالفدان", { role: "style" } ],
-            ["المنطقة و", 91636, "#F80"],
-            ["المنطقة هـ", 80004, "#8F0"],
-            ["خارج حدود القرار", 29549, "#FF0"]
+            ["المنطقة و", 110907, "#F80"],
+            ["المنطقة هـ", 80669, "#8F0"],
+            ["خارج حدود القرار", 20275, "#FF0"]
           ]);
 
           var view2 = new google.visualization.DataView(data2);
