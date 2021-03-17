@@ -13,7 +13,6 @@ import java.util.List;
 import org.wadielnatron.beans.Farm;
 import org.wadielnatron.dbconnection.PostgreSQLConnUtils;
 
-
 /**
  * @author ahmed.kotb
  *
