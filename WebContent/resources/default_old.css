@@ -1337,13 +1337,7 @@ input.hidden {
 				/*text-align: center;*/
 				font-size: 1vw;
 			}
-.beh_logo{
-				width:21vw;
-				height:100%;
-				background-color:#17a2b9;
-				overflow:hidden;
-				float:right;
-			}
+
 .beh_header{
 				width:100%;
 				height:7vw;
@@ -1354,7 +1348,7 @@ input.hidden {
 			}
 			
 .beh_header_login{
-				width:6vw;
+				width:7vw;
 				height:100%;
 				padding:0;
 				margin:0;
@@ -1364,11 +1358,11 @@ input.hidden {
 				color:#efe;
 				font-size:1.25vw;
 				font-weight:bold;
-				line-height: 2;
+				line-height: 1;
 			}
 			
 .beh_header_nav{
-				width:33vw;
+				width:40vw;
 				height:100%;
 				padding:0;
 				margin:0;
@@ -1378,8 +1372,8 @@ input.hidden {
 			}
 			
 .beh_nav_item{
-				width:4vw;
-				height:85%;
+				width:5vw;
+				height:100%;
 				padding:0;
 				margin:0;
 				background-color:#17a2b9;
@@ -1388,38 +1382,23 @@ input.hidden {
 			}
 			
 .beh_header_title{
-				height:55%;
+				width:35 vw;
+				height:100%;
 				padding:0;
 				margin:0;
 				background-color:#17a2b9;
-				overflow:hidden;
-			}
-.beh_header_sub_title{
-				height:45%;
-				width:40%;
-				padding:0;
-				margin:0;
-				background-color:#17a2b9;
+				float:left;
 				overflow:hidden;
 			}
 			
 .beh_title_decorated{
 				width:100%;
 				height:100%;
-				padding-left:4vw;
+				padding-left:1vw;
 				color:#efe;
 				font-size:3vw;
 				font-weight:bold;
-				line-height: 1;
-			}
-.beh_sub_title_decorated{
-				width:100%;
-				height:100%;
-				padding-left:0vw;
-				color:#efe;
-				font-size:0.9vw;
-				font-weight:bold;
-				line-height: 3;
+				line-height: 2;
 			}
 			
 .beh_header_banner{

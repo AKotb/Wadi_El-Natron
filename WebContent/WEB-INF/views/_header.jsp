@@ -72,12 +72,16 @@
 		</a>
 		
 	</div>
-	
+	<div class="beh_logo">
+		<a href="${pageContext.request.contextPath}/home" accesskey="1" title="home">
+			<img class="beh_header_banner" src="resources/images/projectname.png" alt="الشعار">
+		</a>
+	</div>
 	<div class="beh_header_title">
 		<span class="beh_title_decorated">تنمية أراضى محافظة البحيرة</span>
 	</div>
+	<div class="beh_header_sub_title">
+		<span class="beh_sub_title_decorated">رصد وتخريط التعديات على أراضى الدولة وبناء البنية المعلوماتية للموارد الأرضية والمائية بنطاق وادى النطرون - محافظة البحيرة</span>
+	</div>
 	
-	<a href="${pageContext.request.contextPath}/home" accesskey="1" title="home">
-		<img class="beh_header_banner" src="resources/images/projectname.png" alt="الشعار">
-	</a>
 </div>
