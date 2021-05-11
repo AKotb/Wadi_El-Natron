@@ -92,6 +92,7 @@
 	var law529_layer;
 	var road_layer;
 	var roadbuffer_layer;
+	var newdelta_layer;
 	var marker;
 	
 	function initMap() {
@@ -1145,6 +1146,29 @@
 			  law529_layer.setMap(null);
 		  }
 	}
+	
+	function displayAndHideNewDelta() {	
+		var checkbox = document.getElementById('newdelta');
+		  if (checkbox.checked == true)
+		  {
+			  newdelta_layer = new google.maps.Data({
+					map : map
+				});
+			  	newdelta_layer.loadGeoJson('http://localhost:8080/JSON/newdelta.json');
+				//newdelta_layer.loadGeoJson('http://wn-narss.centralus.cloudapp.azure.com:8080/JSON/newdelta.json'); // for azure production server
+				//newdelta_layer.loadGeoJson('http://wn.narss.sci.eg:8080/JSON/newdelta.json'); // for narss production server
+				//newdelta_layer.loadGeoJson('http://41.65.224.229:8080/JSON/newdelta.json'); // for beheira production server
+			  	newdelta_layer.setStyle(function(feature) {
+						return ({
+							fillColor : 'transparent',
+							strokeColor : 'black',
+							strokeWeight : 2
+						});
+				});
+		  } else{
+			  newdelta_layer.setMap(null);
+		  }
+	}
 </script>
 <script>
 function handleClick(myRadio) {
@@ -1339,6 +1363,8 @@ function ConvertDMSToDD(degrees, minutes, seconds, direction) {
 		      <b style="float: right;">(341/2014) .قرار ج</b><input type="checkbox" onclick="displayAndHideLaw341();"  id="law341" style="float: left;"/>
 		      <br>
 		      <b style="float: right;">(529/2017) .قرار ج</b><input type="checkbox" onclick="displayAndHideLaw529();"  id="law529" style="float: left;"/>
+		      <br>
+		      <b style="float: right;">الدلتا الجديدة</b><input type="checkbox" onclick="displayAndHideNewDelta();"  id="newdelta" style="float: left;"/>
 		    </div>
 		
 		</div>
