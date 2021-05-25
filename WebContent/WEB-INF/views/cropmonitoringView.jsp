@@ -28,55 +28,75 @@
 		<jsp:include page="_header.jsp"></jsp:include>
 		<div class="beh_main2">
 			<div class="beh_main_regulations">
-				<div style="height: 37vw;">
+				<div style="height: 31vw;">
 					<div id="cf7" class="shadow">
-							<img class='opaque' src="datafiles/cropmonitoring/ndvi_20140322.jpg" alt="2014-03-22" /> 
-							<img src="datafiles/cropmonitoring/ndvi_20140626.jpg" alt="2014-06-26" /> 
-							<img src="datafiles/cropmonitoring/ndvi_20140914.jpg" alt="2014-09-14" /> 
-							<img src="datafiles/cropmonitoring/ndvi_20150104.jpg" alt="2015-01-04" /> 
-							<img src="datafiles/cropmonitoring/ndvi_20150426.jpg" alt="2015-04-26" /> 
-							<img src="datafiles/cropmonitoring/ndvi_20150715.jpg" alt="2015-07-15" /> 
-							<img src="datafiles/cropmonitoring/ndvi_20150917.jpg" alt="2015-09-17" /> 
-							<img src="datafiles/cropmonitoring/ndvi_20160428.jpg" alt="2016-04-28" /> 
-							<img src="datafiles/cropmonitoring/ndvi_20160717.jpg" alt="2016-07-17" /> 
-							<img src="datafiles/cropmonitoring/ndvi_20160919.jpg" alt="2016-09-19" /> 
-							<img src="datafiles/cropmonitoring/ndvi_20161224.jpg" alt="2016-12-24" /> 
-							<img src="datafiles/cropmonitoring/ndvi_20170330.jpg" alt="2017-03-30" /> 
-							<img src="datafiles/cropmonitoring/ndvi_20170618.jpg" alt="2017-06-18" /> 
-							<img src="datafiles/cropmonitoring/ndvi_20170922.jpg" alt="2017-09-22" /> 
-							<img src="datafiles/cropmonitoring/ndvi_20180128.jpg" alt="2018-01-28" /> 
-							<img src="datafiles/cropmonitoring/ndvi_20180402.jpg" alt="2018-04-02" /> 
-							<img src="datafiles/cropmonitoring/ndvi_20180707.jpg" alt="2018-07-07" /> 
-							<img src="datafiles/cropmonitoring/ndvi_20180925.jpg" alt="2018-09-25" /> 
-							<img src="datafiles/cropmonitoring/ndvi_20181230.jpg" alt="2018-12-30" /> 
-							<img src="datafiles/cropmonitoring/ndvi_20190320.jpg" alt="2019-03-20" /> 
-							<img src="datafiles/cropmonitoring/ndvi_20190624.jpg" alt="2019-06-24" /> 
-							<img src="datafiles/cropmonitoring/ndvi_20190912.jpg" alt="2019-09-12" /> 
-							<img src="datafiles/cropmonitoring/ndvi_20200118.jpg" alt="2020-01-18" /> 
-							<img src="datafiles/cropmonitoring/ndvi_20200423.jpg" alt="2020-04-23" />
-							<img src="datafiles/cropmonitoring/ndvi_20200626.jpg" alt="2020-06-26" />
-							<img src="datafiles/cropmonitoring/ndvi_20200914.jpg" alt="2020-09-14" />
-							<img src="datafiles/cropmonitoring/ndvi_20201219.jpg" alt="2020-12-19" />
+						<div class="floatingimagetitle" id="floatingimagetitleid">التغير
+							الزمني في الغطاء الخضري-المنطقة (و)</div>
+						<img class='opaque'
+							src="datafiles/cropmonitoring/Old_NDVI/db1_NDVI_20160212.jpg"
+							alt="db1_2016-02-12" /> <img
+							src="datafiles/cropmonitoring/Old_NDVI/db1_NDVI_20160502.jpg"
+							alt="db1_2016-05-02" /> <img
+							src="datafiles/cropmonitoring/Old_NDVI/db1_NDVI_20160621.jpg"
+							alt="db1_2016-06-21" /> <img
+							src="datafiles/cropmonitoring/Old_NDVI/db1_NDVI_20160721.jpg"
+							alt="db1_2016-07-21" /> <img
+							src="datafiles/cropmonitoring/Old_NDVI/db1_NDVI_20160820.jpg"
+							alt="db1_2016-08-20" /> <img
+							src="datafiles/cropmonitoring/Old_NDVI/db1_NDVI_20161009.jpg"
+							alt="db1_2016-10-09" /> <img
+							src="datafiles/cropmonitoring/Old_NDVI/db1_NDVI_20170107.jpg"
+							alt="db1_2017-01-07" /> <img
+							src="datafiles/cropmonitoring/Old_NDVI/db1_NDVI_20170226.jpg"
+							alt="db1_2017-02-26" /> <img
+							src="datafiles/cropmonitoring/Old_NDVI/db1_NDVI_20170308.jpg"
+							alt="db1_2017-03-08" /> <img
+							src="datafiles/cropmonitoring/Old_NDVI/db1_NDVI_20170417.jpg"
+							alt="db1_2017-04-17" /> <img
+							src="datafiles/cropmonitoring/Old_NDVI/db1_NDVI_20170527.jpg"
+							alt="db1_2017-05-27" /> <img
+							src="datafiles/cropmonitoring/Old_NDVI/db1_NDVI_20170626.jpg"
+							alt="db1_2017-06-26" /> <img
+							src="datafiles/cropmonitoring/Old_NDVI/db2_NDVI_20160212.jpg"
+							alt="db2_2016-02-12" /> <img
+							src="datafiles/cropmonitoring/Old_NDVI/db2_NDVI_20160502.jpg"
+							alt="db2_2016-05-02" /> <img
+							src="datafiles/cropmonitoring/Old_NDVI/db2_NDVI_20160621.jpg"
+							alt="db2_2016-06-21" /> <img
+							src="datafiles/cropmonitoring/Old_NDVI/db2_NDVI_20160721.jpg"
+							alt="db2_2016-07-21" /> <img
+							src="datafiles/cropmonitoring/Old_NDVI/db2_NDVI_20160820.jpg"
+							alt="db2_2016-08-20" /> <img
+							src="datafiles/cropmonitoring/Old_NDVI/db2_NDVI_20161009.jpg"
+							alt="db2_2016-10-09" /> <img
+							src="datafiles/cropmonitoring/Old_NDVI/db2_NDVI_20170107.jpg"
+							alt="db2_2017-01-07" /> <img
+							src="datafiles/cropmonitoring/Old_NDVI/db2_NDVI_20170226.jpg"
+							alt="db2_2017-02-26" /> <img
+							src="datafiles/cropmonitoring/Old_NDVI/db2_NDVI_20170308.jpg"
+							alt="db2_2017-03-08" /> <img
+							src="datafiles/cropmonitoring/Old_NDVI/db2_NDVI_20170417.jpg"
+							alt="db2_2017-04-17" /> <img
+							src="datafiles/cropmonitoring/Old_NDVI/db2_NDVI_20170527.jpg"
+							alt="db2_2017-05-27" /> <img
+							src="datafiles/cropmonitoring/Old_NDVI/db2_NDVI_20170626.jpg"
+							alt="db2_2017-06-26" />
 					</div>
 				</div>
 				<div class="rowcropmonitor">
-					<div style="padding-left: 7%;">
-						<div class="nvgt" id="prev"></div> <div class="nvgt" id="play"></div> <div class="nvgt" id="next"></div>
+					<div style="align: center;">
+						<div class="nvgt" id="prev"></div>
+						<div class="nvgt" id="play"></div>
+						<div class="nvgt" id="next"></div>
 					</div>
-					<br>
-					<div style="padding-left: 20%; font-size: 10px;">
-					<span id="cf7_controls"> 
-						<span class="selected">2014-03</span> <span>2014-06</span> <span>2014-09</span> 
-						<span>2015-01</span> <span>2015-04</span> <span>2015-07</span> 
-						<span>2015-09</span> <span>2016-04</span> <span>2016-07</span>
-						<span>2016-09</span> <span>2016-12</span> <span>2017-03</span> 
-						<span>2017-06</span> <span>2017-09</span> <span>2018-01</span> 
-						<span>2018-04</span> <span>2018-07</span> <span>2018-09</span> 
-						<span>2018-12</span> <span>2019-03</span> <span>2019-06</span>
-						<span>2019-09</span> <span>2020-01</span> <span>2020-04</span>
-						<span>2020-06</span> <span>2020-09</span> <span>2020-12</span>
+					<br> <span id="cf7_controls"> <span class="selected">2016-02</span>
+						<span>2016-05</span> <span>2016-06</span> <span>2016-07</span> <span>2016-08</span>
+						<span>2016-10</span> <span>2017-01</span> <span>2017-02</span> <span>2017-03</span>
+						<span>2017-04</span> <span>2017-05</span> <span>2017-06</span> <span>2016-02</span>
+						<span>2016-05</span> <span>2016-06</span> <span>2016-07</span> <span>2016-08</span>
+						<span>2016-10</span> <span>2017-01</span> <span>2017-02</span> <span>2017-03</span>
+						<span>2017-04</span> <span>2017-05</span> <span>2017-06</span>
 					</span>
-					</div>
 				</div>
 			</div>
 		</div>
