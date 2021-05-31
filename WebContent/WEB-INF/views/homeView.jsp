@@ -21,60 +21,65 @@
 	media="all" />
 <link href="resources/fonts.css" rel="stylesheet" type="text/css"
 	media="all" />
-<link rel="stylesheet" href="resources/tooplate-style.css" type="text/css"
-	media="all"/>
+<link rel="stylesheet" href="resources/tooplate-style.css"
+	type="text/css" media="all" />
 <link rel="stylesheet" href="resources/beheira.css" type="text/css"
-	media="all"/>
+	media="all" />
 <link
 	href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
 	rel="stylesheet" id="bootstrap-css">
 <title>الرئيسية</title>
 <!-- Test Commit by Ehab -->
 <style type="text/css">
- #latlng_floating-panel {
- 		position: absolute;
-        top: 28%;
-        left: 0.6%;
-        width: 10.5%;
-        padding: 5;
-        z-index: 5;
-        background-color: #fff;
-        border: 1px solid #999;
-        text-align: center;
-        font-family: 'Roboto','sans-serif';
-        line-height: 30px;
-        padding-left: 10px;
-      }
- #latValue {
-        width: 100%;
-        color: gainsboro;
-      }
- #lngValue {
-        width: 100%;
-        color: gainsboro;
-      }
- .latlngValueclass1 {
-        width: 100%;
-        color: gainsboro;
-      }
+#latlng_floating-panel {
+	position: absolute;
+	top: 28%;
+	left: 0.6%;
+	width: 10.5%;
+	padding: 5;
+	z-index: 5;
+	background-color: #fff;
+	border: 1px solid #999;
+	text-align: center;
+	font-family: 'Roboto', 'sans-serif';
+	line-height: 30px;
+	padding-left: 10px;
+}
+
+#latValue {
+	width: 100%;
+	color: gainsboro;
+}
+
+#lngValue {
+	width: 100%;
+	color: gainsboro;
+}
+
+.latlngValueclass1 {
+	width: 100%;
+	color: gainsboro;
+}
+
 .latlngValueclass2 {
-        width: 100%;
-        color: gainsboro;
-      }
- #floating-panel {
-        position: absolute;
-        top: 48%;
-        left: 0.6%;
-        z-index: 5;
-        background-color: #fff;
-        padding: 5px;
-        border: 1px solid #999;
-        text-align: center;
-        font-family: 'Roboto','sans-serif';
-        line-height: 30px;
-        padding-left: 10px;
-        width: 10.5%
-      }
+	width: 100%;
+	color: gainsboro;
+}
+
+#floating-panel {
+	position: absolute;
+	top: 48%;
+	left: 0.6%;
+	z-index: 5;
+	background-color: #fff;
+	padding: 5px;
+	border: 1px solid #999;
+	text-align: center;
+	font-family: 'Roboto', 'sans-serif';
+	line-height: 30px;
+	padding-left: 10px;
+	width: 10.5%
+}
 </style>
 <script>
 	var map;
@@ -883,10 +888,11 @@
 		} else {
 			alert("No Farms Data Retreived!");
 		}
-		var UserRole="<%=session.getAttribute("userRole")%>";
+		var UserRole="<%=session.getAttribute("userRole")%>
+	";
 		if (UserRole != "null") {
 			if (UserRole == "2") {
-		        document.getElementById("manageusersid").style.display = "block";
+				document.getElementById("manageusersid").style.display = "block";
 			} else {
 				document.getElementById("manageusersid").style.display = "none";
 			}
@@ -924,502 +930,503 @@
 		})
 		return http.status;
 	}
-	
-	function displayAndHideCenters() {	
-		var checkbox = document.getElementById('centers');
-		  if (checkbox.checked == true)
-		  {
-			  centers_layer = new google.maps.Data({
-					map : map
-				});
-			    centers_layer.loadGeoJson('http://localhost:8080/JSON/centers.geojson');
-				//centers_layer.loadGeoJson('http://wn-narss.centralus.cloudapp.azure.com:8080/JSON/centers.geojson'); // for azure production server
-				//centers_layer.loadGeoJson('http://wn.narss.sci.eg:8080/JSON/centers.geojson'); // for narss production server
-				//centers_layer.loadGeoJson('http://41.65.224.229:8080/JSON/centers.geojson'); // for beheira production server
-			 	centers_layer.setStyle(function(feature) {
-						return ({
-							fillColor : 'transparent',
-							strokeColor : '#3300FF',
-							strokeWeight : 2
-						});
-				});
-		  } else{
-			  centers_layer.setMap(null);
-		  }
-	}
-	
-	function displayAndHideDistricts() {	
-		var checkbox = document.getElementById('districts');
-		  if (checkbox.checked == true)
-		  {
-			  districts_layer = new google.maps.Data({
-					map : map
-				});
-			  districts_layer.loadGeoJson('http://localhost:8080/JSON/districts.geojson');
-			  //districts_layer.loadGeoJson('http://wn-narss.centralus.cloudapp.azure.com:8080/JSON/districts.geojson'); // for azure production server
-			  //districts_layer.loadGeoJson('http://wn.narss.sci.eg:8080/JSON/districts.geojson'); // for narss production server
-			  //districts_layer.loadGeoJson('http://41.65.224.229:8080/JSON/districts.geojson'); // for beheira production server
-			  districts_layer.setStyle(function(feature) {
-						return ({
-							fillColor : 'transparent',
-							strokeColor : '#5500FF',
-							strokeWeight : 2
-						});
-				});
-		  } else{
-			  districts_layer.setMap(null);
-		  }
-	}
-	
-	function displayAndHideLandsUnionsMohafza() {	
-		var checkbox = document.getElementById('landsunionsmohafza');
-		  if (checkbox.checked == true)
-		  {
-			  landsunionsmohafza_layer = new google.maps.Data({
-					map : map
-				});
-			  	landsunionsmohafza_layer.loadGeoJson('http://localhost:8080/JSON/landsunionsmohafza.json');
-				//landsunionsmohafza_layer.loadGeoJson('http://wn-narss.centralus.cloudapp.azure.com:8080/JSON/landsunionsmohafza.json'); // for azure production server
-				//landsunionsmohafza_layer.loadGeoJson('http://wn.narss.sci.eg:8080/JSON/landsunionsmohafza.json'); // for narss production server
-				//landsunionsmohafza_layer.loadGeoJson('http://41.65.224.229:8080/JSON/landsunionsmohafza.json'); // for beheira production server
-			  	landsunionsmohafza_layer.setStyle(function(feature) {
-						return ({
-							fillColor : 'transparent',
-							strokeColor : '#ff4400',
-							strokeWeight : 3
-						});
-				});
-		  } else{
-			  landsunionsmohafza_layer.setMap(null);
-		  }
-	}
-	
-	function displayAndHideLaw41() {	
-		var checkbox = document.getElementById('law41');
-		  if (checkbox.checked == true)
-		  {
-			  law41_layer = new google.maps.Data({
-					map : map
-				});
-			  	law41_layer.loadGeoJson('http://localhost:8080/JSON/law41.json');
-				//law41_layer.loadGeoJson('http://wn-narss.centralus.cloudapp.azure.com:8080/JSON/law41.json'); // for azure production server
-				//law41_layer.loadGeoJson('http://wn.narss.sci.eg:8080/JSON/law41.json'); // for narss production server
-				//law41_layer.loadGeoJson('http://41.65.224.229:8080/JSON/law41.json'); // for beheira production server
-			  	law41_layer.setStyle(function(feature) {
-						return ({
-							fillColor : 'transparent',
-							strokeColor : '#FFFF00',
-							strokeWeight : 3
-						});
-				});
-		  } else{
-			  law41_layer.setMap(null);
-		  }
-	}
-	
-	function displayAndHideLaw129() {	
-		var checkbox = document.getElementById('law129');
-		  if (checkbox.checked == true)
-		  {
-			  law129_layer = new google.maps.Data({
-					map : map
-				});
-			  	law129_layer.loadGeoJson('http://localhost:8080/JSON/law129.json');
-				//law129_layer.loadGeoJson('http://wn-narss.centralus.cloudapp.azure.com:8080/JSON/law129.json'); // for azure production server
-				//law129_layer.loadGeoJson('http://wn.narss.sci.eg:8080/JSON/law129.json'); // for narss production server
-				//law129_layer.loadGeoJson('http://41.65.224.229:8080/JSON/law129.json'); // for beheira production server
-			  	law129_layer.setStyle(function(feature) {
-						return ({
-							fillColor : 'transparent',
-							strokeColor : '#BB0099',
-							strokeWeight : 3
-						});
-				});
-		  } else{
-			  law129_layer.setMap(null);
-		  }
-	}
-	
-	function displayAndHideLaw228() {	
-		var checkbox = document.getElementById('law228');
-		  if (checkbox.checked == true)
-		  {
-			  law228_layer = new google.maps.Data({
-					map : map
-				});
-			  	law228_layer.loadGeoJson('http://localhost:8080/JSON/law228.json');
-				//law228_layer.loadGeoJson('http://wn-narss.centralus.cloudapp.azure.com:8080/JSON/law228.json'); // for azure production server
-				//law228_layer.loadGeoJson('http://wn.narss.sci.eg:8080/JSON/law228.json'); // for narss production server
-				//law228_layer.loadGeoJson('http://41.65.224.229:8080/JSON/law228.json'); // for beheira production server
-			  	law228_layer.setStyle(function(feature) {
-						return ({
-							fillColor : 'transparent',
-							strokeColor : '#004488',
-							strokeWeight : 2
-						});
-				});
-		  } else{
-			  law228_layer.setMap(null);
-		  }
-	}
-	
-	function displayAndHideLaw233() {	
-		var checkbox = document.getElementById('law233');
-		  if (checkbox.checked == true)
-		  {
-			  road_layer = new google.maps.Data({
-					map : map
-				});
-			  	road_layer.loadGeoJson('http://localhost:8080/JSON/road.json');
-				//road_layer.loadGeoJson('http://wn-narss.centralus.cloudapp.azure.com:8080/JSON/road.json'); // for azure production server
-				//road_layer.loadGeoJson('http://wn.narss.sci.eg:8080/JSON/road.json'); // for narss production server
-				//road_layer.loadGeoJson('http://41.65.224.229:8080/JSON/road.json'); // for beheira production server
-			  	road_layer.setStyle(function(feature) {
-						return ({
-							fillColor : '#FFE584',
-							strokeColor : '#FFE584',
-							strokeWeight : 2
-						});
-				});
-			  	roadbuffer_layer = new google.maps.Data({
-					map : map
-				});
-			  	roadbuffer_layer.loadGeoJson('http://localhost:8080/JSON/roadbuffer.json');
-				//roadbuffer_layer.loadGeoJson('http://wn-narss.centralus.cloudapp.azure.com:8080/JSON/roadbuffer.json'); // for azure production server
-				//roadbuffer_layer.loadGeoJson('http://wn.narss.sci.eg:8080/JSON/roadbuffer.json'); // for narss production server
-				//roadbuffer_layer.loadGeoJson('http://41.65.224.229:8080/JSON/roadbuffer.json'); // for beheira production server
-			  	roadbuffer_layer.setStyle(function(feature) {
-						return ({
-							fillColor : 'transparent',
-							strokeColor : 'red',
-							strokeWeight : 2
-						});
-				});
-		  } else{
-			  road_layer.setMap(null);
-			  roadbuffer_layer.setMap(null);
-		  }
-	}
-	
-	function displayAndHideLaw341() {	
-		var checkbox = document.getElementById('law341');
-		  if (checkbox.checked == true)
-		  {
-			  law341_layer = new google.maps.Data({
-					map : map
-				});
-			  	law341_layer.loadGeoJson('http://localhost:8080/JSON/law341.json');
-				//law341_layer.loadGeoJson('http://wn-narss.centralus.cloudapp.azure.com:8080/JSON/law341.json'); // for azure production server
-				//law341_layer.loadGeoJson('http://wn.narss.sci.eg:8080/JSON/law341.json'); // for narss production server
-				//law341_layer.loadGeoJson('http://41.65.224.229:8080/JSON/law341.json'); // for beheira production server
-			  	law341_layer.setStyle(function(feature) {
-						return ({
-							fillColor : 'transparent',
-							strokeColor : '#ff4466',
-							strokeWeight : 2
-						});
-				});
-		  } else{
-			  law341_layer.setMap(null);
-		  }
-	}
-	
-	function displayAndHideLaw529() {	
-		var checkbox = document.getElementById('law529');
-		  if (checkbox.checked == true)
-		  {
-			  law529_layer = new google.maps.Data({
-					map : map
-				});
-			 	law529_layer.loadGeoJson('http://localhost:8080/JSON/law529.json');
-				//law529_layer.loadGeoJson('http://wn-narss.centralus.cloudapp.azure.com:8080/JSON/law529.json'); // for azure production server
-				//law529_layer.loadGeoJson('http://wn.narss.sci.eg:8080/JSON/law529.json'); // for narss production server
-				//law529_layer.loadGeoJson('http://41.65.224.229:8080/JSON/law529.json'); // for beheira production server
-			  	law529_layer.setStyle(function(feature) {
-						return ({
-							fillColor : 'transparent',
-							strokeColor : 'black',
-							strokeWeight : 2
-						});
-				});
-		  } else{
-			  law529_layer.setMap(null);
-		  }
-	}
-	
-	function displayAndHideNewDelta() {	
-		var checkbox = document.getElementById('newdelta');
-		  if (checkbox.checked == true)
-		  {
-			  newdelta_layer = new google.maps.Data({
-					map : map
-				});
-			  	newdelta_layer.loadGeoJson('http://localhost:8080/JSON/newdelta.json');
-				//newdelta_layer.loadGeoJson('http://wn-narss.centralus.cloudapp.azure.com:8080/JSON/newdelta.json'); // for azure production server
-				//newdelta_layer.loadGeoJson('http://wn.narss.sci.eg:8080/JSON/newdelta.json'); // for narss production server
-				//newdelta_layer.loadGeoJson('http://41.65.224.229:8080/JSON/newdelta.json'); // for beheira production server
-			  	newdelta_layer.setStyle(function(feature) {
-						return ({
-							fillColor : 'transparent',
-							strokeColor : 'black',
-							strokeWeight : 2
-						});
-				});
-		  } else{
-			  newdelta_layer.setMap(null);
-		  }
-	}
-	
 
-	function displayAndHideLandsNotPermitted() {	
+	function displayAndHideCenters() {
+		var checkbox = document.getElementById('centers');
+		if (checkbox.checked == true) {
+			centers_layer = new google.maps.Data({
+				map : map
+			});
+			centers_layer.loadGeoJson('http://localhost:8080/JSON/centers.geojson');
+			//centers_layer.loadGeoJson('http://wn-narss.centralus.cloudapp.azure.com:8080/JSON/centers.geojson'); // for azure production server
+			//centers_layer.loadGeoJson('http://wn.narss.sci.eg:8080/JSON/centers.geojson'); // for narss production server
+			//centers_layer.loadGeoJson('http://41.65.224.229:8080/JSON/centers.geojson'); // for beheira production server
+			centers_layer.setStyle(function(feature) {
+				return ({
+					fillColor : 'transparent',
+					strokeColor : '#3300FF',
+					strokeWeight : 2
+				});
+			});
+		} else {
+			centers_layer.setMap(null);
+		}
+	}
+
+	function displayAndHideDistricts() {
+		var checkbox = document.getElementById('districts');
+		if (checkbox.checked == true) {
+			districts_layer = new google.maps.Data({
+				map : map
+			});
+			districts_layer.loadGeoJson('http://localhost:8080/JSON/districts.geojson');
+			//districts_layer.loadGeoJson('http://wn-narss.centralus.cloudapp.azure.com:8080/JSON/districts.geojson'); // for azure production server
+			//districts_layer.loadGeoJson('http://wn.narss.sci.eg:8080/JSON/districts.geojson'); // for narss production server
+			//districts_layer.loadGeoJson('http://41.65.224.229:8080/JSON/districts.geojson'); // for beheira production server
+			districts_layer.setStyle(function(feature) {
+				return ({
+					fillColor : 'transparent',
+					strokeColor : '#5500FF',
+					strokeWeight : 2
+				});
+			});
+		} else {
+			districts_layer.setMap(null);
+		}
+	}
+
+	function displayAndHideLandsUnionsMohafza() {
+		var checkbox = document.getElementById('landsunionsmohafza');
+		if (checkbox.checked == true) {
+			landsunionsmohafza_layer = new google.maps.Data({
+				map : map
+			});
+			landsunionsmohafza_layer.loadGeoJson('http://localhost:8080/JSON/landsunionsmohafza.json');
+			//landsunionsmohafza_layer.loadGeoJson('http://wn-narss.centralus.cloudapp.azure.com:8080/JSON/landsunionsmohafza.json'); // for azure production server
+			//landsunionsmohafza_layer.loadGeoJson('http://wn.narss.sci.eg:8080/JSON/landsunionsmohafza.json'); // for narss production server
+			//landsunionsmohafza_layer.loadGeoJson('http://41.65.224.229:8080/JSON/landsunionsmohafza.json'); // for beheira production server
+			landsunionsmohafza_layer.setStyle(function(feature) {
+				return ({
+					fillColor : 'transparent',
+					strokeColor : '#ff4400',
+					strokeWeight : 3
+				});
+			});
+		} else {
+			landsunionsmohafza_layer.setMap(null);
+		}
+	}
+
+	function displayAndHideLaw41() {
+		var checkbox = document.getElementById('law41');
+		if (checkbox.checked == true) {
+			law41_layer = new google.maps.Data({
+				map : map
+			});
+			law41_layer.loadGeoJson('http://localhost:8080/JSON/law41.json');
+			//law41_layer.loadGeoJson('http://wn-narss.centralus.cloudapp.azure.com:8080/JSON/law41.json'); // for azure production server
+			//law41_layer.loadGeoJson('http://wn.narss.sci.eg:8080/JSON/law41.json'); // for narss production server
+			//law41_layer.loadGeoJson('http://41.65.224.229:8080/JSON/law41.json'); // for beheira production server
+			law41_layer.setStyle(function(feature) {
+				return ({
+					fillColor : 'transparent',
+					strokeColor : '#FFFF00',
+					strokeWeight : 3
+				});
+			});
+		} else {
+			law41_layer.setMap(null);
+		}
+	}
+
+	function displayAndHideLaw129() {
+		var checkbox = document.getElementById('law129');
+		if (checkbox.checked == true) {
+			law129_layer = new google.maps.Data({
+				map : map
+			});
+			law129_layer.loadGeoJson('http://localhost:8080/JSON/law129.json');
+			//law129_layer.loadGeoJson('http://wn-narss.centralus.cloudapp.azure.com:8080/JSON/law129.json'); // for azure production server
+			//law129_layer.loadGeoJson('http://wn.narss.sci.eg:8080/JSON/law129.json'); // for narss production server
+			//law129_layer.loadGeoJson('http://41.65.224.229:8080/JSON/law129.json'); // for beheira production server
+			law129_layer.setStyle(function(feature) {
+				return ({
+					fillColor : 'transparent',
+					strokeColor : '#BB0099',
+					strokeWeight : 3
+				});
+			});
+		} else {
+			law129_layer.setMap(null);
+		}
+	}
+
+	function displayAndHideLaw228() {
+		var checkbox = document.getElementById('law228');
+		if (checkbox.checked == true) {
+			law228_layer = new google.maps.Data({
+				map : map
+			});
+			law228_layer.loadGeoJson('http://localhost:8080/JSON/law228.json');
+			//law228_layer.loadGeoJson('http://wn-narss.centralus.cloudapp.azure.com:8080/JSON/law228.json'); // for azure production server
+			//law228_layer.loadGeoJson('http://wn.narss.sci.eg:8080/JSON/law228.json'); // for narss production server
+			//law228_layer.loadGeoJson('http://41.65.224.229:8080/JSON/law228.json'); // for beheira production server
+			law228_layer.setStyle(function(feature) {
+				return ({
+					fillColor : 'transparent',
+					strokeColor : '#004488',
+					strokeWeight : 2
+				});
+			});
+		} else {
+			law228_layer.setMap(null);
+		}
+	}
+
+	function displayAndHideLaw233() {
+		var checkbox = document.getElementById('law233');
+		if (checkbox.checked == true) {
+			road_layer = new google.maps.Data({
+				map : map
+			});
+			road_layer.loadGeoJson('http://localhost:8080/JSON/road.json');
+			//road_layer.loadGeoJson('http://wn-narss.centralus.cloudapp.azure.com:8080/JSON/road.json'); // for azure production server
+			//road_layer.loadGeoJson('http://wn.narss.sci.eg:8080/JSON/road.json'); // for narss production server
+			//road_layer.loadGeoJson('http://41.65.224.229:8080/JSON/road.json'); // for beheira production server
+			road_layer.setStyle(function(feature) {
+				return ({
+					fillColor : '#FFE584',
+					strokeColor : '#FFE584',
+					strokeWeight : 2
+				});
+			});
+			roadbuffer_layer = new google.maps.Data({
+				map : map
+			});
+			roadbuffer_layer.loadGeoJson('http://localhost:8080/JSON/roadbuffer.json');
+			//roadbuffer_layer.loadGeoJson('http://wn-narss.centralus.cloudapp.azure.com:8080/JSON/roadbuffer.json'); // for azure production server
+			//roadbuffer_layer.loadGeoJson('http://wn.narss.sci.eg:8080/JSON/roadbuffer.json'); // for narss production server
+			//roadbuffer_layer.loadGeoJson('http://41.65.224.229:8080/JSON/roadbuffer.json'); // for beheira production server
+			roadbuffer_layer.setStyle(function(feature) {
+				return ({
+					fillColor : 'transparent',
+					strokeColor : 'red',
+					strokeWeight : 2
+				});
+			});
+		} else {
+			road_layer.setMap(null);
+			roadbuffer_layer.setMap(null);
+		}
+	}
+
+	function displayAndHideLaw341() {
+		var checkbox = document.getElementById('law341');
+		if (checkbox.checked == true) {
+			law341_layer = new google.maps.Data({
+				map : map
+			});
+			law341_layer.loadGeoJson('http://localhost:8080/JSON/law341.json');
+			//law341_layer.loadGeoJson('http://wn-narss.centralus.cloudapp.azure.com:8080/JSON/law341.json'); // for azure production server
+			//law341_layer.loadGeoJson('http://wn.narss.sci.eg:8080/JSON/law341.json'); // for narss production server
+			//law341_layer.loadGeoJson('http://41.65.224.229:8080/JSON/law341.json'); // for beheira production server
+			law341_layer.setStyle(function(feature) {
+				return ({
+					fillColor : 'transparent',
+					strokeColor : '#ff4466',
+					strokeWeight : 2
+				});
+			});
+		} else {
+			law341_layer.setMap(null);
+		}
+	}
+
+	function displayAndHideLaw529() {
+		var checkbox = document.getElementById('law529');
+		if (checkbox.checked == true) {
+			law529_layer = new google.maps.Data({
+				map : map
+			});
+			law529_layer.loadGeoJson('http://localhost:8080/JSON/law529.json');
+			//law529_layer.loadGeoJson('http://wn-narss.centralus.cloudapp.azure.com:8080/JSON/law529.json'); // for azure production server
+			//law529_layer.loadGeoJson('http://wn.narss.sci.eg:8080/JSON/law529.json'); // for narss production server
+			//law529_layer.loadGeoJson('http://41.65.224.229:8080/JSON/law529.json'); // for beheira production server
+			law529_layer.setStyle(function(feature) {
+				return ({
+					fillColor : 'transparent',
+					strokeColor : 'black',
+					strokeWeight : 2
+				});
+			});
+		} else {
+			law529_layer.setMap(null);
+		}
+	}
+
+	function displayAndHideNewDelta() {
+		var checkbox = document.getElementById('newdelta');
+		if (checkbox.checked == true) {
+			newdelta_layer = new google.maps.Data({
+				map : map
+			});
+			newdelta_layer.loadGeoJson('http://localhost:8080/JSON/newdelta.json');
+			//newdelta_layer.loadGeoJson('http://wn-narss.centralus.cloudapp.azure.com:8080/JSON/newdelta.json'); // for azure production server
+			//newdelta_layer.loadGeoJson('http://wn.narss.sci.eg:8080/JSON/newdelta.json'); // for narss production server
+			//newdelta_layer.loadGeoJson('http://41.65.224.229:8080/JSON/newdelta.json'); // for beheira production server
+			newdelta_layer.setStyle(function(feature) {
+				return ({
+					fillColor : 'transparent',
+					strokeColor : 'black',
+					strokeWeight : 2
+				});
+			});
+		} else {
+			newdelta_layer.setMap(null);
+		}
+	}
+
+	function displayAndHideLandsNotPermitted() {
 		var checkbox = document.getElementById('landsnotpermitted');
-		  if (checkbox.checked == true)
-		  {
-			  landsnotpermitted_layer = new google.maps.Data({
-					map : map
+		if (checkbox.checked == true) {
+			landsnotpermitted_layer = new google.maps.Data({
+				map : map
+			});
+
+			// for development server
+			landsnotpermitted_layer.loadGeoJson('http://localhost:8080/JSON/lands_not_permitted_1.geojson');
+			landsnotpermitted_layer.loadGeoJson('http://localhost:8080/JSON/lands_not_permitted_2.geojson');
+			landsnotpermitted_layer.loadGeoJson('http://localhost:8080/JSON/lands_not_permitted_3.geojson');
+			landsnotpermitted_layer.loadGeoJson('http://localhost:8080/JSON/lands_not_permitted_4.geojson');
+			landsnotpermitted_layer.loadGeoJson('http://localhost:8080/JSON/lands_not_permitted_5.geojson');
+			 
+
+			// for azure production server
+			/*
+			landsnotpermitted_layer.loadGeoJson('http://wn-narss.centralus.cloudapp.azure.com:8080/JSON/lands_not_permitted_1.geojson'); 
+			landsnotpermitted_layer.loadGeoJson('http://wn-narss.centralus.cloudapp.azure.com:8080/JSON/lands_not_permitted_2.geojson');
+			landsnotpermitted_layer.loadGeoJson('http://wn-narss.centralus.cloudapp.azure.com:8080/JSON/lands_not_permitted_3.geojson');
+			landsnotpermitted_layer.loadGeoJson('http://wn-narss.centralus.cloudapp.azure.com:8080/JSON/lands_not_permitted_4.geojson');
+			landsnotpermitted_layer.loadGeoJson('http://wn-narss.centralus.cloudapp.azure.com:8080/JSON/lands_not_permitted_5.geojson');
+			 */
+
+			// for narss production server
+			/*
+			landsnotpermitted_layer.loadGeoJson('http://wn.narss.sci.eg:8080/JSON/lands_not_permitted_1.geojson'); 
+			landsnotpermitted_layer.loadGeoJson('http://wn.narss.sci.eg:8080/JSON/lands_not_permitted_2.geojson');
+			landsnotpermitted_layer.loadGeoJson('http://wn.narss.sci.eg:8080/JSON/lands_not_permitted_3.geojson');
+			landsnotpermitted_layer.loadGeoJson('http://wn.narss.sci.eg:8080/JSON/lands_not_permitted_4.geojson');
+			landsnotpermitted_layer.loadGeoJson('http://wn.narss.sci.eg:8080/JSON/lands_not_permitted_5.geojson');
+			*/
+					
+			// for beheira production server
+			/*
+			landsnotpermitted_layer.loadGeoJson('http://41.65.224.229:8080/JSON/lands_not_permitted_1.geojson'); 
+			landsnotpermitted_layer.loadGeoJson('http://41.65.224.229:8080/JSON/lands_not_permitted_2.geojson');
+			landsnotpermitted_layer.loadGeoJson('http://41.65.224.229:8080/JSON/lands_not_permitted_3.geojson');
+			landsnotpermitted_layer.loadGeoJson('http://41.65.224.229:8080/JSON/lands_not_permitted_4.geojson');
+			landsnotpermitted_layer.loadGeoJson('http://41.65.224.229:8080/JSON/lands_not_permitted_5.geojson');
+			 */
+
+			landsnotpermitted_layer.setStyle(function(feature) {
+				return ({
+					fillColor : '#FF0000',
+					strokeColor : 'black',
+					strokeWeight : 2
 				});
-			  landsnotpermitted_layer.loadGeoJson('http://localhost:8080/JSON/lands_not_permitted_1.geojson');
-			  landsnotpermitted_layer.loadGeoJson('http://localhost:8080/JSON/lands_not_permitted_2.geojson');
-			  landsnotpermitted_layer.loadGeoJson('http://localhost:8080/JSON/lands_not_permitted_3.geojson');
-			  landsnotpermitted_layer.loadGeoJson('http://localhost:8080/JSON/lands_not_permitted_4.geojson');
-			  landsnotpermitted_layer.loadGeoJson('http://localhost:8080/JSON/lands_not_permitted_5.geojson');
-				
-			  //landsnotpermitted_layer.loadGeoJson('http://wn-narss.centralus.cloudapp.azure.com:8080/JSON/lands_not_permitted_1.geojson'); // for azure production server
-			  //landsnotpermitted_layer.loadGeoJson('http://wn-narss.centralus.cloudapp.azure.com:8080/JSON/lands_not_permitted_2.geojson'); // for azure production server
-			  //landsnotpermitted_layer.loadGeoJson('http://wn-narss.centralus.cloudapp.azure.com:8080/JSON/lands_not_permitted_3.geojson'); // for azure production server
-			  //landsnotpermitted_layer.loadGeoJson('http://wn-narss.centralus.cloudapp.azure.com:8080/JSON/lands_not_permitted_4.geojson'); // for azure production server
-			  //landsnotpermitted_layer.loadGeoJson('http://wn-narss.centralus.cloudapp.azure.com:8080/JSON/lands_not_permitted_5.geojson'); // for azure production server
-				
-				//landsnotpermitted_layer.loadGeoJson('http://wn.narss.sci.eg:8080/JSON/lands_not_permitted_1.geojson'); // for narss production server
-				//landsnotpermitted_layer.loadGeoJson('http://wn.narss.sci.eg:8080/JSON/lands_not_permitted_2.geojson'); // for narss production server
-				//landsnotpermitted_layer.loadGeoJson('http://wn.narss.sci.eg:8080/JSON/lands_not_permitted_3.geojson'); // for narss production server
-				//landsnotpermitted_layer.loadGeoJson('http://wn.narss.sci.eg:8080/JSON/lands_not_permitted_4.geojson'); // for narss production server
-				//landsnotpermitted_layer.loadGeoJson('http://wn.narss.sci.eg:8080/JSON/lands_not_permitted_5.geojson'); // for narss production server
-				
-				//landsnotpermitted_layer.loadGeoJson('http://41.65.224.229:8080/JSON/lands_not_permitted_1.geojson'); // for beheira production server
-				//landsnotpermitted_layer.loadGeoJson('http://41.65.224.229:8080/JSON/lands_not_permitted_2.geojson'); // for beheira production server
-				//landsnotpermitted_layer.loadGeoJson('http://41.65.224.229:8080/JSON/lands_not_permitted_3.geojson'); // for beheira production server
-				//landsnotpermitted_layer.loadGeoJson('http://41.65.224.229:8080/JSON/lands_not_permitted_4.geojson'); // for beheira production server
-				//landsnotpermitted_layer.loadGeoJson('http://41.65.224.229:8080/JSON/lands_not_permitted_5.geojson'); // for beheira production server
-			  	
-				landsnotpermitted_layer.setStyle(function(feature) {
-						return ({
-							fillColor : '#FF0000',
-							strokeColor : 'black',
-							strokeWeight : 2
-						});
-				});
-		  } else{
-			  landsnotpermitted_layer.setMap(null);
-		  }
+			});
+		} else {
+			landsnotpermitted_layer.setMap(null);
+		}
 	}
 </script>
 <script>
-function handleClick(myRadio) {
-	var currentValue = myRadio.value;
-	if(currentValue === '1'){
-		document.getElementById('latlng_degrees_id').style.display = "none";
-		document.getElementById('latlng_decimal_id').style.display = "block";
-	}else{
-		document.getElementById('latlng_decimal_id').style.display = "none";
-		document.getElementById('latlng_degrees_id').style.display = "block";
+	function handleClick(myRadio) {
+		var currentValue = myRadio.value;
+		if (currentValue === '1') {
+			document.getElementById('latlng_degrees_id').style.display = "none";
+			document.getElementById('latlng_decimal_id').style.display = "block";
+		} else {
+			document.getElementById('latlng_decimal_id').style.display = "none";
+			document.getElementById('latlng_degrees_id').style.display = "block";
+		}
 	}
-}
 
-function geocodeLatLng(geocoder, map) {
-	var latlng;
-	var inputLat;
-	var inputLng;
-	if (document.getElementById('decid').checked) {
-		 inputLat = document.getElementById('latValue').value;
-		 inputLng = document.getElementById('lngValue').value;
-		 latlng = {lat: parseFloat(inputLat), lng: parseFloat(inputLng)};
+	function geocodeLatLng(geocoder, map) {
+		var latlng;
+		var inputLat;
+		var inputLng;
+		if (document.getElementById('decid').checked) {
+			inputLat = document.getElementById('latValue').value;
+			inputLng = document.getElementById('lngValue').value;
+			latlng = {
+				lat : parseFloat(inputLat),
+				lng : parseFloat(inputLng)
+			};
+		} else if (document.getElementById('degid').checked) {
+			var inputLatDeg = document.getElementById('latdeg').value;
+			var inputLatMin = document.getElementById('latmin').value;
+			var inputLatSec = document.getElementById('latsec').value;
+
+			var inputLngDeg = document.getElementById('lngdeg').value;
+			var inputLngMin = document.getElementById('lngmin').value;
+			var inputLngSec = document.getElementById('lngsec').value;
+
+			inputLat = ConvertDMSToDD(inputLatDeg, inputLatMin, inputLatSec,
+					"N");
+			inputLng = ConvertDMSToDD(inputLngDeg, inputLngMin, inputLngSec,
+					"E");
+			latlng = {
+				lat : parseFloat(inputLat),
+				lng : parseFloat(inputLng)
+			};
+		}
+		geocoder.geocode({
+			'location' : latlng
+		}, function(results, status) {
+			if (status === 'OK') {
+				if (results[0]) {
+					map.setCenter(latlng);
+					map.setZoom(11);
+					marker = new google.maps.Marker({
+						position : latlng,
+						map : map
+					});
+				} else {
+					window.alert('عفواً , لا يوجد نتائج!');
+				}
+			} else {
+				window.alert('عفواً , لقد حدث خطأ!: ' + status);
+			}
+		});
 	}
-	else if (document.getElementById('degid').checked) {
-		  var inputLatDeg = document.getElementById('latdeg').value;
-		  var inputLatMin = document.getElementById('latmin').value;
-		  var inputLatSec = document.getElementById('latsec').value;
-		  
-		  var inputLngDeg = document.getElementById('lngdeg').value;
-		  var inputLngMin = document.getElementById('lngmin').value;
-		  var inputLngSec = document.getElementById('lngsec').value;
-		  
-		  inputLat = ConvertDMSToDD(inputLatDeg, inputLatMin, inputLatSec, "N");
-		  inputLng = ConvertDMSToDD(inputLngDeg, inputLngMin, inputLngSec, "E");
-		  latlng = {lat: parseFloat(inputLat), lng: parseFloat(inputLng)};
+
+	function ConvertDMSToDD(degrees, minutes, seconds, direction) {
+		var dd = Number(degrees) + Number(minutes)
+		/60 + Number(seconds)/(60 * 60);
+
+		if (direction == "S" || direction == "W") {
+			dd = dd * -1;
+		} // Don't do anything for N or E
+		return dd;
 	}
-	geocoder.geocode({'location': latlng}, function(results, status) {
-	      if (status === 'OK') {
-	        if (results[0]) {
-	          map.setCenter(latlng);
-	          map.setZoom(11);
-	          marker = new google.maps.Marker({
-	            position: latlng,
-	            map: map
-	          });
-	        } else {
-	          window.alert('عفواً , لا يوجد نتائج!');
-	        }
-	      } else {
-	        window.alert('عفواً , لقد حدث خطأ!: ' + status);
-	      }
-	    });
-  }
-  
-function ConvertDMSToDD(degrees, minutes, seconds, direction) {
-    var dd = Number(degrees) + Number(minutes)/60 + Number(seconds)/(60*60);
-
-    if (direction == "S" || direction == "W") {
-        dd = dd * -1;
-    } // Don't do anything for N or E
-    return dd;
-}
-
 </script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDxcedr1zrD8h225vpj3hNseos5mHGEDVY&callback=initMap" async defer></script>
+<script
+	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDxcedr1zrD8h225vpj3hNseos5mHGEDVY&callback=initMap"
+	async defer></script>
 </head>
 <body>
-<div class="beh_container">
-	<jsp:include page="_header.jsp"></jsp:include>
-	<div class="beh_main">
-		<div class="beh_main_side">
-			
-		    <div><!-- <div id="latlng_floating-panel"> -->
-	  			
-	  			<input type="radio" name="latlngRadios"  id="decid" onclick="handleClick(this);" value="1" checked="checked"/>Dec.
-	  			<input type="radio" name="latlngRadios"  id="degid" onclick="handleClick(this);" value="2" />Deg.<br>
-	  			
-	  			<div id="latlng_decimal_id" style="display: block;">
-		  			<table border="0" align="center" style="dir: ltr;">
-			  			<tr>
-			  				<td align="left">
-			  					<b>Lat: </b>
-			  				</td>
-			  				<td align="left">
-			  					<input id="latValue" type="text"  onfocus="if(this.value == '30.170996') { this.value = ''; this.style.color = '#000'}" value="30.170996">
-			  				</td>
-			  				<td align="left">
-			  					<b>N</b>
-			  				</td>
-			  			</tr>
-			  			<tr>
-			  				<td align="left">
-			  					<b>Lon: </b>
-			  				</td>
-			  				<td align="left">
-			  					<input id="lngValue" type="text"  onfocus="if(this.value == '30.187959') { this.value = ''; this.style.color = '#000'}" value="30.187959">
-			  				</td>
-			  				<td align="left">
-			  					<b>E</b>
-			  				</td>
-			  			</tr>
-		      		 	<!-- <b>Lat: </b><input id="latValue" type="text"  onfocus="if(this.value == '30.170996') { this.value = ''; this.style.color = '#000'}" value="30.170996">&nbsp;<b>N</b><br>
+	<div class="beh_container">
+		<jsp:include page="_header.jsp"></jsp:include>
+		<div class="beh_main">
+			<div class="beh_main_side">
+
+				<div>
+					<!-- <div id="latlng_floating-panel"> -->
+
+					<input type="radio" name="latlngRadios" id="decid"
+						onclick="handleClick(this);" value="1" checked="checked" />Dec. <input
+						type="radio" name="latlngRadios" id="degid"
+						onclick="handleClick(this);" value="2" />Deg.<br>
+
+					<div id="latlng_decimal_id" style="display: block;">
+						<table border="0" align="center" style="dir: ltr;">
+							<tr>
+								<td align="left"><b>Lat: </b></td>
+								<td align="left"><input id="latValue" type="text"
+									onfocus="if(this.value == '30.170996') { this.value = ''; this.style.color = '#000'}"
+									value="30.170996"></td>
+								<td align="left"><b>N</b></td>
+							</tr>
+							<tr>
+								<td align="left"><b>Lon: </b></td>
+								<td align="left"><input id="lngValue" type="text"
+									onfocus="if(this.value == '30.187959') { this.value = ''; this.style.color = '#000'}"
+									value="30.187959"></td>
+								<td align="left"><b>E</b></td>
+							</tr>
+							<!-- <b>Lat: </b><input id="latValue" type="text"  onfocus="if(this.value == '30.170996') { this.value = ''; this.style.color = '#000'}" value="30.170996">&nbsp;<b>N</b><br>
 		      		 	<b>Lng: </b><input id="lngValue" type="text"  onfocus="if(this.value == '30.187959') { this.value = ''; this.style.color = '#000'}" value="30.187959">&nbsp;<b>E</b><br> -->
-		      		</table>
-	      		</div>
-	      		
-	      		
-	      		<div id="latlng_degrees_id" style="display: none;">
-	      			<table border="0" align="center" style="dir: ltr;">
-		      			<tr>
-		      				<td align="left">
-			  					<b>Lat: </b>
-			  				</td>
-			  				<td align="left">
-			  					<input class="latlngValueclass1" id="latdeg" type="text"  onfocus="if(this.value == '30') { this.value = ''; this.style.color = '#000'}" value="30">
-			  				</td>
-			  				<td align="left">
-			  					<b><sup>o</sup></b>
-			  				</td>
-			  				<td align="left">
-			  					<input class="latlngValueclass1" id="latmin" type="text"  onfocus="if(this.value == '10') { this.value = ''; this.style.color = '#000'}" value="10">
-			  				</td>
-			  				<td align="left">
-			  					<b><sup>'</sup></b>
-			  				</td>
-			  				<td align="left">
-			  					<input class="latlngValueclass2" id="latsec" type="text"  onfocus="if(this.value == '15.5856') { this.value = ''; this.style.color = '#000'}" value="15.5856">
-			  				</td>
-			  				<td align="left">
-			  					<sup>"</sup>
-			  				</td>
-			  				<td align="left">
-			  					<b>N</b>
-			  				</td>
-		      			</tr>
-		      			<tr>
-		      				<td align="left">
-			  					<b>Lng: </b>
-			  				</td>
-			  				<td align="left">
-			  					<input class="latlngValueclass1" id="lngdeg" type="text"  onfocus="if(this.value == '30') { this.value = ''; this.style.color = '#000'}" value="30">
-			  				</td>
-			  				<td align="left">
-			  					<b><sup>o</sup></b>
-			  				</td>
-			  				<td align="left">
-			  					<input class="latlngValueclass1" id="lngmin" type="text"  onfocus="if(this.value == '11') { this.value = ''; this.style.color = '#000'}" value="11">
-			  				</td>
-			  				<td align="left">
-			  					<b><sup>'</sup></b>
-			  				</td>
-			  				<td align="left">
-			  					<input class="latlngValueclass2" id="lngsec" type="text"  onfocus="if(this.value == '16.6524') { this.value = ''; this.style.color = '#000'}" value="16.6524">
-			  				</td>
-			  				<td align="left">
-			  					<sup>"</sup>
-			  				</td>
-			  				<td align="left">
-			  					<b>E</b>
-			  				</td>
-		      			</tr>
-	      			</table>
-	      		<!-- <b>Lat: </b><input class="latlngValueclass1" id="latdeg" type="text"  onfocus="if(this.value == '30') { this.value = ''; this.style.color = '#000'}" value="30"><b><sup>o</sup></b>
+						</table>
+					</div>
+
+
+					<div id="latlng_degrees_id" style="display: none;">
+						<table border="0" align="center" style="dir: ltr;">
+							<tr>
+								<td align="left"><b>Lat: </b></td>
+								<td align="left"><input class="latlngValueclass1"
+									id="latdeg" type="text"
+									onfocus="if(this.value == '30') { this.value = ''; this.style.color = '#000'}"
+									value="30"></td>
+								<td align="left"><b><sup>o</sup></b></td>
+								<td align="left"><input class="latlngValueclass1"
+									id="latmin" type="text"
+									onfocus="if(this.value == '10') { this.value = ''; this.style.color = '#000'}"
+									value="10"></td>
+								<td align="left"><b><sup>'</sup></b></td>
+								<td align="left"><input class="latlngValueclass2"
+									id="latsec" type="text"
+									onfocus="if(this.value == '15.5856') { this.value = ''; this.style.color = '#000'}"
+									value="15.5856"></td>
+								<td align="left"><sup>"</sup></td>
+								<td align="left"><b>N</b></td>
+							</tr>
+							<tr>
+								<td align="left"><b>Lng: </b></td>
+								<td align="left"><input class="latlngValueclass1"
+									id="lngdeg" type="text"
+									onfocus="if(this.value == '30') { this.value = ''; this.style.color = '#000'}"
+									value="30"></td>
+								<td align="left"><b><sup>o</sup></b></td>
+								<td align="left"><input class="latlngValueclass1"
+									id="lngmin" type="text"
+									onfocus="if(this.value == '11') { this.value = ''; this.style.color = '#000'}"
+									value="11"></td>
+								<td align="left"><b><sup>'</sup></b></td>
+								<td align="left"><input class="latlngValueclass2"
+									id="lngsec" type="text"
+									onfocus="if(this.value == '16.6524') { this.value = ''; this.style.color = '#000'}"
+									value="16.6524"></td>
+								<td align="left"><sup>"</sup></td>
+								<td align="left"><b>E</b></td>
+							</tr>
+						</table>
+						<!-- <b>Lat: </b><input class="latlngValueclass1" id="latdeg" type="text"  onfocus="if(this.value == '30') { this.value = ''; this.style.color = '#000'}" value="30"><b><sup>o</sup></b>
 	      					<input class="latlngValueclass1" id="latmin" type="text"  onfocus="if(this.value == '10') { this.value = ''; this.style.color = '#000'}" value="10">&nbsp;<b><sup>'</sup></b>
 	      					<input class="latlngValueclass2" id="latsec" type="text"  onfocus="if(this.value == '15.5856') { this.value = ''; this.style.color = '#000'}" value="15.5856">&nbsp;<b><sup>"</sup> N</b><br>
 	      		<b>Lng: </b><input class="latlngValueclass1" id="lngdeg" type="text"  onfocus="if(this.value == '30') { this.value = ''; this.style.color = '#000'}" value="30"><b><sup>o</sup></b>
 	      					<input class="latlngValueclass1" id="lngmin" type="text"  onfocus="if(this.value == '11') { this.value = ''; this.style.color = '#000'}" value="11">&nbsp;<b><sup>'</sup></b>
 	      					<input class="latlngValueclass2" id="lngsec" type="text"  onfocus="if(this.value == '16.6524') { this.value = ''; this.style.color = '#000'}" value="16.6524">&nbsp;<b><sup>"</sup> E</b><br> -->
-	      		</div>
-	      		<h2 align="center">
-	      			<input id="cancellatlng" type="button" value="إلغاء" class="btn btn-info btn-md">
-	      			<input id="submitlatlng" type="button" value="بحث" class="btn btn-info btn-md">
-	      		</h2>
-	    	</div>
-	    	
-	    	<div class="beh_main_side_sep"></div>
-	    	
-	    	<div style="padding:1vw 1vw 3vw 1vw;"><!-- <div id="floating-panel"> -->
-		      <b style="float: right;">المراكز</b><input type="checkbox" onclick="displayAndHideCenters();"  id="centers" style="float: left;"/>
-		      <br>
-		      <b style="float: right;">المناطق</b><input type="checkbox" onclick="displayAndHideDistricts();"  id="districts" style="float: left;"/>
-		      <br>
-		      <b style="float: right;">أراضي مضافة للمحافظة</b><input type="checkbox" onclick="displayAndHideLandsUnionsMohafza();"  id="landsunionsmohafza" style="float: left;"/>
-		      <br>
-		      <b style="float: right;">أراضي ممنوع التعامل عليها</b><input type="checkbox" onclick="displayAndHideLandsNotPermitted();"  id="landsnotpermitted" style="float: left;"/>
-		      <br>
-		      <b style="float: right;">(41/2017) .قرار ج</b><input type="checkbox" onclick="displayAndHideLaw41();"  id="law41" style="float: left;"/>
-		      <br>
-		      <b style="float: right;">(129/2017) .قرار ج</b><input type="checkbox" onclick="displayAndHideLaw129();"  id="law129" style="float: left;"/>
-		      <br>
-		      <b style="float: right;">(228/1990) قرار</b><input type="checkbox" onclick="displayAndHideLaw228();"  id="law228" style="float: left;"/>
-		      <br>
-		      <b style="float: right;">(233/2016) .قرار ج</b><input type="checkbox" onclick="displayAndHideLaw233();"  id="law233" style="float: left;"/>
-		      <br>
-		      <b style="float: right;">(341/2014) .قرار ج</b><input type="checkbox" onclick="displayAndHideLaw341();"  id="law341" style="float: left;"/>
-		      <br>
-		      <b style="float: right;">(529/2017) .قرار ج</b><input type="checkbox" onclick="displayAndHideLaw529();"  id="law529" style="float: left;"/>
-		      <br>
-		      <b style="float: right;">الدلتا الجديدة</b><input type="checkbox" onclick="displayAndHideNewDelta();"  id="newdelta" style="float: left;"/>
-		     </div>
-		
+					</div>
+					<h2 align="center">
+						<input id="cancellatlng" type="button" value="إلغاء"
+							class="btn btn-info btn-md"> <input id="submitlatlng"
+							type="button" value="بحث" class="btn btn-info btn-md">
+					</h2>
+				</div>
+
+				<div class="beh_main_side_sep"></div>
+
+				<div style="padding: 1vw 1vw 3vw 1vw;">
+					<!-- <div id="floating-panel"> -->
+					<b style="float: right;">المراكز</b><input type="checkbox"
+						onclick="displayAndHideCenters();" id="centers"
+						style="float: left;" /> <br> <b style="float: right;">المناطق</b><input
+						type="checkbox" onclick="displayAndHideDistricts();"
+						id="districts" style="float: left;" /> <br> <b
+						style="float: right;">أراضي مضافة للمحافظة</b><input
+						type="checkbox" onclick="displayAndHideLandsUnionsMohafza();"
+						id="landsunionsmohafza" style="float: left;" /> <br> <b
+						style="float: right;">أراضي ممنوع التعامل عليها</b><input
+						type="checkbox" onclick="displayAndHideLandsNotPermitted();"
+						id="landsnotpermitted" style="float: left;" /> <br> <b
+						style="float: right;">(41/2017) .قرار ج</b><input type="checkbox"
+						onclick="displayAndHideLaw41();" id="law41" style="float: left;" />
+					<br> <b style="float: right;">(129/2017) .قرار ج</b><input
+						type="checkbox" onclick="displayAndHideLaw129();" id="law129"
+						style="float: left;" /> <br> <b style="float: right;">(228/1990)
+						قرار</b><input type="checkbox" onclick="displayAndHideLaw228();"
+						id="law228" style="float: left;" /> <br> <b
+						style="float: right;">(233/2016) .قرار ج</b><input type="checkbox"
+						onclick="displayAndHideLaw233();" id="law233" style="float: left;" />
+					<br> <b style="float: right;">(341/2014) .قرار ج</b><input
+						type="checkbox" onclick="displayAndHideLaw341();" id="law341"
+						style="float: left;" /> <br> <b style="float: right;">(529/2017)
+						.قرار ج</b><input type="checkbox" onclick="displayAndHideLaw529();"
+						id="law529" style="float: left;" /> <br> <b
+						style="float: right;">الدلتا الجديدة</b><input type="checkbox"
+						onclick="displayAndHideNewDelta();" id="newdelta"
+						style="float: left;" />
+				</div>
+
+			</div>
+			<div class="beh_main_map" id="map-canvas">
+				<!-- <div id="map-canvas"></div> -->
+			</div>
 		</div>
-		<div class="beh_main_map" id="map-canvas">
-			<!-- <div id="map-canvas"></div> -->
-		</div>
+
+		<jsp:include page="_footer.jsp"></jsp:include>
 	</div>
-	
-	<jsp:include page="_footer.jsp"></jsp:include>
-</div>
 </body>
 </html>
