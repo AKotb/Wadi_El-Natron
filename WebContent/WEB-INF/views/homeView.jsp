@@ -1169,6 +1169,50 @@
 			  newdelta_layer.setMap(null);
 		  }
 	}
+	
+
+	function displayAndHideLandsNotPermitted() {	
+		var checkbox = document.getElementById('landsnotpermitted');
+		  if (checkbox.checked == true)
+		  {
+			  landsnotpermitted_layer = new google.maps.Data({
+					map : map
+				});
+			  landsnotpermitted_layer.loadGeoJson('http://localhost:8080/JSON/lands_not_permitted_1.geojson');
+			  landsnotpermitted_layer.loadGeoJson('http://localhost:8080/JSON/lands_not_permitted_2.geojson');
+			  landsnotpermitted_layer.loadGeoJson('http://localhost:8080/JSON/lands_not_permitted_3.geojson');
+			  landsnotpermitted_layer.loadGeoJson('http://localhost:8080/JSON/lands_not_permitted_4.geojson');
+			  landsnotpermitted_layer.loadGeoJson('http://localhost:8080/JSON/lands_not_permitted_5.geojson');
+				
+			  //landsnotpermitted_layer.loadGeoJson('http://wn-narss.centralus.cloudapp.azure.com:8080/JSON/lands_not_permitted_1.geojson'); // for azure production server
+			  //landsnotpermitted_layer.loadGeoJson('http://wn-narss.centralus.cloudapp.azure.com:8080/JSON/lands_not_permitted_2.geojson'); // for azure production server
+			  //landsnotpermitted_layer.loadGeoJson('http://wn-narss.centralus.cloudapp.azure.com:8080/JSON/lands_not_permitted_3.geojson'); // for azure production server
+			  //landsnotpermitted_layer.loadGeoJson('http://wn-narss.centralus.cloudapp.azure.com:8080/JSON/lands_not_permitted_4.geojson'); // for azure production server
+			  //landsnotpermitted_layer.loadGeoJson('http://wn-narss.centralus.cloudapp.azure.com:8080/JSON/lands_not_permitted_5.geojson'); // for azure production server
+				
+				//landsnotpermitted_layer.loadGeoJson('http://wn.narss.sci.eg:8080/JSON/lands_not_permitted_1.geojson'); // for narss production server
+				//landsnotpermitted_layer.loadGeoJson('http://wn.narss.sci.eg:8080/JSON/lands_not_permitted_2.geojson'); // for narss production server
+				//landsnotpermitted_layer.loadGeoJson('http://wn.narss.sci.eg:8080/JSON/lands_not_permitted_3.geojson'); // for narss production server
+				//landsnotpermitted_layer.loadGeoJson('http://wn.narss.sci.eg:8080/JSON/lands_not_permitted_4.geojson'); // for narss production server
+				//landsnotpermitted_layer.loadGeoJson('http://wn.narss.sci.eg:8080/JSON/lands_not_permitted_5.geojson'); // for narss production server
+				
+				//landsnotpermitted_layer.loadGeoJson('http://41.65.224.229:8080/JSON/lands_not_permitted_1.geojson'); // for beheira production server
+				//landsnotpermitted_layer.loadGeoJson('http://41.65.224.229:8080/JSON/lands_not_permitted_2.geojson'); // for beheira production server
+				//landsnotpermitted_layer.loadGeoJson('http://41.65.224.229:8080/JSON/lands_not_permitted_3.geojson'); // for beheira production server
+				//landsnotpermitted_layer.loadGeoJson('http://41.65.224.229:8080/JSON/lands_not_permitted_4.geojson'); // for beheira production server
+				//landsnotpermitted_layer.loadGeoJson('http://41.65.224.229:8080/JSON/lands_not_permitted_5.geojson'); // for beheira production server
+			  	
+				landsnotpermitted_layer.setStyle(function(feature) {
+						return ({
+							fillColor : '#FF0000',
+							strokeColor : 'black',
+							strokeWeight : 2
+						});
+				});
+		  } else{
+			  landsnotpermitted_layer.setMap(null);
+		  }
+	}
 </script>
 <script>
 function handleClick(myRadio) {
@@ -1352,6 +1396,8 @@ function ConvertDMSToDD(degrees, minutes, seconds, direction) {
 		      <br>
 		      <b style="float: right;">أراضي مضافة للمحافظة</b><input type="checkbox" onclick="displayAndHideLandsUnionsMohafza();"  id="landsunionsmohafza" style="float: left;"/>
 		      <br>
+		      <b style="float: right;">أراضي ممنوع التعامل عليها</b><input type="checkbox" onclick="displayAndHideLandsNotPermitted();"  id="landsnotpermitted" style="float: left;"/>
+		      <br>
 		      <b style="float: right;">(41/2017) .قرار ج</b><input type="checkbox" onclick="displayAndHideLaw41();"  id="law41" style="float: left;"/>
 		      <br>
 		      <b style="float: right;">(129/2017) .قرار ج</b><input type="checkbox" onclick="displayAndHideLaw129();"  id="law129" style="float: left;"/>
@@ -1365,7 +1411,7 @@ function ConvertDMSToDD(degrees, minutes, seconds, direction) {
 		      <b style="float: right;">(529/2017) .قرار ج</b><input type="checkbox" onclick="displayAndHideLaw529();"  id="law529" style="float: left;"/>
 		      <br>
 		      <b style="float: right;">الدلتا الجديدة</b><input type="checkbox" onclick="displayAndHideNewDelta();"  id="newdelta" style="float: left;"/>
-		    </div>
+		     </div>
 		
 		</div>
 		<div class="beh_main_map" id="map-canvas">
