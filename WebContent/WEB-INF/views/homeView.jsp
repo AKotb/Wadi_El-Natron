@@ -98,6 +98,7 @@
 	var road_layer;
 	var roadbuffer_layer;
 	var newdelta_layer;
+	var landsnotpermitted_layer;
 	var marker;
 	
 	function initMap() {
@@ -888,8 +889,7 @@
 		} else {
 			alert("No Farms Data Retreived!");
 		}
-		var UserRole="<%=session.getAttribute("userRole")%>
-	";
+		var UserRole="<%=session.getAttribute("userRole")%>";
 		if (UserRole != "null") {
 			if (UserRole == "2") {
 				document.getElementById("manageusersid").style.display = "block";
@@ -1392,30 +1392,36 @@
 					<!-- <div id="floating-panel"> -->
 					<b style="float: right;">المراكز</b><input type="checkbox"
 						onclick="displayAndHideCenters();" id="centers"
-						style="float: left;" /> <br> <b style="float: right;">المناطق</b><input
+						style="float: left;" /> <br> 
+					<b style="float: right;">المناطق</b><input
 						type="checkbox" onclick="displayAndHideDistricts();"
-						id="districts" style="float: left;" /> <br> <b
-						style="float: right;">أراضي مضافة للمحافظة</b><input
+						id="districts" style="float: left;" /> <br> 
+					<b style="float: right;">أراضي مضافة للمحافظة</b><input
 						type="checkbox" onclick="displayAndHideLandsUnionsMohafza();"
-						id="landsunionsmohafza" style="float: left;" /> <br> <b
-						style="float: right;">أراضي ممنوع التعامل عليها</b><input
+						id="landsunionsmohafza" style="float: left;" /> <br> 
+					
+					<!-- <b style="float: right;">أراضي ممنوع التعامل عليها</b><input
 						type="checkbox" onclick="displayAndHideLandsNotPermitted();"
-						id="landsnotpermitted" style="float: left;" /> <br> <b
-						style="float: right;">(41/2017) .قرار ج</b><input type="checkbox"
-						onclick="displayAndHideLaw41();" id="law41" style="float: left;" />
-					<br> <b style="float: right;">(129/2017) .قرار ج</b><input
+						id="landsnotpermitted" style="float: left;" /> <br> -->
+						
+						 
+					<b style="float: right;">(41/2017) .قرار ج</b><input type="checkbox"
+						onclick="displayAndHideLaw41();" id="law41" style="float: left;" /> <br> 
+					<b style="float: right;">(129/2017) .قرار ج</b><input
 						type="checkbox" onclick="displayAndHideLaw129();" id="law129"
-						style="float: left;" /> <br> <b style="float: right;">(228/1990)
+						style="float: left;" /> <br> 
+					<b style="float: right;">(228/1990)
 						قرار</b><input type="checkbox" onclick="displayAndHideLaw228();"
-						id="law228" style="float: left;" /> <br> <b
-						style="float: right;">(233/2016) .قرار ج</b><input type="checkbox"
-						onclick="displayAndHideLaw233();" id="law233" style="float: left;" />
-					<br> <b style="float: right;">(341/2014) .قرار ج</b><input
+						id="law228" style="float: left;" /> <br> 
+					<b style="float: right;">(233/2016) .قرار ج</b><input type="checkbox"
+						onclick="displayAndHideLaw233();" id="law233" style="float: left;" /><br> 
+					<b style="float: right;">(341/2014) .قرار ج</b><input
 						type="checkbox" onclick="displayAndHideLaw341();" id="law341"
-						style="float: left;" /> <br> <b style="float: right;">(529/2017)
+						style="float: left;" /> <br> 
+					<b style="float: right;">(529/2017)
 						.قرار ج</b><input type="checkbox" onclick="displayAndHideLaw529();"
-						id="law529" style="float: left;" /> <br> <b
-						style="float: right;">الدلتا الجديدة</b><input type="checkbox"
+						id="law529" style="float: left;" /> <br> 
+					<b style="float: right;">الدلتا الجديدة</b><input type="checkbox"
 						onclick="displayAndHideNewDelta();" id="newdelta"
 						style="float: left;" />
 				</div>
